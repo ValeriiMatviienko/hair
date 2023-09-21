@@ -6,24 +6,34 @@ interface ContactFormProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
-
+interface InputType {
+  nameInput: string;
+  numberInput: string;
+  descriptionInput: string;
+}
 const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
-  // const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [inputValues, setInputValues] = useState({
-    input1: "",
-    input2: "",
-    input3: "",
+  const [inputValues, setInputValues] = useState<InputType>({
+    nameInput: "",
+    numberInput: "",
+    descriptionInput: "",
   });
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setInputValues((prevState) => ({ ...prevState, [name]: value }));
   };
-
+  const resetInputs = () => {
+    setInputValues({
+      nameInput: "",
+      numberInput: "",
+      descriptionInput: "",
+    });
+  };
   const handleClick = () => {
     alert(
-      `Name: ${inputValues.input1}, Email-address: ${inputValues.input2}, Message: ${inputValues.input3}`
+      `Name: ${inputValues.nameInput}, Number: ${inputValues.numberInput}, Message: ${inputValues.descriptionInput}`
     );
+    resetInputs();
     setIsOpen(false);
   };
   const handleSubmit = (event: { preventDefault: () => void }) => {
@@ -31,13 +41,9 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
   };
 
   const isDisabled = Object.values(inputValues).some((value) => value === "");
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
-
-  const openModal = () => {
-    setIsOpen(true);
+  const toggleModal = (open: boolean) => {
+    !open && resetInputs();
+    setIsOpen(open);
   };
 
   return (
@@ -47,7 +53,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
           <button
             type="button"
             className="justify-end px-6 py-4 text-xl font-semibold rounded-full lg:px-12 navbutton bg-darkgreen text-white hover:text-darkgreen hover:bg-white border border-darkgreen"
-            onClick={openModal}
+            onClick={() => toggleModal(true)}
           >
             Contact Me
           </button>
@@ -55,7 +61,11 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={closeModal}>
+        <Dialog
+          as="div"
+          className="relative z-50"
+          onClose={() => toggleModal(false)}
+        >
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -82,15 +92,12 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                 <Dialog.Panel className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                   <div className="max-w-screen-md px-4 py-8 mx-auto lg:py-8">
                     <div className="flex items-center justify-center flex-shrink-0">
-                      <Link
-                        href="/"
-                        className="text-2xl font-semibold text-black sm:text-4xl"
-                      >
-                        Desgy Solutions
-                      </Link>
+                      <h1 className="text-2xl font-semibold text-black sm:text-4xl">
+                        Contact form
+                      </h1>
                     </div>
                     <p className="mt-8 mb-8 font-light text-center text-gray-500 lg:mb-16 dark:text-gray-400 sm:text-xl">
-                      Contact us now? Want to send us a feedback?
+                      Fill in the form to contact me
                     </p>
                     <form
                       action="#"
@@ -102,12 +109,12 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           htmlFor="text"
                           className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                         >
-                          Your Name
+                          Name
                         </label>
                         <input
                           id="text"
-                          name="input1"
-                          value={inputValues.input1}
+                          name="nameInput"
+                          value={inputValues.nameInput}
                           onChange={handleChange}
                           type="text"
                           autoComplete="current-password"
@@ -118,21 +125,21 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                       </div>
                       <div>
                         <label
-                          htmlFor="email"
+                          htmlFor="number"
                           className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                         >
-                          Your email
+                          Number
                         </label>
                         <input
-                          id="email"
-                          name="input2"
-                          value={inputValues.input2}
+                          id="number"
+                          name="numberInput"
+                          value={inputValues.numberInput}
                           onChange={handleChange}
-                          type="email"
+                          type="tel"
                           autoComplete="current-password"
                           required
                           className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border rounded-md appearance-none border-linegrey focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                          placeholder="xyz@email.com"
+                          placeholder="Your phone number"
                         />
                       </div>
                       <div className="sm:col-span-2">
@@ -144,8 +151,8 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                         </label>
                         <textarea
                           id="message"
-                          name="input3"
-                          value={inputValues.input3}
+                          name="descriptionInput"
+                          value={inputValues.descriptionInput}
                           onChange={handleChange}
                           className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border rounded-md appearance-none border-linegrey focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                           placeholder="Leave a comment..."
@@ -155,7 +162,11 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                         type="submit"
                         onClick={handleClick}
                         disabled={isDisabled}
-                        className="w-full px-5 py-3 text-sm font-medium text-center text-white rounded-lg disabled:opacity-50 bg-blue focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        className={`w-full px-5 py-3 text-sm font-medium text-center  rounded-lg focus:ring-4 focus:outline-none focus:ring-primary-300 bg-darkgreen text-white border border-darkgreen ${
+                          isDisabled
+                            ? "opacity-50 pointer-events-none"
+                            : "hover:text-darkgreen hover:bg-white"
+                        }`}
                       >
                         Send message
                       </button>
