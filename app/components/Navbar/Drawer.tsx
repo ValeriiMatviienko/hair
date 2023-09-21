@@ -7,9 +7,15 @@ interface DrawerProps {
   children: ReactNode;
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
+  setIsContactFormOpen: (isOpen: boolean) => void;
 }
 
-const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
+const Drawer = ({
+  children,
+  isOpen,
+  setIsOpen,
+  setIsContactFormOpen,
+}: DrawerProps) => {
   return (
     <main
       className={

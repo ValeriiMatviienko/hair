@@ -18,7 +18,10 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Data = () => {
+interface DataProps {
+  setIsContactFormOpen: (isOpen: boolean) => void;
+}
+const DrawerData = ({ setIsContactFormOpen }: DataProps) => {
   return (
     <div className="w-full max-w-sm mx-auto rounded-md">
       <div className="flex-1 py-1 space-y-4">
@@ -40,7 +43,10 @@ const Data = () => {
               </Link>
             ))}
             <div className="mt-4"></div>
-            <button className="flex justify-center w-full px-4 py-3 text-base font-medium bg-transparent border rounded-full border-bgpink text-pink lg:px-8 navbutton hover:text-white hover:bg-gold">
+            <button
+              onClick={() => setIsContactFormOpen(true)}
+              className="flex justify-center w-full px-4 py-3 text-base font-medium border rounded-full  bg-darkgreen text-white hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
+            >
               Contact me
             </button>
           </div>
@@ -50,4 +56,4 @@ const Data = () => {
   );
 };
 
-export default Data;
+export default DrawerData;

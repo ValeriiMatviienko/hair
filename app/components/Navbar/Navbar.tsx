@@ -1,11 +1,11 @@
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-import React from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
-import Drawerdata from "./Drawerdata";
-import Signindialog from "./Signindialog";
+import DrawerData from "./Drawerdata";
+import ContactForm from "./ContactForm";
 import Image from "next/image";
+import { useState } from "react";
 
 interface NavigationItem {
   name: string;
@@ -25,7 +25,8 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   return (
     <Disclosure as="nav" className="navbar">
@@ -35,7 +36,7 @@ const Navbar = () => {
             <div className="flex items-center flex-1 sm:justify-between">
               {/* LOGO */}
 
-              <div className="flex items-center flex-shrink-0 sm:hidden border-right">
+              <div className="flex items-center flex-shrink-0 border-right">
                 <Image
                   src="/images/5908.jpg"
                   alt="logo"
@@ -44,21 +45,7 @@ const Navbar = () => {
                 />
                 <Link
                   href="/"
-                  className="ml-4 text-2xl font-semibold text-black"
-                >
-                  Hair by Hanna.
-                </Link>
-              </div>
-              <div className="items-center flex-shrink-0 hidden sm:flex border-right">
-                <Image
-                  src="/images/5908.jpg"
-                  alt="logo"
-                  width={56}
-                  height={56}
-                />
-                <Link
-                  href="/"
-                  className="ml-4 text-2xl font-semibold text-black"
+                  className="ml-4 text-2xl font-semibold text-black sm:text-3xl"
                 >
                   Hair by Hanna.
                 </Link>
@@ -86,12 +73,15 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="hidden gap-6 lg:flex">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 mr-3">
                   <a className="text-lg font-medium" href="tel:+48780509295">
                     +48780509295
                   </a>
                 </div>
-                <Signindialog />
+                <ContactForm
+                  isOpen={isContactFormOpen}
+                  setIsOpen={setIsContactFormOpen}
+                />
               </div>
             </div>
             <div className="block lg:hidden">
@@ -101,8 +91,12 @@ const Navbar = () => {
                 onClick={() => setIsOpen(true)}
               />
             </div>
-            <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-              <Drawerdata />
+            <Drawer
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              setIsContactFormOpen={setIsContactFormOpen}
+            >
+              <DrawerData setIsContactFormOpen={setIsContactFormOpen} />
             </Drawer>
           </div>
         </div>

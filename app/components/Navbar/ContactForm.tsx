@@ -2,8 +2,13 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import Link from "next/link";
 
-const Contactusform = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface ContactFormProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
   const [inputValues, setInputValues] = useState({
     input1: "",
     input2: "",
@@ -37,14 +42,14 @@ const Contactusform = () => {
 
   return (
     <>
-      <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
+      <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
         <div className="hidden lg:block">
           <button
             type="button"
-            className="justify-end px-6 py-4 text-xl font-semibold bg-transparent rounded-full lg:px-12 navbutton hover:bg-navyblue hover:text-white"
+            className="justify-end px-6 py-4 text-xl font-semibold rounded-full lg:px-12 navbutton bg-darkgreen text-white hover:text-darkgreen hover:bg-white border border-darkgreen"
             onClick={openModal}
           >
-            Contact Us
+            Contact Me
           </button>
         </div>
       </div>
@@ -166,4 +171,4 @@ const Contactusform = () => {
   );
 };
 
-export default Contactusform;
+export default ContactForm;
