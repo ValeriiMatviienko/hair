@@ -44,7 +44,7 @@ const Service = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h3 className="mb-3 text-lg font-normal uppercase text-pink ls-51">
+            <h3 className="mb-3 text-lg font-normal uppercase text-black ls-51">
               Features
             </h3>
           </Fade>
@@ -55,7 +55,7 @@ const Service = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <p className="text-3xl font-semibold lg:text-5xl text-lightgrey">
+            <p className="text-3xl font-semibold lg:text-5xl text-black">
               Get a many of interesting <br /> features.
             </p>
           </Fade>
@@ -78,14 +78,6 @@ const Service = () => {
                 <p className="mt-2 text-lg font-normal text-center text-black text-opacity-50">
                   {items.subheading}
                 </p>
-                {/* <div className="flex items-center justify-center">
-                  <Link href="/">
-                    <p className="mt-2 text-lg font-medium text-center text-pink hover-underline">
-                      {items.link}
-                      <ChevronRightIcon width={20} height={20} />
-                    </p>
-                  </Link>
-                </div> */}
               </div>
             ))}
           </Fade>
