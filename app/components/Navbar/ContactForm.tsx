@@ -30,12 +30,27 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
     });
   };
   const handleClick = () => {
-    alert(
-      `Name: ${inputValues.nameInput}, Number: ${inputValues.numberInput}, Message: ${inputValues.descriptionInput}`
-    );
+    fetch("https://formspree.io/f/mgejnlnr", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: inputValues.nameInput,
+        number: inputValues.numberInput,
+        message: inputValues.descriptionInput,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.ok) {
+          alert("Message sent!");
+        }
+      });
     resetInputs();
     setIsOpen(false);
   };
+
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
   };
