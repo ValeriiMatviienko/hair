@@ -10,10 +10,6 @@
   outline: 0;
 }
 
-html {
-  scroll-behavior: smooth !important;
-}
-
 body {
   background-color: #fafafa;
 }
@@ -32,16 +28,6 @@ html:not([data-scroll="0"]) .navbar {
 
 .ls-51 {
   letter-spacing: 0.515em;
-}
-
-.br-50 {
-  border-radius: 50px 400px 50px 50px;
-}
-
-@media screen and (max-width: 1200px) {
-  .br-50 {
-    border-radius: 20px;
-  }
 }
 
 .space-links {

@@ -24,7 +24,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
         <div className="hidden lg:block">
           <button
             type="button"
-            className="justify-end px-6 py-4 text-xl font-semibold rounded-full lg:px-12 navbutton bg-darkgreen text-white hover:text-darkgreen hover:bg-white border border-darkgreen"
+            className="justify-end px-6 py-4 text-xl font-semibold text-white border rounded-full lg:px-12 navbutton bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen"
             onClick={() => toggleModal({ open: true, setIsOpen })}
           >
             Contact Me
@@ -91,8 +91,8 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           type="text"
                           autoComplete="current-password"
                           required
-                          className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none  focus:z-10  focus:outline-none sm:text-sm"
-                          placeholder="Name..."
+                          className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
+                          placeholder="Name"
                         />
                       </div>
                       <div>
@@ -110,7 +110,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           type="tel"
                           autoComplete="current-password"
                           required
-                          className="relative block w-full px-3 py-2 text-black  border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
+                          className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
                           placeholder="Your phone number"
                         />
                       </div>
@@ -127,7 +127,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           value={inputValues.descriptionInput}
                           onChange={handleChange}
                           className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
-                          placeholder="Leave a comment..."
+                          placeholder="Leave a comment"
                         ></textarea>
                       </div>
                       <button
