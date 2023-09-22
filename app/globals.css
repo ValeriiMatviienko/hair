@@ -63,10 +63,6 @@ html:not([data-scroll="0"]) .navbar {
   transform: translateY(-8px);
 }
 
-.footer-icons:hover > .sepiaa {
-  filter: invert(100.1);
-}
-
 .space-links {
   transition: 0.3s;
 }

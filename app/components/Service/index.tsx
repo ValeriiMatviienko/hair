@@ -38,7 +38,7 @@ const Service = () => {
             triggerOnce={true}
           >
             <h3 className="mb-3 text-lg font-normal uppercase text-black ls-51">
-              Features
+              Services
             </h3>
           </Fade>
           <Fade
@@ -49,7 +49,7 @@ const Service = () => {
             triggerOnce={true}
           >
             <p className="text-3xl font-semibold lg:text-5xl text-black">
-              Get a many of interesting <br /> features.
+              Discover services I have.
             </p>
           </Fade>
         </div>

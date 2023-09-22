@@ -15,7 +15,7 @@ const Gallery = () => {
             triggerOnce={true}
           >
             <h2 className="mb-3 text-lg font-normal tracking-widest uppercase text-pink ls-51">
-              Our Gallery
+              Gallery
             </h2>
           </Fade>
           <Fade
@@ -26,7 +26,7 @@ const Gallery = () => {
             triggerOnce={true}
           >
             <h3 className="text-3xl font-semibold text-black lg:text-5xl">
-              Gallery of our cooked food.
+              Gallery of my latest works.
             </h3>
           </Fade>
         </div>

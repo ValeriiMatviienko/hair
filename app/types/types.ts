@@ -5,18 +5,14 @@ export interface cardDataType {
   subheading: string;
 }
 export interface SocialLinks {
-  imgSrc: string;
+  Component: React.FC<React.SVGProps<SVGSVGElement>>;
   link: string;
-  width: number;
+
+  description: string;
 }
 export interface Product {
   name: string;
   price: number;
-}
-export interface NavigationItem {
-  name: string;
-  href: string;
-  current: boolean;
 }
 export interface NavigationItem {
   name: string;
