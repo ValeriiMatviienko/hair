@@ -1,11 +1,5 @@
-"use client";
-import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
-
-interface Product {
-  name: string;
-  price: number;
-}
+import { Product } from "@/app/types/types";
 
 const Price = () => {
   const products: Product[] = [

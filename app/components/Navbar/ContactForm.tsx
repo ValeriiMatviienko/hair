@@ -2,11 +2,7 @@ import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import "react-toastify/dist/ReactToastify.css";
-
-interface ContactFormProps {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-}
+import { ContactFormProps } from "@/app/types/types";
 
 const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
   const { inputValues, setInputValues, handleSubmitForm, toggleModal } =

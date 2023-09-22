@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
-import Link from "next/link";
 
 const HeroSection = () => {
   return (

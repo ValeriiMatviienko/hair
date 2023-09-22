@@ -7,12 +7,7 @@ import ContactForm from "./ContactForm";
 import Image from "next/image";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
-
-interface NavigationItem {
-  name: string;
-  href: string;
-  current: boolean;
-}
+import { NavigationItem } from "@/app/types/types";
 
 const navigation: NavigationItem[] = [
   { name: "About", href: "#home-section", current: false },

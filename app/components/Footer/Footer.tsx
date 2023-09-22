@@ -1,13 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SocialLinks } from "@/app/types/types";
 
-interface socialLinks {
-  imgSrc: string;
-  link: string;
-  width: number;
-}
-
-const socialLinks: socialLinks[] = [
+const socialLinks: SocialLinks[] = [
   {
     imgSrc: "/images/Footer/facebook.svg",
     link: "https://facebook.com",

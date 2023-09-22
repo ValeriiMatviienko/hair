@@ -1,10 +1,6 @@
 import React from "react";
 import Link from "next/link";
-interface NavigationItem {
-  name: string;
-  href: string;
-  current: boolean;
-}
+import { DrowerDataProps, NavigationItem } from "@/app/types/types";
 
 const navigation: NavigationItem[] = [
   { name: "About", href: "#home-section", current: false },
@@ -17,10 +13,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-interface DataProps {
-  setIsContactFormOpen: (isOpen: boolean) => void;
-}
-const DrawerData = ({ setIsContactFormOpen }: DataProps) => {
+const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
   return (
     <div className="w-full max-w-sm mx-auto rounded-md">
       <div className="flex-1 py-1 space-y-4">

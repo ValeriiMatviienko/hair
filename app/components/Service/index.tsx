@@ -1,13 +1,5 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { cardDataType } from "@/app/types/types";
 import { Fade } from "react-awesome-reveal";
-
-interface cardDataType {
-  heading: string;
-  subheading: string;
-}
 
 const cardData: cardDataType[] = [
   {
