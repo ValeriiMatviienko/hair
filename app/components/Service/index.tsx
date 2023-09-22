@@ -1,3 +1,4 @@
+"use client";
 import { cardDataType } from "@/app/types/types";
 import { Fade } from "react-awesome-reveal";
 

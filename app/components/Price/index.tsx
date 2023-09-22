@@ -1,3 +1,4 @@
+"use client";
 import { Fade } from "react-awesome-reveal";
 import { Product } from "@/app/types/types";
 

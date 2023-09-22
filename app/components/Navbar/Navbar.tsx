@@ -30,8 +30,6 @@ const Navbar = () => {
         <div className="p-3 mx-auto max-w-7xl md:p-6 lg:px-8">
           <div className="relative flex items-center h-12 sm:h-20">
             <div className="flex items-center flex-1 sm:justify-between">
-              {/* LOGO */}
-
               <div className="flex items-center flex-shrink-0 border-right">
                 <Image
                   src="/images/5908.jpg"
@@ -46,21 +44,13 @@ const Navbar = () => {
                   Hair by Hanna.
                 </Link>
               </div>
-
-              {/* LINKS */}
-
               <div className="items-center hidden lg:flex border-right ">
                 <div className="flex justify-end space-x-4">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={classNames(
-                        item.current
-                          ? "bg-black"
-                          : "navlinks hover:opacity-100",
-                        "px-3 py-4 rounded-md text-lg font-normal opacity-50 hover:text-gold space-links"
-                      )}
+                      className="px-4 py-4 rounded-md text-lg font-normal text-black hover:text-darkgreen space-links"
                       aria-current={item.href ? "page" : undefined}
                     >
                       {item.name}
@@ -70,7 +60,7 @@ const Navbar = () => {
               </div>
               <div className="hidden gap-6 lg:flex">
                 <div className="flex items-center gap-2 mr-3">
-                  <a className="text-lg font-medium" href="tel:+48780509295">
+                  <a className="text-xl font-medium" href="tel:+48780509295">
                     +48780509295
                   </a>
                 </div>
