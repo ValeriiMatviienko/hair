@@ -1,66 +1,28 @@
+import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
-import Link from "next/link";
+import { Fragment } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface ContactFormProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
-interface InputType {
-  nameInput: string;
-  numberInput: string;
-  descriptionInput: string;
-}
+
 const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
-  const [inputValues, setInputValues] = useState<InputType>({
-    nameInput: "",
-    numberInput: "",
-    descriptionInput: "",
-  });
+  const { inputValues, setInputValues, handleSubmitForm, toggleModal } =
+    useContactForm();
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setInputValues((prevState) => ({ ...prevState, [name]: value }));
   };
-  const resetInputs = () => {
-    setInputValues({
-      nameInput: "",
-      numberInput: "",
-      descriptionInput: "",
-    });
-  };
-  const handleClick = () => {
-    fetch("https://formspree.io/f/mgejnlnr", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: inputValues.nameInput,
-        number: inputValues.numberInput,
-        message: inputValues.descriptionInput,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.ok) {
-          alert("Message sent!");
-        }
-      });
-    resetInputs();
-    setIsOpen(false);
-  };
-
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-  };
 
   const isDisabled = Object.values(inputValues).some((value) => value === "");
-  const toggleModal = (open: boolean) => {
-    !open && resetInputs();
-    setIsOpen(open);
+  const handleFormSubmittion = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleSubmitForm(setIsOpen);
   };
-
   return (
     <>
       <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
@@ -68,7 +30,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
           <button
             type="button"
             className="justify-end px-6 py-4 text-xl font-semibold rounded-full lg:px-12 navbutton bg-darkgreen text-white hover:text-darkgreen hover:bg-white border border-darkgreen"
-            onClick={() => toggleModal(true)}
+            onClick={() => toggleModal({ open: true, setIsOpen })}
           >
             Contact Me
           </button>
@@ -79,7 +41,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
         <Dialog
           as="div"
           className="relative z-50"
-          onClose={() => toggleModal(false)}
+          onClose={() => toggleModal({ open: false, setIsOpen })}
         >
           <Transition.Child
             as={Fragment}
@@ -117,7 +79,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                     <form
                       action="#"
                       className="space-y-8"
-                      onSubmit={handleSubmit}
+                      onSubmit={handleFormSubmittion}
                     >
                       <div>
                         <label
@@ -175,7 +137,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                       </div>
                       <button
                         type="submit"
-                        onClick={handleClick}
+                        onClick={() => handleSubmitForm}
                         disabled={isDisabled}
                         className={`w-full px-5 py-3 text-sm font-medium text-center  rounded-lg focus:ring-4 focus:outline-none focus:ring-primary-300 bg-darkgreen text-white border border-darkgreen ${
                           isDisabled
@@ -193,6 +155,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
           </div>
         </Dialog>
       </Transition>
+      <ToastContainer />
     </>
   );
 };
