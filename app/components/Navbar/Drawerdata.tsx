@@ -9,10 +9,6 @@ const navigation: NavigationItem[] = [
   { name: "Price", href: "#gallery-section", current: false },
 ];
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
   return (
     <div className="w-full max-w-sm mx-auto rounded-md">
@@ -23,21 +19,20 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={classNames(
-                  item.current
-                    ? "bg-gray-900 text-purple"
-                    : "text-black hover:bg-gray-700 hover:text-purple",
-                  "block  py-2 rounded-md text-base font-medium"
-                )}
+                className="block  py-2 rounded-md text-base font-medium"
                 aria-current={item.current ? "page" : undefined}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="mt-4"></div>
+            <div className="flex items-center">
+              <a className="text-xl font-medium" href="tel:+48780509295">
+                +48780509295
+              </a>
+            </div>
             <button
               onClick={() => setIsContactFormOpen(true)}
-              className="flex justify-center w-full px-4 py-3 text-base font-medium border rounded-full  bg-darkgreen text-white hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
+              className="flex justify-center w-full px-4 py-3 text-base font-medium border rounded-full bg-darkgreen text-white hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
             >
               Contact me
             </button>

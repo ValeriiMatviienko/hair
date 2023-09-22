@@ -14,7 +14,7 @@ const Gallery = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h2 className="mb-3 text-lg font-normal tracking-widest uppercase text-pink ls-51">
+            <h2 className="mb-3 text-lg font-normal tracking-widest uppercase text-black ls-51">
               Gallery
             </h2>
           </Fade>

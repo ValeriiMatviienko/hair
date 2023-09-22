@@ -1,9 +1,12 @@
 import "./globals.css";
-import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar";
 
 export const metadata = {
   title: "Hair by Hanna",
+  author: "Hanna Matviienko",
+  description: "Professional trichologist and hair treatments.",
+  keywords: ["hair", "keratine", "botox", "professional", "nanoplastia"],
 };
 
 export default function RootLayout({

@@ -68,7 +68,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                         Contact form
                       </h1>
                     </div>
-                    <p className="mt-8 mb-8 font-light text-center text-gray-500 lg:mb-16 dark:text-gray-400 sm:text-xl">
+                    <p className="mt-8 mb-8 font-light text-center text-black lg:mb-16 sm:text-xl">
                       Fill in the form to contact me
                     </p>
                     <form
@@ -79,7 +79,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                       <div>
                         <label
                           htmlFor="text"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                          className="block mb-2 text-sm font-medium text-black "
                         >
                           Name
                         </label>
@@ -91,14 +91,14 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           type="text"
                           autoComplete="current-password"
                           required
-                          className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border rounded-md appearance-none border-linegrey focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                          className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none  focus:z-10  focus:outline-none sm:text-sm"
                           placeholder="Name..."
                         />
                       </div>
                       <div>
                         <label
                           htmlFor="number"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                          className="block mb-2 text-sm font-medium text-black"
                         >
                           Number
                         </label>
@@ -110,14 +110,14 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           type="tel"
                           autoComplete="current-password"
                           required
-                          className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border rounded-md appearance-none border-linegrey focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                          className="relative block w-full px-3 py-2 text-black  border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
                           placeholder="Your phone number"
                         />
                       </div>
                       <div className="sm:col-span-2">
                         <label
                           htmlFor="message"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                          className="block mb-2 text-sm font-medium text-black "
                         >
                           Your message
                         </label>
@@ -126,7 +126,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           name="descriptionInput"
                           value={inputValues.descriptionInput}
                           onChange={handleChange}
-                          className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border rounded-md appearance-none border-linegrey focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                          className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
                           placeholder="Leave a comment..."
                         ></textarea>
                       </div>
@@ -134,7 +134,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                         type="submit"
                         onClick={() => handleSubmitForm}
                         disabled={isDisabled}
-                        className={`w-full px-5 py-3 text-sm font-medium text-center  rounded-lg focus:ring-4 focus:outline-none focus:ring-primary-300 bg-darkgreen text-white border border-darkgreen ${
+                        className={`w-full px-5 py-3 text-sm font-medium text-center rounded-lg focus:ring-4 focus:outline-none bg-darkgreen text-white border border-darkgreen ${
                           isDisabled
                             ? "opacity-50 pointer-events-none"
                             : "hover:text-darkgreen hover:bg-white"

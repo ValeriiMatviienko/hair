@@ -1,7 +1,17 @@
-import HeroSection from "./components/HeroSection/index";
-import Service from "./components/Service/index";
-import Price from "./components/Price/index";
-import Gallery from "./components/Gallery/index";
+import dynamic from "next/dynamic";
+
+const HeroSection = dynamic(() => import("./components/HeroSection/index"), {
+  ssr: false,
+});
+const Service = dynamic(() => import("./components/Service/index"), {
+  ssr: false,
+});
+const Price = dynamic(() => import("./components/Price/index"), {
+  ssr: false,
+});
+const Gallery = dynamic(() => import("./components/Gallery/index"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (

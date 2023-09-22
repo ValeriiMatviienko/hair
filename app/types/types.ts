@@ -26,7 +26,7 @@ export interface DrawerProps {
   children: ReactNode;
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
-  setIsContactFormOpen: (isOpen: boolean) => void;
+  // setIsContactFormOpen: (isOpen: boolean) => void;
 }
 export interface ContactFormProps {
   isOpen: boolean;

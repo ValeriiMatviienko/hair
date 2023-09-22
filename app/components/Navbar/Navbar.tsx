@@ -16,13 +16,9 @@ const navigation: NavigationItem[] = [
   { name: "Price", href: "#price-section", current: false },
 ];
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
 
   return (
     <Disclosure as="nav" className="navbar">
@@ -77,11 +73,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(true)}
               />
             </div>
-            <Drawer
-              isOpen={isOpen}
-              setIsOpen={setIsOpen}
-              setIsContactFormOpen={setIsContactFormOpen}
-            >
+            <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
               <DrawerData setIsContactFormOpen={setIsContactFormOpen} />
             </Drawer>
           </div>

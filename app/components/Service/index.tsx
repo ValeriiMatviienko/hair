@@ -64,7 +64,6 @@ const Service = () => {
           >
             {cardData.map((items, i) => (
               <div className="relative p-8 card-b rounded-3xl" key={i}>
-                <div className="work-img-bg rounded-full flex justify-center absolute top-[-50%] sm:top-[-40%] md:top-[-55%] lg:top-[-45%] left-[0%]"></div>
                 <h3 className="mt-16 text-2xl font-semibold text-center text-black">
                   {items.heading}
                 </h3>

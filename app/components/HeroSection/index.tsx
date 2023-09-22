@@ -15,7 +15,7 @@ const HeroSection = () => {
               damping={1e-1}
               triggerOnce={true}
             >
-              <h1 className="mb-5 text-4xl font-semibold text-center lg:text-7xl text-lightgrey md:4px lg:text-start">
+              <h1 className="mb-5 text-4xl font-semibold text-center lg:text-7xl text-black md:4px lg:text-start">
                 Welcome to my world
               </h1>
             </Fade>
@@ -26,7 +26,7 @@ const HeroSection = () => {
               damping={1e-1}
               triggerOnce={true}
             >
-              <p className="mb-10 font-normal text-center text-grey lg:text-lg lg:text-start">
+              <p className="mb-10 font-normal text-center text-black lg:text-lg lg:text-start">
                 Lorem ipsum dolor sit amet consectetur.
                 <br /> Lorem ipsum dolor sit amet consectetur adipisicing.
               </p>
