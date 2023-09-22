@@ -1,7 +1,6 @@
 import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 interface ContactFormProps {
@@ -155,7 +154,6 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
           </div>
         </Dialog>
       </Transition>
-      <ToastContainer />
     </>
   );
 };

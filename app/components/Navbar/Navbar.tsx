@@ -2,10 +2,11 @@ import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
-import DrawerData from "./Drawerdata";
+import DrawerData from "./DrawerData";
 import ContactForm from "./ContactForm";
 import Image from "next/image";
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 interface NavigationItem {
   name: string;
@@ -100,6 +101,7 @@ const Navbar = () => {
             </Drawer>
           </div>
         </div>
+        <ToastContainer className="z-100" />
       </>
     </Disclosure>
   );

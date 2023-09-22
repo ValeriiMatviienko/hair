@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-
 interface NavigationItem {
   name: string;
   href: string;
