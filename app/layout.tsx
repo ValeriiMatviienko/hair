@@ -1,10 +1,8 @@
 import "./globals.css";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Hair by Hanna",
-  author: "Hanna Matviienko",
   description: "Professional trichologist and hair treatments.",
   keywords: ["hair", "keratine", "botox", "professional", "nanoplastia"],
 };
@@ -16,11 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

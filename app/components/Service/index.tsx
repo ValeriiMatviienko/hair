@@ -37,7 +37,7 @@ const Service = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h3 className="mb-3 text-lg font-normal uppercase text-black ls-51">
+            <h3 className="mb-3 text-lg font-normal text-black uppercase ls-51">
               Services
             </h3>
           </Fade>
@@ -48,7 +48,7 @@ const Service = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <p className="text-3xl font-semibold lg:text-5xl text-black">
+            <p className="text-3xl font-semibold text-black lg:text-5xl">
               Discover services I have.
             </p>
           </Fade>
@@ -63,7 +63,7 @@ const Service = () => {
             triggerOnce={true}
           >
             {cardData.map((items, i) => (
-              <div className="relative p-8 card-b rounded-3xl" key={i}>
+              <div className="relative p-8 rounded-3xl" key={i}>
                 <h3 className="mt-16 text-2xl font-semibold text-center text-black">
                   {items.heading}
                 </h3>
