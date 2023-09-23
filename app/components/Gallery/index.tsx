@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
+import { GalleryImage } from "./GalleryImage";
 
 const Gallery = () => {
   return (
@@ -9,18 +10,18 @@ const Gallery = () => {
         <div className="text-center">
           <Fade
             direction={"up"}
-            delay={400}
+            delay={100}
             cascade
             damping={1e-1}
             triggerOnce={true}
           >
-            <h2 className="mb-3 text-lg font-normal tracking-widest uppercase text-black ls-51">
+            <h2 className="mb-3 text-lg font-normal tracking-widest text-black uppercase ls-51">
               Gallery
             </h2>
           </Fade>
           <Fade
             direction={"up"}
-            delay={800}
+            delay={100}
             cascade
             damping={1e-1}
             triggerOnce={true}
@@ -31,92 +32,21 @@ const Gallery = () => {
           </Fade>
         </div>
 
-        <div className="grid grid-cols-1 px-6 my-16 space-y-6 md:grid-cols-12 sm:space-x-6 md:space-y-0">
-          <div className="flex justify-center col-span-6 overflow-hidden rounded-3xl">
-            <Image
-              src="/images/5908.jpg"
-              alt="pizza-one"
-              width={1000}
-              height={805}
-              className="inner-img"
-            />
-          </div>
-          <div className="flex justify-center col-span-6 overflow-hidden rounded-3xl">
-            <Image
-              src="/images/5908.jpg"
-              alt="pizza-one"
-              width={1000}
-              height={805}
-              className="inner-img"
-            />
-          </div>
-
-          <div className="flex justify-center col-span-6">
-            <div className="grid grid-flow-row grid-rows-1 gap-4">
-              <div className="row-span-1 overflow-hidden rounded-3xl">
-                <Image
-                  src="/images/5908.jpg"
-                  alt="pizza-two"
-                  width={700}
-                  height={405}
-                  className="inner-img"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="overflow-hidden rounded-3xl">
-                  <Image
-                    src="/images/5908.jpg"
-                    alt="pizza-three"
-                    width={500}
-                    height={405}
-                    className="inner-img"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-3xl">
-                  <Image
-                    src="/images/5908.jpg"
-                    alt="pizza-four"
-                    width={500}
-                    height={405}
-                    className="inner-img"
-                  />
-                </div>
-              </div>
+        <div className="grid grid-cols-1 px-6 my-16 space-y-6 sm:grid-cols-2 md:grid-cols-3 sm:space-x-6 md:space-y-0">
+          {GalleryImage.map((image, index) => (
+            <div
+              key={index}
+              className="flex justify-center overflow-hidden rounded-3xl"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                className={image.className || "inner-img"}
+              />
             </div>
-          </div>
-          <div className="flex justify-center col-span-6">
-            <div className="grid grid-flow-row grid-rows-1 gap-4">
-              <div className="row-span-1 overflow-hidden rounded-3xl">
-                <Image
-                  src="/images/5908.jpg"
-                  alt="pizza-two"
-                  width={700}
-                  height={405}
-                  className="inner-img"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="overflow-hidden rounded-3xl">
-                  <Image
-                    src="/images/5908.jpg"
-                    alt="pizza-three"
-                    width={500}
-                    height={405}
-                    className="inner-img"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-3xl">
-                  <Image
-                    src="/images/5908.jpg"
-                    alt="pizza-four"
-                    width={500}
-                    height={405}
-                    className="inner-img"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

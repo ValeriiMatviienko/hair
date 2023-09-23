@@ -23,10 +23,10 @@ const Navbar = () => {
   return (
     <Disclosure as="nav" className="navbar">
       <>
-        <div className="p-3 mx-auto max-w-7xl md:p-6 lg:px-8">
-          <div className="relative flex items-center h-12 sm:h-20">
-            <div className="flex items-center flex-1 sm:justify-between">
-              <div className="flex items-center flex-shrink-0 border-right">
+        <div className="p-2 mx-auto sm:p-3 max-w-7xl md:p-6 lg:px-8">
+          <div className="relative flex items-center h-12 sm:h-16 md:h-20">
+            <div className="flex flex-col items-center justify-between flex-1 sm:flex-row">
+              <div className="flex flex-col items-center flex-shrink-0 mb-2 sm:flex-row sm:mb-0 border-right sm:mr-4">
                 <Image
                   src="/images/5908.jpg"
                   alt="logo"
@@ -35,7 +35,7 @@ const Navbar = () => {
                 />
                 <Link
                   href="/"
-                  className="ml-4 text-2xl font-semibold text-black sm:text-3xl"
+                  className="mt-2 ml-0 text-xl font-semibold text-black sm:mt-0 sm:ml-4 sm:text-2xl"
                 >
                   Hair by Hanna.
                 </Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="px-4 py-4 rounded-md text-lg font-normal text-black hover:text-darkgreen space-links"
+                      className="px-4 py-4 text-lg font-normal text-black rounded-md hover:text-darkgreen space-links"
                       aria-current={item.href ? "page" : undefined}
                     >
                       {item.name}

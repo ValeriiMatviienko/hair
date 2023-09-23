@@ -1,47 +1,39 @@
 "use client";
 import { Fade } from "react-awesome-reveal";
-import { Product } from "@/app/types/types";
+import { ProductList } from "./ProductPriceItems";
 
 const Price = () => {
-  const products: Product[] = [
-    { name: "Keratine", price: 400 },
-    { name: "Botox", price: 350 },
-    { name: "Nanoplastia", price: 600 },
-    { name: "Mixadance", price: 500 },
-    { name: "Haircut", price: 100 },
-  ];
-
   return (
-    <div className="relative" id="price-section">
-      <div className="px-6 mx-auto max-w-7xl lg:pt-20 sm:pb-24">
-        <div className="flex flex-col my-16 space-x-5 lg:grid-cols-12">
+    <div className="relative pt-4 sm:pt-0" id="price-section">
+      <div className="px-4 mx-auto sm:px-6 max-w-7xl lg:pt-20 sm:pb-24">
+        <div className="flex flex-col my-8 space-x-0 sm:my-16 sm:space-x-5 lg:grid-cols-12">
           <div className="flex flex-col justify-center col-span-12 lg:col-span-6">
             <Fade
               direction={"up"}
-              delay={400}
+              delay={100}
               cascade
               damping={0.1}
               triggerOnce
             >
-              <h2 className="mb-5 text-3xl font-normal text-center uppercase text-black ls-51">
+              <h2 className="mb-4 text-2xl font-normal text-center text-black uppercase sm:mb-5 sm:text-3xl ls-51">
                 Price
               </h2>
             </Fade>
             <Fade
               direction={"up"}
-              delay={800}
+              delay={100}
               cascade
               damping={0.1}
               triggerOnce
             >
-              <ul className="space-y-4">
-                {products.map((product, index) => (
+              <ul className="space-y-2 sm:space-y-4">
+                {ProductList.map((product, index) => (
                   <li key={index} className="flex justify-between">
-                    <h3 className="text-xl mb-3 font-normal lg:text-3xl text-black">
+                    <h3 className="mb-2 text-lg font-normal text-black sm:text-xl sm:mb-3 lg:text-3xl">
                       {product.name}
                     </h3>
                     <span className="flex items-center">
-                      <span className="ml-4 text-xl font-normal lg:text-3xl text-black">{`${product.price} PLN`}</span>
+                      <span className="ml-2 text-lg font-normal text-black sm:ml-4 sm:text-xl lg:text-3xl">{`${product.price} PLN`}</span>
                     </span>
                   </li>
                 ))}
