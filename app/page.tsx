@@ -1,7 +1,8 @@
 import dynamic from "next/dynamic";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer/Footer";
 
+const Navbar = dynamic(() => import("./components/Navbar"), {
+  ssr: false,
+});
 const HeroSection = dynamic(() => import("./components/HeroSection/index"), {
   ssr: false,
 });
@@ -12,6 +13,9 @@ const Price = dynamic(() => import("./components/Price/index"), {
   ssr: false,
 });
 const Gallery = dynamic(() => import("./components/Gallery/index"), {
+  ssr: false,
+});
+const Footer = dynamic(() => import("./components/Footer/Footer"), {
   ssr: false,
 });
 
