@@ -7,14 +7,7 @@ import ContactForm from "./ContactForm";
 import Image from "next/image";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { NavigationItem } from "@/app/types/types";
-
-const navigation: NavigationItem[] = [
-  { name: "About", href: "#home-section", current: false },
-  { name: "Services", href: "#service-section", current: false },
-  { name: "Gallery", href: "#gallery-section", current: false },
-  { name: "Price", href: "#price-section", current: false },
-];
+import { NavigationItem } from "./NavigationItem";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -26,7 +19,7 @@ const Navbar = () => {
         <div className="p-2 mx-auto sm:p-3 max-w-7xl md:p-6 lg:px-8">
           <div className="relative flex items-center h-12 sm:h-16 md:h-20">
             <div className="flex flex-col items-center justify-between flex-1 sm:flex-row">
-              <div className="flex flex-col items-center flex-shrink-0 mb-2 sm:flex-row sm:mb-0 border-right sm:mr-4">
+              <div className="flex items-center flex-shrink-0 mb-2 text-center sm:mr-4">
                 <Image
                   src="/images/5908.jpg"
                   alt="logo"
@@ -35,14 +28,14 @@ const Navbar = () => {
                 />
                 <Link
                   href="/"
-                  className="mt-2 ml-0 text-xl font-semibold text-black sm:mt-0 sm:ml-4 sm:text-2xl"
+                  className="mt-2 ml-4 text-xl font-semibold text-black sm:text-2xl"
                 >
                   Hair by Hanna.
                 </Link>
               </div>
               <div className="items-center hidden lg:flex border-right ">
                 <div className="flex justify-end space-x-4">
-                  {navigation.map((item) => (
+                  {NavigationItem.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}

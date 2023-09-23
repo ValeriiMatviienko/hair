@@ -4,7 +4,7 @@ import { FacebookIcon, InstagramIcon } from "@/public/images/Footer/icons";
 export const socialLinks: SocialLinks[] = [
   {
     Component: FacebookIcon,
-    link: "https://facebook.com",
+    link: "https://facebook.com/matvienko.hanna",
     description: "Facebook",
   },
   {

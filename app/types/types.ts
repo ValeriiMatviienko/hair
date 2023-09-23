@@ -13,7 +13,7 @@ export interface ProductPrice {
   name: string;
   price: number;
 }
-export interface NavigationItem {
+export interface NavigationItemType {
   name: string;
   href: string;
   current: boolean;
