@@ -32,7 +32,7 @@ const useContactForm = () => {
   };
 
   const handleSubmitForm = (setIsOpen: (isOpen: boolean) => void) => {
-    fetch("https://formspree.io/f/mgejnlnr", {
+    fetch("/api/sendEmail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,12 +44,8 @@ const useContactForm = () => {
       }),
     })
       .then((response) => response.json())
-      .then((data) => {
-        if (data.ok) {
-          toast.success("Message sent!");
-        } else {
-          toast.error("Something went wrong. Please try again later.");
-        }
+      .then((_data) => {
+        toast.success("Message sent!");
       })
       .catch(() => {
         toast.error("Error sending the message. Please try again.");
