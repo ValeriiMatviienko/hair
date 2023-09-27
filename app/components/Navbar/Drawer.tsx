@@ -22,9 +22,9 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
       >
         <article className="relative flex flex-col h-full max-w-lg pb-10 space-y-6 w-340px">
           <header className="flex items-center justify-between px-4 py-4">
-            <div className="flex items-center flex-shrink-0 border-right">
+            <div className="flex items-center flex-shrink-0">
               <Image src="/images/5908.jpg" alt="logo" width={36} height={36} />
-              <Link href="/" className="ml-4 text-2xl font-semibold text-black">
+              <Link href="/" className="text-2xl font-semibold text-black ">
                 Hair by Hanna.
               </Link>
             </div>

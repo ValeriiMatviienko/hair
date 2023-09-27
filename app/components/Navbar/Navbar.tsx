@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="p-2 mx-auto sm:p-3 max-w-7xl md:p-6 lg:px-8">
           <div className="relative flex items-center h-12 sm:h-16 md:h-20">
             <div className="flex flex-col items-center justify-between flex-1 sm:flex-row">
-              <div className="flex items-center flex-shrink-0 mb-2 text-center sm:mr-4">
+              <div className="flex items-center flex-shrink-0 mb-2 text-center">
                 <Image
                   src="/images/5908.jpg"
                   alt="logo"
