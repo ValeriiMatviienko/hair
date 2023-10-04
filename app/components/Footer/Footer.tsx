@@ -5,18 +5,27 @@ const Footer = () => {
   return (
     <div className="max-w-2xl px-4 pt-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
       <div className="grid grid-cols-1 my-12 gap-y-10 sm:grid-cols-6 lg:grid-cols-12">
-        <div className="mb-6 col-span-full sm:col-span-6 sm:mb-0">
-          <div className="flex flex-wrap justify-center gap-4">
+        <div className="col-span-full sm:col-span-6">
+          <h2 className="mb-4 text-lg text-center uppercase">Follow Me On:</h2>
+          <div className="flex flex-wrap justify-center gap-4 mb-5">
             {socialLinks.map((item, i) => (
               <div key={i} className="flex flex-col items-center mx-2">
                 <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  <div className="flex items-center justify-center w-12 h-12 text-base rounded-full shadow-xl sm:w-10 sm:h-10 md:w-8 md:h-8">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-xl sm:w-10 sm:h-10 md:w-8 md:h-8">
                     <item.Component className="w-full h-full" />
                   </div>
                 </a>
-                <p className="mt-2 text-center">{item.description}</p>
+                <p className="mt-2 text-center text-black">
+                  {item.description}
+                </p>
               </div>
             ))}
+          </div>
+          <div className="py-4">
+            <h2 className="mb-2 text-lg text-center uppercase">Address:</h2>
+            <p className="text-lg text-center">
+              Aleja Armii Krajowej 48 <br /> Wrocław (Krzyki)
+            </p>
           </div>
         </div>
         <div className="col-span-full sm:col-span-6">
@@ -34,7 +43,7 @@ const Footer = () => {
       </div>
 
       <div className="items-center justify-between py-6 border-t md:flex border-t-bordertop">
-        <h4 className="text-sm font-normal text-center sm:text-base text-darkgrey md:text-start">
+        <h4 className="text-sm font-normal text-center text-black sm:text-base md:text-start">
           &quot;Copyright &copy; {currentYear} Hair by Hanna. All rights
           reserved.&quot;
         </h4>

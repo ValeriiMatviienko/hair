@@ -19,14 +19,14 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
                 {item.name}
               </Link>
             ))}
-            <div className="flex items-center ">
+            <div className="flex items-center">
               <a className="mt-5 text-xl font-medium" href="tel:+48780509295">
                 +48780509295
               </a>
             </div>
             <button
               onClick={() => setIsContactFormOpen(true)}
-              className="flex justify-center w-full px-4 py-3 mt-4 text-base font-medium text-white border rounded-full bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
+              className="flex justify-center w-full px-4 py-3 text-base font-medium text-white border rounded-full bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
             >
               Contact me
             </button>
