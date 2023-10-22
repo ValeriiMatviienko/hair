@@ -58,7 +58,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
             key={i}
             className={`${
               i === index ? "w-4 h-4" : "w-2 h-2"
-            } rounded-full cursor-pointer bg-softgreen`}
+            } rounded-full cursor-pointer bg-black`}
           ></div>
         ))}
       </div>
