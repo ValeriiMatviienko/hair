@@ -40,7 +40,7 @@ const HeroSection = () => {
               alt="nothing"
               width={1000}
               height={805}
-              className="object-cover w-full h-auto"
+              className="object-cover w-full h-auto rounded-lg shadow-lg"
             />
           </div>
         </div>

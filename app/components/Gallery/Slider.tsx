@@ -40,7 +40,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
           alt={images[index].alt}
           width={images[index].width}
           height={images[index].height}
-          className="max-w-full"
+          className="max-w-full rounded-lg shadow-lg"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
