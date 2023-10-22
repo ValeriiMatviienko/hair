@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: #fafafa;
+  background: linear-gradient(to bottom, #fafafa, #b9e6d3);
 }
 
 html:not([data-scroll="0"]) .navbar {

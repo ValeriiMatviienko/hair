@@ -14,6 +14,7 @@ module.exports = {
       black: "#212121",
       darkgreen: "#1A4C3D",
       softgreen: "#3F695C",
+      mutedgreen: "#a8d5c6",
       gold: "#BC9A17",
     },
     fontSize: {
