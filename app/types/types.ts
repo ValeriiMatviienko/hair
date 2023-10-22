@@ -38,3 +38,6 @@ export type ImageInfo = {
   height: number;
   className?: string;
 };
+export interface SliderProps {
+  images: ImageInfo[];
+}

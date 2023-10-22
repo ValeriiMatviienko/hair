@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 import { GalleryImage } from "./GalleryImage";
+import Slider from "./Slider";
 
-const Gallery = () => {
+const Gallery: React.FC = () => {
   return (
     <div id="gallery-section">
       <div className="max-w-2xl mx-auto mt-20 lg:max-w-7xl sm:py-4 lg:px-8 md:pt-24">
@@ -32,21 +32,8 @@ const Gallery = () => {
           </Fade>
         </div>
 
-        <div className="grid grid-cols-1 px-6 my-16 space-y-6 sm:grid-cols-2 md:grid-cols-3 sm:space-x-6 md:space-y-0">
-          {GalleryImage.map((image, index) => (
-            <div
-              key={index}
-              className="flex justify-center overflow-hidden rounded-3xl"
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                className={image.className || "inner-img"}
-              />
-            </div>
-          ))}
+        <div className="my-16">
+          <Slider images={GalleryImage} />
         </div>
       </div>
     </div>
