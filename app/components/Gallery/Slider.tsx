@@ -31,9 +31,9 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="flex items-center justify-between w-full px-4">
+      <div className="flex items-center justify-between w-full px-4 ">
         <ArrowLeftIcon
-          className="w-8 h-8 text-black cursor-pointer"
+          className="w-8 h-8 text-black cursor-pointer "
           onClick={handlePrev}
         />
         <Image
@@ -47,7 +47,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
           onTouchEnd={handleTouchEnd}
         />
         <ArrowRightIcon
-          className="w-8 h-8 text-black cursor-pointer "
+          className="w-8 h-8 text-black cursor-pointer"
           onClick={handleNext}
         />
       </div>
