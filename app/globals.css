@@ -12,6 +12,7 @@
 
 body {
   background: linear-gradient(to bottom, #fafafa, #b9e6d3);
+  user-select: none;
 }
 
 html:not([data-scroll="0"]) .navbar {

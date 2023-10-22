@@ -9,23 +9,35 @@ const Footer = () => {
           <h2 className="mb-4 text-lg text-center uppercase">Follow Me On:</h2>
           <div className="flex flex-wrap justify-center gap-4 mb-5">
             {socialLinks.map((item, i) => (
-              <div key={i} className="flex flex-col items-center mx-2">
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <a
+                key={i}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-2"
+              >
+                <div className="flex flex-col items-center hover:underline">
                   <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-xl sm:w-10 sm:h-10 md:w-8 md:h-8">
                     <item.Component className="w-full h-full" />
                   </div>
-                </a>
-                <p className="mt-2 text-center text-black">
-                  {item.description}
-                </p>
-              </div>
+                  <p className="mt-2 text-center text-black">
+                    {item.description}
+                  </p>
+                </div>
+              </a>
             ))}
           </div>
           <div className="py-4">
             <h2 className="mb-2 text-lg text-center uppercase">Address:</h2>
-            <p className="text-lg text-center">
-              Aleja Armii Krajowej 48 <br /> Wrocław (Krzyki)
-            </p>
+            <div className="text-lg text-center hover:underline ">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Aleja+Armii+Krajowej+48+Wrocław+(Krzyki)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                al. Armii Krajowej 48 <br /> Wrocław (Krzyki)
+              </a>
+            </div>
           </div>
         </div>
         <div className="col-span-full sm:col-span-6">

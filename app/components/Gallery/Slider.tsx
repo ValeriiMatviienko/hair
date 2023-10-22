@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import ArrowLeftIcon from "@heroicons/react/24/outline/ArrowLeftIcon";
-import ArrowRightIcon from "@heroicons/react/24/outline/ArrowRightIcon";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { SliderProps } from "@/app/types/types";
 
 const Slider: React.FC<SliderProps> = ({ images }) => {

@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-
 export interface serviceDataType {
   serviceTitle: string;
   serviceDescription: string;
@@ -25,12 +24,12 @@ export interface DrawerProps {
   children: ReactNode;
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
-  // setIsContactFormOpen: (isOpen: boolean) => void;
 }
 export interface ContactFormProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
+
 export type ImageInfo = {
   src: string;
   alt: string;
@@ -40,4 +39,13 @@ export type ImageInfo = {
 };
 export interface SliderProps {
   images: ImageInfo[];
+}
+export interface InputType {
+  nameInput: string;
+  numberInput: string;
+  descriptionInput: string;
+}
+export interface ToggleModalProps {
+  open: boolean;
+  setIsOpen: (isOpen: boolean) => void;
 }

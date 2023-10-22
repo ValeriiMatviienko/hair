@@ -1,16 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-
-interface InputType {
-  nameInput: string;
-  numberInput: string;
-  descriptionInput: string;
-}
-
-interface ToggleModalProps {
-  open: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-}
+import { InputType, ToggleModalProps } from "../types/types";
 
 const useContactForm = () => {
   const [inputValues, setInputValues] = useState<InputType>({
