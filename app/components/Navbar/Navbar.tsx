@@ -26,14 +26,14 @@ const Navbar = () => {
                   width={36}
                   height={36}
                 />
-                <Link
+                <a
                   href="/"
                   className="mt-2 ml-4 text-xl font-semibold text-black sm:text-2xl"
                 >
                   Hair by Hanna
-                </Link>
+                </a>
               </div>
-              <div className="items-center hidden lg:flex border-right ">
+              <div className="items-center hidden lg:flex">
                 <div className="flex justify-end space-x-4">
                   {NavigationItem.map((item) => (
                     <Link
