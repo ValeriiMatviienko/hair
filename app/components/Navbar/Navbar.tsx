@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { NavigationItem } from "./NavigationItem";
-import DrawerData from "./Drawerdata";
+import DrawerData from "./DrawerData";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -30,7 +30,7 @@ const Navbar = () => {
                   href="/"
                   className="mt-2 ml-4 text-xl font-semibold text-black sm:text-2xl"
                 >
-                  Hair by Hanna.
+                  Hair by Hanna
                 </Link>
               </div>
               <div className="items-center hidden lg:flex border-right ">
