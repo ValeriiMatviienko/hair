@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { SliderProps } from "@/app/types/types";
@@ -24,9 +24,18 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
   const handlePrev = () => {
     index === 0 ? setIndex(length) : setIndex(index - 1);
   };
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     index === length ? setIndex(0) : setIndex(index + 1);
-  };
+  }, [index, length]);
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => {
+      clearInterval(slideInterval);
+    };
+  }, [index, handleNext]);
 
   return (
     <div className="flex flex-col items-center justify-center">
