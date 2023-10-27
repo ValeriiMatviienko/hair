@@ -18,6 +18,9 @@ const Gallery = dynamic(() => import("./components/Gallery/index"), {
 const Footer = dynamic(() => import("./components/Footer/Footer"), {
   ssr: false,
 });
+const FAQSection = dynamic(() => import("./components/FAQ/index"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -27,6 +30,7 @@ export default function Home() {
       <Service />
       <Gallery />
       <Price />
+      <FAQSection />
       <Footer />
     </main>
   );
