@@ -16,10 +16,10 @@ const Navbar = () => {
   return (
     <Disclosure as="nav" className="navbar">
       <>
-        <div className="p-2 mx-auto sm:p-3 max-w-7xl md:p-6 lg:px-8">
+        <div className="p-2 mx-auto max-w-screen-2xl sm:p-3 md:p-6 lg:px-8">
           <div className="relative flex items-center h-12 sm:h-16 md:h-20">
             <div className="flex flex-col items-center justify-between flex-1 sm:flex-row">
-              <div className="flex items-center flex-shrink-0 mb-2 text-center">
+              <div className="flex items-center flex-shrink-0 mb-2 mr-8 text-center">
                 <Image
                   src="/images/5908.jpg"
                   alt="logo"

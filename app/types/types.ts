@@ -49,3 +49,11 @@ export interface ToggleModalProps {
   open: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface AccordionProps {
+  items: FAQItem[];
+}

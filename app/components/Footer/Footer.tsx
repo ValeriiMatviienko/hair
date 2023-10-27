@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="max-w-2xl px-4 pt-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
       <div className="grid grid-cols-1 my-12 gap-y-10 sm:grid-cols-6 lg:grid-cols-12">
         <div className="col-span-full sm:col-span-6">
-          <h2 className="mb-4 text-lg text-center uppercase">Follow Me On:</h2>
+          <h2 className="mb-4 text-lg text-center uppercase">Follow me on:</h2>
           <div className="flex flex-wrap justify-center gap-4 mb-5">
             {socialLinks.map((item, i) => (
               <a
