@@ -21,6 +21,9 @@ const Footer = dynamic(() => import("./components/Footer/Footer"), {
 const FAQSection = dynamic(() => import("./components/FAQ/index"), {
   ssr: false,
 });
+const BenefitsSection = dynamic(() => import("./components/Benefits/index"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -28,6 +31,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <Service />
+      <BenefitsSection />
       <Gallery />
       <Price />
       <FAQSection />

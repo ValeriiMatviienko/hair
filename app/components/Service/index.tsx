@@ -43,11 +43,11 @@ const Service = () => {
             triggerOnce={true}
           >
             {serviceData.map((items, i) => (
-              <div className="relative p-8 rounded-3xl" key={i}>
+              <div className="p-8 -3xl" key={i}>
                 <h3 className="mt-16 text-2xl font-semibold text-center text-black">
                   {items.serviceTitle}
                 </h3>
-                <p className="mt-2 text-lg font-normal text-center text-black text-opacity-50">
+                <p className="mt-2 text-lg font-normal text-center text-black text-opacity-80">
                   {items.serviceDescription}
                 </p>
               </div>

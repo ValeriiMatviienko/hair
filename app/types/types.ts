@@ -57,3 +57,11 @@ export interface FAQItem {
 export interface AccordionProps {
   items: FAQItem[];
 }
+
+export type BenefitData = {
+  title: string;
+  benefits: {
+    subtitle: string;
+    description: string;
+  }[];
+};
