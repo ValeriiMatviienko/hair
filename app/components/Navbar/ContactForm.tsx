@@ -3,7 +3,12 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ContactFormProps } from "@/app/types/types";
-import { EnvelopeIcon, PhoneIcon, UserIcon } from "@heroicons/react/24/outline";
+import {
+  EnvelopeIcon,
+  PhoneIcon,
+  UserIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 
 const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
   const { inputValues, setInputValues, handleSubmitForm, toggleModal } =
@@ -63,6 +68,13 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                  <button
+                    onClick={() => toggleModal({ open: false, setIsOpen })}
+                    className="absolute p-2 rounded-full top-3 right-3 hover:bg-gray-200"
+                    aria-label="Close modal"
+                  >
+                    <XMarkIcon className="w-6 h-6" />
+                  </button>
                   <div className="max-w-screen-md px-4 py-8 mx-auto lg:py-8">
                     <div className="flex items-center justify-center flex-shrink-0">
                       <h1 className="text-2xl font-semibold text-black sm:text-4xl">

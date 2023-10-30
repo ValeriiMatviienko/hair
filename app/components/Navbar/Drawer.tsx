@@ -25,7 +25,7 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
             <div className="flex items-center flex-shrink-0">
               <Image src="/images/5908.jpg" alt="logo" width={36} height={36} />
               <Link href="/" className="text-2xl font-semibold text-black ">
-                Hair by Hanna.
+                Hair by Hanna
               </Link>
             </div>
 

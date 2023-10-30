@@ -2,7 +2,7 @@ import { ImageInfo } from "@/app/types/types";
 
 export const GalleryImage: ImageInfo[] = [
   {
-    src: "/images/5908.jpg",
+    src: "/images/profilePicture.jpg",
     alt: "example one",
     width: 500,
     height: 405,
@@ -14,7 +14,7 @@ export const GalleryImage: ImageInfo[] = [
     height: 405,
   },
   {
-    src: "/images/5908.jpg",
+    src: "/images/profilePicture.jpg",
     alt: "example three",
     width: 500,
     height: 405,
@@ -26,7 +26,7 @@ export const GalleryImage: ImageInfo[] = [
     height: 405,
   },
   {
-    src: "/images/5908.jpg",
+    src: "/images/profilePicture.jpg",
     alt: "example five",
     width: 500,
     height: 405,
