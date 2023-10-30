@@ -33,10 +33,10 @@ const HeroSection = () => {
             </Fade>
           </div>
 
-          <div className="relative flex justify-center col-span-12 lg:col-span-6">
-            <div className="absolute flex items-center gap-5 p-2 bg-white bottom-10 left-10 rounded-xl"></div>
+          <div className="flex justify-center col-span-12 lg:col-span-6">
+            <div className="flex items-center gap-5 p-2  bottom-10 left-10 rounded-xl"></div>
             <Image
-              src="/images/5908.jpg"
+              src="/images/profilePicture.jpg"
               alt="nothing"
               width={1000}
               height={805}
