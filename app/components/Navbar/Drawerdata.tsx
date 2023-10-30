@@ -15,7 +15,6 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
                 key={item.name}
                 href={item.href}
                 className="block py-2 text-base font-medium rounded-md"
-                aria-current={item.current ? "page" : undefined}
               >
                 {item.name}
               </Link>

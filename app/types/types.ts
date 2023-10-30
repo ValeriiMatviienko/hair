@@ -15,7 +15,6 @@ export interface ProductPrice {
 export interface NavigationItemType {
   name: string;
   href: string;
-  current: boolean;
 }
 export interface DrowerDataProps {
   setIsContactFormOpen: (isOpen: boolean) => void;

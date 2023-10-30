@@ -1,10 +1,10 @@
 import { NavigationItemType } from "@/app/types/types";
 
 export const NavigationItem: NavigationItemType[] = [
-  { name: "About me", href: "#home-section", current: false },
-  { name: "Services", href: "#service-section", current: false },
-  { name: "Benefits", href: "#benefits-section", current: false },
-  { name: "Gallery", href: "#gallery-section", current: false },
-  { name: "Price", href: "#price-section", current: false },
-  { name: "FAQ", href: "#faq-section", current: false },
+  { name: "About me", href: "#home-section" },
+  { name: "Services", href: "#service-section" },
+  { name: "Benefits", href: "#benefits-section" },
+  { name: "Gallery", href: "#gallery-section" },
+  { name: "Price", href: "#price-section" },
+  { name: "FAQ", href: "#faq-section" },
 ];
