@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Bars3Icon, PhoneIcon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
 import ContactForm from "./ContactForm";
 import Image from "next/image";
@@ -40,7 +40,6 @@ const Navbar = () => {
                       key={item.name}
                       href={item.href}
                       className="px-4 py-4 text-lg font-normal text-black rounded-md hover:text-darkgreen space-links"
-                      aria-current={item.href ? "page" : undefined}
                     >
                       {item.name}
                     </Link>
@@ -49,6 +48,10 @@ const Navbar = () => {
               </div>
               <div className="hidden gap-6 lg:flex">
                 <div className="flex items-center gap-2 mr-3">
+                  <PhoneIcon
+                    className="w-6 h-6 text-black"
+                    aria-hidden="true"
+                  />
                   <a className="text-xl font-medium" href="tel:+48780509295">
                     +48780509295
                   </a>

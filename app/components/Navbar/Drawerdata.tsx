@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { DrowerDataProps } from "@/app/types/types";
 import { NavigationItem } from "./NavigationItem";
+import { PhoneIcon } from "@heroicons/react/24/outline";
 
 const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
   return (
@@ -19,8 +20,12 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
                 {item.name}
               </Link>
             ))}
-            <div className="flex items-center">
-              <a className="mt-5 text-xl font-medium" href="tel:+48780509295">
+            <div className="flex items-center space-x-2">
+              <PhoneIcon className="w-6 h-6 text-black" aria-hidden="true" />
+              <a
+                className="text-xl font-medium align-middle"
+                href="tel:+48780509295"
+              >
                 +48780509295
               </a>
             </div>
