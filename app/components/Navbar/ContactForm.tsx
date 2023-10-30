@@ -3,6 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ContactFormProps } from "@/app/types/types";
+import { EnvelopeIcon, PhoneIcon, UserIcon } from "@heroicons/react/24/outline";
 
 const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
   const { inputValues, setInputValues, handleSubmitForm, toggleModal } =
@@ -79,8 +80,9 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                       <div>
                         <label
                           htmlFor="text"
-                          className="block mb-2 text-sm font-medium text-black "
+                          className="flex items-center mb-2 font-medium text-black"
                         >
+                          <UserIcon className="inline-block w-5 h-5 mr-2" />
                           Name
                         </label>
                         <input
@@ -98,8 +100,9 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                       <div>
                         <label
                           htmlFor="number"
-                          className="block mb-2 text-sm font-medium text-black"
+                          className="flex items-center mb-2 font-medium text-black"
                         >
+                          <PhoneIcon className="inline-block w-5 h-5 mr-2" />
                           Number
                         </label>
                         <input
@@ -117,8 +120,9 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                       <div className="sm:col-span-2">
                         <label
                           htmlFor="message"
-                          className="block mb-2 text-sm font-medium text-black "
+                          className="flex items-center mb-2 font-medium text-black"
                         >
+                          <EnvelopeIcon className="inline-block w-5 h-5 mr-2" />
                           Your message
                         </label>
                         <textarea
