@@ -12,6 +12,7 @@ import DrawerData from "./DrawerData";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
+  const [activeLink, setActiveLink] = useState<string | null>(null);
 
   return (
     <Disclosure as="nav" className="navbar">
@@ -39,7 +40,10 @@ const Navbar = () => {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="px-4 py-4 text-lg font-normal text-black rounded-md hover:text-darkgreen space-links"
+                      onClick={() => setActiveLink(item.name)}
+                      className={`px-4 py-4 text-lg font-normal hover:text-darkgreen space-links ${
+                        activeLink === item.name ? "active-class" : ""
+                      }`}
                     >
                       {item.name}
                     </Link>
