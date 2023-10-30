@@ -33,7 +33,10 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
               </a>
             </div>
             <button
-              onClick={() => setIsContactFormOpen(true)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsContactFormOpen(true);
+              }}
               className="flex justify-center w-full px-4 py-3 font-medium text-white border rounded-full bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
             >
               Contact me
