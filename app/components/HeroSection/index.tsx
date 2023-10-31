@@ -1,8 +1,10 @@
 "use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 
 const HeroSection = () => {
+  const t = useTranslations("Index");
   return (
     <div id="home-section">
       <div className="px-4 pt-10 mx-auto sm:px-6 sm:pt-20 max-w-7xl sm:pb-24">
@@ -16,7 +18,7 @@ const HeroSection = () => {
               triggerOnce={true}
             >
               <h1 className="mb-4 text-5xl font-semibold text-center text-black sm:mb-5 lg:text-7xl lg:text-start">
-                Welcome to my world
+                {t("title")}
               </h1>
             </Fade>
             <Fade

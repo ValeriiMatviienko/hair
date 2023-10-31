@@ -1,4 +1,11 @@
 import { ReactNode } from "react";
+
+export type RootLayoutProps = {
+  children: React.ReactNode;
+  params: {
+    locale: string;
+  };
+};
 export interface serviceDataType {
   serviceTitle: string;
   serviceDescription: string;
