@@ -34,7 +34,7 @@ const HeroSection = () => {
           </div>
 
           <div className="flex justify-center col-span-12 lg:col-span-6">
-            <div className="flex items-center gap-5 p-2  bottom-10 left-10 rounded-xl"></div>
+            <div className="flex items-center gap-5 bottom-10 left-10 rounded-xl"></div>
             <Image
               src="/images/profilePicture.jpg"
               alt="nothing"
