@@ -5,7 +5,7 @@ import { benefits } from "./BenefitItems";
 const BenefitsSection = () => {
   return (
     <div
-      className="px-4 py-20 mx-auto sm:px-6 sm:py-40 max-w-7xl"
+      className="px-4 mx-auto sm:px-6 sm:py-20 max-w-7xl"
       id="benefits-section"
     >
       <Fade

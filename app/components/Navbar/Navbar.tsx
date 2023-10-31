@@ -29,7 +29,7 @@ const Navbar = () => {
                 />
                 <a
                   href="/"
-                  className="mt-2 ml-4 text-xl font-semibold text-black sm:text-2xl"
+                  className="mt-2 ml-4 text-2xl font-semibold text-black md:text-3xl sm:text-2xl"
                 >
                   Hair by Hanna
                 </a>
@@ -41,7 +41,7 @@ const Navbar = () => {
                       key={item.name}
                       href={item.href}
                       onClick={() => setActiveLink(item.name)}
-                      className={`px-4 py-4 text-lg font-normal hover:text-darkgreen space-links ${
+                      className={`px-4 py-4 text-lg  hover:text-darkgreen space-links ${
                         activeLink === item.name ? "active-class" : ""
                       }`}
                     >
@@ -68,7 +68,7 @@ const Navbar = () => {
             </div>
             <div className="block lg:hidden">
               <Bars3Icon
-                className="block w-8 h-8"
+                className="block w-8 h-8 md:w-12 md:h-12"
                 aria-hidden="true"
                 onClick={() => setIsOpen(true)}
               />
