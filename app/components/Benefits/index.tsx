@@ -15,10 +15,10 @@ const BenefitsSection = () => {
         damping={1e-1}
         triggerOnce={true}
       >
-        <h3 className="mb-3 text-lg font-normal text-center text-black uppercase ls-51">
+        <h3 className="mb-3 text-lg text-center text-black uppercase ls-51">
           Benefits
         </h3>
-        <p className="text-3xl font-semibold text-black lg:text-5xl">
+        <p className="text-3xl font-semibold text-center text-black lg:text-5xl">
           Learn the advantages of various hair treatments.
         </p>
       </Fade>
@@ -33,16 +33,16 @@ const BenefitsSection = () => {
             triggerOnce={true}
           >
             <div>
-              <h4 className="mb-4 text-2xl text-center text-black">
+              <h4 className="mb-4 text-2xl text-center text-black uppercase">
                 {benefitSection.title}
               </h4>
               <ul className="space-y-4">
                 {benefitSection.benefits.map((benefit, subIdx) => (
                   <li key={subIdx} className="flex flex-col space-y-2">
-                    <h5 className="text-xl font-semibold">
+                    <h5 className="text-lg font-semibold text-center uppercase md:text-left">
                       {benefit.subtitle}
                     </h5>
-                    <p className="text-lg text-black text-opacity-80">
+                    <p className="text-lg text-center text-black text-opacity-80 md:text-left">
                       {benefit.description}
                     </p>
                   </li>
