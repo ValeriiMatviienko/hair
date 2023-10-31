@@ -17,10 +17,10 @@ const Footer = () => {
                 className="mx-2"
               >
                 <div className="flex flex-col items-center hover:underline">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-xl sm:w-10 sm:h-10 md:w-8 md:h-8">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full shadow-xl md:w-14 md:h-14 ">
                     <item.Component className="w-full h-full" />
                   </div>
-                  <p className="mt-2 text-center text-black">
+                  <p className="mt-2 text-lg text-center text-black">
                     {item.description}
                   </p>
                 </div>
