@@ -19,7 +19,7 @@ const BenefitsSection = () => {
           Benefits
         </h3>
         <p className="text-3xl font-semibold text-center text-black lg:text-5xl">
-          Learn the advantages of various hair treatments.
+          Learn the advantages of various hair treatments
         </p>
       </Fade>
 

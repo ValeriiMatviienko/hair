@@ -29,7 +29,7 @@ const Service = () => {
             triggerOnce={true}
           >
             <p className="text-3xl font-semibold text-black lg:text-5xl">
-              Discover services I have.
+              Discover services I have
             </p>
           </Fade>
         </div>
@@ -43,8 +43,8 @@ const Service = () => {
             triggerOnce={true}
           >
             {serviceData.map((items, i) => (
-              <div className="p-8 -3xl" key={i}>
-                <h3 className="mt-16 text-2xl font-semibold text-center text-black">
+              <div className="p-6 -3xl" key={i}>
+                <h3 className="text-2xl font-semibold text-center text-black">
                   {items.serviceTitle}
                 </h3>
                 <p className="mt-2 text-lg text-center text-black text-opacity-80">

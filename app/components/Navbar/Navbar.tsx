@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
 import ContactForm from "./ContactForm";
-import Image from "next/image";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import DrawerData from "./DrawerData";
@@ -25,12 +24,6 @@ const Navbar = () => {
           <div className="relative flex items-center h-12 sm:h-16 md:h-20">
             <div className="flex items-center justify-between flex-1 sm:flex-row">
               <div className="flex items-center flex-shrink-0 mb-2 mr-8 text-center">
-                <Image
-                  src="/images/5908.jpg"
-                  alt="logo"
-                  width={36}
-                  height={36}
-                />
                 <a
                   href="/"
                   className="mt-2 ml-4 text-2xl font-semibold text-black md:text-3xl sm:text-2xl"

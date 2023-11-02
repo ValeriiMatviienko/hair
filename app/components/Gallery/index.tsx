@@ -27,7 +27,7 @@ const Gallery: React.FC = () => {
             triggerOnce={true}
           >
             <h3 className="text-3xl font-semibold text-black lg:text-5xl">
-              Gallery of my latest works.
+              Gallery of my latest works
             </h3>
           </Fade>
         </div>
