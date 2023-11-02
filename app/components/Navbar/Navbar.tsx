@@ -64,10 +64,13 @@ const Navbar = () => {
                     +48780509295
                   </a>
                 </div>
-                <ContactForm
-                  isOpen={isContactFormOpen}
-                  setIsOpen={setIsContactFormOpen}
-                />
+                <div className="flex items-center gap-4">
+                  <ContactForm
+                    isOpen={isContactFormOpen}
+                    setIsOpen={setIsContactFormOpen}
+                  />
+                  <LanguageSelector />
+                </div>
               </div>
             </div>
             <div className="block lg:hidden">
