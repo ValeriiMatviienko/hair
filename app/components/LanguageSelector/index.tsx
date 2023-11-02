@@ -27,15 +27,18 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div className="relative inline-block text-left ">
+    <div
+      className="relative inline-block text-left "
+      onClick={(e) => e.stopPropagation()}
+    >
       <select
         value={selectedLocale}
         onChange={handleLanguageChange}
-        className="block w-full px-2 py-2 mt-1 border rounded-md cursor-pointer focus:outline-none focus:ring hover:border-darkgreen sm:text-sm"
+        className="block w-full px-2 py-2 mt-1 border rounded-md cursor-pointer hover:border-darkgreen sm:text-sm"
       >
-        <option value="en">English</option>
-        <option value="pl">Polski</option>
-        <option value="ua">Українська</option>
+        <option value="en">EN</option>
+        <option value="pl">PL</option>
+        <option value="ua">UA</option>
       </select>
     </div>
   );

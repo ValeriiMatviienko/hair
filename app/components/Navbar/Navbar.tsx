@@ -6,10 +6,14 @@ import ContactForm from "./ContactForm";
 import Image from "next/image";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { NavigationItem } from "./NavigationItem";
 import DrawerData from "./DrawerData";
+import LanguageSelector from "../LanguageSelector";
+import { useTranslations } from "next-intl";
+import { getNavigationItems } from "./NavigationItem";
 
 const Navbar = () => {
+  const t = useTranslations("Index");
+  const navigationItems = getNavigationItems(t);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string | null>(null);
@@ -36,12 +40,12 @@ const Navbar = () => {
               </div>
               <div className="items-center hidden lg:flex">
                 <div className="flex justify-end space-x-4">
-                  {NavigationItem.map((item) => (
+                  {navigationItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setActiveLink(item.name)}
-                      className={`px-4 py-4 text-lg  hover:text-darkgreen space-links ${
+                      className={`px-4 py-4 text-lg hover:text-darkgreen space-links ${
                         activeLink === item.name ? "active-class" : ""
                       }`}
                     >

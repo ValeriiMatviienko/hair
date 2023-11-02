@@ -1,5 +1,21 @@
 {
   "Index": {
+    "nav_about": "O mnie",
+    "nav_service": "Usługi",
+    "nav_benefit": "Korzyści",
+    "nav_galery": "Galeria",
+    "nav_price": "Cennik",
+    "nav_faq": "FAQ",
+    "nav_contact": "Kontakt",
+    "form_title": "Formularz kontaktowy",
+    "form_subtitle": "Wypełnij formularz, aby się ze mną skontaktować",
+    "form_name": "Imię",
+    "form_name_placeholder": "Imię",
+    "form_number": "Numer",
+    "form_number_placeholder": "Twój numer telefonu",
+    "form_message": "Twoja wiadomość",
+    "form_message_placeholder": "Zostaw komentarz",
+    "form_button_send": "Wyślij wiadomość",
     "title": "siemano"
   }
 }

@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { RootLayoutProps } from "../types/types";
 import { NextIntlClientProvider } from "next-intl";
-import LanguageSelector from "../components/LanguageSelector";
 
 export const metadata: Metadata = {
   title: "Hair by Hanna",
@@ -30,12 +29,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <body>
-          <header>
-            <LanguageSelector />
-          </header>
-          {children}
-        </body>
+        <body>{children}</body>
       </NextIntlClientProvider>
     </html>
   );

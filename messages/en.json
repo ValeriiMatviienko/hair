@@ -1,5 +1,21 @@
 {
   "Index": {
+    "nav_about": "About me",
+    "nav_service": "Services",
+    "nav_benefit": "Benefits",
+    "nav_galery": "Gallery",
+    "nav_price": "Price",
+    "nav_faq": "FAQ",
+    "nav_contact": "Contact me",
+    "form_title": "Contact form",
+    "form_subtitle": "Fill in the form to contact me",
+    "form_name": "Name",
+    "form_name_placeholder": "Name",
+    "form_number": "Number",
+    "form_number_placeholder": "Your phone number",
+    "form_message": "Your message",
+    "form_message_placeholder": "Leave a comment",
+    "form_button_send": "Send message",
     "title": "Hello world!"
   }
 }

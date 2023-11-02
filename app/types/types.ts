@@ -19,10 +19,7 @@ export interface ProductPrice {
   name: string;
   price: number;
 }
-export interface NavigationItemType {
-  name: string;
-  href: string;
-}
+export type TranslationFunction = (key: string) => string;
 export interface DrowerDataProps {
   setIsContactFormOpen: (isOpen: boolean) => void;
 }

@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { DrowerDataProps } from "@/app/types/types";
-import { NavigationItem } from "./NavigationItem";
 import { PhoneIcon } from "@heroicons/react/24/outline";
+import LanguageSelector from "../LanguageSelector";
+import { getNavigationItems } from "./NavigationItem";
+import { useTranslations } from "next-intl";
 
 const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
+  const t = useTranslations("Index");
+  const navigationItems = getNavigationItems(t);
   const [activeLink, setActiveLink] = useState<string | null>(null);
+
   return (
     <div className="w-full max-w-sm mx-auto rounded-md">
       <div className="flex-1 py-1 ">
         <div className="sm:block">
           <div className="px-5 pt-2 pb-3">
-            {NavigationItem.map((item) => (
+            {navigationItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -37,10 +42,11 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
                 e.stopPropagation();
                 setIsContactFormOpen(true);
               }}
-              className="flex justify-center w-full px-4 py-3 font-medium text-white border rounded-full bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
+              className="flex justify-center w-full px-4 py-3 mb-10 font-medium text-white border rounded-full bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
             >
-              Contact me
+              {t("nav_contact")}
             </button>
+            <LanguageSelector />
           </div>
         </div>
       </div>

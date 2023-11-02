@@ -9,8 +9,10 @@ import {
   UserIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { useTranslations } from "next-intl";
 
 const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
+  const t = useTranslations("Index");
   const { inputValues, setInputValues, handleSubmitForm, toggleModal } =
     useContactForm();
 
@@ -33,7 +35,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
             className="justify-end px-6 py-4 text-xl font-semibold text-white border rounded-full lg:px-12 navbutton bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen"
             onClick={() => toggleModal({ open: true, setIsOpen })}
           >
-            Contact Me
+            {t("nav_contact")}
           </button>
         </div>
       </div>
@@ -77,12 +79,12 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                   </button>
                   <div className="max-w-screen-md px-4 py-8 mx-auto lg:py-8">
                     <div className="flex items-center justify-center flex-shrink-0">
-                      <h1 className="text-2xl font-semibold text-black sm:text-4xl">
-                        Contact form
+                      <h1 className="text-2xl font-semibold text-black">
+                        {t("form_title")}
                       </h1>
                     </div>
                     <p className="mt-8 mb-8 font-light text-center text-black lg:mb-16 sm:text-xl">
-                      Fill in the form to contact me
+                      {t("form_subtitle")}
                     </p>
                     <form
                       action="#"
@@ -92,10 +94,10 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                       <div>
                         <label
                           htmlFor="text"
-                          className="flex items-center mb-2 font-medium text-black"
+                          className="flex items-center mb-2 text-black"
                         >
                           <UserIcon className="inline-block w-5 h-5 mr-2" />
-                          Name
+                          {t("form_name")}
                         </label>
                         <input
                           id="text"
@@ -106,7 +108,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           autoComplete="current-password"
                           required
                           className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
-                          placeholder="Name"
+                          placeholder={t("form_name_placeholder")}
                         />
                       </div>
                       <div>
@@ -115,7 +117,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           className="flex items-center mb-2 font-medium text-black"
                         >
                           <PhoneIcon className="inline-block w-5 h-5 mr-2" />
-                          Number
+                          {t("form_number")}
                         </label>
                         <input
                           id="number"
@@ -126,7 +128,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           autoComplete="current-password"
                           required
                           className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
-                          placeholder="Your phone number"
+                          placeholder={t("form_number_placeholder")}
                         />
                       </div>
                       <div className="sm:col-span-2">
@@ -135,7 +137,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           className="flex items-center mb-2 font-medium text-black"
                         >
                           <EnvelopeIcon className="inline-block w-5 h-5 mr-2" />
-                          Your message
+                          {t("form_message")}
                         </label>
                         <textarea
                           id="message"
@@ -143,7 +145,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                           value={inputValues.descriptionInput}
                           onChange={handleChange}
                           className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
-                          placeholder="Leave a comment"
+                          placeholder={t("form_message_placeholder")}
                         ></textarea>
                       </div>
                       <button
@@ -156,7 +158,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                             : "hover:text-darkgreen hover:bg-white"
                         }`}
                       >
-                        Send message
+                        {t("form_button_send")}
                       </button>
                     </form>
                   </div>
