@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-import { Bars3Icon, PhoneIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
 import ContactForm from "./ContactForm";
 import Image from "next/image";
@@ -38,7 +38,7 @@ const Navbar = () => {
                   Hair by Hanna
                 </a>
               </div>
-              <div className="items-center hidden lg:flex">
+              <div className="items-center hidden xl:flex">
                 <div className="flex justify-end space-x-4">
                   {navigationItems.map((item) => (
                     <Link
@@ -54,12 +54,8 @@ const Navbar = () => {
                   ))}
                 </div>
               </div>
-              <div className="hidden gap-6 lg:flex">
+              <div className="hidden gap-6 xl:flex">
                 <div className="flex items-center gap-2 mr-3">
-                  <PhoneIcon
-                    className="w-6 h-6 text-black"
-                    aria-hidden="true"
-                  />
                   <a className="text-xl font-medium" href="tel:+48780509295">
                     +48780509295
                   </a>
@@ -73,7 +69,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div className="block lg:hidden">
+            <div className="block xl:hidden">
               <Bars3Icon
                 className="block w-8 h-8 md:w-12 md:h-12"
                 aria-hidden="true"

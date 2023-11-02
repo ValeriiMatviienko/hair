@@ -15,7 +15,7 @@ const Price = () => {
               damping={0.1}
               triggerOnce
             >
-              <h2 className="mb-4 text-2xl font-normal text-center text-black uppercase sm:mb-5 sm:text-3xl ls-51">
+              <h2 className="mb-4 text-2xl text-center text-black uppercase sm:mb-5 sm:text-3xl ls-51">
                 Price
               </h2>
             </Fade>
@@ -29,11 +29,11 @@ const Price = () => {
               <ul className="space-y-2 sm:space-y-4">
                 {ProductList.map((product, index) => (
                   <li key={index} className="flex justify-between">
-                    <h3 className="mb-2 text-lg font-normal text-black sm:text-xl sm:mb-3 lg:text-3xl">
+                    <h3 className="mb-2 text-lg text-black sm:text-xl sm:mb-3 lg:text-3xl">
                       {product.name}
                     </h3>
                     <span className="flex items-center">
-                      <span className="ml-2 text-lg font-normal text-black sm:ml-4 sm:text-xl lg:text-3xl">{`${product.price} PLN`}</span>
+                      <span className="ml-2 text-lg text-black sm:ml-4 sm:text-xl lg:text-3xl">{`${product.price} PLN`}</span>
                     </span>
                   </li>
                 ))}

@@ -15,9 +15,7 @@ const FAQSection: React.FC = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h3 className="mb-3 text-2xl font-normal text-black uppercase ls-51">
-              FAQ
-            </h3>
+            <h3 className="mb-3 text-2xl text-black uppercase ls-51">FAQ</h3>
           </Fade>
           <Fade
             direction={"up"}

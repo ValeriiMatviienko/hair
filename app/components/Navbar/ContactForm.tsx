@@ -32,7 +32,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
         <div className="hidden lg:block">
           <button
             type="button"
-            className="justify-end px-6 py-4 text-xl font-semibold text-white border rounded-full lg:px-12 navbutton bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen"
+            className="justify-end px-4 py-4 text-xl font-semibold text-white border rounded-full lg:px-6 navbutton bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen"
             onClick={() => toggleModal({ open: true, setIsOpen })}
           >
             {t("nav_contact")}

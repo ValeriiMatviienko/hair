@@ -53,7 +53,7 @@ const BenefitsSection = () => {
         ))}
       </div>
       <Fade direction="up" delay={400} damping={1e-1} triggerOnce={true}>
-        <p className="mt-10 text-lg font-normal text-black">
+        <p className="mt-10 text-lg text-black">
           Each of these treatments offers unique benefits, and the best choice
           will depend on an individual&apos;s hair type, condition, and desired
           results. It&apos;s always advisable to consult with a professional

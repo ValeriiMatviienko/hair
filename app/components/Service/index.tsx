@@ -17,7 +17,7 @@ const Service = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h3 className="mb-3 text-lg font-normal text-black uppercase ls-51">
+            <h3 className="mb-3 text-lg text-black uppercase ls-51">
               Services
             </h3>
           </Fade>
@@ -47,7 +47,7 @@ const Service = () => {
                 <h3 className="mt-16 text-2xl font-semibold text-center text-black">
                   {items.serviceTitle}
                 </h3>
-                <p className="mt-2 text-lg font-normal text-center text-black text-opacity-80">
+                <p className="mt-2 text-lg text-center text-black text-opacity-80">
                   {items.serviceDescription}
                 </p>
               </div>

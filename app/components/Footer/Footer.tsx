@@ -55,7 +55,7 @@ const Footer = () => {
       </div>
 
       <div className="items-center justify-between py-6 border-t md:flex border-t-bordertop">
-        <h4 className="text-sm font-normal text-center text-black sm:text-base md:text-start">
+        <h4 className="text-center text-black md:text-lg md:text-start">
           &quot;Copyright &copy; {currentYear} Hair by Hanna. All rights
           reserved.&quot;
         </h4>
