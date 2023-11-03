@@ -30,6 +30,31 @@
     "service_title_3": "Послуга 3",
     "service_description_3": "Опис послуги",
     "service_title_4": "Послуга 4",
-    "service_description_4": "Опис послуги"
+    "service_description_4": "Опис послуги",
+
+    "benefits_section_title": "Benefits",
+    "benefits_section_subtitle": "Learn the advantages of various hair treatments",
+    "benefit_keratin_title": "Keratin",
+    "benefit_keratin_subtitle1": "",
+    "benefit_keratin_description1": "",
+    "benefit_keratin_subtitle2": "",
+    "benefit_keratin_description2": "",
+    "benefit_keratin_subtitle3": "",
+    "benefit_keratin_description3": "",
+    "benefit_nanoplastia_title": "Nanoplastia",
+    "benefit_nanoplastia_subtitle1": "",
+    "benefit_nanoplastia_description1": "",
+    "benefit_nanoplastia_subtitle2": "",
+    "benefit_nanoplastia_description2": "",
+    "benefit_nanoplastia_subtitle3": "",
+    "benefit_nanoplastia_description3": "",
+    "benefit_botox_title": "Botox for hair",
+    "benefit_botox_subtitle1": "",
+    "benefit_botox_description1": "",
+    "benefit_botox_subtitle2": "",
+    "benefit_botox_description2": "",
+    "benefit_botox_subtitle3": "",
+    "benefit_botox_description3": "",
+    "benefits_conclusion": "Each of these treatments offers unique benefits, and the best choice will depend on an individual's hair type, condition, and desired results. It's always advisable to consult with a professional hairstylist before undergoing any treatment to ensure it's suitable for one's specific hair needs."
   }
 }

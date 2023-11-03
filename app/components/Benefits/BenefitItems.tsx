@@ -1,68 +1,54 @@
-import { BenefitData } from "@/app/types/types";
+import { BenefitData, TranslationFunction } from "@/app/types/types";
 
-export const benefits: BenefitData[] = [
+export const getBenefitItems = (t: TranslationFunction): BenefitData[] => [
   {
-    title: "Keratin Straightening",
+    title: t("benefit_keratin_title"),
     benefits: [
       {
-        subtitle: "Long-lasting Straightness",
-        description:
-          "Keratin treatments infuse the hair with protein, making it straight and frizz-free for an extended period.",
+        subtitle: t("benefit_keratin_subtitle1"),
+        description: t("benefit_keratin_description1"),
       },
       {
-        subtitle: "Heat Protection",
-        description:
-          "The treatment provides a layer of protection against heat, reducing damage from styling tools.",
+        subtitle: t("benefit_keratin_subtitle2"),
+        description: t("benefit_keratin_description2"),
       },
       {
-        subtitle: "Shine and Smoothness",
-        description:
-          "Keratin-treated hair becomes noticeably shinier and feels exceptionally smooth to the touch.",
+        subtitle: t("benefit_keratin_subtitle3"),
+        description: t("benefit_keratin_description3"),
       },
     ],
   },
   {
-    title: "Nanoplastia",
+    title: t("benefit_nanoplastia_title"),
     benefits: [
       {
-        subtitle: "Natural Look",
-        description:
-          "Unlike other straightening treatments, nanoplastia gives the hair a more natural straight look rather than a flat ironed appearance.",
+        subtitle: t("benefit_nanoplastia_subtitle1"),
+        description: t("benefit_nanoplastia_description1"),
       },
       {
-        subtitle: "Hydration",
-        description:
-          "The treatment hydrates the hair, replenishing lost moisture and ensuring hair remains soft.",
+        subtitle: t("benefit_nanoplastia_subtitle2"),
+        description: t("benefit_nanoplastia_description2"),
       },
       {
-        subtitle: "Less Chemicals",
-        description:
-          "Nanoplastia often uses fewer chemicals than other treatments, making it a safer option for many individuals.",
+        subtitle: t("benefit_nanoplastia_subtitle3"),
+        description: t("benefit_nanoplastia_description3"),
       },
     ],
   },
   {
-    title: "Botox for Hair",
+    title: t("benefit_botox_title"),
     benefits: [
       {
-        subtitle: "Deep Conditioning",
-        description:
-          "Botox for hair acts as an intense conditioner, treating split ends and making hair softer and smoother.",
+        subtitle: t("benefit_botox_subtitle1"),
+        description: t("benefit_botox_description1"),
       },
       {
-        subtitle: "Volume Reduction",
-        description:
-          "It helps reduce excessive volume in curly or frizzy hair, making it more manageable.",
+        subtitle: t("benefit_botox_subtitle2"),
+        description: t("benefit_botox_description2"),
       },
       {
-        subtitle: "Frizz Control",
-        description:
-          "Botox for hair significantly reduces frizz, making hair look sleeker and shinier.",
-      },
-      {
-        subtitle: "Restoration",
-        description:
-          "It helps restore and rebuild the hair, providing essential nutrients that improve hair health.",
+        subtitle: t("benefit_botox_subtitle3"),
+        description: t("benefit_botox_description3"),
       },
     ],
   },

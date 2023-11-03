@@ -1,8 +1,11 @@
 "use client";
 import { Fade } from "react-awesome-reveal";
-import { benefits } from "./BenefitItems";
+import { getBenefitItems } from "./BenefitItems";
+import { useTranslations } from "next-intl";
 
 const BenefitsSection = () => {
+  const t = useTranslations("Index");
+  const benefits = getBenefitItems(t);
   return (
     <div
       className="px-4 mx-auto sm:px-6 sm:py-20 max-w-7xl"
@@ -16,10 +19,10 @@ const BenefitsSection = () => {
         triggerOnce={true}
       >
         <h3 className="mb-3 text-lg text-center text-black uppercase ls-51">
-          Benefits
+          {t("benefits_section_title")}
         </h3>
         <p className="text-3xl font-semibold text-center text-black lg:text-5xl">
-          Learn the advantages of various hair treatments
+          {t("benefits_section_subtitle")}
         </p>
       </Fade>
 
@@ -54,11 +57,7 @@ const BenefitsSection = () => {
       </div>
       <Fade direction="up" delay={400} damping={1e-1} triggerOnce={true}>
         <p className="mt-10 text-lg text-center text-black md:text-xl">
-          Each of these treatments offers unique benefits, and the best choice
-          will depend on an individual&apos;s hair type, condition, and desired
-          results. It&apos;s always advisable to consult with a professional
-          hairstylist before undergoing any treatment to ensure it&apos;s
-          suitable for one&apos;s specific hair needs.
+          {t("benefits_conclusion")}
         </p>
       </Fade>
     </div>
