@@ -7,6 +7,7 @@
     "nav_price": "Цінник",
     "nav_faq": "FAQ",
     "nav_contact": "Написати",
+
     "form_title": "Контактна форма",
     "form_subtitle": "Заповніть форму, щоб зв'язатися зі мною",
     "form_name": "Ім'я",
@@ -16,6 +17,19 @@
     "form_message": "Ваше повідомлення",
     "form_message_placeholder": "Залиште коментар",
     "form_button_send": "Надіслати повідомлення",
-    "title": "Добрий день"
+
+    "hero_title": "Вітаю в моєму світі",
+    "hero_description": "Вітаю в моєму світі",
+
+    "service_section_title": "Послуги",
+    "service_section_subtitle": "Дізнайся про мої послуги",
+    "service_title_1": "Послуга 1",
+    "service_description_1": "Опис послуги",
+    "service_title_2": "Послуга 2",
+    "service_description_2": "Опис послуги",
+    "service_title_3": "Послуга 3",
+    "service_description_3": "Опис послуги",
+    "service_title_4": "Послуга 4",
+    "service_description_4": "Опис послуги"
   }
 }

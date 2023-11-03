@@ -18,7 +18,9 @@ const Accordion = ({ items }: AccordionProps) => {
             className="flex items-center justify-between p-4 cursor-pointer"
             onClick={() => handleAccordionClick(index)}
           >
-            <p className="font-semibold text-black">{item.question}</p>
+            <p className="font-semibold text-black md:text-xl">
+              {item.question}
+            </p>
             {openIndex === index ? (
               <ChevronUpIcon className="w-6 h-6 text-black" />
             ) : (
@@ -27,7 +29,7 @@ const Accordion = ({ items }: AccordionProps) => {
           </div>
           {openIndex === index && (
             <div className="p-4">
-              <p className="text-black">{item.answer}</p>
+              <p className="text-black md:text-xl">{item.answer}</p>
             </div>
           )}
         </div>

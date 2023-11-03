@@ -7,6 +7,7 @@
     "nav_price": "Price",
     "nav_faq": "FAQ",
     "nav_contact": "Contact me",
+
     "form_title": "Contact form",
     "form_subtitle": "Fill in the form to contact me",
     "form_name": "Name",
@@ -16,6 +17,19 @@
     "form_message": "Your message",
     "form_message_placeholder": "Leave a comment",
     "form_button_send": "Send message",
-    "title": "Hello world!"
+
+    "hero_title": "Welcome to my world",
+    "hero_description": "Welcome to my world",
+
+    "service_section_title": "Servives",
+    "service_section_subtitle": "Discover services I have",
+    "service_title_1": "Service 1",
+    "service_description_1": "Service description",
+    "service_title_2": "Service 2",
+    "service_description_2": "Service description",
+    "service_title_3": "Service 3",
+    "service_description_3": "Service description",
+    "service_title_4": "Service 4",
+    "service_description_4": "Service description"
   }
 }

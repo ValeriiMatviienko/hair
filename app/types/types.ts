@@ -6,10 +6,6 @@ export type RootLayoutProps = {
     locale: string;
   };
 };
-export interface serviceDataType {
-  serviceTitle: string;
-  serviceDescription: string;
-}
 export interface SocialLinks {
   Component: React.FC<React.SVGProps<SVGSVGElement>>;
   link: string;

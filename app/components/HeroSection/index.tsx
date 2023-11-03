@@ -18,7 +18,7 @@ const HeroSection = () => {
               triggerOnce={true}
             >
               <h1 className="mb-4 text-5xl font-semibold text-center text-black sm:mb-5 lg:text-7xl lg:text-start">
-                {t("title")}
+                {t("hero_title")}
               </h1>
             </Fade>
             <Fade
@@ -29,8 +29,7 @@ const HeroSection = () => {
               triggerOnce={true}
             >
               <p className="mb-6 text-center text-black sm:text-xl sm:mb-10 lg:text-start">
-                Lorem ipsum dolor sit amet consectetur.
-                <br /> Lorem ipsum dolor sit amet consectetur adipisicing.
+                {t("hero_description")}
               </p>
             </Fade>
           </div>

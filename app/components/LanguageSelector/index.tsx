@@ -34,7 +34,7 @@ const LanguageSelector = () => {
       <select
         value={selectedLocale}
         onChange={handleLanguageChange}
-        className="block w-full px-2 py-2 mt-1 border rounded-md cursor-pointer hover:border-darkgreen sm:text-sm"
+        className="block w-full px-2 py-2 mt-1 border rounded-md cursor-pointer bg-softgray hover:border-darkgreen sm:text-sm"
       >
         <option value="en">EN</option>
         <option value="pl">PL</option>

@@ -1,8 +1,11 @@
 "use client";
 import { Fade } from "react-awesome-reveal";
-import { serviceData } from "./ServiceData";
+import { getServiceData } from "./ServiceData";
+import { useTranslations } from "next-intl";
 
 const Service = () => {
+  const t = useTranslations("Index");
+  const serviceData = getServiceData(t);
   return (
     <div>
       <div
@@ -18,7 +21,7 @@ const Service = () => {
             triggerOnce={true}
           >
             <h3 className="mb-3 text-lg text-black uppercase ls-51">
-              Services
+              {t("service_section_title")}
             </h3>
           </Fade>
           <Fade
@@ -29,7 +32,7 @@ const Service = () => {
             triggerOnce={true}
           >
             <p className="text-3xl font-semibold text-black lg:text-5xl">
-              Discover services I have
+              {t("service_section_subtitle")}
             </p>
           </Fade>
         </div>
@@ -43,11 +46,11 @@ const Service = () => {
             triggerOnce={true}
           >
             {serviceData.map((items, i) => (
-              <div className="p-6 -3xl" key={i}>
+              <div className="p-5" key={i}>
                 <h3 className="text-2xl font-semibold text-center text-black">
                   {items.serviceTitle}
                 </h3>
-                <p className="mt-2 text-lg text-center text-black text-opacity-80">
+                <p className="mt-2 text-lg text-center text-black md:text-xl text-opacity-80">
                   {items.serviceDescription}
                 </p>
               </div>

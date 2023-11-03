@@ -39,10 +39,10 @@ const BenefitsSection = () => {
               <ul className="space-y-4">
                 {benefitSection.benefits.map((benefit, subIdx) => (
                   <li key={subIdx} className="flex flex-col space-y-2">
-                    <h5 className="text-lg font-semibold text-center uppercase md:text-left">
+                    <h5 className="text-lg font-semibold text-center uppercase md:text-xl md:text-left">
                       {benefit.subtitle}
                     </h5>
-                    <p className="text-lg text-center text-black text-opacity-80 md:text-left">
+                    <p className="text-lg text-center text-black md:text-xl text-opacity-80 md:text-left">
                       {benefit.description}
                     </p>
                   </li>
@@ -53,7 +53,7 @@ const BenefitsSection = () => {
         ))}
       </div>
       <Fade direction="up" delay={400} damping={1e-1} triggerOnce={true}>
-        <p className="mt-10 text-lg text-black">
+        <p className="mt-10 text-lg text-center text-black md:text-xl">
           Each of these treatments offers unique benefits, and the best choice
           will depend on an individual&apos;s hair type, condition, and desired
           results. It&apos;s always advisable to consult with a professional

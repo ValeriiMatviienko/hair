@@ -1,24 +1,20 @@
-import { serviceDataType } from "@/app/types/types";
+import { TranslationFunction } from "@/app/types/types";
 
-export const serviceData: serviceDataType[] = [
+export const getServiceData = (t: TranslationFunction) => [
   {
-    serviceTitle: "Service",
-    serviceDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed harum ut doloribus quibusdam consequatur dolores ab esse fuga voluptates porro est, officiis iusto. Illo iure obcaecati maxime fugit quo adipisci.",
+    serviceTitle: t("service_title_1"),
+    serviceDescription: t("service_description_1"),
   },
   {
-    serviceTitle: "Service",
-    serviceDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed harum ut doloribus quibusdam consequatur dolores ab esse fuga voluptates porro est, officiis iusto. Illo iure obcaecati maxime fugit quo adipisci.",
+    serviceTitle: t("service_title_2"),
+    serviceDescription: t("service_description_2"),
   },
   {
-    serviceTitle: "Service",
-    serviceDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed harum ut doloribus quibusdam consequatur dolores ab esse fuga voluptates porro est, officiis iusto. Illo iure obcaecati maxime fugit quo adipisci.",
+    serviceTitle: t("service_title_3"),
+    serviceDescription: t("service_description_3"),
   },
   {
-    serviceTitle: "Service",
-    serviceDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed harum ut doloribus quibusdam consequatur dolores ab esse fuga voluptates porro est, officiis iusto. Illo iure obcaecati maxime fugit quo adipisci.",
+    serviceTitle: t("service_title_4"),
+    serviceDescription: t("service_description_4"),
   },
 ];

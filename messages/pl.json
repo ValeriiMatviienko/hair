@@ -7,6 +7,7 @@
     "nav_price": "Cennik",
     "nav_faq": "FAQ",
     "nav_contact": "Kontakt",
+
     "form_title": "Formularz kontaktowy",
     "form_subtitle": "Wypełnij formularz, aby się ze mną skontaktować",
     "form_name": "Imię",
@@ -16,6 +17,19 @@
     "form_message": "Twoja wiadomość",
     "form_message_placeholder": "Zostaw komentarz",
     "form_button_send": "Wyślij wiadomość",
-    "title": "siemano"
+
+    "hero_title": "Zapraszam do mojego swiata",
+    "hero_description": "Zapraszam do mojego swiata",
+
+    "service_section_title": "Usługi",
+    "service_section_subtitle": "Zapoznaj się z moją ofertą",
+    "service_title_1": "Usługa 1",
+    "service_description_1": "Opis usługi 1",
+    "service_title_2": "Usługa 2",
+    "service_description_2": "Opis usługi 2",
+    "service_title_3": "Usługa 3",
+    "service_description_3": "Opis usługi 3",
+    "service_title_4": "Usługa 4",
+    "service_description_4": "Opis usługi 4"
   }
 }
