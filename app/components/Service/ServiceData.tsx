@@ -1,6 +1,6 @@
-import { TranslationFunction } from "@/app/types/types";
+import { TranslationFunction, serviceDataType } from "@/app/types/types";
 
-export const getServiceData = (t: TranslationFunction) => [
+export const getServiceData = (t: TranslationFunction): serviceDataType[] => [
   {
     serviceTitle: t("service_title_1"),
     serviceDescription: t("service_description_1"),

@@ -64,3 +64,11 @@ export type BenefitData = {
     description: string;
   }[];
 };
+export interface serviceDataType {
+  serviceTitle: string;
+  serviceDescription: string;
+}
+export interface NavigationItemType {
+  name: string;
+  href: string;
+}
