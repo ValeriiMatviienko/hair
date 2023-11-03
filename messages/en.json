@@ -58,6 +58,13 @@
     "benefits_conclusion": "Each of these treatments offers unique benefits, and the best choice will depend on an individual's hair type, condition, and desired results. It's always advisable to consult with a professional hairstylist before undergoing any treatment to ensure it's suitable for one's specific hair needs.",
 
     "gallery_title": "Gallery",
-    "gallery_subtitle": "Gallery of my latest works"
+    "gallery_subtitle": "Gallery of my latest works",
+
+    "price_section_title": "Prices",
+    "price_keratine": "Keratine",
+    "price_botox": "Botox",
+    "price_nanoplastia": "Nanoplastia",
+    "price_mixadance": "Mixadance",
+    "price_haircut": "Haircut"
   }
 }

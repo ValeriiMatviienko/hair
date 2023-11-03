@@ -1,8 +1,11 @@
 "use client";
 import { Fade } from "react-awesome-reveal";
-import { ProductList } from "./ProductPriceItems";
+import { getProductPrices } from "./ProductPriceItems";
+import { useTranslations } from "next-intl";
 
 const Price = () => {
+  const t = useTranslations("Index");
+  const productList = getProductPrices(t);
   return (
     <div className="relative pt-4 sm:pt-0" id="price-section">
       <div className="px-4 mx-auto sm:px-6 max-w-7xl lg:pt-20 sm:pb-24">
@@ -16,7 +19,7 @@ const Price = () => {
               triggerOnce
             >
               <h2 className="mb-4 text-2xl text-center text-black uppercase sm:mb-5 sm:text-3xl ls-51">
-                Price
+                {t("price_section_title")}
               </h2>
             </Fade>
             <Fade
@@ -27,7 +30,7 @@ const Price = () => {
               triggerOnce
             >
               <ul className="space-y-2 sm:space-y-4">
-                {ProductList.map((product, index) => (
+                {productList.map((product, index) => (
                   <li key={index} className="flex justify-between">
                     <h3 className="mb-2 text-lg text-black sm:text-xl sm:mb-3 lg:text-3xl">
                       {product.name}

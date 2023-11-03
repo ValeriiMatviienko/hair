@@ -1,9 +1,9 @@
-import { ProductPrice } from "@/app/types/types";
+import { ProductPrice, TranslationFunction } from "@/app/types/types";
 
-export const ProductList: ProductPrice[] = [
-  { name: "Keratine", price: 400 },
-  { name: "Botox", price: 350 },
-  { name: "Nanoplastia", price: 600 },
-  { name: "Mixadance", price: 500 },
-  { name: "Haircut", price: 100 },
+export const getProductPrices = (t: TranslationFunction): ProductPrice[] => [
+  { name: t("price_keratine"), price: 400 },
+  { name: t("price_nanoplastia"), price: 600 },
+  { name: t("price_botox"), price: 350 },
+  { name: t("price_mixadance"), price: 500 },
+  { name: t("price_haircut"), price: 100 },
 ];
