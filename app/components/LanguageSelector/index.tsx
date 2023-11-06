@@ -32,6 +32,7 @@ const LanguageSelector = () => {
       onClick={(e) => e.stopPropagation()}
     >
       <select
+        aria-label="Select language"
         value={selectedLocale}
         onChange={handleLanguageChange}
         className="block w-full px-2 py-2 mt-1 border rounded-md cursor-pointer bg-softgray hover:border-darkgreen sm:text-sm"

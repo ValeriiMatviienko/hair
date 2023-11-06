@@ -11,10 +11,12 @@ export interface SocialLinks {
   link: string;
   description: string;
 }
-export interface ProductPrice {
+export type ProductPrice = {
   name: string;
-  price: number;
-}
+  shortHairPrice: number;
+  midHairPrice: number;
+  longHairPrice: number;
+};
 export type TranslationFunction = (key: string) => string;
 export interface DrowerDataProps {
   setIsContactFormOpen: (isOpen: boolean) => void;

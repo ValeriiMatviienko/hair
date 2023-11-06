@@ -42,6 +42,7 @@ const Footer = () => {
         </div>
         <div className="col-span-full sm:col-span-6">
           <iframe
+            title="Hair by Hanna Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.35689438791!2d17.054840199999997!3d51.0834207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc2ed9db2820d%3A0x600a19542516804!2zYWxlamEgQXJtaWkgS3Jham93ZWogNDgsIDUwLTUwNSBXcm9jxYJhdywg0J_QvtC70YzRidCw!5e0!3m2!1suk!2sde!4v1695216454566!5m2!1suk!2sde"
             width="100%"
             height="250"
@@ -55,10 +56,10 @@ const Footer = () => {
       </div>
 
       <div className="items-center justify-between py-6 border-t md:flex border-t-bordertop">
-        <h4 className="text-center text-black md:text-lg md:text-start">
+        <h3 className="text-center text-black md:text-lg md:text-start">
           &quot;Copyright &copy; {currentYear} Hair by Hanna. All rights
           reserved.&quot;
-        </h4>
+        </h3>
       </div>
     </div>
   );

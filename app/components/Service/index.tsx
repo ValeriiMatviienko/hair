@@ -20,9 +20,9 @@ const Service = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h3 className="mb-3 text-lg text-black uppercase ls-51">
+            <h1 className="mb-3 text-lg text-black uppercase ls-51">
               {t("service_section_title")}
-            </h3>
+            </h1>
           </Fade>
           <Fade
             direction={"up"}
@@ -47,9 +47,9 @@ const Service = () => {
           >
             {serviceData.map((items, i) => (
               <div className="p-5" key={i}>
-                <h3 className="text-2xl font-semibold text-center text-black">
+                <h2 className="text-2xl font-semibold text-center text-black">
                   {items.serviceTitle}
-                </h3>
+                </h2>
                 <p className="mt-2 text-lg text-center text-black md:text-xl text-opacity-80">
                   {items.serviceDescription}
                 </p>

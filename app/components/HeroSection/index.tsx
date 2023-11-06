@@ -38,10 +38,11 @@ const HeroSection = () => {
             <div className="flex items-center gap-5 bottom-10 left-10 rounded-xl"></div>
             <Image
               src="/images/profilePicture.jpg"
-              alt="nothing"
+              alt="Profile picture"
               width={1000}
               height={805}
               className="object-cover w-full h-auto rounded-lg shadow-lg"
+              priority
             />
           </div>
         </div>

@@ -6,44 +6,62 @@ import { useTranslations } from "next-intl";
 const Price = () => {
   const t = useTranslations("Index");
   const productList = getProductPrices(t);
+
   return (
     <div className="relative pt-4 sm:pt-0" id="price-section">
       <div className="px-4 mx-auto sm:px-6 max-w-7xl lg:pt-20 sm:pb-24">
-        <div className="flex flex-col my-8 space-x-0 sm:my-16 sm:space-x-5 lg:grid-cols-12">
-          <div className="flex flex-col justify-center col-span-12 lg:col-span-6">
-            <Fade
-              direction={"up"}
-              delay={100}
-              cascade
-              damping={0.1}
-              triggerOnce
-            >
-              <h2 className="mb-4 text-2xl text-center text-black uppercase sm:mb-5 sm:text-3xl ls-51">
-                {t("price_section_title")}
-              </h2>
-            </Fade>
-            <Fade
-              direction={"up"}
-              delay={100}
-              cascade
-              damping={0.1}
-              triggerOnce
-            >
-              <ul className="space-y-2 sm:space-y-4">
-                {productList.map((product, index) => (
-                  <li key={index} className="flex justify-between">
-                    <h3 className="mb-2 text-lg text-black sm:text-xl sm:mb-3 lg:text-3xl">
-                      {product.name}
-                    </h3>
-                    <span className="flex items-center">
-                      <span className="ml-2 text-lg text-black sm:ml-4 sm:text-xl lg:text-3xl">{`${product.price} PLN`}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </Fade>
-          </div>
-        </div>
+        <Fade direction={"up"} delay={100} cascade damping={0.1} triggerOnce>
+          <h2 className="mb-4 text-2xl text-center text-black uppercase sm:mb-5 sm:text-3xl lg:text-4xl">
+            {t("price_section_title")}
+          </h2>
+        </Fade>
+        <Fade direction={"up"} delay={200} cascade damping={0.1} triggerOnce>
+          <table className="w-full text-sm text-left text-black md:text-lg">
+            <thead className="text-black uppercase ">
+              <tr>
+                <th scope="col" className="px-3 py-3 text-left lg:text-xl">
+                  {t("product_type")}
+                </th>
+                <th
+                  scope="col"
+                  className="px-3 py-3 text-lg text-center lg:text-xl"
+                >
+                  {t("short_hair")}
+                </th>
+                <th
+                  scope="col"
+                  className="px-3 py-3 text-lg text-center lg:text-xl"
+                >
+                  {t("mid_hair")}
+                </th>
+                <th
+                  scope="col"
+                  className="px-3 py-3 text-lg text-center lg:text-xl"
+                >
+                  {t("long_hair")}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {productList.map((product, index) => (
+                <tr key={index} className="border-b ">
+                  <td className="px-3 py-3 text-left uppercase s lg:text-xl">
+                    {product.name}
+                  </td>
+                  <td className="px-2 py-3 text-lg text-center md:text-2xl">
+                    {`${product.shortHairPrice} zł`}
+                  </td>
+                  <td className="px-2 py-3 text-lg text-center md:text-2xl">
+                    {`${product.midHairPrice} zł`}
+                  </td>
+                  <td className="px-2 py-3 text-lg text-center md:text-2xl">
+                    {`${product.longHairPrice} zł`}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </Fade>
       </div>
     </div>
   );
