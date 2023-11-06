@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   keywords: ["hair", "keratin", "botox", "professional", "nanoplastia"],
 };
 
-const locales = ["en", "pl", "ua"];
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
 export default async function RootLayout({
   children,
   params: { locale },
