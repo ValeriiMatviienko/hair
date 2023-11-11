@@ -7,7 +7,23 @@ import { NextIntlClientProvider } from "next-intl";
 export const metadata: Metadata = {
   title: "Hair by Hanna",
   description: "Professional trichologist and hair treatments.",
-  keywords: ["hair", "keratin", "botox", "professional", "nanoplastia"],
+  keywords: [
+    "hair",
+    "keratin",
+    "botox",
+    "professional",
+    "nanoplastia",
+    "волосся",
+    "кератин",
+    "ботокс",
+    "професійний",
+    "нанопластика",
+    "włosy",
+    "keratyna",
+    "botoks",
+    "profesjonalny",
+    "nanoplastia",
+  ],
 };
 
 export default async function RootLayout({

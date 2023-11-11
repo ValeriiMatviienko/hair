@@ -1,24 +1,20 @@
-import { FAQItem } from "@/app/types/types";
+import { FAQItem, TranslationFunction } from "@/app/types/types";
 
-export const faqs: FAQItem[] = [
+export const getFAQs = (t: TranslationFunction): FAQItem[] => [
   {
-    question: "What is Lorem Ipsum?",
-    answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    question: t("faq_question_1"),
+    answer: t("faq_answer_1"),
   },
   {
-    question: "Why do we use it?",
-    answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    question: t("faq_question_2"),
+    answer: t("faq_answer_2"),
   },
   {
-    question: "Why do we use it?",
-    answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    question: t("faq_question_3"),
+    answer: t("faq_answer_3"),
   },
   {
-    question: "Why do we use it?",
-    answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    question: t("faq_question_4"),
+    answer: t("faq_answer_4"),
   },
 ];

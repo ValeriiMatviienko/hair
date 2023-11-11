@@ -12,4 +12,9 @@ export const socialLinks: SocialLinks[] = [
     link: "https://instagram.com/hair.by.hanna.wroclaw",
     description: "Instagram",
   },
+  // {
+  //   Component: TikTokIcon,
+  //   link: "https://instagram.com/hair.by.hanna.wroclaw",
+  //   description: "TikTok",
+  // },
 ];
