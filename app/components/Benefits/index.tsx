@@ -18,7 +18,7 @@ const BenefitsSection = () => {
         damping={1e-1}
         triggerOnce={true}
       >
-        <h3 className="mb-3 text-lg text-center text-black uppercase ls-51">
+        <h3 className="mb-3 text-2xl text-center text-black uppercase ls-51">
           {t("benefits_section_title")}
         </h3>
         <p className="text-3xl font-semibold text-center text-black lg:text-5xl">

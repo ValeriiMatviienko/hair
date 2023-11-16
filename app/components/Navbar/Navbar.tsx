@@ -38,7 +38,7 @@ const Navbar = () => {
                       key={item.name}
                       href={item.href}
                       onClick={() => setActiveLink(item.name)}
-                      className={`px-4 py-4 text-lg hover:text-darkgreen space-links ${
+                      className={`px-4 py-4 text-lg sm:text-xl hover:text-darkgreen space-links ${
                         activeLink === item.name ? "active-class" : ""
                       }`}
                     >

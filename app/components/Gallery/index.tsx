@@ -17,7 +17,7 @@ const Gallery: React.FC = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h2 className="mb-3 text-lg tracking-widest text-black uppercase ls-51">
+            <h2 className="mb-3 text-2xl tracking-widest text-black uppercase ls-51">
               {t("gallery_title")}
             </h2>
           </Fade>

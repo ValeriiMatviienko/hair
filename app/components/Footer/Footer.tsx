@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="grid grid-cols-1 my-12 gap-y-10 sm:grid-cols-6 lg:grid-cols-12">
         <div className="col-span-full sm:col-span-6">
           <h2 className="mb-4 text-lg font-semibold text-center uppercase">
-            {t("follow_me")}
+            {t("follow_me")}:
           </h2>
           <div className="flex flex-wrap justify-center gap-4 mb-5">
             {socialLinks.map((item, i) => (
@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
           <div className="py-4">
             <h2 className="mb-2 text-lg font-semibold text-center uppercase">
-              {t("adress")}
+              {t("adress")}:
             </h2>
             <div className="text-lg text-center hover:underline ">
               <a

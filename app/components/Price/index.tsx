@@ -11,7 +11,7 @@ const Price = () => {
     <div className="relative pt-4 sm:pt-0" id="price-section">
       <div className="px-4 mx-auto sm:px-6 max-w-7xl lg:pt-20 sm:pb-24">
         <Fade direction={"up"} delay={100} cascade damping={0.1} triggerOnce>
-          <h2 className="mb-4 text-2xl text-center text-black uppercase sm:mb-5 sm:text-3xl lg:text-4xl">
+          <h2 className="mb-4 text-2xl text-center text-black uppercase sm:mb-5 ls-51">
             {t("price_section_title")}
           </h2>
         </Fade>

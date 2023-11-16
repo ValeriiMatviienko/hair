@@ -29,7 +29,7 @@ html:not([data-scroll="0"]) .navbar {
 }
 
 .ls-51 {
-  letter-spacing: 0.515em;
+  letter-spacing: 0.5em;
 }
 
 .space-links {
@@ -55,3 +55,27 @@ html:not([data-scroll="0"]) .navbar {
   color: #1a4c3d;
   font-weight: bold;
 }
+/* .title-line {
+  position: relative;
+  display: inline-block;
+}
+
+.title-line::before,
+.title-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 60px; 
+  height: 1px; 
+  background-color: black; 
+}
+
+.title-line::before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.title-line::after {
+  left: 100%;
+  margin-left: 15px;
+} */

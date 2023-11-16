@@ -20,7 +20,7 @@ const Service = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h1 className="mb-3 text-lg text-black uppercase ls-51">
+            <h1 className="mb-3 text-2xl text-black uppercase ls-51">
               {t("service_section_title")}
             </h1>
           </Fade>
