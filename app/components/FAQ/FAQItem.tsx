@@ -17,4 +17,8 @@ export const getFAQs = (t: TranslationFunction): FAQItem[] => [
     question: t("faq_question_4"),
     answer: t("faq_answer_4"),
   },
+  {
+    question: t("faq_question_5"),
+    answer: t("faq_answer_5"),
+  },
 ];

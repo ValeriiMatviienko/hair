@@ -1,6 +1,6 @@
 import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Fragment, useCallback } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ContactFormProps } from "@/app/types/types";
 import {
@@ -16,16 +16,22 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
   const { inputValues, setInputValues, handleSubmitForm, toggleModal } =
     useContactForm();
 
-  const handleChange = (e: { target: { name: string; value: string } }) => {
-    const { name, value } = e.target;
-    setInputValues((prevState) => ({ ...prevState, [name]: value }));
-  };
+  const handleChange = useCallback(
+    (e: { target: { name: string; value: string } }) => {
+      const { name, value } = e.target;
+      setInputValues((prevState) => ({ ...prevState, [name]: value }));
+    },
+    [setInputValues]
+  );
 
   const isDisabled = Object.values(inputValues).some((value) => value === "");
-  const handleFormSubmittion = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    handleSubmitForm(setIsOpen);
-  };
+  const handleFormSubmittion = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      handleSubmitForm(setIsOpen);
+    },
+    [handleSubmitForm, setIsOpen]
+  );
   return (
     <>
       <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
@@ -75,7 +81,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                     className="absolute p-2 rounded-full top-3 right-3 hover:bg-gray-200"
                     aria-label="Close modal"
                   >
-                    <XMarkIcon className="w-6 h-6" />
+                    {isOpen && <XMarkIcon className="w-6 h-6" />}
                   </button>
                   <div className="max-w-screen-md px-4 py-8 mx-auto lg:py-8">
                     <div className="flex items-center justify-center flex-shrink-0">

@@ -5,8 +5,6 @@ import { useState, useEffect } from "react";
 const LanguageSelector = () => {
   const pathname = usePathname();
   const router = useRouter();
-
-  /** Local state to manage selected language */
   const [selectedLocale, setSelectedLocale] = useState<string>("pl");
 
   /** On component mount, get saved locale from localStorage */

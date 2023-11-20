@@ -18,7 +18,7 @@
     "form_message_placeholder": "Zostaw komentarz",
     "form_button_send": "Wyślij wiadomość",
 
-    "hero_title": "Zapraszam do mojego swiata",
+    "hero_title": "Welcome to my world",
     "hero_description": "Zapraszam do mojego swiata",
 
     "service_section_title": "Usługi",
@@ -64,7 +64,7 @@
     "product_type": "Usługa",
     "short_hair": "25cm",
     "mid_hair": "45cm",
-    "long_hair": "45+cm",
+    "long_hair": "65cm",
     "price_keratine": "Keratine",
     "price_botox": "Botox",
     "price_nanoplastia": "Nanoplastia",
@@ -72,7 +72,7 @@
     "price_haircut": "Haircut",
 
     "faq_title": "FAQ",
-    "faq_subtitle": "",
+    "faq_subtitle": "To co najczęściej pytacie",
     "faq_question_1": "",
     "faq_answer_1": "",
     "faq_question_2": "",
