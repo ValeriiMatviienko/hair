@@ -1,30 +1,20 @@
 import "./globals.css";
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { RootLayoutProps } from "../types/types";
+import { GenerateMetadataParams, RootLayoutProps } from "../types/types";
 import { NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Hair by Hanna",
-  description: "Professional trichologist and hair treatments.",
-  keywords: [
-    "hair",
-    "keratin",
-    "botox",
-    "professional",
-    "nanoplastia",
-    "волосся",
-    "кератин",
-    "ботокс",
-    "професійний",
-    "нанопластика",
-    "włosy",
-    "keratyna",
-    "botoks",
-    "profesjonalny",
-    "nanoplastia",
-  ],
-};
+export async function generateMetadata({
+  params: { locale },
+}: GenerateMetadataParams) {
+  const t = await getTranslations({ locale, namespace: "Index" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: t("keywords").split(","),
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -36,6 +26,7 @@ export default async function RootLayout({
   } catch (error) {
     notFound();
   }
+
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>

@@ -48,11 +48,6 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="hidden gap-6 xl:flex">
-                <div className="flex items-center gap-2 mr-3">
-                  <a className="text-xl font-medium" href="tel:+48780509295">
-                    +48780509295
-                  </a>
-                </div>
                 <div className="flex items-center gap-4">
                   <ContactForm
                     isOpen={isContactFormOpen}

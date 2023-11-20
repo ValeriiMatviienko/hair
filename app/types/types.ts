@@ -74,3 +74,8 @@ export interface NavigationItemType {
   name: string;
   href: string;
 }
+export type GenerateMetadataParams = {
+  params: {
+    locale: string;
+  };
+};

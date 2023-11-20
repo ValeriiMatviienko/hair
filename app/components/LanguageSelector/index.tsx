@@ -1,6 +1,10 @@
 "use client";
-import { usePathname, useRouter } from "next-intl/client";
 import { useState, useEffect } from "react";
+import { createSharedPathnamesNavigation } from "next-intl/navigation";
+
+const locales = ["en", "pl", "ua"] as const;
+/** Create the shared navigation instance */
+const { useRouter, usePathname } = createSharedPathnamesNavigation({ locales });
 
 const LanguageSelector = () => {
   const pathname = usePathname();
@@ -26,7 +30,7 @@ const LanguageSelector = () => {
 
   return (
     <div
-      className="relative inline-block text-left "
+      className="relative inline-block text-left"
       onClick={(e) => e.stopPropagation()}
     >
       <select

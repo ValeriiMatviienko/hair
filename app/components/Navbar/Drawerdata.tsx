@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { DrowerDataProps } from "@/app/types/types";
-import { PhoneIcon } from "@heroicons/react/24/outline";
 import LanguageSelector from "../LanguageSelector";
 import { getNavigationItems } from "./NavigationItem";
 import { useTranslations } from "next-intl";
@@ -28,15 +27,6 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
                 {item.name}
               </Link>
             ))}
-            <div className="flex items-center mb-10 space-x-2">
-              <PhoneIcon className="w-6 h-6 text-black" aria-hidden="true" />
-              <a
-                className="text-xl font-medium align-middle"
-                href="tel:+48780509295"
-              >
-                +48780509295
-              </a>
-            </div>
             <button
               onClick={(e) => {
                 e.stopPropagation();
