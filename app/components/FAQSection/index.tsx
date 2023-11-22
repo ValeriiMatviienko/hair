@@ -19,7 +19,7 @@ const FAQSection: React.FC = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h3 className="mb-3 text-2xl text-black uppercase ls-51">
+            <h3 className="mb-3 text-2xl text-black uppercase title-line ls-51">
               {t("faq_title")}
             </h3>
           </Fade>

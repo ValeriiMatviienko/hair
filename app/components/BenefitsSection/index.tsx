@@ -19,9 +19,11 @@ const BenefitsSection = () => {
         damping={1e-1}
         triggerOnce={true}
       >
-        <h3 className="mb-3 text-2xl text-center text-black uppercase ls-51">
-          {t("benefits_section_title")}
-        </h3>
+        <div className="text-center">
+          <h2 className="mx-auto mb-3 text-2xl text-center text-black uppercase title-line ls-51">
+            {t("benefits_section_title")}
+          </h2>
+        </div>
         <p className="text-3xl font-semibold text-center text-black lg:text-5xl">
           {t("benefits_section_subtitle")}
         </p>
@@ -37,15 +39,15 @@ const BenefitsSection = () => {
             triggerOnce={true}
           >
             <div>
-              <h4 className="mb-4 text-2xl text-center text-black uppercase">
+              <h3 className="mb-4 text-2xl text-center text-black uppercase">
                 {benefitSection.title}
-              </h4>
+              </h3>
               <ul className="space-y-4">
                 {benefitSection.benefits.map((benefit, subIdx) => (
                   <li key={subIdx} className="flex flex-col space-y-2">
-                    <h5 className="text-lg font-semibold text-center uppercase md:text-xl md:text-left">
+                    <h4 className="text-lg font-semibold text-center uppercase md:text-xl md:text-left">
                       {benefit.subtitle}
-                    </h5>
+                    </h4>
                     <p className="text-lg text-center text-black md:text-xl text-opacity-80 md:text-left">
                       {benefit.description}
                     </p>

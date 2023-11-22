@@ -55,7 +55,7 @@ html:not([data-scroll="0"]) .navbar {
   color: #1a4c3d;
   font-weight: bold;
 }
-/* .title-line {
+.title-line {
   position: relative;
   display: inline-block;
 }
@@ -65,9 +65,9 @@ html:not([data-scroll="0"]) .navbar {
   content: "";
   position: absolute;
   top: 50%;
-  width: 60px; 
-  height: 1px; 
-  background-color: black; 
+  height: 1px;
+  background-color: black;
+  width: 50px;
 }
 
 .title-line::before {
@@ -77,5 +77,5 @@ html:not([data-scroll="0"]) .navbar {
 
 .title-line::after {
   left: 100%;
-  margin-left: 15px;
-} */
+  margin-left: 5px;
+}
