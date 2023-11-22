@@ -1,8 +1,11 @@
 "use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 
 const HeroSection = () => {
+  const t = useTranslations("Index");
+
   return (
     <div id="home-section">
       <div className="px-4 pt-10 mx-auto sm:px-6 sm:pt-20 max-w-7xl sm:pb-24">
@@ -15,8 +18,8 @@ const HeroSection = () => {
               damping={1e-1}
               triggerOnce={true}
             >
-              <h1 className="mb-4 text-5xl font-semibold text-center text-black sm:mb-5 lg:text-7xl lg:text-start">
-                Welcome to my world
+              <h1 className="mb-4 text-4xl font-semibold text-center text-black md:text-5xl sm:mb-5 lg:text-7xl lg:text-start">
+                {t("hero_title")}
               </h1>
             </Fade>
             <Fade
@@ -26,9 +29,8 @@ const HeroSection = () => {
               damping={1e-1}
               triggerOnce={true}
             >
-              <p className="mb-6 text-center text-black sm:text-xl sm:mb-10 lg:text-start">
-                Lorem ipsum dolor sit amet consectetur.
-                <br /> Lorem ipsum dolor sit amet consectetur adipisicing.
+              <p className="mb-6 text-center text-black whitespace-pre-line sm:text-xl sm:mb-10 lg:text-start">
+                {t("hero_description")}
               </p>
             </Fade>
           </div>
@@ -37,10 +39,11 @@ const HeroSection = () => {
             <div className="flex items-center gap-5 bottom-10 left-10 rounded-xl"></div>
             <Image
               src="/images/profilePicture.jpg"
-              alt="nothing"
+              alt="Profile picture"
               width={1000}
               height={805}
               className="object-cover w-full h-auto rounded-lg shadow-lg"
+              priority
             />
           </div>
         </div>

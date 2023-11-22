@@ -1,8 +1,12 @@
 "use client";
 import { Fade } from "react-awesome-reveal";
-import { benefits } from "./BenefitItems";
+import { getBenefitItems } from "./BenefitItems";
+import { useTranslations } from "next-intl";
 
 const BenefitsSection = () => {
+  const t = useTranslations("Index");
+  const benefits = getBenefitItems(t);
+
   return (
     <div
       className="px-4 mx-auto sm:px-6 sm:py-20 max-w-7xl"
@@ -15,11 +19,13 @@ const BenefitsSection = () => {
         damping={1e-1}
         triggerOnce={true}
       >
-        <h3 className="mb-3 text-lg text-center text-black uppercase ls-51">
-          Benefits
-        </h3>
+        <div className="text-center">
+          <h2 className="mx-auto mb-3 text-2xl text-center text-black uppercase title-line ls-51">
+            {t("benefits_section_title")}
+          </h2>
+        </div>
         <p className="text-3xl font-semibold text-center text-black lg:text-5xl">
-          Learn the advantages of various hair treatments.
+          {t("benefits_section_subtitle")}
         </p>
       </Fade>
 
@@ -33,16 +39,16 @@ const BenefitsSection = () => {
             triggerOnce={true}
           >
             <div>
-              <h4 className="mb-4 text-2xl text-center text-black uppercase">
+              <h3 className="mb-4 text-2xl text-center text-black uppercase">
                 {benefitSection.title}
-              </h4>
+              </h3>
               <ul className="space-y-4">
                 {benefitSection.benefits.map((benefit, subIdx) => (
                   <li key={subIdx} className="flex flex-col space-y-2">
-                    <h5 className="text-lg font-semibold text-center uppercase md:text-left">
+                    <h4 className="text-lg font-semibold text-center uppercase md:text-xl md:text-left">
                       {benefit.subtitle}
-                    </h5>
-                    <p className="text-lg text-center text-black text-opacity-80 md:text-left">
+                    </h4>
+                    <p className="text-lg text-center text-black md:text-xl text-opacity-80 md:text-left">
                       {benefit.description}
                     </p>
                   </li>
@@ -53,12 +59,8 @@ const BenefitsSection = () => {
         ))}
       </div>
       <Fade direction="up" delay={400} damping={1e-1} triggerOnce={true}>
-        <p className="mt-10 text-lg font-normal text-black">
-          Each of these treatments offers unique benefits, and the best choice
-          will depend on an individual&apos;s hair type, condition, and desired
-          results. It&apos;s always advisable to consult with a professional
-          hairstylist before undergoing any treatment to ensure it&apos;s
-          suitable for one&apos;s specific hair needs.
+        <p className="mt-10 text-lg text-center text-black md:text-xl">
+          {t("benefits_conclusion")}
         </p>
       </Fade>
     </div>

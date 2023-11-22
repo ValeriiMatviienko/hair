@@ -1,21 +1,23 @@
 import { ReactNode } from "react";
-export interface serviceDataType {
-  serviceTitle: string;
-  serviceDescription: string;
-}
+
+export type RootLayoutProps = {
+  children: React.ReactNode;
+  params: {
+    locale: string;
+  };
+};
 export interface SocialLinks {
   Component: React.FC<React.SVGProps<SVGSVGElement>>;
   link: string;
   description: string;
 }
-export interface ProductPrice {
+export type ProductPrice = {
   name: string;
-  price: number;
-}
-export interface NavigationItemType {
-  name: string;
-  href: string;
-}
+  shortHairPrice: number;
+  midHairPrice: number;
+  longHairPrice: number;
+};
+export type TranslationFunction = (key: string) => string;
 export interface DrowerDataProps {
   setIsContactFormOpen: (isOpen: boolean) => void;
 }
@@ -63,4 +65,17 @@ export type BenefitData = {
     subtitle: string;
     description: string;
   }[];
+};
+export interface serviceDataType {
+  serviceTitle: string;
+  serviceDescription: string;
+}
+export interface NavigationItemType {
+  name: string;
+  href: string;
+}
+export type GenerateMetadataParams = {
+  params: {
+    locale: string;
+  };
 };

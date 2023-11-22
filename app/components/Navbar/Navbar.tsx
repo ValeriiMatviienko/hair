@@ -1,15 +1,18 @@
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-import { Bars3Icon, PhoneIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
 import ContactForm from "./ContactForm";
-import Image from "next/image";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { NavigationItem } from "./NavigationItem";
 import DrawerData from "./DrawerData";
+import LanguageSelector from "../LanguageSelector";
+import { useTranslations } from "next-intl";
+import { getNavigationItems } from "./NavigationItem";
 
 const Navbar = () => {
+  const t = useTranslations("Index");
+  const navigationItems = getNavigationItems(t);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string | null>(null);
@@ -21,12 +24,6 @@ const Navbar = () => {
           <div className="relative flex items-center h-12 sm:h-16 md:h-20">
             <div className="flex items-center justify-between flex-1 sm:flex-row">
               <div className="flex items-center flex-shrink-0 mb-2 mr-8 text-center">
-                <Image
-                  src="/images/5908.jpg"
-                  alt="logo"
-                  width={36}
-                  height={36}
-                />
                 <a
                   href="/"
                   className="mt-2 ml-4 text-2xl font-semibold text-black md:text-3xl sm:text-2xl"
@@ -34,14 +31,14 @@ const Navbar = () => {
                   Hair by Hanna
                 </a>
               </div>
-              <div className="items-center hidden lg:flex">
+              <div className="items-center hidden xl:flex">
                 <div className="flex justify-end space-x-4">
-                  {NavigationItem.map((item) => (
+                  {navigationItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setActiveLink(item.name)}
-                      className={`px-4 py-4 text-lg  hover:text-darkgreen space-links ${
+                      className={`px-4 py-4 text-lg sm:text-xl hover:text-darkgreen space-links ${
                         activeLink === item.name ? "active-class" : ""
                       }`}
                     >
@@ -50,23 +47,17 @@ const Navbar = () => {
                   ))}
                 </div>
               </div>
-              <div className="hidden gap-6 lg:flex">
-                <div className="flex items-center gap-2 mr-3">
-                  <PhoneIcon
-                    className="w-6 h-6 text-black"
-                    aria-hidden="true"
+              <div className="hidden gap-6 xl:flex">
+                <div className="flex items-center gap-4">
+                  <ContactForm
+                    isOpen={isContactFormOpen}
+                    setIsOpen={setIsContactFormOpen}
                   />
-                  <a className="text-xl font-medium" href="tel:+48780509295">
-                    +48780509295
-                  </a>
+                  <LanguageSelector />
                 </div>
-                <ContactForm
-                  isOpen={isContactFormOpen}
-                  setIsOpen={setIsContactFormOpen}
-                />
               </div>
             </div>
-            <div className="block lg:hidden">
+            <div className="block xl:hidden">
               <Bars3Icon
                 className="block w-8 h-8 md:w-12 md:h-12"
                 aria-hidden="true"

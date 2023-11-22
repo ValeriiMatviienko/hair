@@ -1,9 +1,13 @@
 "use client";
 import Accordion from "./Accordion";
 import { Fade } from "react-awesome-reveal";
-import { faqs } from "./FAQItem";
+import { getFAQs } from "./FAQItem";
+import { useTranslations } from "next-intl";
 
 const FAQSection: React.FC = () => {
+  const t = useTranslations("Index");
+  const faqs = getFAQs(t);
+
   return (
     <div className="p-4" id="faq-section">
       <div className="px-4 pt-10 mx-auto sm:px-6 sm:pt-20 max-w-7xl sm:pb-24">
@@ -15,8 +19,8 @@ const FAQSection: React.FC = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h3 className="mb-3 text-2xl font-normal text-black uppercase ls-51">
-              FAQ
+            <h3 className="mb-3 text-2xl text-black uppercase title-line ls-51">
+              {t("faq_title")}
             </h3>
           </Fade>
           <Fade
@@ -27,7 +31,7 @@ const FAQSection: React.FC = () => {
             triggerOnce={true}
           >
             <p className="text-3xl font-semibold text-black lg:text-5xl">
-              Frequently Asked Questions
+              {t("faq_subtitle")}
             </p>
           </Fade>
         </div>

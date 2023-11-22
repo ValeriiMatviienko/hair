@@ -1,7 +1,6 @@
 import React from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Image from "next/image";
 import { DrawerProps } from "@/app/types/types";
 
 const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
@@ -23,7 +22,6 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
         <article className="relative flex flex-col h-full max-w-lg pb-10 space-y-6 w-340px">
           <header className="flex items-center justify-between px-4 py-4">
             <div className="flex items-center flex-shrink-0">
-              <Image src="/images/5908.jpg" alt="logo" width={36} height={36} />
               <Link href="/" className="text-2xl font-semibold text-black ">
                 Hair by Hanna
               </Link>

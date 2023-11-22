@@ -1,10 +1,12 @@
-import { NavigationItemType } from "@/app/types/types";
+import { NavigationItemType, TranslationFunction } from "@/app/types/types";
 
-export const NavigationItem: NavigationItemType[] = [
-  { name: "About me", href: "#home-section" },
-  { name: "Services", href: "#service-section" },
-  { name: "Benefits", href: "#benefits-section" },
-  { name: "Gallery", href: "#gallery-section" },
-  { name: "Price", href: "#price-section" },
-  { name: "FAQ", href: "#faq-section" },
+export const getNavigationItems = (
+  t: TranslationFunction
+): NavigationItemType[] => [
+  { name: t("nav_about"), href: "#home-section" },
+  { name: t("nav_service"), href: "#service-section" },
+  { name: t("nav_benefit"), href: "#benefits-section" },
+  { name: t("nav_galery"), href: "#gallery-section" },
+  { name: t("nav_price"), href: "#price-section" },
+  { name: t("nav_faq"), href: "#faq-section" },
 ];

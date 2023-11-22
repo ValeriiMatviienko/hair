@@ -2,8 +2,11 @@
 import { Fade } from "react-awesome-reveal";
 import { GalleryImage } from "./GalleryImage";
 import Slider from "./Slider";
+import { useTranslations } from "next-intl";
 
-const Gallery: React.FC = () => {
+const GallerySection: React.FC = () => {
+  const t = useTranslations("Index");
+
   return (
     <div id="gallery-section">
       <div className="max-w-2xl mx-auto mt-20 lg:max-w-7xl sm:py-4 lg:px-8 md:pt-24">
@@ -15,8 +18,8 @@ const Gallery: React.FC = () => {
             damping={1e-1}
             triggerOnce={true}
           >
-            <h2 className="mb-3 text-lg font-normal tracking-widest text-black uppercase ls-51">
-              Gallery
+            <h2 className="mb-3 text-2xl tracking-widest text-black uppercase title-line ls-51">
+              {t("gallery_title")}
             </h2>
           </Fade>
           <Fade
@@ -27,7 +30,7 @@ const Gallery: React.FC = () => {
             triggerOnce={true}
           >
             <h3 className="text-3xl font-semibold text-black lg:text-5xl">
-              Gallery of my latest works.
+              {t("gallery_subtitle")}
             </h3>
           </Fade>
         </div>
@@ -40,4 +43,4 @@ const Gallery: React.FC = () => {
   );
 };
 
-export default Gallery;
+export default GallerySection;
