@@ -7,22 +7,22 @@ const Navbar = dynamic(() => import("../components/Navbar"), {
 const HeroSection = dynamic(() => import("../components/HeroSection"), {
   ssr: false,
 });
-const Service = dynamic(() => import("../components/Service"), {
+const ServiceSection = dynamic(() => import("../components/ServiceSection"), {
   ssr: false,
 });
-const Price = dynamic(() => import("../components/Price"), {
+const PriceSection = dynamic(() => import("../components/PriceSection"), {
   ssr: false,
 });
-const Gallery = dynamic(() => import("../components/Gallery"), {
+const GallerySection = dynamic(() => import("../components/GallerySection"), {
   ssr: false,
 });
-const Footer = dynamic(() => import("../components/Footer/Footer"), {
+const FooterSection = dynamic(() => import("../components/FooterSection"), {
   ssr: false,
 });
-const FAQSection = dynamic(() => import("../components/FAQ"), {
+const FAQSection = dynamic(() => import("../components/FAQSection"), {
   ssr: false,
 });
-const BenefitsSection = dynamic(() => import("../components/Benefits"), {
+const BenefitsSection = dynamic(() => import("../components/BenefitsSection"), {
   ssr: false,
 });
 
@@ -31,12 +31,12 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <Service />
+      <ServiceSection />
       <BenefitsSection />
-      <Gallery />
-      <Price />
+      <GallerySection />
+      <PriceSection />
       <FAQSection />
-      <Footer />
+      <FooterSection />
       <ScrollToTopButton />
     </main>
   );

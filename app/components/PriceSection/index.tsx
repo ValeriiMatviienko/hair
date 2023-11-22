@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 import { getProductPrices } from "./ProductPriceItems";
 import { useTranslations } from "next-intl";
 
-const Price = () => {
+const PriceSection = () => {
   const t = useTranslations("Index");
   const productList = getProductPrices(t);
 
@@ -67,4 +67,4 @@ const Price = () => {
   );
 };
 
-export default Price;
+export default PriceSection;

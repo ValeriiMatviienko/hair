@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 const BenefitsSection = () => {
   const t = useTranslations("Index");
   const benefits = getBenefitItems(t);
+
   return (
     <div
       className="px-4 mx-auto sm:px-6 sm:py-20 max-w-7xl"

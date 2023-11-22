@@ -3,9 +3,10 @@ import { Fade } from "react-awesome-reveal";
 import { getServiceData } from "./ServiceData";
 import { useTranslations } from "next-intl";
 
-const Service = () => {
+const ServiceSection = () => {
   const t = useTranslations("Index");
   const serviceData = getServiceData(t);
+
   return (
     <div>
       <div
@@ -62,4 +63,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default ServiceSection;

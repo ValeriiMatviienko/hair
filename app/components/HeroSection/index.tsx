@@ -5,6 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 const HeroSection = () => {
   const t = useTranslations("Index");
+
   return (
     <div id="home-section">
       <div className="px-4 pt-10 mx-auto sm:px-6 sm:pt-20 max-w-7xl sm:pb-24">
