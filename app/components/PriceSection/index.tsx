@@ -10,14 +10,14 @@ const PriceSection = () => {
   return (
     <div className="relative pt-4 sm:pt-0" id="price-section">
       <div className="px-4 mx-auto sm:px-6 max-w-7xl lg:pt-20 sm:pb-24">
-        <Fade direction={"up"} delay={100} cascade damping={0.1} triggerOnce>
+        <Fade direction={"up"} delay={40} cascade damping={0.1} triggerOnce>
           <div className="text-center">
             <h2 className="mb-4 text-2xl text-center text-black uppercase title-line sm:mb-10 ls-51">
               {t("price_section_title")}
             </h2>
           </div>
         </Fade>
-        <Fade direction={"up"} delay={200} cascade damping={0.1} triggerOnce>
+        <Fade direction={"up"} delay={40} cascade damping={0.1} triggerOnce>
           <table className="w-full text-sm text-left text-black md:text-lg">
             <thead className="text-black uppercase ">
               <tr>

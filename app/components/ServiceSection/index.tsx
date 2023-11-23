@@ -15,9 +15,9 @@ const ServiceSection = () => {
       <div className="mb-10 text-center sm:mb-14">
         <Fade
           direction={"up"}
-          delay={100}
+          delay={40}
           cascade
-          damping={1e-1}
+          damping={0.1}
           triggerOnce={true}
         >
           <h1 className="mb-3 text-2xl text-black uppercase title-line ls-51">
@@ -26,9 +26,9 @@ const ServiceSection = () => {
         </Fade>
         <Fade
           direction={"up"}
-          delay={100}
+          delay={40}
           cascade
-          damping={1e-1}
+          damping={0.1}
           triggerOnce={true}
         >
           <p className="text-3xl font-semibold text-black lg:text-5xl">
@@ -40,9 +40,9 @@ const ServiceSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 sm:gap-y-20 gap-x-3 sm:gap-x-5">
         <Fade
           direction={"up"}
-          delay={100}
+          delay={40}
           cascade
-          damping={1e-1}
+          damping={0.1}
           triggerOnce={true}
         >
           {serviceData.map((items, i) => (

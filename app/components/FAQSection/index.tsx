@@ -14,9 +14,9 @@ const FAQSection: React.FC = () => {
         <div className="mb-10 text-center sm:mb-14">
           <Fade
             direction={"up"}
-            delay={100}
+            delay={40}
             cascade
-            damping={1e-1}
+            damping={0.1}
             triggerOnce={true}
           >
             <h3 className="mb-3 text-2xl text-black uppercase title-line ls-51">
@@ -25,9 +25,9 @@ const FAQSection: React.FC = () => {
           </Fade>
           <Fade
             direction={"up"}
-            delay={100}
+            delay={40}
             cascade
-            damping={1e-1}
+            damping={0.1}
             triggerOnce={true}
           >
             <p className="text-3xl font-semibold text-black lg:text-5xl">
@@ -39,9 +39,9 @@ const FAQSection: React.FC = () => {
           <div className="col-span-12 lg:col-span-12">
             <Fade
               direction={"up"}
-              delay={100}
+              delay={40}
               cascade
-              damping={1e-1}
+              damping={0.1}
               triggerOnce={true}
             >
               <Accordion items={faqs} />

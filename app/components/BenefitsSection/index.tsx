@@ -12,13 +12,7 @@ const BenefitsSection = () => {
       className="px-4 mx-auto sm:px-6 sm:py-20 max-w-7xl"
       id="benefits-section"
     >
-      <Fade
-        direction="up"
-        delay={100}
-        cascade
-        damping={1e-1}
-        triggerOnce={true}
-      >
+      <Fade direction="up" delay={40} cascade damping={0.1} triggerOnce={true}>
         <div className="text-center">
           <h2 className="mx-auto mb-3 text-2xl text-center text-black uppercase title-line ls-51">
             {t("benefits_section_title")}
@@ -34,8 +28,8 @@ const BenefitsSection = () => {
           <Fade
             key={idx}
             direction="up"
-            delay={100 + idx * 50}
-            damping={1e-1}
+            delay={50 + idx * 50}
+            damping={0.1}
             triggerOnce={true}
           >
             <div>
@@ -58,7 +52,7 @@ const BenefitsSection = () => {
           </Fade>
         ))}
       </div>
-      <Fade direction="up" delay={400} damping={1e-1} triggerOnce={true}>
+      <Fade direction="up" delay={40} damping={0.1} triggerOnce={true}>
         <p className="mt-10 text-lg text-center text-black md:text-xl">
           {t("benefits_conclusion")}
         </p>

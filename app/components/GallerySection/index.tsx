@@ -13,9 +13,9 @@ const GallerySection: React.FC = () => {
         <div className="text-center">
           <Fade
             direction={"up"}
-            delay={100}
+            delay={40}
             cascade
-            damping={1e-1}
+            damping={0.1}
             triggerOnce={true}
           >
             <h2 className="mb-3 text-2xl tracking-widest text-black uppercase title-line ls-51">
@@ -24,9 +24,9 @@ const GallerySection: React.FC = () => {
           </Fade>
           <Fade
             direction={"up"}
-            delay={100}
+            delay={40}
             cascade
-            damping={1e-1}
+            damping={0.1}
             triggerOnce={true}
           >
             <h3 className="text-3xl font-semibold text-black lg:text-5xl">

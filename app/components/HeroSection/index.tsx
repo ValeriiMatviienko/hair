@@ -13,9 +13,9 @@ const HeroSection = () => {
           <div className="flex flex-col justify-center col-span-12 pb-8 sm:pb-0 lg:col-span-6">
             <Fade
               direction={"up"}
-              delay={100}
+              delay={40}
               cascade
-              damping={1e-1}
+              damping={0.1}
               triggerOnce={true}
             >
               <h1 className="mb-4 text-4xl font-semibold text-center text-black md:text-5xl sm:mb-5 lg:text-7xl lg:text-start">
@@ -24,9 +24,9 @@ const HeroSection = () => {
             </Fade>
             <Fade
               direction={"up"}
-              delay={100}
+              delay={40}
               cascade
-              damping={1e-1}
+              damping={0.1}
               triggerOnce={true}
             >
               <p className="mb-6 text-center text-black whitespace-pre-line sm:text-xl sm:mb-10 lg:text-start">
