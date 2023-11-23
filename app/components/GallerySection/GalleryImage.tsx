@@ -2,39 +2,39 @@ import { ImageInfo } from "@/app/types/types";
 
 export const GalleryImage: ImageInfo[] = [
   {
-    src: "/images/profilePicture.jpg",
+    src: "/images/sliderPicture1.jpg",
     alt: "example one",
-    width: 500,
-    height: 405,
   },
   {
-    src: "/images/profilePicture.jpg",
+    src: "/images/sliderPicture2.jpg",
     alt: "example two",
-    width: 500,
-    height: 405,
   },
   {
-    src: "/images/profilePicture.jpg",
+    src: "/images/sliderPicture3.jpg",
     alt: "example three",
-    width: 500,
-    height: 405,
   },
   {
-    src: "/images/profilePicture.jpg",
+    src: "/images/sliderPicture4.jpg",
     alt: "example four",
-    width: 500,
-    height: 405,
   },
   {
-    src: "/images/profilePicture.jpg",
+    src: "/images/sliderPicture5.jpg",
     alt: "example five",
-    width: 500,
-    height: 405,
   },
   {
-    src: "/images/profilePicture.jpg",
+    src: "/images/sliderPicture6.jpg",
     alt: "example six",
-    width: 500,
-    height: 405,
+  },
+  {
+    src: "/images/sliderPicture7.jpg",
+    alt: "example seven",
+  },
+  // {
+  //   src: "/images/sliderPicture8.jpg",
+  //   alt: "example eight",
+  // },
+  {
+    src: "/images/sliderPicture9.jpg",
+    alt: "example nine",
   },
 ];
