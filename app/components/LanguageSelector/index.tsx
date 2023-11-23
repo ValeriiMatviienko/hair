@@ -27,13 +27,14 @@ const LanguageSelector = () => {
     setSelectedLocale(newLocale); /** Update local state */
     localStorage.setItem("selectedLocale", newLocale);
   };
-
+  
   return (
     <div
       className="relative inline-block text-left"
       onClick={(e) => e.stopPropagation()}
     >
       <select
+        id="languageSelector"
         aria-label="Select language"
         value={selectedLocale}
         onChange={handleLanguageChange}

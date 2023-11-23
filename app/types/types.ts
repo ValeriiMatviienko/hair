@@ -34,8 +34,6 @@ export interface ContactFormProps {
 export type ImageInfo = {
   src: string;
   alt: string;
-  width: number;
-  height: number;
   className?: string;
 };
 export interface SliderProps {

@@ -15,11 +15,6 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     setDistance(e.touches[0].clientX - startX);
   };
-  const handleTouchEnd = () => {
-    distance > 50 ? handlePrev() : distance < -50 && handleNext();
-    /** Reset the distance for the next swipe */
-    setDistance(0);
-  };
 
   const handlePrev = () => {
     index === 0 ? setIndex(length) : setIndex(index - 1);
@@ -27,6 +22,12 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
   const handleNext = useCallback(() => {
     index === length ? setIndex(0) : setIndex(index + 1);
   }, [index, length]);
+
+  const handleTouchEnd = () => {
+    distance > 50 ? handlePrev() : distance < -50 && handleNext();
+    /** Reset the distance for the next swipe */
+    setDistance(0);
+  };
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -47,8 +48,9 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
         <Image
           src={images[index].src}
           alt={images[index].alt}
-          width={images[index].width}
-          height={images[index].height}
+          width={500}
+          height={500}
+          style={{ width: "auto", height: "auto" }}
           className="max-w-full rounded-lg shadow-lg"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}

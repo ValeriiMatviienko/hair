@@ -12,7 +12,7 @@ const PriceSection = () => {
       <div className="px-4 mx-auto sm:px-6 max-w-7xl lg:pt-20 sm:pb-24">
         <Fade direction={"up"} delay={100} cascade damping={0.1} triggerOnce>
           <div className="text-center">
-            <h2 className="mb-4 text-2xl text-center text-black uppercase title-line sm:mb-5 ls-51">
+            <h2 className="mb-4 text-2xl text-center text-black uppercase title-line sm:mb-10 ls-51">
               {t("price_section_title")}
             </h2>
           </div>

@@ -5,10 +5,10 @@ import Drawer from "./Drawer";
 import ContactForm from "./ContactForm";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import DrawerData from "./DrawerData";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
 import { getNavigationItems } from "./NavigationItem";
+import DrawerData from "./Drawerdata";
 
 const Navbar = () => {
   const t = useTranslations("Index");

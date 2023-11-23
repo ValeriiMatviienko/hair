@@ -19,7 +19,7 @@ const Footer = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mx-2"
+                className="flex-1 text-center"
               >
                 <div className="flex flex-col items-center hover:underline">
                   <div className="flex items-center justify-center w-10 h-10 rounded-full shadow-xl md:w-14 md:h-14 ">
