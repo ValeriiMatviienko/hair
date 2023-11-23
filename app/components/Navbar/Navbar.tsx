@@ -53,7 +53,7 @@ const Navbar = () => {
                     isOpen={isContactFormOpen}
                     setIsOpen={setIsContactFormOpen}
                   />
-                  <LanguageSelector />
+                  <LanguageSelector id="navbarLanguageSelector" />
                 </div>
               </div>
             </div>

@@ -77,3 +77,6 @@ export type GenerateMetadataParams = {
     locale: string;
   };
 };
+export type LanguageSelectorProps = {
+  id: string;
+};

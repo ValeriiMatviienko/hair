@@ -1,12 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
+import { LanguageSelectorProps } from "@/app/types/types";
 
 const locales = ["en", "pl", "ua"] as const;
 /** Create the shared navigation instance */
 const { useRouter, usePathname } = createSharedPathnamesNavigation({ locales });
 
-const LanguageSelector = () => {
+const LanguageSelector = ({ id }: LanguageSelectorProps) => {
   const pathname = usePathname();
   const router = useRouter();
   const [selectedLocale, setSelectedLocale] = useState<string>("pl");
@@ -27,14 +28,14 @@ const LanguageSelector = () => {
     setSelectedLocale(newLocale); /** Update local state */
     localStorage.setItem("selectedLocale", newLocale);
   };
-  
+
   return (
     <div
       className="relative inline-block text-left"
       onClick={(e) => e.stopPropagation()}
     >
       <select
-        id="languageSelector"
+        id={id}
         aria-label="Select language"
         value={selectedLocale}
         onChange={handleLanguageChange}

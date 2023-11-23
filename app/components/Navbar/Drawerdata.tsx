@@ -36,7 +36,7 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
             >
               {t("nav_contact")}
             </button>
-            <LanguageSelector />
+            <LanguageSelector id="drawerLanguageSelector" />
           </div>
         </div>
       </div>
