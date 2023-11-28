@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { GenerateMetadataParams, RootLayoutProps } from "../types/types";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import Head from "next/head";
 
 export async function generateMetadata({
   params: { locale },
@@ -32,13 +31,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <Head>
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-          as="style"
-        />
-      </Head>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body>{children}</body>
       </NextIntlClientProvider>

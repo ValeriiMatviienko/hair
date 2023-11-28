@@ -53,7 +53,7 @@ const BenefitsSection = () => {
         ))}
       </div>
       <Fade direction="up" delay={40} damping={0.1} triggerOnce={true}>
-        <p className="mt-10 text-lg text-center text-black md:text-xl">
+        <p className="mt-10 text-lg text-center text-black sm:text-xl">
           {t("benefits_conclusion")}
         </p>
       </Fade>

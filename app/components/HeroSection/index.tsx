@@ -29,7 +29,7 @@ const HeroSection = () => {
               damping={0.1}
               triggerOnce={true}
             >
-              <p className="mb-6 text-center text-black whitespace-pre-line sm:text-xl sm:mb-10 lg:text-start">
+              <p className="mb-6 text-lg text-center text-black whitespace-pre-line sm:text-xl sm:mb-10 lg:text-start">
                 {t("hero_description")}
               </p>
             </Fade>
@@ -37,7 +37,7 @@ const HeroSection = () => {
 
           <div className="flex justify-center col-span-12 lg:col-span-6">
             <Image
-              src="/images/profilePicture.jpg"
+              src="/images/profilePicture.webp"
               alt="Profile picture"
               width={1000}
               height={805}
