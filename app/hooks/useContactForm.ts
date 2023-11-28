@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { toast } from "react-toastify";
 import { InputType, ToggleModalProps } from "../types/types";
 import { useTranslations } from "next-intl";
@@ -11,17 +11,20 @@ const useContactForm = () => {
     descriptionInput: "",
   });
 
-  const resetInputs = () => {
+  const resetInputs = useCallback(() => {
     setInputValues({
       nameInput: "",
       numberInput: "",
       descriptionInput: "",
     });
-  };
-  const toggleModal = ({ open, setIsOpen }: ToggleModalProps) => {
-    !open && resetInputs();
-    setIsOpen(open);
-  };
+  }, []);
+  const toggleModal = useCallback(
+    ({ open, setIsOpen }: ToggleModalProps) => {
+      !open && resetInputs();
+      setIsOpen(open);
+    },
+    [resetInputs]
+  );
 
   const handleSubmitForm = (setIsOpen: (isOpen: boolean) => void) => {
     fetch("/api/sendEmail", {

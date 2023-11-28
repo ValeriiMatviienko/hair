@@ -25,6 +25,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
   );
 
   const isDisabled = Object.values(inputValues).some((value) => value === "");
+
   const handleFormSubmittion = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -32,6 +33,13 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
     },
     [handleSubmitForm, setIsOpen]
   );
+  const toggleModalOpen = useCallback(() => {
+    toggleModal({ open: true, setIsOpen });
+  }, [setIsOpen, toggleModal]);
+
+  const toggleModalClose = useCallback(() => {
+    toggleModal({ open: false, setIsOpen });
+  }, [setIsOpen, toggleModal]);
   return (
     <>
       <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
@@ -39,7 +47,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
           <button
             type="button"
             className="justify-end px-4 py-4 text-xl font-semibold text-white border rounded-full lg:px-6 navbutton bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen"
-            onClick={() => toggleModal({ open: true, setIsOpen })}
+            onClick={toggleModalOpen}
           >
             {t("nav_contact")}
           </button>
@@ -47,11 +55,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog
-          as="div"
-          className="relative z-50"
-          onClose={() => toggleModal({ open: false, setIsOpen })}
-        >
+        <Dialog as="div" className="relative z-50" onClose={toggleModalClose}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -77,7 +81,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
               >
                 <Dialog.Panel className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                   <button
-                    onClick={() => toggleModal({ open: false, setIsOpen })}
+                    onClick={toggleModalClose}
                     className="absolute p-2 rounded-full top-3 right-3 hover:bg-gray-200"
                     aria-label="Close modal"
                   >

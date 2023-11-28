@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Link from "next/link";
 import { DrowerDataProps } from "@/app/types/types";
 import LanguageSelector from "../LanguageSelector";
@@ -9,6 +9,14 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
   const t = useTranslations("Index");
   const navigationItems = getNavigationItems(t);
   const [activeLink, setActiveLink] = useState<string | null>(null);
+
+  const handleContactClick = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      setIsContactFormOpen(true);
+    },
+    [setIsContactFormOpen]
+  );
 
   return (
     <div className="w-full max-w-sm mx-auto rounded-md">
@@ -28,10 +36,7 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
               </Link>
             ))}
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsContactFormOpen(true);
-              }}
+              onClick={handleContactClick}
               className="flex justify-center w-full px-4 py-3 mb-10 font-medium text-white border rounded-full bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
             >
               {t("nav_contact")}
