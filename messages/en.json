@@ -89,6 +89,9 @@
 
     "title": "Hair by Hanna",
     "description": "Professional trichologist specializing in hair care treatments including keratin smoothing, hair botox, and nanoplastia. Tailored solutions for the health and beauty of your hair.",
-    "keywords": "hair, keratin, botox, professional, nanoplastia, hair treatment, hair care, trichologist, hair restoration, hair beauty"
+    "keywords": "hair, keratin, botox, professional, nanoplastia, hair treatment, hair care, trichologist, hair restoration, hair beauty",
+
+    "messageSent": "Message sent!",
+    "messageError": "Error sending the message. Please try again."
   }
 }

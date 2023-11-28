@@ -89,6 +89,9 @@
 
     "title": "Hair by Hanna",
     "description": "Profesjonalny trycholog specjalizujący się w keratynowym wygładzaniu włosów, botoxie, i nanoplastii. Oferujemy indywidualnie dopasowane zabiegi, aby przywrócić Twoim włosom blask i zdrowie.",
-    "keywords": "włosy, keratyna, botoks, profesjonalny, nanoplastyka, wygładzanie włosów, zabiegi na włosy, trycholog, pielęgnacja włosów, odnowa włosów"
+    "keywords": "włosy, keratyna, botoks, profesjonalny, nanoplastyka, wygładzanie włosów, zabiegi na włosy, trycholog, pielęgnacja włosów, odnowa włosów",
+
+    "messageSent": "Wiadomość wysłana!",
+    "messageError": "Błąd wysyłania wiadomości. Proszę spróbować ponownie."
   }
 }

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
 import { notFound } from "next/navigation";
 import { GenerateMetadataParams, RootLayoutProps } from "../types/types";
 import { NextIntlClientProvider } from "next-intl";

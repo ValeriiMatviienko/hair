@@ -79,3 +79,16 @@ html:not([data-scroll="0"]) .navbar {
   left: 100%;
   margin-left: 5px;
 }
+@keyframes click-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.click-scale-animation {
+  animation: click-scale 0.3s ease-in-out;
+}

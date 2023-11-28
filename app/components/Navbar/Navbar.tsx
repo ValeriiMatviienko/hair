@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
 import ContactForm from "./ContactForm";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
@@ -16,6 +16,16 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+  const handleIconClick = useCallback(() => {
+    setIsOpen(true);
+    setMenuOpen(!menuOpen);
+    setMenuOpen(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+    }, 300);
+  }, [menuOpen, setIsOpen, setMenuOpen]);
 
   return (
     <Disclosure as="nav" className="navbar">
@@ -59,9 +69,11 @@ const Navbar = () => {
             </div>
             <div className="block xl:hidden">
               <Bars3Icon
-                className="block w-8 h-8 md:w-12 md:h-12"
+                className={`block w-8 h-8 md:w-12 md:h-12 ${
+                  menuOpen ? "click-scale-animation" : ""
+                }`}
                 aria-hidden="true"
-                onClick={() => setIsOpen(true)}
+                onClick={handleIconClick}
               />
             </div>
             <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
