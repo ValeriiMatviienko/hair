@@ -44,22 +44,15 @@ html:not([data-scroll="0"]) .navbar {
   width: 340px;
 }
 
-.inner-img {
-  transition: 0.3s;
-}
-
-.inner-img:hover {
-  transform: scale(1.1);
-}
 .active-class {
   color: #1a4c3d;
   font-weight: bold;
 }
+
 .title-line {
   position: relative;
   display: inline-block;
 }
-
 .title-line::before,
 .title-line::after {
   content: "";
@@ -69,16 +62,15 @@ html:not([data-scroll="0"]) .navbar {
   background-color: black;
   width: 50px;
 }
-
 .title-line::before {
   right: 100%;
   margin-right: 15px;
 }
-
 .title-line::after {
   left: 100%;
   margin-left: 5px;
 }
+
 @keyframes click-scale {
   0%,
   100% {
