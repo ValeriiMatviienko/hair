@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { LanguageSelectorProps } from "@/app/types/types";
 
@@ -20,20 +20,21 @@ const LanguageSelector = ({ id }: LanguageSelectorProps) => {
     }
   }, []);
 
-  const handleLanguageChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const newLocale = event.target.value;
-    router.push(pathname, { locale: newLocale });
-    setSelectedLocale(newLocale); /** Update local state */
-    localStorage.setItem("selectedLocale", newLocale);
-  };
+  const handleLanguageChange = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      const newLocale = event.target.value;
+      router.push(pathname, { locale: newLocale });
+      setSelectedLocale(newLocale);
+      localStorage.setItem("selectedLocale", newLocale);
+    },
+    [pathname, router]
+  );
+
+  const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) =>
+    e.stopPropagation();
 
   return (
-    <div
-      className="relative inline-block text-left"
-      onClick={(e) => e.stopPropagation()}
-    >
+    <div className="relative inline-block text-left" onClick={stopPropagation}>
       <select
         id={id}
         aria-label="Select language"

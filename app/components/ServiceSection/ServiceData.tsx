@@ -13,8 +13,4 @@ export const getServiceData = (t: TranslationFunction): serviceDataType[] => [
     serviceTitle: t("service_title_3"),
     serviceDescription: t("service_description_3"),
   },
-  {
-    serviceTitle: t("service_title_4"),
-    serviceDescription: t("service_description_4"),
-  },
 ];
