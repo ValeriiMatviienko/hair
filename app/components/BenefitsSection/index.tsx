@@ -8,7 +8,7 @@ const BenefitsSection = () => {
   const benefits = getBenefitItems(t);
 
   return (
-    <div
+    <section
       className="px-4 mx-auto sm:px-6 sm:py-20 max-w-7xl"
       id="benefits-section"
     >
@@ -57,7 +57,7 @@ const BenefitsSection = () => {
           {t("benefits_conclusion")}
         </p>
       </Fade>
-    </div>
+    </section>
   );
 };
 

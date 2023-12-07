@@ -8,7 +8,7 @@ const ServiceSection = () => {
   const serviceData = getServiceData(t);
 
   return (
-    <div
+    <section
       className="px-4 py-10 mx-auto sm:px-6 sm:py-20 max-w-7xl"
       id="service-section"
     >
@@ -62,7 +62,7 @@ const ServiceSection = () => {
           {t("benefits_conclusion")}
         </p>
       </Fade>
-    </div>
+    </section>
   );
 };
 

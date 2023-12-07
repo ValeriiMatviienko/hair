@@ -9,6 +9,7 @@ import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
 import { getNavigationItems } from "./NavigationItem";
 import DrawerData from "./Drawerdata";
+import useContactForm from "@/app/hooks/useContactForm";
 
 const Navbar = () => {
   const t = useTranslations("Index");
@@ -17,6 +18,7 @@ const Navbar = () => {
   const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const { showToastContainer } = useContactForm();
 
   const handleIconClick = useCallback(() => {
     setIsOpen(true);
@@ -81,7 +83,7 @@ const Navbar = () => {
             </Drawer>
           </div>
         </div>
-        <ToastContainer className="z-100" />
+        {showToastContainer ? <ToastContainer className="z-100" /> : null}
       </>
     </Disclosure>
   );

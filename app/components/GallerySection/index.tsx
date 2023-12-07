@@ -8,7 +8,7 @@ const GallerySection: React.FC = () => {
   const t = useTranslations("Index");
 
   return (
-    <div id="gallery-section">
+    <section id="gallery-section">
       <div className="max-w-2xl mx-auto mt-20 lg:max-w-7xl sm:py-4 lg:px-8 md:pt-24">
         <div className="text-center">
           <Fade
@@ -39,7 +39,7 @@ const GallerySection: React.FC = () => {
           <Slider images={GalleryImage} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
