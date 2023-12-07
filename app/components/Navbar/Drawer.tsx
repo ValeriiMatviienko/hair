@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { DrawerProps } from "@/app/types/types";
@@ -7,6 +7,17 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
   const handleClose = useCallback(() => {
     setIsOpen(false);
   }, [setIsOpen]);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (body) {
+      if (isOpen) {
+        body.style.overflow = "hidden";
+      } else {
+        body.style.overflow = "";
+      }
+    }
+  }, [isOpen]);
 
   return (
     <main
