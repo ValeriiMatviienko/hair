@@ -12,9 +12,33 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Index" });
 
   return {
+    metadataBase: new URL("https://hairbyhanna.pl"),
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: "/",
+      languages: {
+        "pl-PL": "/pl-PL",
+        "uk-UA": "/uk-UA",
+        "en-US": "/en-US",
+      },
+    },
     keywords: t("keywords").split(","),
+    author: "Valerii Matviienko",
+    copyright: "Hair by Hanna",
+    robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: false,
+        noimageindex: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 

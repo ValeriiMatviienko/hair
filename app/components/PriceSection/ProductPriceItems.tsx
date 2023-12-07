@@ -20,12 +20,6 @@ export const getProductPrices = (t: TranslationFunction): ProductPrice[] => [
     longHairPrice: 420,
   },
   {
-    name: t("price_mixadance"),
-    shortHairPrice: 400,
-    midHairPrice: 500,
-    longHairPrice: 600,
-  },
-  {
     name: t("price_haircut"),
     shortHairPrice: 70,
     midHairPrice: 100,

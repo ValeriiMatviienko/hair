@@ -38,7 +38,7 @@ const Footer = () => {
             </h2>
             <div className="text-lg text-center hover:underline ">
               <a href="" target="_blank" rel="noopener noreferrer">
-                CZEKAMY NA OTWARCIE
+                SOON!
               </a>
             </div>
           </div>
