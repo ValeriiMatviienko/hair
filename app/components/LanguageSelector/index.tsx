@@ -17,8 +17,11 @@ const LanguageSelector = ({ id }: LanguageSelectorProps) => {
     const savedLocale = localStorage.getItem("selectedLocale");
     if (savedLocale) {
       setSelectedLocale(savedLocale);
+      router.push(pathname, { locale: savedLocale });
+    } else {
+      localStorage.setItem("selectedLocale", "pl");
     }
-  }, []);
+  }, [pathname, router]);
 
   const handleLanguageChange = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
