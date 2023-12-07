@@ -1,25 +1,30 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { toast } from "react-toastify";
 import { InputType, ToggleModalProps } from "../types/types";
+import { useTranslations } from "next-intl";
 
 const useContactForm = () => {
+  const t = useTranslations("Index");
   const [inputValues, setInputValues] = useState<InputType>({
     nameInput: "",
     numberInput: "",
     descriptionInput: "",
   });
 
-  const resetInputs = () => {
+  const resetInputs = useCallback(() => {
     setInputValues({
       nameInput: "",
       numberInput: "",
       descriptionInput: "",
     });
-  };
-  const toggleModal = ({ open, setIsOpen }: ToggleModalProps) => {
-    !open && resetInputs();
-    setIsOpen(open);
-  };
+  }, []);
+  const toggleModal = useCallback(
+    ({ open, setIsOpen }: ToggleModalProps) => {
+      !open && resetInputs();
+      setIsOpen(open);
+    },
+    [resetInputs]
+  );
 
   const handleSubmitForm = (setIsOpen: (isOpen: boolean) => void) => {
     fetch("/api/sendEmail", {
@@ -35,10 +40,10 @@ const useContactForm = () => {
     })
       .then((response) => response.json())
       .then((_data) => {
-        toast.success("Message sent!");
+        toast.success(t("messageSent"));
       })
       .catch(() => {
-        toast.error("Error sending the message. Please try again.");
+        toast.error(t("messageError"));
       });
 
     resetInputs();

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { DrawerProps } from "@/app/types/types";
 
 const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
+  const handleClose = useCallback(() => {
+    setIsOpen(false);
+  }, [setIsOpen]);
+
   return (
     <main
       className={
@@ -27,27 +31,14 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
               </Link>
             </div>
 
-            <XMarkIcon
-              className="block w-6 h-6"
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            />
+            <XMarkIcon className="block w-6 h-6" onClick={handleClose} />
           </header>
-          <div
-            onClick={() => {
-              setIsOpen(false);
-            }}
-          >
-            {children}
-          </div>
+          <div onClick={handleClose}>{children}</div>
         </article>
       </section>
       <section
         className="w-screen h-full cursor-pointer "
-        onClick={() => {
-          setIsOpen(false);
-        }}
+        onClick={handleClose}
       ></section>
     </main>
   );

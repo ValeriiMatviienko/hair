@@ -9,7 +9,7 @@ const ServiceSection = () => {
 
   return (
     <div
-      className="px-4 py-20 mx-auto sm:px-6 sm:py-40 max-w-7xl"
+      className="px-4 py-10 mx-auto sm:px-6 sm:py-20 max-w-7xl"
       id="service-section"
     >
       <div className="mb-10 text-center sm:mb-14">
@@ -37,7 +37,7 @@ const ServiceSection = () => {
         </Fade>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 sm:gap-y-20 gap-x-3 sm:gap-x-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 sm:gap-y-20 gap-x-3 sm:gap-x-5">
         <Fade
           direction={"up"}
           delay={40}
@@ -46,17 +46,22 @@ const ServiceSection = () => {
           triggerOnce={true}
         >
           {serviceData.map((items, i) => (
-            <div className="p-5" key={i}>
+            <div className="p-3" key={i}>
               <h2 className="text-2xl font-semibold text-center text-black">
                 {items.serviceTitle}
               </h2>
-              <p className="mt-2 text-lg text-center text-black md:text-xl text-opacity-80">
+              <p className="mt-2 text-lg text-center text-black whitespace-pre-line md:text-start md:text-xl text-opacity-80">
                 {items.serviceDescription}
               </p>
             </div>
           ))}
         </Fade>
       </div>
+      <Fade direction="up" delay={40} damping={0.1} triggerOnce={true}>
+        <p className="mt-20 text-lg text-center text-black sm:text-xl">
+          {t("benefits_conclusion")}
+        </p>
+      </Fade>
     </div>
   );
 };

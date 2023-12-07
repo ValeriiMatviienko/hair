@@ -22,15 +22,13 @@
     "hero_description": "I am Hanna, your future hair care expert with 6 years of experience\n\nI specialise in the following procedures: keratin straightening, nanoplasty and Botox. I have been teaching others for 3 years.\n\nAlso I provide trichological consultations and solve problems with hair loss.\n\nI will open you the world of beautiful and healthy hair.",
 
     "service_section_title": "Servives",
-    "service_section_subtitle": "Discover services I have",
-    "service_title_1": "Service 1",
-    "service_description_1": "Service description",
-    "service_title_2": "Service 2",
-    "service_description_2": "Service description",
-    "service_title_3": "Service 3",
-    "service_description_3": "Service description",
-    "service_title_4": "Service 4",
-    "service_description_4": "Service description",
+    "service_section_subtitle": "Learn the advantages of various hair treatments",
+    "service_title_1": "Keratin straightening",
+    "service_description_1": "A treatment that transforms curly and fluffy hair into beautiful, smooth and incredibly shiny hair. You won't need a flat iron anymore because your hair will look perfect after blow-drying. Even in the wettest weather, whether it's autumn in Poland or a holiday in the tropics, your hair will always be smooth.\n\nEffect: 4 - 6 months.\nDuration: 2 - 4 hours.",
+    "service_title_2": "Botox for hair",
+    "service_description_2": "A restoration procedure for damaged, bleached curls. Botox contains valuable oils and vitamins, which means it nourishes and moisturises your hair to the maximum, improves its condition, and gives it softness and shine. Your hair will be strong and stop breaking, which means you'll grow your desired length. Botox does not take away volume, while making curls manageable. You'll want to touch your hair more often, because it feels like cashmere.\n\nEffect: 1 - 4 months.\nDuration: 1.5 - 2.5 hours.",
+    "service_title_3": "Nanoplastia",
+    "service_description_3": "A unique permanent straightening treatment based on amino acids. Ideal for naturally unruly and curly hair. The only procedure that can straighten hair for up to 10 months. After the procedure, the hair lightens by 1-2 tones, which allows you to see yourself in a new colour without spoiling your hair with dyes. Hair becomes very manageable and remains well-groomed for a long time.\n\nEffect: 6 - 10 months.\nDuration: 3 - 7 hours.",
 
     "benefits_section_title": "Benefits",
     "benefits_section_subtitle": "Learn the advantages of various hair treatments",
@@ -73,8 +71,8 @@
 
     "faq_title": "FAQ",
     "faq_subtitle": "Answers to your questions",
-    "faq_question_1": "How to prepare for the visit?",
-    "faq_answer_1": "",
+    "faq_question_1": "Are there any contraindications?",
+    "faq_answer_1": "Asthma, pregnancy, tendency to allergies, scalp injuries (open wounds, scratches)",
     "faq_question_2": "How long does the procedure take?",
     "faq_answer_2": "It depends on the length and density of the hair, as well as on the type of procedure, but at least 1.5 hours.",
     "faq_question_3": "How long does the effect last on the hair?",
@@ -89,6 +87,9 @@
 
     "title": "Hair by Hanna",
     "description": "Professional trichologist specializing in hair care treatments including keratin smoothing, hair botox, and nanoplastia. Tailored solutions for the health and beauty of your hair.",
-    "keywords": "hair, keratin, botox, professional, nanoplastia, hair treatment, hair care, trichologist, hair restoration, hair beauty"
+    "keywords": "hair, keratin, botox, professional, nanoplastia, hair treatment, hair care, trichologist, hair restoration, hair beauty",
+
+    "messageSent": "Message sent!",
+    "messageError": "Error sending the message. Please try again."
   }
 }

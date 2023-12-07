@@ -22,15 +22,13 @@
     "hero_description": "Jestem Hanna - Twoj przyszły ekspert w dziedzinie pielęgnacji włosów z 6-letnim doświadczeniem.\n\nSpecjalizuję się w takich procedurach jak prostowanie keratynowe, nanoplastyka i botox. Od 3 lat szkolę innych w tych dziedzinach.\n\nOprócz tego udzielam konsultacji trychologicznych i rozwiązuję problemy z wypadaniem włosów.\n\nOtworzę przed Tobą świat pięknych i zdrowych włosów.",
 
     "service_section_title": "Usługi",
-    "service_section_subtitle": "Zapoznaj się z moją ofertą",
-    "service_title_1": "Usługa 1",
-    "service_description_1": "Opis usługi 1",
-    "service_title_2": "Usługa 2",
-    "service_description_2": "Opis usługi 2",
-    "service_title_3": "Usługa 3",
-    "service_description_3": "Opis usługi 3",
-    "service_title_4": "Usługa 4",
-    "service_description_4": "Opis usługi 4",
+    "service_section_subtitle": "Poznaj zalety różnych zabiegów na włosy",
+    "service_title_1": "Keratynowe prostowanie",
+    "service_description_1": "Zabieg, który przekształca kręcone i puszyste włosy w piękne, gładkie i niesamowicie lśniące. Nie będziesz już potrzebować prostownicy, ponieważ Twoje włosy po wysuszeniu będą wyglądać idealnie. Nawet w najbardziej wilgotną pogodę, czy to jesień w Polsce, czy wakacje w tropikach, Twoje włosy zawsze będą gładkie.\n\nEfekt: 4 - 6 miesięcy.\nCzas trwania: 2 - 4 godziny.",
+    "service_title_2": "Botox na włosy",
+    "service_description_2": "Zabieg odbudowujący zniszczone, rozjaśnione loki. Botox zawiera cenne olejki i witaminy, dzięki którym maksymalnie odżywia i nawilża włosy, poprawia ich kondycję, nadaje im miękkość i połysk. Twoje włosy będą mocne i przestaną się łamać, co oznacza, że uzyskasz pożądaną długość. Botox nie odbiera objętości, a jednocześnie sprawia, że loki stają się podatne na układanie. Będziesz chciała częściej dotykać swoich włosów, ponieważ w dotyku będą przypominać kaszmir.\n\nEfekt: 1 - 4 miesięcy.\nCzas trwania: 1,5 - 2,5 godz.",
+    "service_title_3": "Nanoplastyka",
+    "service_description_3": "Unikalny zabieg trwałego prostowania włosów na bazie aminokwasów. Idealny dla naturalnie niesfornych i kręconych włosów. Jedyny zabieg, który może wyprostować włosy na okres do 10 miesięcy. Po zabiegu włosy rozjaśniają się o 1-2 tony, co pozwala zobaczyć siebie w nowym kolorze bez niszczenia włosów farbami. Włosy stają się bardzo podatne na układanie i pozostają zadbane przez długi czas.\n\nEfekt: 6 - 10 miesięcy.\nCzas trwania: 3 - 7 godzin.",
 
     "benefits_section_title": "Korzyści",
     "benefits_section_subtitle": "Poznaj zalety różnych zabiegów na włosy",
@@ -73,8 +71,8 @@
 
     "faq_title": "FAQ",
     "faq_subtitle": "Najczęściej zadawane pytania",
-    "faq_question_1": "Jak przygotować się do wizyty?",
-    "faq_answer_1": "",
+    "faq_question_1": "Czy są jakieś przeciwwskazania?",
+    "faq_answer_1": "Astma, ciąża, skłonnosci do alergii, uszkodzenia skóry głowy (otwarte rany, zadrapania)",
     "faq_question_2": "Jak długo trwa zabieg?",
     "faq_answer_2": "Zależy to od długości i gęstości włosów, a także rodzaju zabiegu, ale co najmniej 1.5 godziny.",
     "faq_question_3": "Jak długo utrzymuje się efekt?",
@@ -89,6 +87,9 @@
 
     "title": "Hair by Hanna",
     "description": "Profesjonalny trycholog specjalizujący się w keratynowym wygładzaniu włosów, botoxie, i nanoplastii. Oferujemy indywidualnie dopasowane zabiegi, aby przywrócić Twoim włosom blask i zdrowie.",
-    "keywords": "włosy, keratyna, botoks, profesjonalny, nanoplastyka, wygładzanie włosów, zabiegi na włosy, trycholog, pielęgnacja włosów, odnowa włosów"
+    "keywords": "włosy, keratyna, botoks, profesjonalny, nanoplastyka, wygładzanie włosów, zabiegi na włosy, trycholog, pielęgnacja włosów, odnowa włosów",
+
+    "messageSent": "Wiadomość wysłana!",
+    "messageError": "Błąd wysyłania wiadomości. Proszę spróbować ponownie."
   }
 }

@@ -55,6 +55,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          loading="lazy"
         />
         <ArrowRightIcon
           className="w-8 h-8 text-black cursor-pointer"
