@@ -25,6 +25,7 @@ const LanguageSelector = ({ id }: LanguageSelectorProps) => {
 
   const handleLanguageChange = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
+      event.preventDefault();
       const newLocale = event.target.value;
       router.push(pathname, { locale: newLocale });
       setSelectedLocale(newLocale);
