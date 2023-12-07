@@ -50,7 +50,7 @@ const Navbar = () => {
                       key={item.name}
                       href={item.href}
                       onClick={() => setActiveLink(item.name)}
-                      className={`pr-4 py-4 text-lg sm:text-xl hover:text-darkgreen space-links ${
+                      className={`pr-4 py-4 text-lg sm:text-xl ${
                         activeLink === item.name ? "active-class" : ""
                       }`}
                     >
