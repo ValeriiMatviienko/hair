@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/private/"],
       },
     ],
-    sitemap: "https://hairbyhanna.pl/sitemap.xml",
+    sitemap: "https://hair-by-hanna.vercel.app/pl",
   };
 }
