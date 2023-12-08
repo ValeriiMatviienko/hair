@@ -32,25 +32,25 @@ const Navbar = () => {
   return (
     <Disclosure as="nav" className="navbar">
       <>
-        <div className="p-2 mx-auto max-w-screen-2xl sm:p-3 md:p-6 lg:px-8">
-          <div className="relative flex items-center h-12 sm:h-16 md:h-20">
-            <div className="flex items-center justify-between flex-1 sm:flex-row">
-              <div className="flex items-center flex-shrink-0 mb-2 mr-8 text-center">
+        <div className="p-2 mx-auto max-w-screen-2xl md:p-5">
+          <div className="relative flex items-center">
+            <div className="flex items-center justify-between flex-1">
+              <div className="flex items-center flex-shrink-0 mb-2 text-center">
                 <a
                   href="/"
-                  className="mt-2 ml-4 text-2xl font-semibold text-black md:text-3xl sm:text-2xl"
+                  className="mt-2 ml-4 text-2xl font-semibold text-black md:mt-0 md:text-3xl sm:text-2xl"
                 >
                   Hair by Hanna
                 </a>
               </div>
               <div className="items-center hidden xl:flex">
-                <div className="flex justify-end space-x-4">
+                <div className="flex space-x-4">
                   {navigationItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       onClick={() => setActiveLink(item.name)}
-                      className={`pr-4 py-4 text-lg sm:text-xl ${
+                      className={`nav-link px-2 py-4 text-lg sm:text-xl ${
                         activeLink === item.name ? "active-class" : ""
                       }`}
                     >
@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
             <div className="block xl:hidden">
               <Bars3Icon
-                className={`block w-8 h-8 md:w-12 md:h-12 ${
+                className={`block w-9 h-9 md:w-12 md:h-12 ${
                   menuOpen ? "click-scale-animation" : ""
                 }`}
                 aria-hidden="true"
