@@ -7,6 +7,7 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
   const handleClose = useCallback(
     (event: React.MouseEvent) => {
       event.preventDefault();
+      event.stopPropagation();
       setIsOpen(false);
     },
     [setIsOpen]

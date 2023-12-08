@@ -1,5 +1,4 @@
 import React, { useCallback } from "react";
-import Link from "next/link";
 import { DrowerDataProps } from "@/app/types/types";
 import LanguageSelector from "../LanguageSelector";
 import { getNavigationItems } from "./NavigationItem";
