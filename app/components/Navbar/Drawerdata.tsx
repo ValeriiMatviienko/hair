@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import Link from "next/link";
-import { DrowerDataProps } from "@/app/types/types";
+import { DrowerDataProps, NavigationItemType } from "@/app/types/types";
 import LanguageSelector from "../LanguageSelector";
 import { getNavigationItems } from "./NavigationItem";
 import { useTranslations } from "next-intl";
@@ -18,6 +18,34 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
     [setIsContactFormOpen]
   );
 
+  const handleNavLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    item: NavigationItemType
+  ) => {
+    event.preventDefault();
+    setActiveLink(item.name);
+    smoothScroll(item.href);
+  };
+
+  function smoothScroll(targetId: string) {
+    const targetElement = document.querySelector(targetId) as HTMLElement;
+
+    if (targetElement) {
+      const headerElement = document.querySelector(
+        ".navbar"
+      ) as HTMLElement | null;
+      const headerHeight = headerElement ? headerElement.offsetHeight : 0;
+
+      const targetPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = targetPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition + window.pageYOffset,
+        behavior: "smooth",
+      });
+    }
+  }
+
   return (
     <div className="w-full max-w-sm mx-auto rounded-md">
       <div className="flex-1 py-1 ">
@@ -27,7 +55,7 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={() => setActiveLink(item.name)}
+                onClick={(e) => handleNavLinkClick(e, item)}
                 className={`block px-4 py-4 text-lg mb-4 hover:text-darkgreen space-links ${
                   activeLink === item.name ? "active-class" : ""
                 }`}

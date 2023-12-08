@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import { getNavigationItems } from "./NavigationItem";
 import DrawerData from "./Drawerdata";
 import useContactForm from "@/app/hooks/useContactForm";
+import { NavigationItemType } from "@/app/types/types";
 
 const Navbar = () => {
   const t = useTranslations("Index");
@@ -28,6 +29,34 @@ const Navbar = () => {
       setMenuOpen(false);
     }, 300);
   }, [menuOpen, setIsOpen, setMenuOpen]);
+
+  const handleNavLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    item: NavigationItemType
+  ) => {
+    event.preventDefault();
+    setActiveLink(item.name);
+    smoothScroll(item.href);
+  };
+
+  function smoothScroll(targetId: string) {
+    const targetElement = document.querySelector(targetId) as HTMLElement;
+
+    if (targetElement) {
+      const headerElement = document.querySelector(
+        ".navbar"
+      ) as HTMLElement | null;
+      const headerHeight = headerElement ? headerElement.offsetHeight : 0;
+
+      const targetPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = targetPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition + window.pageYOffset,
+        behavior: "smooth",
+      });
+    }
+  }
 
   return (
     <Disclosure as="nav" className="navbar">
@@ -49,7 +78,7 @@ const Navbar = () => {
                     <Link
                       key={item.name}
                       href={item.href}
-                      onClick={() => setActiveLink(item.name)}
+                      onClick={(e) => handleNavLinkClick(e, item)}
                       className={`nav-link px-2 py-4 text-lg sm:text-xl ${
                         activeLink === item.name ? "active-class" : ""
                       }`}

@@ -8,17 +8,6 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
     setIsOpen(false);
   }, [setIsOpen]);
 
-  useEffect(() => {
-    const body = document.querySelector("body");
-    if (body) {
-      if (isOpen) {
-        body.style.overflow = "hidden";
-      } else {
-        body.style.overflow = "";
-      }
-    }
-  }, [isOpen]);
-
   return (
     <main
       className={
