@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
 import ContactForm from "./ContactForm";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
@@ -78,9 +78,11 @@ const Navbar = () => {
                 onClick={handleIconClick}
               />
             </div>
-            <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-              <DrawerData setIsContactFormOpen={setIsContactFormOpen} />
-            </Drawer>
+            {isOpen ? (
+              <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+                <DrawerData setIsContactFormOpen={setIsContactFormOpen} />
+              </Drawer>
+            ) : null}
           </div>
         </div>
         {showToastContainer ? <ToastContainer className="z-100" /> : null}
