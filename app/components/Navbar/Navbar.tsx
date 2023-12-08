@@ -3,23 +3,24 @@ import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
 import ContactForm from "./ContactForm";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
 import { getNavigationItems } from "./NavigationItem";
 import DrawerData from "./Drawerdata";
 import useContactForm from "@/app/hooks/useContactForm";
-import { NavigationItemType } from "@/app/types/types";
+import useNavigation from "@/app/hooks/useNavigation";
+import NavigationItemComponent from "./NavigationItemComponent";
 
 const Navbar = () => {
   const t = useTranslations("Index");
   const navigationItems = getNavigationItems(t);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
-  const [activeLink, setActiveLink] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const { showToastContainer } = useContactForm();
+  const { activeLink, handleNavLinkClick } = useNavigation();
 
   const handleIconClick = useCallback(() => {
     setIsOpen(true);
@@ -29,34 +30,6 @@ const Navbar = () => {
       setMenuOpen(false);
     }, 300);
   }, [menuOpen, setIsOpen, setMenuOpen]);
-
-  const handleNavLinkClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    item: NavigationItemType
-  ) => {
-    event.preventDefault();
-    setActiveLink(item.name);
-    smoothScroll(item.href);
-  };
-
-  function smoothScroll(targetId: string) {
-    const targetElement = document.querySelector(targetId) as HTMLElement;
-
-    if (targetElement) {
-      const headerElement = document.querySelector(
-        ".navbar"
-      ) as HTMLElement | null;
-      const headerHeight = headerElement ? headerElement.offsetHeight : 0;
-
-      const targetPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = targetPosition - headerHeight;
-
-      window.scrollTo({
-        top: offsetPosition + window.pageYOffset,
-        behavior: "smooth",
-      });
-    }
-  }
 
   return (
     <Disclosure as="nav" className="navbar">
@@ -74,18 +47,12 @@ const Navbar = () => {
               </div>
               <div className="items-center hidden xl:flex">
                 <div className="flex space-x-4">
-                  {navigationItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      onClick={(e) => handleNavLinkClick(e, item)}
-                      className={`nav-link px-2 py-4 text-lg sm:text-xl ${
-                        activeLink === item.name ? "active-class" : ""
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+                  <NavigationItemComponent
+                    navigationItems={navigationItems}
+                    activeLink={activeLink}
+                    handleNavLinkClick={handleNavLinkClick}
+                    className="px-2 py-4 text-lg nav-link sm:text-xl"
+                  />
                 </div>
               </div>
               <div className="hidden gap-6 xl:flex">

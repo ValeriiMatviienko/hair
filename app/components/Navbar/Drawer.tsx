@@ -1,12 +1,16 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { DrawerProps } from "@/app/types/types";
 
 const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
-  const handleClose = useCallback(() => {
-    setIsOpen(false);
-  }, [setIsOpen]);
+  const handleClose = useCallback(
+    (event: React.MouseEvent) => {
+      event.preventDefault();
+      setIsOpen(false);
+    },
+    [setIsOpen]
+  );
 
   return (
     <main
