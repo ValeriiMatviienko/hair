@@ -10,6 +10,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
+import ContactButton from "./ContactButton";
 
 const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
   const t = useTranslations("Index");
@@ -44,13 +45,10 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
     <>
       <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
         <div className="hidden lg:block">
-          <button
-            type="button"
-            className="justify-end px-4 py-4 text-xl font-semibold text-white border rounded-full lg:px-6 navbutton bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen"
+          <ContactButton
             onClick={toggleModalOpen}
-          >
-            {t("nav_contact")}
-          </button>
+            className="justify-end lg:px-6 navbutton"
+          />
         </div>
       </div>
 

@@ -9,7 +9,7 @@ const FAQSection: React.FC = () => {
   const faqs = getFAQs(t);
 
   return (
-    <div className="p-4" id="faq-section">
+    <section className="p-4" id="faq-section">
       <div className="px-4 pt-10 mx-auto sm:px-6 sm:pt-20 max-w-7xl sm:pb-24">
         <div className="mb-10 text-center sm:mb-14">
           <Fade
@@ -49,7 +49,7 @@ const FAQSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -10,6 +10,7 @@ const useContactForm = () => {
     numberInput: "",
     descriptionInput: "",
   });
+  const [showToastContainer, setShowToastContainer] = useState<boolean>(false);
 
   const resetInputs = useCallback(() => {
     setInputValues({
@@ -41,16 +42,24 @@ const useContactForm = () => {
       .then((response) => response.json())
       .then((_data) => {
         toast.success(t("messageSent"));
+        setShowToastContainer(true);
       })
       .catch(() => {
         toast.error(t("messageError"));
+        setShowToastContainer(true);
       });
 
     resetInputs();
     toggleModal({ open: false, setIsOpen });
   };
 
-  return { inputValues, setInputValues, handleSubmitForm, toggleModal };
+  return {
+    inputValues,
+    setInputValues,
+    handleSubmitForm,
+    toggleModal,
+    showToastContainer,
+  };
 };
 
 export default useContactForm;
