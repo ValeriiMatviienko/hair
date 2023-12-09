@@ -5,6 +5,7 @@ import { getNavigationItems } from "./NavigationItem";
 import { useTranslations } from "next-intl";
 import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "./NavigationItemComponent";
+import ContactButton from "../ContactForm/ContactButton";
 
 const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
   const t = useTranslations("Index");
@@ -30,12 +31,10 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
               handleNavLinkClick={handleNavLinkClick}
               className="block px-4 py-4 mb-4 text-lg hover:text-darkgreen space-links"
             />
-            <button
+            <ContactButton
               onClick={handleContactClick}
-              className="flex justify-center w-full px-4 py-3 mb-10 font-medium text-white border rounded-full bg-darkgreen hover:text-darkgreen hover:bg-white border-darkgreen lg:px-8 navbutton"
-            >
-              {t("nav_contact")}
-            </button>
+              className="justify-center w-full mb-10 lg:px-8 navbutton"
+            />
             <LanguageSelector id="drawerLanguageSelector" />
           </div>
         </div>

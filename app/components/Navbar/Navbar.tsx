@@ -1,7 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
-import ContactForm from "./ContactForm";
 import { useCallback, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import LanguageSelector from "../LanguageSelector";
@@ -11,6 +10,7 @@ import DrawerData from "./Drawerdata";
 import useContactForm from "@/app/hooks/useContactForm";
 import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "./NavigationItemComponent";
+import ContactForm from "../ContactForm/ContactForm";
 
 const Navbar = () => {
   const t = useTranslations("Index");
