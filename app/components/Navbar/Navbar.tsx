@@ -1,16 +1,17 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import Drawer from "./Drawer";
+import Drawer from "../DrawerComponent/Drawer";
 import { useCallback, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
 import { getNavigationItems } from "./NavigationItem";
-import DrawerData from "./Drawerdata";
 import useContactForm from "@/app/hooks/useContactForm";
 import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "./NavigationItemComponent";
 import ContactForm from "../ContactForm/ContactForm";
+import DrawerData from "../DrawerComponent/Drawerdata";
+import LogoComponent from "./LogoComponent";
 
 const Navbar = () => {
   const t = useTranslations("Index");
@@ -33,17 +34,10 @@ const Navbar = () => {
   return (
     <Disclosure as="nav" className="navbar">
       <>
-        <div className="p-2 mx-auto max-w-screen-2xl md:p-5">
-          <div className="relative flex items-center">
+        <div className="p-4 mx-auto max-w-screen-2xl md:p-8">
+          <div className="flex items-center">
             <div className="flex items-center justify-between flex-1">
-              <div className="flex items-center flex-shrink-0 mb-2 text-center">
-                <a
-                  href="/"
-                  className="mt-2 ml-4 text-2xl font-semibold text-black md:mt-0 md:text-3xl sm:text-2xl"
-                >
-                  Hair by Hanna
-                </a>
-              </div>
+              <LogoComponent />
               <div className="items-center hidden xl:flex">
                 <div className="flex space-x-4">
                   <NavigationItemComponent

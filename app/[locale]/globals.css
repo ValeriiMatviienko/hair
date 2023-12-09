@@ -85,7 +85,7 @@ html:not([data-scroll="0"]) .navbar {
   animation: click-scale 0.3s ease-in-out;
 }
 .navbutton {
-  width: 175px;
+  width: 190px;
   height: 55px;
   display: flex;
   justify-content: center;

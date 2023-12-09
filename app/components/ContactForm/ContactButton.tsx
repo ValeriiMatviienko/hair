@@ -1,9 +1,5 @@
+import { ContactButtonProps } from "@/app/types/types";
 import { useTranslations } from "next-intl";
-
-type ContactButtonProps = {
-  onClick: (e: React.MouseEvent) => void;
-  className?: string;
-};
 
 const ContactButton = ({ onClick, className = "" }: ContactButtonProps) => {
   const t = useTranslations("Index");

@@ -89,3 +89,7 @@ export interface NavigationItemComponentProps {
   ) => void;
   className: string;
 }
+export type ContactButtonProps = {
+  onClick: (e: React.MouseEvent) => void;
+  className?: string;
+};
