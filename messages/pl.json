@@ -19,7 +19,7 @@
     "form_button_send": "Wyślij wiadomość",
 
     "hero_title": "Welcome to my world",
-    "hero_description": "Jestem Hanna - Twoj przyszły ekspert w dziedzinie pielęgnacji włosów z 6-letnim doświadczeniem.\n\nSpecjalizuję się w takich procedurach jak prostowanie keratynowe, nanoplastyka i botox. Od 3 lat szkolę innych w tych dziedzinach.\n\nOprócz tego udzielam konsultacji trychologicznych i rozwiązuję problemy z wypadaniem włosów.\n\nOtworzę przed Tobą świat pięknych i zdrowych włosów.",
+    "hero_description": "Jestem Hanna - Twoj przyszły ekspert w dziedzinie pielęgnacji włosów z 6-letnim doświadczeniem.\n\nSpecjalizuję się w takich procedurach jak prostowanie keratynowe, nanoplastia i botox. Od 3 lat szkolę innych w tych dziedzinach.\n\nOprócz tego udzielam konsultacji trychologicznych i rozwiązuję problemy z wypadaniem włosów.\n\nOtworzę przed Tobą świat pięknych i zdrowych włosów.",
 
     "service_section_title": "Usługi",
     "service_section_subtitle": "Poznaj zalety różnych zabiegów na włosy",
@@ -27,7 +27,7 @@
     "service_description_1": "Zabieg, który przekształca kręcone i puszyste włosy w piękne, gładkie i niesamowicie lśniące. Nie będziesz już potrzebować prostownicy, ponieważ Twoje włosy po wysuszeniu będą wyglądać idealnie. Nawet w najbardziej wilgotną pogodę, czy to jesień w Polsce, czy wakacje w tropikach, Twoje włosy zawsze będą gładkie.\n\nEfekt: 4 - 6 miesięcy.\nCzas trwania: 2 - 4 godziny.",
     "service_title_2": "Botox na włosy",
     "service_description_2": "Zabieg odbudowujący zniszczone, rozjaśnione loki. Botox zawiera cenne olejki i witaminy, dzięki którym maksymalnie odżywia i nawilża włosy, poprawia ich kondycję, nadaje im miękkość i połysk. Twoje włosy będą mocne i przestaną się łamać, co oznacza, że uzyskasz pożądaną długość. Botox nie odbiera objętości, a jednocześnie sprawia, że loki stają się podatne na układanie. Będziesz chciała częściej dotykać swoich włosów, ponieważ w dotyku będą przypominać kaszmir.\n\nEfekt: 1 - 4 miesięcy.\nCzas trwania: 1,5 - 2,5 godz.",
-    "service_title_3": "Nanoplastyka",
+    "service_title_3": "Nanoplastia",
     "service_description_3": "Unikalny zabieg trwałego prostowania włosów na bazie aminokwasów. Idealny dla naturalnie niesfornych i kręconych włosów. Jedyny zabieg, który może wyprostować włosy na okres do 10 miesięcy. Po zabiegu włosy rozjaśniają się o 1-2 tony, co pozwala zobaczyć siebie w nowym kolorze bez niszczenia włosów farbami. Włosy stają się bardzo podatne na układanie i pozostają zadbane przez długi czas.\n\nEfekt: 6 - 10 miesięcy.\nCzas trwania: 3 - 7 godzin.",
 
     "benefits_section_title": "Korzyści",
@@ -39,7 +39,7 @@
     "benefit_keratin_description2": "",
     "benefit_keratin_subtitle3": "",
     "benefit_keratin_description3": "",
-    "benefit_nanoplastia_title": "Nanoplastyka",
+    "benefit_nanoplastia_title": "Nanoplastia",
     "benefit_nanoplastia_subtitle1": "",
     "benefit_nanoplastia_description1": "",
     "benefit_nanoplastia_subtitle2": "",
@@ -65,7 +65,7 @@
     "long_hair": "65cm",
     "price_keratine": "Keratyna",
     "price_botox": "Botox",
-    "price_nanoplastia": "Nanoplastyka",
+    "price_nanoplastia": "Nanoplastia",
     "price_haircut": "Haircut",
 
     "faq_title": "FAQ",
@@ -86,7 +86,7 @@
 
     "title": "Hair by Hanna",
     "description": "Profesjonalny trycholog we Wrocławiu, specjalizujący się w keratynowym wygładzaniu włosów, botoxie i nanoplastii. Oferujemy indywidualnie dopasowane zabiegi dla zdrowia i piękna Twoich włosów we Wrocławiu.",
-    "keywords": "pielęgnacja włosów Wrocław, wygładzanie keratynowe Wrocław, botoks na włosy Wrocław, nanoplastyka, profesjonalny trycholog Wrocław, zabiegi na włosy, odnowa włosów, trycholog we Wrocławiu",
+    "keywords": "pielęgnacja włosów Wrocław, wygładzanie keratynowe Wrocław, botoks na włosy Wrocław, nanoplastia, profesjonalny trycholog Wrocław, zabiegi na włosy, odnowa włosów, trycholog we Wrocławiu",
 
     "messageSent": "Wiadomość wysłana!",
     "messageError": "Błąd wysyłania wiadomości. Proszę spróbować ponownie."
