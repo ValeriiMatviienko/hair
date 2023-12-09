@@ -8,7 +8,7 @@ const HeroSection = () => {
 
   return (
     <section id="home-section">
-      <div className="px-4 pt-10 mx-auto sm:px-6 sm:pt-20 max-w-7xl sm:pb-24">
+      <div className="px-4 pt-10 mx-auto mb-10 sm:mb-8 sm:px-6 sm:pt-20 max-w-7xl sm:pb-24">
         <div className="grid grid-cols-1 space-x-0 sm:space-x-1 lg:grid-cols-12">
           <div className="flex flex-col justify-center col-span-12 pb-8 sm:pb-0 lg:col-span-6">
             <Fade

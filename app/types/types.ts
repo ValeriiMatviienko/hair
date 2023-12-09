@@ -80,3 +80,12 @@ export type GenerateMetadataParams = {
 export type LanguageSelectorProps = {
   id: string;
 };
+export interface NavigationItemComponentProps {
+  navigationItems: NavigationItemType[];
+  activeLink: string | null;
+  handleNavLinkClick: (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    item: NavigationItemType
+  ) => void;
+  className: string;
+}

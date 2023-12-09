@@ -8,7 +8,7 @@ const PriceSection = () => {
   const productList = getProductPrices(t);
 
   return (
-    <section className="pt-4 sm:pt-0" id="price-section">
+    <section className="pt-4 mb-8 sm:pt-0" id="price-section">
       <div className="px-4 mx-auto sm:px-6 max-w-7xl lg:pt-20 sm:pb-24">
         <Fade direction={"up"} delay={40} cascade damping={0.1} triggerOnce>
           <div className="text-center">

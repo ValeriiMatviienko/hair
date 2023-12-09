@@ -17,13 +17,15 @@ body {
 }
 
 html:not([data-scroll="0"]) .navbar {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
+  background-blend-mode: overlay;
   background-color: #fafafa;
-  opacity: 1.9;
+  opacity: 1;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
   transition: 0.4s linear;
-  z-index: 3;
+  z-index: 1000;
 }
 
 .ls-51 {
@@ -88,4 +90,24 @@ html:not([data-scroll="0"]) .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: translateX(0);
 }

@@ -38,17 +38,23 @@ const LanguageSelector = ({ id }: LanguageSelectorProps) => {
     e.stopPropagation();
 
   return (
-    <div className="relative inline-block text-left" onClick={stopPropagation}>
+    <div className="inline-block" onClick={stopPropagation}>
       <select
         id={id}
         aria-label="Select language"
         value={selectedLocale}
         onChange={handleLanguageChange}
-        className="block w-full px-2 py-2 mt-1 border rounded-md cursor-pointer bg-softgray hover:border-darkgreen sm:text-sm hover:bg-softgray"
+        className="w-full px-4 py-3 font-medium bg-white border rounded-full cursor-pointer text-darkgreen border-darkgreen hover:bg-softgray"
       >
-        <option value="en">EN</option>
-        <option value="pl">PL</option>
-        <option value="ua">UA</option>
+        <option value="en" className="bg-white text-darkgreen">
+          EN
+        </option>
+        <option value="pl" className="bg-white text-darkgreen">
+          PL
+        </option>
+        <option value="ua" className="bg-white text-darkgreen">
+          UA
+        </option>
       </select>
     </div>
   );
