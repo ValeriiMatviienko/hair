@@ -6,7 +6,6 @@ import { ToastContainer } from "react-toastify";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
 import { getNavigationItems } from "./NavigationItem";
-import useContactForm from "@/app/hooks/useContactForm";
 import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "./NavigationItemComponent";
 import ContactForm from "../ContactForm/ContactForm";
@@ -19,7 +18,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const { showToastContainer } = useContactForm();
   const { activeLink, handleNavLinkClick } = useNavigation();
 
   const handleIconClick = useCallback(() => {
@@ -69,8 +67,8 @@ const Navbar = () => {
               </Drawer>
             ) : null}
           </div>
+          <ToastContainer className="z-100" />
         </div>
-        {showToastContainer ? <ToastContainer className="z-100" /> : null}
       </>
     </Disclosure>
   );

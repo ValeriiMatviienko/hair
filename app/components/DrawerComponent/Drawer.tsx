@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { DrawerProps } from "@/app/types/types";
 import LogoComponent from "../Navbar/LogoComponent";
@@ -12,6 +12,15 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
     },
     [setIsOpen]
   );
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   const mainClassName = `fixed overflow-hidden z-10 bg-black bg-opacity-25 inset-0 transform ease-in-out ${
     isOpen ? "opacity-100" : "opacity-0"

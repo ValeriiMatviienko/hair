@@ -58,7 +58,6 @@ const useContactForm = () => {
     setInputValues,
     handleSubmitForm,
     toggleModal,
-    showToastContainer,
   };
 };
 

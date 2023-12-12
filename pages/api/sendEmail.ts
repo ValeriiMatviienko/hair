@@ -23,13 +23,22 @@ export default async function EmailHandler(
       text: `Name: ${name}\nNumber: ${number}\nMessage: ${message}`,
     };
 
-    transporter.sendMail(mailOptions, (error, _info) => {
-      if (error) {
-        return res
+    try {
+      await transporter.sendMail(mailOptions);
+      res
+        .status(200)
+        .json({ success: true, message: "Email sent successfully" });
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(500).json({ success: false, error: error.message });
+      } else {
+        res
           .status(500)
-          .json({ success: false, error: error.toString() });
+          .json({ success: false, error: "An unknown error occurred" });
       }
-      res.status(200).json({ success: true, message: "Sent successfully" });
-    });
+    }
+  } else {
+    res.setHeader("Allow", ["POST"]);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
