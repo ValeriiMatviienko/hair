@@ -14,11 +14,21 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
   );
 
   useEffect(() => {
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+
     if (isOpen) {
+      // Prevent scrolling on iOS devices
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed"; // For iOS devices
+      window.addEventListener("touchmove", handleTouchMove, { passive: false });
     }
+
     return () => {
       document.body.style.overflow = "";
+      document.body.style.position = ""; // Reset for iOS devices
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, [isOpen]);
 
