@@ -1,7 +1,6 @@
 import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useCallback } from "react";
-import "react-toastify/dist/ReactToastify.css";
 import { ContactFormProps } from "@/app/types/types";
 import {
   EnvelopeIcon,
