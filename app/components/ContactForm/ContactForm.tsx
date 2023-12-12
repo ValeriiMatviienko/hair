@@ -85,7 +85,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                   >
                     {isOpen && <XMarkIcon className="w-6 h-6" />}
                   </button>
-                  <div className="max-w-screen-md px-4 py-8 mx-auto lg:py-8">
+                  <div className="max-w-screen-md px-4 py-6 mx-auto">
                     <div className="flex items-center justify-center flex-shrink-0">
                       <h1 className="text-xl font-semibold text-black sm:text-2xl">
                         {t("form_title")}

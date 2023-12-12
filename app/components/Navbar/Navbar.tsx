@@ -23,13 +23,9 @@ const Navbar = () => {
   const { activeLink, handleNavLinkClick } = useNavigation();
 
   const handleIconClick = useCallback(() => {
-    setIsOpen(true);
-    setMenuOpen(!menuOpen);
-    setMenuOpen(true);
-    setTimeout(() => {
-      setMenuOpen(false);
-    }, 300);
-  }, [menuOpen, setIsOpen, setMenuOpen]);
+    setIsOpen(!isOpen);
+    setMenuOpen((prevState) => !prevState);
+  }, [isOpen, setIsOpen, setMenuOpen]);
 
   return (
     <Disclosure as="nav" className="navbar">

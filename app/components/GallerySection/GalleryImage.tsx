@@ -1,10 +1,10 @@
 import { ImageInfo } from "@/app/types/types";
 
 export const GalleryImage: ImageInfo[] = [
-  {
-    src: "/images/sliderPicture1.webp",
-    alt: "example one",
-  },
+  // {
+  //   src: "/images/sliderPicture1.webp",
+  //   alt: "example one",
+  // },
   {
     src: "/images/sliderPicture2.webp",
     alt: "example two",
