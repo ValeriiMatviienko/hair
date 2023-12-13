@@ -29,7 +29,7 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
               navigationItems={navigationItems}
               activeLink={activeLink}
               handleNavLinkClick={handleNavLinkClick}
-              className="block px-4 py-4 mb-4 text-lg hover:text-darkgreen space-links"
+              className="block px-4 py-4 mb-4 text-lg hover:text-darkgreen"
             />
             <ContactButton
               onClick={handleContactClick}
