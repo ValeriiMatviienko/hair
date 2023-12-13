@@ -32,14 +32,6 @@ html:not([data-scroll="0"]) .navbar {
   letter-spacing: 0.5em;
 }
 
-.space-links {
-  transition: 0.3s;
-}
-
-.space-links:hover {
-  letter-spacing: 1px;
-}
-
 .w-340px {
   width: 80vw;
 }

@@ -14,22 +14,24 @@ const useNavigation = () => {
   );
 
   function smoothScroll(targetId: string) {
-    const targetElement = document.querySelector(targetId) as HTMLElement;
+    setTimeout(() => {
+      const targetElement = document.querySelector(targetId) as HTMLElement;
 
-    if (targetElement) {
-      const headerElement = document.querySelector(
-        ".navbar"
-      ) as HTMLElement | null;
-      const headerHeight = headerElement ? headerElement.offsetHeight : 0;
+      if (targetElement) {
+        const headerElement = document.querySelector(
+          ".navbar"
+        ) as HTMLElement | null;
+        const headerHeight = headerElement ? headerElement.offsetHeight : 0;
 
-      const targetPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = targetPosition - headerHeight;
+        const targetPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = targetPosition - headerHeight;
 
-      window.scrollTo({
-        top: offsetPosition + window.pageYOffset,
-        behavior: "smooth",
-      });
-    }
+        window.scrollTo({
+          top: offsetPosition + window.pageYOffset,
+          behavior: "smooth",
+        });
+      }
+    }, 150);
   }
 
   return { activeLink, setActiveLink, handleNavLinkClick };
