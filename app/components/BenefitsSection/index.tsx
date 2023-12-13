@@ -9,7 +9,7 @@ const BenefitsSection = () => {
 
   return (
     <section
-      className="px-4 mx-auto sm:px-6 sm:py-20 max-w-7xl"
+      className="px-4 py-12 mx-auto md:py-18 lg:px-8 max-w-7xl"
       id="benefits-section"
     >
       <Fade direction="up" delay={40} cascade damping={0.1} triggerOnce={true}>

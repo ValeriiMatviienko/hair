@@ -9,7 +9,7 @@ const ServiceSection = () => {
 
   return (
     <section
-      className="px-4 py-10 mx-auto sm:px-6 sm:py-20 max-w-7xl"
+      className="px-4 py-12 mx-auto md:py-18 lg:px-8 max-w-7xl"
       id="service-section"
     >
       <div className="mb-10 text-center sm:mb-14">
