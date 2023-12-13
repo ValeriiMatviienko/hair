@@ -10,13 +10,14 @@ export async function generateMetadata({
   params: { locale },
 }: GenerateMetadataParams) {
   const t = await getTranslations({ locale, namespace: "Index" });
+  const baseUrl = process.env.BASE_URL || "http://localhost:3000";
 
   return {
-    metadataBase: new URL("https://hairbyhanna.pl"),
+    metadataBase: new URL(baseUrl),
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: "/",
+      canonical: `${baseUrl}/${locale}`,
       languages: {
         "pl-PL": "/pl-PL",
         "uk-UA": "/uk-UA",
