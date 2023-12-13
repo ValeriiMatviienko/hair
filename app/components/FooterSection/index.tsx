@@ -6,7 +6,7 @@ const Footer = () => {
   const t = useTranslations("Index");
 
   return (
-    <div className="max-w-2xl px-4 pt-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
+    <div className="px-4 py-12 mx-auto md:py-18 lg:px-8 max-w-7xl">
       <div className="grid grid-cols-1 my-12 gap-y-10 sm:grid-cols-6 lg:grid-cols-12">
         <div className="col-span-full sm:col-span-6">
           <h2 className="mb-4 text-lg font-semibold text-center uppercase">
@@ -62,7 +62,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="items-center justify-between py-6 border-t md:flex border-t-bordertop">
+      <div className="items-center border-t">
         <h3 className="text-center text-black md:text-lg md:text-start">
           &quot;Copyright &copy; {currentYear} Hair by Hanna. All rights
           reserved.&quot;
