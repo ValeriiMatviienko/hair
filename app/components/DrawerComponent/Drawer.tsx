@@ -1,7 +1,9 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { DrawerProps } from "@/app/types/types";
 import LogoComponent from "../Navbar/LogoComponent";
+import useDocumentHeight from "@/app/hooks/useDocumentHeight";
+import useOnScreenKeyboardScrollFix from "@/app/hooks/useOnScreenKeyboardScrollFix";
 
 const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
   const handleClose = useCallback(
@@ -12,25 +14,8 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
     },
     [setIsOpen]
   );
-
-  useEffect(() => {
-    const handleTouchMove = (e: TouchEvent) => {
-      e.preventDefault();
-    };
-
-    if (isOpen) {
-      // Prevent scrolling on iOS devices
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed"; // For iOS devices
-      window.addEventListener("touchmove", handleTouchMove, { passive: false });
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-      document.body.style.position = ""; // Reset for iOS devices
-      window.removeEventListener("touchmove", handleTouchMove);
-    };
-  }, [isOpen]);
+  useOnScreenKeyboardScrollFix();
+  useDocumentHeight();
 
   const mainClassName = `fixed overflow-hidden z-10 bg-black bg-opacity-25 inset-0 transform ease-in-out ${
     isOpen ? "opacity-100" : "opacity-0"
