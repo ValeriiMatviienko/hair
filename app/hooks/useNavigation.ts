@@ -4,16 +4,7 @@ import { NavigationItemType } from "../types/types";
 const useNavigation = () => {
   const [activeLink, setActiveLink] = useState<string | null>(null);
 
-  const handleNavLinkClick = useCallback(
-    (event: React.MouseEvent<HTMLAnchorElement>, item: NavigationItemType) => {
-      event.preventDefault();
-      setActiveLink(item.name);
-      smoothScroll(item.href);
-    },
-    []
-  );
-
-  function smoothScroll(targetId: string) {
+  const smoothScroll = useCallback((targetId: string) => {
     setTimeout(() => {
       const targetElement = document.querySelector(targetId) as HTMLElement;
 
@@ -32,9 +23,18 @@ const useNavigation = () => {
         });
       }
     }, 150);
-  }
+  }, []);
 
-  return { activeLink, setActiveLink, handleNavLinkClick };
+  const handleNavLinkClick = useCallback(
+    (event: React.MouseEvent<HTMLAnchorElement>, item: NavigationItemType) => {
+      event.preventDefault();
+      setActiveLink(item.name);
+      smoothScroll(item.href);
+    },
+    [smoothScroll]
+  );
+
+  return { activeLink, handleNavLinkClick };
 };
 
 export default useNavigation;
