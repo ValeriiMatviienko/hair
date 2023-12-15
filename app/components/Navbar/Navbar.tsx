@@ -1,6 +1,5 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import Drawer from "../DrawerComponent/Drawer";
 import { useCallback, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import LanguageSelector from "../LanguageSelector";
@@ -9,21 +8,20 @@ import { getNavigationItems } from "./NavigationItem";
 import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "./NavigationItemComponent";
 import ContactForm from "../ContactForm/ContactForm";
-import DrawerData from "../DrawerComponent/Drawerdata";
 import LogoComponent from "./LogoComponent";
+import DrawerContainer from "../DrawerComponent/DrawerContainer";
 
 const Navbar = () => {
   const t = useTranslations("Index");
   const navigationItems = getNavigationItems(t);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
   const { activeLink, handleNavLinkClick } = useNavigation();
 
   const handleIconClick = useCallback(() => {
     setIsOpen(!isOpen);
-    setMenuOpen((prevState) => !prevState);
-  }, [isOpen, setIsOpen, setMenuOpen]);
+  }, [isOpen, setIsOpen]);
 
   return (
     <Disclosure as="nav" className="navbar">
@@ -55,17 +53,17 @@ const Navbar = () => {
             <div className="block xl:hidden">
               <Bars3Icon
                 className={`block w-9 h-9 md:w-12 md:h-12 ${
-                  menuOpen ? "click-scale-animation" : ""
+                  isOpen ? "click-scale-animation" : ""
                 }`}
                 aria-hidden="true"
                 onClick={handleIconClick}
               />
             </div>
-            {isOpen ? (
-              <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-                <DrawerData setIsContactFormOpen={setIsContactFormOpen} />
-              </Drawer>
-            ) : null}
+            <DrawerContainer
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              setIsContactFormOpen={setIsContactFormOpen}
+            />
           </div>
           <ToastContainer className="z-100" />
         </div>

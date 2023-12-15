@@ -5,24 +5,22 @@ const useNavigation = () => {
   const [activeLink, setActiveLink] = useState<string | null>(null);
 
   const smoothScroll = useCallback((targetId: string) => {
-    setTimeout(() => {
-      const targetElement = document.querySelector(targetId) as HTMLElement;
+    const targetElement = document.querySelector(targetId) as HTMLElement;
 
-      if (targetElement) {
-        const headerElement = document.querySelector(
-          ".navbar"
-        ) as HTMLElement | null;
-        const headerHeight = headerElement ? headerElement.offsetHeight : 0;
+    if (targetElement) {
+      const headerElement = document.querySelector(
+        ".navbar"
+      ) as HTMLElement | null;
+      const headerHeight = headerElement ? headerElement.offsetHeight : 0;
 
-        const targetPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = targetPosition - headerHeight;
+      const targetPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = targetPosition - headerHeight;
 
-        window.scrollTo({
-          top: offsetPosition + window.pageYOffset,
-          behavior: "smooth",
-        });
-      }
-    }, 150);
+      window.scrollTo({
+        top: offsetPosition + window.pageYOffset,
+        behavior: "smooth",
+      });
+    }
   }, []);
 
   const handleNavLinkClick = useCallback(

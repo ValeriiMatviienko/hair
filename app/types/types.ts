@@ -26,6 +26,11 @@ export interface DrawerProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
+export interface DrawerContainerProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  setIsContactFormOpen: (isOpen: boolean) => void;
+}
 export interface ContactFormProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
