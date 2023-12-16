@@ -21,7 +21,7 @@ export default async function EmailHandler(
       to: process.env.EMAIL,
       subject: "New message from Hair by Hanna",
       html: `
-    <h1>New Contact Form Submission</h1>
+    <h3>New Contact Form Submission</h3>
     <p><strong>Name:</strong> ${name}</p>
     <p><strong>Number:</strong> ${number}</p>
     <p><strong>Message:</strong></p>

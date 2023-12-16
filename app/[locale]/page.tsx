@@ -28,16 +28,22 @@ const BenefitsSection = dynamic(() => import("../components/BenefitsSection"), {
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <HeroSection />
-      <ServiceSection />
-      {/* <BenefitsSection /> */}
-      <GallerySection />
-      <PriceSection />
-      <FAQSection />
-      <FooterSection />
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <HeroSection />
+        <ServiceSection />
+        {/* <BenefitsSection /> */}
+        <GallerySection />
+        <PriceSection />
+        <FAQSection />
+      </main>
+      <footer>
+        <FooterSection />
+      </footer>
       <ScrollToTopButton />
-    </main>
+    </>
   );
 }

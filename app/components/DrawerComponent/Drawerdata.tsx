@@ -23,20 +23,18 @@ const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
   return (
     <div className="w-full max-w-sm mx-auto rounded-md">
       <div className="flex-1 py-1 ">
-        <div className="sm:block">
-          <div className="px-5 pt-2 pb-3">
-            <NavigationItemComponent
-              navigationItems={navigationItems}
-              activeLink={activeLink}
-              handleNavLinkClick={handleNavLinkClick}
-              className="block px-4 py-4 mb-4 text-lg hover:text-darkgreen"
-            />
-            <ContactButton
-              onClick={handleContactClick}
-              className="justify-center w-full mb-10 lg:px-8 navbutton"
-            />
-            <LanguageSelector id="drawerLanguageSelector" />
-          </div>
+        <div className="px-5 pt-2 pb-3">
+          <NavigationItemComponent
+            navigationItems={navigationItems}
+            activeLink={activeLink}
+            handleNavLinkClick={handleNavLinkClick}
+            className="block px-4 py-4 mb-4 text-lg hover:text-darkgreen"
+          />
+          <ContactButton
+            onClick={handleContactClick}
+            className="justify-center w-full mb-10 lg:px-8 navbutton"
+          />
+          <LanguageSelector id="drawerLanguageSelector" />
         </div>
       </div>
     </div>
