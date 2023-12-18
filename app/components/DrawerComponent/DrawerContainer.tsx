@@ -3,13 +3,13 @@ import DrawerData from "./Drawerdata";
 import { useNavigationContext } from "@/app/context/NavigationContext";
 
 const DrawerContainer = () => {
-  const { isOpen, setIsContactFormOpen } = useNavigationContext();
+  const { isOpen } = useNavigationContext();
 
   return (
     <>
       {isOpen ? (
         <Drawer>
-          <DrawerData setIsContactFormOpen={setIsContactFormOpen} />
+          <DrawerData />
         </Drawer>
       ) : null}
     </>

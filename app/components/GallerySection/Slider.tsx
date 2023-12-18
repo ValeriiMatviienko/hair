@@ -1,9 +1,9 @@
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { SliderProps } from "@/app/types/types";
 
-const Slider: FC<SliderProps> = ({ images }) => {
+const Slider = ({ images }: SliderProps) => {
   const length = images.length - 1;
   const [index, setIndex] = useState<number>(0);
   const [startX, setStartX] = useState<number>(0);
