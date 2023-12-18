@@ -9,7 +9,6 @@ import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "./NavigationItemComponent";
 import ContactForm from "../ContactForm/ContactForm";
 import LogoComponent from "./LogoComponent";
-import DrawerContainer from "../DrawerComponent/DrawerContainer";
 import { useNavigationContext } from "@/app/context/NavigationContext";
 
 const Navbar = () => {
@@ -55,7 +54,6 @@ const Navbar = () => {
                 onClick={handleIconClick}
               />
             </div>
-            <DrawerContainer />
           </div>
           <ToastContainer className="z-100" />
         </div>

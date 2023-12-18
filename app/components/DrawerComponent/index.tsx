@@ -1,3 +1,4 @@
+"use client";
 import Drawer from "./Drawer";
 import DrawerData from "./Drawerdata";
 import { useNavigationContext } from "@/app/context/NavigationContext";

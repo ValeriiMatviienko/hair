@@ -4,6 +4,9 @@ import ScrollToTopButton from "../components/ScrollToTopButton";
 const Navbar = dynamic(() => import("../components/Navbar"), {
   ssr: false,
 });
+const DrawerContainer = dynamic(() => import("../components/DrawerComponent"), {
+  ssr: false,
+});
 const HeroSection = dynamic(() => import("../components/HeroSection"), {
   ssr: false,
 });
@@ -30,6 +33,7 @@ export default function Home() {
   return (
     <main>
       <Navbar />
+      <DrawerContainer />
       <HeroSection />
       <ServiceSection />
       {/* <BenefitsSection /> */}
