@@ -1,6 +1,6 @@
 import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useCallback, useState } from "react";
+import { Fragment } from "react";
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -9,43 +9,21 @@ import {
 } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
 import ContactButton from "./ContactButton";
-import { useNavigationContext } from "@/app/context/NavigationContext";
 
 const ContactForm = () => {
-  const { isContactFormOpen, setIsContactFormOpen } = useNavigationContext();
   const t = useTranslations("Index");
-  const { inputValues, setInputValues, handleSubmitForm } = useContactForm();
-  const [isNumberValid, setIsNumberValid] = useState<boolean>(true);
+  const {
+    inputValues,
+    handleSubmitForm,
+    handleChange,
+    isDisabled,
+    handleFormSubmittion,
+    toggleModalOpen,
+    toggleModalClose,
+    isNumberValid,
+    isContactFormOpen,
+  } = useContactForm();
 
-  const handleChange = useCallback(
-    (e: { target: { name: string; value: string } }) => {
-      const { name, value } = e.target;
-      if (name === "numberInput") {
-        const isValid = /^\d*$/.test(value);
-        setIsNumberValid(isValid);
-        if (!isValid) return;
-      }
-      setInputValues((prevState) => ({ ...prevState, [name]: value }));
-    },
-    [setInputValues]
-  );
-
-  const isDisabled = Object.values(inputValues).some((value) => value === "");
-
-  const handleFormSubmittion = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      handleSubmitForm(setIsContactFormOpen);
-    },
-    [handleSubmitForm, setIsContactFormOpen]
-  );
-  const toggleModalOpen = useCallback(() => {
-    setIsContactFormOpen(true);
-  }, [setIsContactFormOpen]);
-
-  const toggleModalClose = useCallback(() => {
-    setIsContactFormOpen(false);
-  }, [setIsContactFormOpen]);
   return (
     <>
       <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
