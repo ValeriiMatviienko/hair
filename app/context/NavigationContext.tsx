@@ -5,13 +5,7 @@ import React, {
   useContext,
   useState,
 } from "react";
-
-interface NavigationContextType {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  isContactFormOpen: boolean;
-  setIsContactFormOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import { NavigationContextType } from "../types/types";
 
 const NavigationContext = createContext<NavigationContextType>({
   isOpen: false,

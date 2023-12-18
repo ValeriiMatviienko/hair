@@ -89,6 +89,8 @@
     "keywords": "pielęgnacja włosów Wrocław, wygładzanie keratynowe Wrocław, botoks na włosy Wrocław, nanoplastia, profesjonalny trycholog Wrocław, zabiegi na włosy, odnowa włosów, trycholog we Wrocławiu",
 
     "messageSent": "Wiadomość wysłana!",
-    "messageError": "Błąd wysyłania wiadomości. Proszę spróbować ponownie."
+    "messageError": "Błąd wysyłania wiadomości. Proszę spróbować ponownie.",
+
+    "form_number_tip": "Proszę używaj tylko cyfr."
   }
 }
