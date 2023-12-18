@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { toast } from "react-toastify";
 import { InputType, ToggleModalProps } from "../types/types";
 import { useTranslations } from "next-intl";
+import { useNavigationContext } from "../context/NavigationContext";
 
 const useContactForm = () => {
   const t = useTranslations("Index");
@@ -11,6 +12,7 @@ const useContactForm = () => {
     descriptionInput: "",
   });
   const [showToastContainer, setShowToastContainer] = useState<boolean>(false);
+  const { setIsContactFormOpen } = useNavigationContext();
 
   const resetInputs = useCallback(() => {
     setInputValues({
@@ -43,6 +45,7 @@ const useContactForm = () => {
       .then((_data) => {
         toast.success(t("messageSent"));
         setShowToastContainer(true);
+        setIsContactFormOpen(false);
       })
       .catch(() => {
         toast.error(t("messageError"));

@@ -12,8 +12,7 @@ import ContactButton from "./ContactButton";
 import { useNavigationContext } from "@/app/context/NavigationContext";
 
 const ContactForm = () => {
-  const { isContactFormOpen, setIsContactFormOpen, setIsOpen } =
-    useNavigationContext();
+  const { isContactFormOpen, setIsContactFormOpen } = useNavigationContext();
   const t = useTranslations("Index");
   const { inputValues, setInputValues, handleSubmitForm } = useContactForm();
 
@@ -30,9 +29,9 @@ const ContactForm = () => {
   const handleFormSubmittion = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      handleSubmitForm(setIsOpen);
+      handleSubmitForm(setIsContactFormOpen);
     },
-    [handleSubmitForm, setIsOpen]
+    [handleSubmitForm, setIsContactFormOpen]
   );
   const toggleModalOpen = useCallback(() => {
     setIsContactFormOpen(true);
