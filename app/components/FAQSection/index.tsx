@@ -3,8 +3,9 @@ import Accordion from "./Accordion";
 import { Fade } from "react-awesome-reveal";
 import { getFAQs } from "./FAQItem";
 import { useTranslations } from "next-intl";
+import { FC } from "react";
 
-const FAQSection: React.FC = () => {
+const FAQSection: FC = () => {
   const t = useTranslations("Index");
   const faqs = getFAQs(t);
 

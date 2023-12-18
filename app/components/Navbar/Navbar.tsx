@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { ToastContainer } from "react-toastify";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
@@ -10,13 +10,12 @@ import NavigationItemComponent from "./NavigationItemComponent";
 import ContactForm from "../ContactForm/ContactForm";
 import LogoComponent from "./LogoComponent";
 import DrawerContainer from "../DrawerComponent/DrawerContainer";
+import { useNavigationContext } from "@/app/context/NavigationContext";
 
 const Navbar = () => {
   const t = useTranslations("Index");
   const navigationItems = getNavigationItems(t);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isContactFormOpen, setIsContactFormOpen] = useState<boolean>(false);
-
+  const { isOpen, setIsOpen } = useNavigationContext();
   const { activeLink, handleNavLinkClick } = useNavigation();
 
   const handleIconClick = useCallback(() => {
@@ -42,10 +41,7 @@ const Navbar = () => {
               </div>
               <div className="hidden gap-6 xl:flex">
                 <div className="flex items-center gap-4">
-                  <ContactForm
-                    isOpen={isContactFormOpen}
-                    setIsOpen={setIsContactFormOpen}
-                  />
+                  <ContactForm />
                   <LanguageSelector id="navbarLanguageSelector" />
                 </div>
               </div>
@@ -59,11 +55,7 @@ const Navbar = () => {
                 onClick={handleIconClick}
               />
             </div>
-            <DrawerContainer
-              isOpen={isOpen}
-              setIsOpen={setIsOpen}
-              setIsContactFormOpen={setIsContactFormOpen}
-            />
+            <DrawerContainer />
           </div>
           <ToastContainer className="z-100" />
         </div>

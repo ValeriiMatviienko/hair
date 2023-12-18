@@ -1,8 +1,8 @@
 "use client";
 import Navbar from "./Navbar";
-import React, { useEffect } from "react";
+import React, { useEffect, FC } from "react";
 
-const Navbarin: React.FC = () => {
+const Navbarin: FC = () => {
   useEffect(() => {
     // The debounce function receives our function as a parameter
     const debounce = (fn: Function) => {

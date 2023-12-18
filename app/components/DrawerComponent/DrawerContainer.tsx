@@ -1,16 +1,14 @@
-import { DrawerContainerProps } from "@/app/types/types";
 import Drawer from "./Drawer";
 import DrawerData from "./Drawerdata";
+import { useNavigationContext } from "@/app/context/NavigationContext";
 
-const DrawerContainer = ({
-  isOpen,
-  setIsOpen,
-  setIsContactFormOpen,
-}: DrawerContainerProps) => {
+const DrawerContainer = () => {
+  const { isOpen, setIsContactFormOpen } = useNavigationContext();
+
   return (
     <>
       {isOpen ? (
-        <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+        <Drawer>
           <DrawerData setIsContactFormOpen={setIsContactFormOpen} />
         </Drawer>
       ) : null}

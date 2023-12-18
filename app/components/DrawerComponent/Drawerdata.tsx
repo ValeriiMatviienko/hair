@@ -1,13 +1,14 @@
 import React, { useCallback } from "react";
-import { DrowerDataProps } from "@/app/types/types";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
 import useNavigation from "@/app/hooks/useNavigation";
 import ContactButton from "../ContactForm/ContactButton";
 import NavigationItemComponent from "../Navbar/NavigationItemComponent";
 import { getNavigationItems } from "../Navbar/NavigationItem";
+import { useNavigationContext } from "@/app/context/NavigationContext";
 
-const DrawerData = ({ setIsContactFormOpen }: DrowerDataProps) => {
+const DrawerData = () => {
+  const { setIsContactFormOpen } = useNavigationContext();
   const t = useTranslations("Index");
   const navigationItems = getNavigationItems(t);
   const { activeLink, handleNavLinkClick } = useNavigation();

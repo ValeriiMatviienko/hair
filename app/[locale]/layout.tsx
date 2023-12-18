@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { GenerateMetadataParams, RootLayoutProps } from "../types/types";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { NavigationProvider } from "../context/NavigationContext";
 
 export async function generateMetadata({
   params: { locale },
@@ -56,9 +57,11 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <NextIntlClientProvider locale={locale} messages={messages}>
-        <body>{children}</body>
-      </NextIntlClientProvider>
+      <NavigationProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <body>{children}</body>
+        </NextIntlClientProvider>
+      </NavigationProvider>
     </html>
   );
 }

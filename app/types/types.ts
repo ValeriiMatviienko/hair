@@ -18,24 +18,9 @@ export type ProductPrice = {
   longHairPrice: number;
 };
 export type TranslationFunction = (key: string) => string;
-export interface DrowerDataProps {
-  setIsContactFormOpen: (isOpen: boolean) => void;
-}
 export interface DrawerProps {
   children: ReactNode;
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
 }
-export interface DrawerContainerProps {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-  setIsContactFormOpen: (isOpen: boolean) => void;
-}
-export interface ContactFormProps {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-}
-
 export type ImageInfo = {
   src: string;
   alt: string;

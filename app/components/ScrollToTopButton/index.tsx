@@ -1,8 +1,8 @@
 "use client";
 import { ChevronUpIcon } from "@heroicons/react/24/outline";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, FC } from "react";
 
-const ScrollToTopButton: React.FC = () => {
+const ScrollToTopButton: FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {

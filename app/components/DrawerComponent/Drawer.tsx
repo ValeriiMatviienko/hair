@@ -4,8 +4,10 @@ import { DrawerProps } from "@/app/types/types";
 import LogoComponent from "../Navbar/LogoComponent";
 import useDocumentHeight from "@/app/hooks/useDocumentHeight";
 import useOnScreenKeyboardScrollFix from "@/app/hooks/useOnScreenKeyboardScrollFix";
+import { useNavigationContext } from "@/app/context/NavigationContext";
 
-const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
+const Drawer = ({ children }: DrawerProps) => {
+  const { isOpen, setIsOpen } = useNavigationContext();
   const handleClose = useCallback(
     (event: React.MouseEvent) => {
       event.preventDefault();

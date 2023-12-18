@@ -1,8 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-export const FacebookIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
-  props
-) => (
+export const FacebookIcon: FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
     width="9"
     height="14"
@@ -18,9 +16,7 @@ export const FacebookIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
   </svg>
 );
 
-export const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
-  props
-) => (
+export const InstagramIcon: FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
     width="18"
     height="18"
@@ -53,7 +49,7 @@ export const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (
   </svg>
 );
 
-export const TikTokIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+export const TikTokIcon: FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
     width="24"
     height="24"

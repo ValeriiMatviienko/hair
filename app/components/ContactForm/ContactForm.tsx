@@ -1,7 +1,6 @@
 import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useCallback } from "react";
-import { ContactFormProps } from "@/app/types/types";
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -10,11 +9,13 @@ import {
 } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
 import ContactButton from "./ContactButton";
+import { useNavigationContext } from "@/app/context/NavigationContext";
 
-const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
+const ContactForm = () => {
+  const { isContactFormOpen, setIsContactFormOpen, setIsOpen } =
+    useNavigationContext();
   const t = useTranslations("Index");
-  const { inputValues, setInputValues, handleSubmitForm, toggleModal } =
-    useContactForm();
+  const { inputValues, setInputValues, handleSubmitForm } = useContactForm();
 
   const handleChange = useCallback(
     (e: { target: { name: string; value: string } }) => {
@@ -34,12 +35,12 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
     [handleSubmitForm, setIsOpen]
   );
   const toggleModalOpen = useCallback(() => {
-    toggleModal({ open: true, setIsOpen });
-  }, [setIsOpen, toggleModal]);
+    setIsContactFormOpen(true);
+  }, [setIsContactFormOpen]);
 
   const toggleModalClose = useCallback(() => {
-    toggleModal({ open: false, setIsOpen });
-  }, [setIsOpen, toggleModal]);
+    setIsContactFormOpen(false);
+  }, [setIsContactFormOpen]);
   return (
     <>
       <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
@@ -51,7 +52,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
         </div>
       </div>
 
-      <Transition appear show={isOpen} as={Fragment}>
+      <Transition appear show={isContactFormOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={toggleModalClose}>
           <Transition.Child
             as={Fragment}
@@ -82,7 +83,7 @@ const ContactForm = ({ isOpen, setIsOpen }: ContactFormProps) => {
                     className="absolute p-2 rounded-full top-3 right-3 hover:bg-gray-200"
                     aria-label="Close modal"
                   >
-                    {isOpen && <XMarkIcon className="w-6 h-6" />}
+                    {isContactFormOpen && <XMarkIcon className="w-6 h-6" />}
                   </button>
                   <div className="px-4 py-6 mx-auto">
                     <div className="flex items-center justify-center flex-shrink-0">
