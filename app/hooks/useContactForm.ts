@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { toast } from "react-toastify";
-import { InputType, ToggleModalProps } from "../types/types";
+import { InputType } from "../types/types";
 import { useTranslations } from "next-intl";
 import { useNavigationContext } from "../context/NavigationContext";
 
@@ -22,41 +22,37 @@ const useContactForm = () => {
     });
   }, []);
 
-  const toggleModal = useCallback(
-    ({ open, setIsOpen }: ToggleModalProps) => {
-      !open && resetInputs();
-      setIsOpen(open);
-    },
-    [resetInputs]
-  );
+  const toggleModalOpen = useCallback(() => {
+    setIsContactFormOpen(true);
+  }, [setIsContactFormOpen]);
 
-  const handleSubmitForm = useCallback(
-    (setIsOpen: (isOpen: boolean) => void) => {
-      fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: inputValues.nameInput,
-          number: inputValues.numberInput,
-          message: inputValues.descriptionInput,
-        }),
+  const toggleModalClose = useCallback(() => {
+    resetInputs();
+    setIsNumberValid(true);
+    setIsContactFormOpen(false);
+  }, [resetInputs, setIsContactFormOpen]);
+
+  const handleSubmitForm = useCallback(() => {
+    fetch("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: inputValues.nameInput,
+        number: inputValues.numberInput,
+        message: inputValues.descriptionInput,
+      }),
+    })
+      .then((response) => response.json())
+      .then((_data) => {
+        toast.success(t("messageSent"));
+        toggleModalClose();
       })
-        .then((response) => response.json())
-        .then((_data) => {
-          toast.success(t("messageSent"));
-          setIsContactFormOpen(false);
-        })
-        .catch(() => {
-          toast.error(t("messageError"));
-        });
-
-      resetInputs();
-      toggleModal({ open: false, setIsOpen });
-    },
-    [inputValues, resetInputs, setIsContactFormOpen, t, toggleModal]
-  );
+      .catch(() => {
+        toast.error(t("messageError"));
+      });
+  }, [inputValues, toggleModalClose, t]);
 
   const handleChange = useCallback(
     (e: { target: { name: string; value: string } }) => {
@@ -76,20 +72,11 @@ const useContactForm = () => {
   const handleFormSubmittion = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      handleSubmitForm(setIsContactFormOpen);
+      handleSubmitForm();
+      toggleModalClose();
     },
-    [handleSubmitForm, setIsContactFormOpen]
+    [handleSubmitForm, toggleModalClose]
   );
-
-  const toggleModalOpen = useCallback(() => {
-    setIsContactFormOpen(true);
-  }, [setIsContactFormOpen]);
-
-  const toggleModalClose = useCallback(() => {
-    resetInputs();
-    setIsNumberValid(true);
-    setIsContactFormOpen(false);
-  }, [resetInputs, setIsContactFormOpen]);
 
   return {
     inputValues,
