@@ -17,6 +17,7 @@ module.exports = {
       softgreen: "#3F695C",
       mutedgreen: "#a8d5c6",
       softgray: "#f0f0f0",
+      warning: "#ff4545",
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],

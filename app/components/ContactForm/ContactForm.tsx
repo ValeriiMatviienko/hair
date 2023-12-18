@@ -1,6 +1,6 @@
 import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useCallback } from "react";
+import { Fragment, useCallback, useState } from "react";
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -15,10 +15,16 @@ const ContactForm = () => {
   const { isContactFormOpen, setIsContactFormOpen } = useNavigationContext();
   const t = useTranslations("Index");
   const { inputValues, setInputValues, handleSubmitForm } = useContactForm();
+  const [isNumberValid, setIsNumberValid] = useState<boolean>(true);
 
   const handleChange = useCallback(
     (e: { target: { name: string; value: string } }) => {
       const { name, value } = e.target;
+      if (name === "numberInput") {
+        const isValid = /^\d*$/.test(value);
+        setIsNumberValid(isValid);
+        if (!isValid) return;
+      }
       setInputValues((prevState) => ({ ...prevState, [name]: value }));
     },
     [setInputValues]
@@ -112,6 +118,7 @@ const ContactForm = () => {
                           value={inputValues.nameInput}
                           onChange={handleChange}
                           type="text"
+                          maxLength={50}
                           autoComplete="current-password"
                           required
                           className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
@@ -132,11 +139,17 @@ const ContactForm = () => {
                           value={inputValues.numberInput}
                           onChange={handleChange}
                           type="tel"
+                          maxLength={20}
                           autoComplete="current-password"
                           required
                           className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"
                           placeholder={t("form_number_placeholder")}
                         />
+                        {!isNumberValid && (
+                          <p className="mt-1 text-xs text-warning">
+                            {t("form_number_tip")}
+                          </p>
+                        )}
                       </div>
                       <div className="sm:col-span-2">
                         <label
@@ -149,6 +162,7 @@ const ContactForm = () => {
                         <textarea
                           id="message"
                           name="descriptionInput"
+                          maxLength={600}
                           value={inputValues.descriptionInput}
                           onChange={handleChange}
                           className="relative block w-full px-3 py-2 text-black border rounded-md appearance-none focus:z-10 focus:outline-none sm:text-sm"

@@ -89,6 +89,8 @@
     "keywords": "hair care Wroclaw, keratin straightening Wroclaw, hair botox Wroclaw, nanoplastia treatment, professional trichologist Wroclaw, hair treatment, hair restoration, hair beauty, trichologist in Wroclaw",
 
     "messageSent": "Message sent!",
-    "messageError": "Error sending the message. Please try again."
+    "messageError": "Error sending the message. Please try again.",
+
+    "form_number_tip": "Please enter only numbers."
   }
 }

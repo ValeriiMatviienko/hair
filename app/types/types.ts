@@ -83,3 +83,9 @@ export type ContactButtonProps = {
   onClick: (e: React.MouseEvent) => void;
   className?: string;
 };
+export interface NavigationContextType {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isContactFormOpen: boolean;
+  setIsContactFormOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
