@@ -23,7 +23,8 @@ const LanguageSelector = ({ id }: LanguageSelectorProps) => {
   }, [pathname, router]);
 
   const handleLanguageChange = useCallback(
-    (newLocale: string) => {
+    (e: React.MouseEvent<HTMLDivElement>, newLocale: string) => {
+      e.preventDefault();
       router.push(pathname, { locale: newLocale });
       setSelectedLocale(newLocale);
       localStorage.setItem("selectedLocale", newLocale);
@@ -57,7 +58,7 @@ const LanguageSelector = ({ id }: LanguageSelectorProps) => {
             <div
               key={locale}
               className="px-4 py-2 cursor-pointer hover:bg-softgray text-darkgreen"
-              onClick={() => handleLanguageChange(locale)}
+              onClick={(e) => handleLanguageChange(e, locale)}
             >
               {locale.toUpperCase()}
             </div>
