@@ -16,16 +16,8 @@ body {
   user-select: none;
 }
 
-html:not([data-scroll="0"]) .navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-blend-mode: overlay;
-  background-color: #fafafa;
-  opacity: 1;
+.navbar {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  transition: 0.4s linear;
-  z-index: 1;
 }
 
 .ls-51 {
