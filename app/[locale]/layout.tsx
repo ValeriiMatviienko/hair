@@ -68,9 +68,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <NavigationProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ToastProvider>
-            <body>{children}</body>
-          </ToastProvider>
+          <body>
+            <ToastProvider>{children}</ToastProvider>
+          </body>
         </NextIntlClientProvider>
       </NavigationProvider>
     </html>
