@@ -26,7 +26,13 @@ export async function generateMetadata({
       },
     },
     keywords: t("keywords").split(","),
-    author: "Valerii Matviienko",
+    creator: "Valerii Matviienko",
+    authors: [
+      {
+        name: "Hanna Matviienko",
+        url: "https://www.instagram.com/hair.by.hanna.wroclaw/",
+      },
+    ],
     copyright: "Hair by Hanna",
     robots: {
       index: true,
@@ -41,6 +47,9 @@ export async function generateMetadata({
         "max-snippet": -1,
       },
     },
+    viewport: "width=device-width, initial-scale=1",
+    referrer: "origin",
+    category: "Beauty",
   };
 }
 
