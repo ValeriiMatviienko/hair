@@ -95,3 +95,9 @@ body {
 .nav-link:hover::after {
   transform: translateX(0);
 }
+@media (hover: hover) {
+  button:hover {
+    background-color: #3f695c;
+    opacity: 0.8;
+  }
+}

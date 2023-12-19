@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-page-custom-font */
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { notFound } from "next/navigation";
@@ -6,6 +5,7 @@ import { GenerateMetadataParams, RootLayoutProps } from "../types/types";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { NavigationProvider } from "../context/NavigationContext";
+import ToastProvider from "../context/ToastProvider";
 
 export async function generateMetadata({
   params: { locale },
@@ -68,7 +68,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <NavigationProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <body>{children}</body>
+          <ToastProvider>
+            <body>{children}</body>
+          </ToastProvider>
         </NextIntlClientProvider>
       </NavigationProvider>
     </html>
