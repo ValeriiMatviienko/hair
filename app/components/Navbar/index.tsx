@@ -1,46 +1,66 @@
 "use client";
-import Navbar from "./Navbar";
-import React, { useEffect, FC } from "react";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { useCallback } from "react";
+import { ToastContainer } from "react-toastify";
+import LanguageSelector from "../LanguageSelector";
+import { useTranslations } from "next-intl";
+import { getNavigationItems } from "./NavigationItem";
+import useNavigation from "@/app/hooks/useNavigation";
+import NavigationItemComponent from "./NavigationItemComponent";
+import ContactForm from "../ContactForm/ContactForm";
+import LogoComponent from "./LogoComponent";
+import { useNavigationContext } from "@/app/context/NavigationContext";
 
-const Navbarin: FC = () => {
-  useEffect(() => {
-    // The debounce function receives our function as a parameter
-    const debounce = (fn: Function) => {
-      // This holds the requestAnimationFrame reference, so we can cancel it if we wish
-      let frame: number;
-      // The debounce function returns a new function that can receive a variable number of arguments
-      return (...params: any[]) => {
-        // If the frame variable has been defined, clear it now, and queue for next frame
-        if (frame) {
-          cancelAnimationFrame(frame);
-        }
-        // Queue our function call for the next frame
-        frame = requestAnimationFrame(() => {
-          // Call our function and pass any params we received
-          fn(...params);
-        });
-      };
-    };
+const Navbar = () => {
+  const t = useTranslations("Index");
+  const navigationItems = getNavigationItems(t);
+  const { isOpen, setIsOpen } = useNavigationContext();
+  const { activeLink, handleNavLinkClick } = useNavigation();
 
-    // Reads out the scroll position and stores it in the data attribute
-    // so we can use it in our stylesheets
-    const storeScroll = () => {
-      document.documentElement.dataset.scroll = window.scrollY.toString();
-    };
+  const handleIconClick = useCallback(() => {
+    setIsOpen(!isOpen);
+  }, [isOpen, setIsOpen]);
 
-    // Listen for new scroll events, here we debounce our `storeScroll` function
-    document.addEventListener("scroll", debounce(storeScroll), {
-      passive: true,
-    });
-
-    // Update scroll position for first time
-    storeScroll();
-  }, []);
   return (
-    <>
-      <Navbar />
-    </>
+    <Disclosure as="nav" className="sticky top-0 z-10 bg-white navbar">
+      <>
+        <div className="p-4 mx-auto max-w-screen-2xl md:p-8">
+          <div className="flex items-center">
+            <div className="flex items-center justify-between flex-1">
+              <LogoComponent />
+              <div className="items-center hidden xl:flex">
+                <div className="flex space-x-4">
+                  <NavigationItemComponent
+                    navigationItems={navigationItems}
+                    activeLink={activeLink}
+                    handleNavLinkClick={handleNavLinkClick}
+                    className="px-2 py-4 text-lg nav-link sm:text-xl"
+                  />
+                </div>
+              </div>
+              <div className="hidden gap-6 xl:flex">
+                <div className="flex items-center gap-4">
+                  <ContactForm />
+                  <LanguageSelector id="navbarLanguageSelector" />
+                </div>
+              </div>
+            </div>
+            <div className="block xl:hidden">
+              <Bars3Icon
+                className={`block w-9 h-9 md:w-12 md:h-12 ${
+                  isOpen ? "click-scale-animation" : ""
+                }`}
+                aria-hidden="true"
+                onClick={handleIconClick}
+              />
+            </div>
+          </div>
+          <ToastContainer className="z-100" />
+        </div>
+      </>
+    </Disclosure>
   );
 };
 
-export default Navbarin;
+export default Navbar;

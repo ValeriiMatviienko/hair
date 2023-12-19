@@ -21,26 +21,26 @@ const PriceSection = () => {
       </Fade>
       <Fade direction={"up"} delay={40} cascade damping={0.1} triggerOnce>
         <table className="w-full text-sm text-left text-black md:text-lg">
-          <thead className="text-black uppercase ">
+          <thead className="text-black uppercase">
             <tr>
-              <th scope="col" className="px-3 py-3 text-left lg:text-xl">
+              <th scope="col" className="px-1 py-2 text-left lg:text-xl">
                 {t("product_type")}
               </th>
               <th
                 scope="col"
-                className="px-3 py-3 text-lg text-center lg:text-xl"
+                className="px-1 py-2 text-lg text-center lg:text-xl"
               >
                 {t("short_hair")}
               </th>
               <th
                 scope="col"
-                className="px-3 py-3 text-lg text-center lg:text-xl"
+                className="px-1 py-2 text-lg text-center lg:text-xl"
               >
                 {t("mid_hair")}
               </th>
               <th
                 scope="col"
-                className="px-3 py-3 text-lg text-center lg:text-xl"
+                className="px-1 py-2 text-lg text-center lg:text-xl"
               >
                 {t("long_hair")}
               </th>
@@ -48,17 +48,17 @@ const PriceSection = () => {
           </thead>
           <tbody>
             {productList.map((product, index) => (
-              <tr key={index} className="border-b ">
-                <td className="px-3 py-3 text-left uppercase s lg:text-xl">
+              <tr key={index} className="border-b">
+                <td className="px-1 py-3 text-left uppercase lg:text-xl">
                   {product.name}
                 </td>
-                <td className="px-2 py-3 text-lg text-center md:text-2xl">
+                <td className="px-1 py-3 text-lg text-center md:text-2xl">
                   {`${product.shortHairPrice} zł`}
                 </td>
-                <td className="px-2 py-3 text-lg text-center md:text-2xl">
+                <td className="px-1 py-3 text-lg text-center md:text-2xl">
                   {`${product.midHairPrice} zł`}
                 </td>
-                <td className="px-2 py-3 text-lg text-center md:text-2xl">
+                <td className="px-1 py-3 text-lg text-center md:text-2xl">
                   {`${product.longHairPrice} zł`}
                 </td>
               </tr>
