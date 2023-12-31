@@ -66,7 +66,13 @@
     "price_keratine": "Keratine",
     "price_botox": "Botox",
     "price_nanoplastia": "Nanoplastia",
-    "price_haircut": "Haircut",
+
+    "dodatki_title": "Додатково",
+    "dodatki_prices": "Ціна",
+    "bio_ampoule": "Біо-ампулка проти випадіння волосся",
+    "scalp_peeling": "Трихологічний пілінг шкіри голови",
+    "hair_trimming": "Стрижка кінчиків",
+    "sos_treatment": "SOS treatment",
 
     "faq_title": "FAQ",
     "faq_subtitle": "Відповіді на ваші запитання",

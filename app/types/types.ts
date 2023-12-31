@@ -92,3 +92,7 @@ export interface NavigationContextType {
 export interface ToastProviderProps {
   children: React.ReactNode;
 }
+export type AdditionalService = {
+  name: string;
+  price: number;
+};

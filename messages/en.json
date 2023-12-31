@@ -66,7 +66,13 @@
     "price_keratine": "Keratine",
     "price_botox": "Botox",
     "price_nanoplastia": "Nanoplastia",
-    "price_haircut": "Haircut",
+
+    "dodatki_title": "Extra",
+    "dodatki_prices": "Price",
+    "bio_ampoule": "Bio-ampoule against hair loss",
+    "scalp_peeling": "Trichological scalp scrub",
+    "hair_trimming": "Haircut",
+    "sos_treatment": "SOS treatment",
 
     "faq_title": "FAQ",
     "faq_subtitle": "Answers to your questions",

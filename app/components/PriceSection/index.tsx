@@ -1,11 +1,12 @@
 "use client";
 import { Fade } from "react-awesome-reveal";
-import { getProductPrices } from "./ProductPriceItems";
+import { getAdditionalServices, getProductPrices } from "./ProductPriceItems";
 import { useTranslations } from "next-intl";
 
 const PriceSection = () => {
   const t = useTranslations("Index");
   const productList = getProductPrices(t);
+  const additionalServices = getAdditionalServices(t);
 
   return (
     <section
@@ -54,6 +55,35 @@ const PriceSection = () => {
                 </td>
                 <td className="px-1 py-3 text-lg text-center md:text-2xl">
                   {`${product.longHairPrice}`}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Fade>
+      <Fade direction={"up"} delay={40} cascade damping={0.1} triggerOnce>
+        <table className="w-full mt-10 text-sm text-left text-black md:text-lg">
+          <thead className="text-black">
+            <tr>
+              <th
+                scope="col"
+                className="px-1 py-2 text-left uppercase lg:text-xl"
+              >
+                {t("dodatki_title")}
+              </th>
+              <th scope="col" className="px-1 py-2 text-center lg:text-xl">
+                {t("dodatki_prices")}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {additionalServices.map((service, index) => (
+              <tr key={index} className="border-b">
+                <td className="px-1 py-3 text-left uppercase lg:text-xl">
+                  {service.name}
+                </td>
+                <td className="px-1 py-3 text-lg text-center md:text-2xl">
+                  {`${service.price}`}
                 </td>
               </tr>
             ))}
