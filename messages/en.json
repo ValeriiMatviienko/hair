@@ -21,7 +21,7 @@
     "hero_title": "Welcome to my world",
     "hero_description": "I am Hanna, your future hair care expert with 6 years of experience\n\nI specialise in the following procedures: keratin straightening, nanoplasty and Botox. I have been teaching others for 3 years.\n\nAlso I provide trichological consultations and solve problems with hair loss.\n\nI will open you the world of beautiful and healthy hair.",
 
-    "service_section_title": "Servives",
+    "service_section_title": "Services",
     "service_section_subtitle": "Learn the advantages of various hair treatments",
     "service_title_1": "Keratin straightening",
     "service_description_1": "A treatment that transforms curly and fluffy hair into beautiful, smooth and incredibly shiny hair. You won't need a flat iron anymore because your hair will look perfect after blow-drying. Even in the wettest weather, whether it's autumn in Poland or a holiday in the tropics, your hair will always be smooth.\n\nEffect: 4 - 6 months.\nDuration: 2 - 4 hours.",
@@ -53,20 +53,26 @@
     "benefit_botox_description2": "",
     "benefit_botox_subtitle3": "",
     "benefit_botox_description3": "",
-    "benefits_conclusion": "Each of these treatments offers unique benefits, and the best choice will depend on an individual's hair type, condition, and desired results. It's always advisable to consult with a professional hairstylist before undergoing any treatment to ensure it's suitable for one's specific hair needs.",
+    "benefits_conclusion": "Each of these procedures has certain advantages, and to choose the right one for your hair, contact me and I will answer all your questions.",
 
     "gallery_title": "Gallery",
     "gallery_subtitle": "Gallery of my latest works",
 
     "price_section_title": "Prices",
-    "product_type": "Product",
-    "short_hair": "25cm",
-    "mid_hair": "45cm",
-    "long_hair": "65cm",
+    "product_type": "Service",
+    "short_hair": "Shoulder",
+    "mid_hair": "Mid-back",
+    "long_hair": "Waist",
     "price_keratine": "Keratine",
     "price_botox": "Botox",
     "price_nanoplastia": "Nanoplastia",
-    "price_haircut": "Haircut",
+
+    "dodatki_title": "Extra",
+    "dodatki_prices": "Price",
+    "bio_ampoule": "Bio-ampoule against hair loss",
+    "scalp_peeling": "Trichological scalp scrub",
+    "hair_trimming": "Haircut",
+    "sos_treatment": "SOS treatment",
 
     "faq_title": "FAQ",
     "faq_subtitle": "Answers to your questions",
@@ -91,6 +97,8 @@
     "messageSent": "Message sent!",
     "messageError": "Error sending the message. Please try again.",
 
-    "form_number_tip": "Please enter only numbers."
+    "form_number_tip": "Please enter only numbers.",
+
+    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.35689438791!2d17.054840199999997!3d51.0834207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc2ed9db2820d%3A0x600a19542516804!2sal.%20Armii%20Krajowej%2048%2C%2050-505%20Wroc%C5%82aw%2C%20Poland!5e0!3m2!1sen!2sde!4v1702980639982!5m2!1sen!2sde"
   }
 }

@@ -2,7 +2,6 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useCallback } from "react";
-import { ToastContainer } from "react-toastify";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
 import { getNavigationItems } from "./NavigationItem";
@@ -56,7 +55,6 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <ToastContainer className="z-100" />
         </div>
       </>
     </Disclosure>

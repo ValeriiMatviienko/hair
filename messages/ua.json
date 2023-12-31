@@ -53,20 +53,26 @@
     "benefit_botox_description2": "",
     "benefit_botox_subtitle3": "",
     "benefit_botox_description3": "",
-    "benefits_conclusion": "Кожна з цих процедур пропонує унікальні переваги, і найкращий вибір залежить від типу волосся, стану та бажаних результатів. Завжди бажано проконсультуватися з професіоналом перед проведенням будь-якої процедури, щоб переконатися, що вона підходить для конкретних потреб вашого волосся.",
+    "benefits_conclusion": "Кожна з цих процедур має певні переваги і щоб обрати саме те, що пасуватиме для твого волосся - сконтактуй зі мною і я відповім на всі твої питання.",
 
     "gallery_title": "Галерея",
     "gallery_subtitle": "Галерея моїх останніх робіт",
 
     "price_section_title": "Ціни",
-    "product_type": "Продукт",
-    "short_hair": "25cm",
-    "mid_hair": "45cm",
-    "long_hair": "65cm",
+    "product_type": "Послуга",
+    "short_hair": "До плечей",
+    "mid_hair": "До лопаток",
+    "long_hair": "До пояса",
     "price_keratine": "Keratine",
     "price_botox": "Botox",
     "price_nanoplastia": "Nanoplastia",
-    "price_haircut": "Haircut",
+
+    "dodatki_title": "Додатково",
+    "dodatki_prices": "Ціна",
+    "bio_ampoule": "Біо-ампулка проти випадіння волосся",
+    "scalp_peeling": "Трихологічний пілінг шкіри голови",
+    "hair_trimming": "Стрижка кінчиків",
+    "sos_treatment": "SOS treatment",
 
     "faq_title": "FAQ",
     "faq_subtitle": "Відповіді на ваші запитання",
@@ -91,6 +97,8 @@
     "messageSent": "Повідомлення відправлено!",
     "messageError": "Помилка при відправленні повідомлення. Будь ласка, спробуйте ще раз.",
 
-    "form_number_tip": "Будь ласка, вводьте тільки цифри."
+    "form_number_tip": "Будь ласка, вводьте тільки цифри.",
+
+    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.35689438791!2d17.054840199999997!3d51.0834207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc2ed9db2820d%3A0x600a19542516804!2zYWxlamEgQXJtaWkgS3Jham93ZWogNDgsIDUwLTUwNSBXcm9jxYJhdywg0J_QvtC70YzRidCw!5e0!3m2!1suk!2sde!4v1695216454566!5m2!1suk!2sde"
   }
 }

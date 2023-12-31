@@ -1,18 +1,17 @@
-"use client";
 import { useState, useEffect, useCallback } from "react";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { LanguageSelectorProps } from "@/app/types/types";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 
 const locales = ["en", "pl", "ua"] as const;
-/** Create the shared navigation instance */
 const { useRouter, usePathname } = createSharedPathnamesNavigation({ locales });
 
 const LanguageSelector = ({ id }: LanguageSelectorProps) => {
   const pathname = usePathname();
   const router = useRouter();
   const [selectedLocale, setSelectedLocale] = useState<string>("pl");
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
-  /** On component mount, get saved locale from localStorage */
   useEffect(() => {
     const savedLocale = localStorage.getItem("selectedLocale");
     if (savedLocale) {
@@ -24,38 +23,48 @@ const LanguageSelector = ({ id }: LanguageSelectorProps) => {
   }, [pathname, router]);
 
   const handleLanguageChange = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      const newLocale = event.target.value;
+    (e: React.MouseEvent<HTMLDivElement>, newLocale: string) => {
+      e.preventDefault();
       router.push(pathname, { locale: newLocale });
       setSelectedLocale(newLocale);
       localStorage.setItem("selectedLocale", newLocale);
+      setIsDropdownOpen(false);
     },
     [pathname, router]
   );
 
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) =>
     e.stopPropagation();
 
   return (
-    <div className="inline-block" onClick={stopPropagation}>
-      <select
+    <div className="relative inline-block" onClick={stopPropagation}>
+      <div
         id={id}
         aria-label="Select language"
-        value={selectedLocale}
-        onChange={handleLanguageChange}
-        className="w-full px-4 py-3 font-medium bg-white border rounded-full cursor-pointer text-darkgreen border-darkgreen hover:bg-softgray"
+        className="flex items-center px-4 py-3 font-medium bg-white border rounded-full cursor-pointer text-darkgreen border-darkgreen hover:bg-softgray"
+        onClick={toggleDropdown}
       >
-        <option value="en" className="bg-white text-darkgreen">
-          EN
-        </option>
-        <option value="pl" className="bg-white text-darkgreen">
-          PL
-        </option>
-        <option value="ua" className="bg-white text-darkgreen">
-          UA
-        </option>
-      </select>
+        <span className="mr-2">{selectedLocale.toUpperCase()}</span>
+        {isDropdownOpen ? (
+          <ChevronUpIcon className="w-5 h-5" />
+        ) : (
+          <ChevronDownIcon className="w-5 h-5" />
+        )}
+      </div>
+      {isDropdownOpen && (
+        <div className="absolute mt-1 transform translate-x-4 bg-white rounded-md shadow-lg">
+          {locales.map((locale) => (
+            <div
+              key={locale}
+              className="px-4 py-2 cursor-pointer hover:bg-softgray text-darkgreen"
+              onClick={(e) => handleLanguageChange(e, locale)}
+            >
+              {locale.toUpperCase()}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

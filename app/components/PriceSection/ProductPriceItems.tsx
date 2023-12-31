@@ -1,4 +1,8 @@
-import { ProductPrice, TranslationFunction } from "@/app/types/types";
+import {
+  AdditionalService,
+  ProductPrice,
+  TranslationFunction,
+} from "@/app/types/types";
 
 export const getProductPrices = (t: TranslationFunction): ProductPrice[] => [
   {
@@ -20,10 +24,13 @@ export const getProductPrices = (t: TranslationFunction): ProductPrice[] => [
     midHairPrice: 330,
     longHairPrice: 420,
   },
-  {
-    name: t("price_haircut"),
-    shortHairPrice: 70,
-    midHairPrice: 100,
-    longHairPrice: 130,
-  },
+];
+
+export const getAdditionalServices = (
+  t: TranslationFunction
+): AdditionalService[] => [
+  { name: t("bio_ampoule"), price: 50 },
+  { name: t("scalp_peeling"), price: 50 },
+  { name: t("hair_trimming"), price: 90 },
+  { name: t("sos_treatment"), price: 50 },
 ];

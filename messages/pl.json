@@ -53,20 +53,26 @@
     "benefit_botox_description2": "",
     "benefit_botox_subtitle3": "",
     "benefit_botox_description3": "",
-    "benefits_conclusion": "Każdy z tych zabiegów oferuje unikalne korzyści, jego wybór będzie zależał od rodzaju włosów, kondycji i pożądanych rezultatów. Zawsze zaleca się skonsultowanie się z profesjonalnym fryzjerem przed poddaniem się jakiemukolwiek zabiegowi, aby upewnić się, że jest on odpowiedni dla konkretnych potrzeb włosów.",
+    "benefits_conclusion": "Każdy z tych zabiegów ma pewne zalety, aby wybrać dokładnie ten zabieg który będzie pasować  do twoich włosów - skontaktuj się ze mną, a odpowiem na wszystkie Twoje pytania.",
 
     "gallery_title": "Galeria",
     "gallery_subtitle": "Galeria ostatnich realizacji",
 
     "price_section_title": "Cennik",
     "product_type": "Usługa",
-    "short_hair": "25cm",
-    "mid_hair": "45cm",
-    "long_hair": "65cm",
+    "short_hair": "Do ramion",
+    "mid_hair": "Do łopatek",
+    "long_hair": "Do pasa",
     "price_keratine": "Keratyna",
     "price_botox": "Botox",
     "price_nanoplastia": "Nanoplastia",
-    "price_haircut": "Haircut",
+
+    "dodatki_title": "Dodatki",
+    "dodatki_prices": "Cena",
+    "bio_ampoule": "Bio-ampułka przeciw wypadaniu włosów",
+    "scalp_peeling": "Trychologiczny peeling skóry głowy",
+    "hair_trimming": "Strzyżenie końcówek",
+    "sos_treatment": "SOS treatment",
 
     "faq_title": "FAQ",
     "faq_subtitle": "Najczęściej zadawane pytania",
@@ -91,6 +97,8 @@
     "messageSent": "Wiadomość wysłana!",
     "messageError": "Błąd wysyłania wiadomości. Proszę spróbować ponownie.",
 
-    "form_number_tip": "Proszę używaj tylko cyfr."
+    "form_number_tip": "Proszę używaj tylko cyfr.",
+
+    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.35689438791!2d17.054840199999997!3d51.0834207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc2ed9db2820d%3A0x600a19542516804!2sal.%20Armii%20Krajowej%2048%2C%2050-505%20Wroc%C5%82aw%2C%20Polska!5e0!3m2!1spl!2sde!4v1702980357187!5m2!1spl!2sde"
   }
 }

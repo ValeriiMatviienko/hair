@@ -11,6 +11,13 @@
   outline: 0;
 }
 
+body,
+button,
+a,
+div {
+  cursor: url("/iron.cur"), auto;
+}
+
 body {
   background: linear-gradient(to bottom right, #fafafa, #e0e0e0);
   user-select: none;
@@ -94,4 +101,10 @@ body {
 
 .nav-link:hover::after {
   transform: translateX(0);
+}
+@media (hover: hover) {
+  button:hover {
+    background-color: #3f695c;
+    opacity: 0.8;
+  }
 }
