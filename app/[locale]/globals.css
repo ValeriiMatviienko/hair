@@ -11,6 +11,13 @@
   outline: 0;
 }
 
+body,
+button,
+a,
+div {
+  cursor: url("/iron.cur"), auto;
+}
+
 body {
   background: linear-gradient(to bottom right, #fafafa, #e0e0e0);
   user-select: none;

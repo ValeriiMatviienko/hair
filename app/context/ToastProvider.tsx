@@ -2,10 +2,7 @@
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-interface ToastProviderProps {
-  children: React.ReactNode;
-}
+import { ToastProviderProps } from "../types/types";
 
 export default function ToastProvider({ children }: ToastProviderProps) {
   return (

@@ -89,3 +89,6 @@ export interface NavigationContextType {
   isContactFormOpen: boolean;
   setIsContactFormOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
+export interface ToastProviderProps {
+  children: React.ReactNode;
+}
