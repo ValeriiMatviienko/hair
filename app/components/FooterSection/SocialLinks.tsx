@@ -7,7 +7,7 @@ import TikTokIcon, {
 export const socialLinks: SocialLinks[] = [
   {
     Component: FacebookIcon,
-    link: "https://facebook.com/matvienko.hanna",
+    link: "https://facebook.com/hair.by.hanna.ua",
     description: "Facebook",
   },
   {
