@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { socialLinks } from "./SocialLinks";
+import OpenHours from "./OpenHours";
 
 const currentYear = new Date().getFullYear();
 
@@ -46,6 +47,7 @@ const Footer = () => {
                 al. Armii Krajowej 48 <br /> Wrocław (Krzyki)
               </a>
             </div>
+            <OpenHours />
           </div>
         </div>
         <div className="col-span-full sm:col-span-6">
