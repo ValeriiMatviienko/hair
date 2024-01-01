@@ -2,8 +2,9 @@
 import { Fade } from "react-awesome-reveal";
 import { getAdditionalServices, getProductPrices } from "./ProductPriceItems";
 import { useTranslations } from "next-intl";
+import { FC } from "react";
 
-const PriceSection = () => {
+const PriceSection: FC = () => {
   const t = useTranslations("Index");
   const productList = getProductPrices(t);
   const additionalServices = getAdditionalServices(t);

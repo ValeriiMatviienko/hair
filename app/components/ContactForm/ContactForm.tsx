@@ -1,6 +1,6 @@
 import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { FC, Fragment } from "react";
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -10,7 +10,7 @@ import {
 import { useTranslations } from "next-intl";
 import ContactButton from "./ContactButton";
 
-const ContactForm = () => {
+const ContactForm: FC = () => {
   const t = useTranslations("Index");
   const {
     inputValues,

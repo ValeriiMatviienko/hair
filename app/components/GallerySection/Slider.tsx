@@ -10,9 +10,11 @@ const Slider = ({ images }: SliderProps) => {
   const [distance, setDistance] = useState<number>(0);
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.preventDefault();
     setStartX(e.touches[0].clientX);
   };
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.preventDefault();
     setDistance(e.touches[0].clientX - startX);
   };
 
@@ -23,7 +25,8 @@ const Slider = ({ images }: SliderProps) => {
     index === length ? setIndex(0) : setIndex(index + 1);
   }, [index, length]);
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.preventDefault();
     distance > 50 ? handlePrev() : distance < -50 && handleNext();
     /** Reset the distance for the next swipe */
     setDistance(0);
@@ -32,7 +35,7 @@ const Slider = ({ images }: SliderProps) => {
   useEffect(() => {
     const slideInterval = setInterval(() => {
       handleNext();
-    }, 5000);
+    }, 3000);
     return () => {
       clearInterval(slideInterval);
     };
