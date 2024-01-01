@@ -1,9 +1,10 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { FC } from "react";
 import { Fade } from "react-awesome-reveal";
 
-const HeroSection = () => {
+const HeroSection: FC = () => {
   const t = useTranslations("Index");
 
   return (

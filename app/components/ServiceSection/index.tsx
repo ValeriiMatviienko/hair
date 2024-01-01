@@ -2,8 +2,9 @@
 import { Fade } from "react-awesome-reveal";
 import { getServiceData } from "./ServiceData";
 import { useTranslations } from "next-intl";
+import { FC } from "react";
 
-const ServiceSection = () => {
+const ServiceSection: FC = () => {
   const t = useTranslations("Index");
   const serviceData = getServiceData(t);
 

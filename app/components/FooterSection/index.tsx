@@ -1,10 +1,11 @@
 import { useTranslations } from "next-intl";
 import { socialLinks } from "./SocialLinks";
 import OpenHours from "./OpenHours";
+import { FC } from "react";
 
 const currentYear = new Date().getFullYear();
 
-const Footer = () => {
+const Footer: FC = () => {
   const t = useTranslations("Index");
 
   return (

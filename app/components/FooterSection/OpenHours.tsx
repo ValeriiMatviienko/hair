@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
+import { FC } from "react";
 
-const OpenHours = () => {
+const OpenHours: FC = () => {
   const t = useTranslations("Index");
 
   return (
