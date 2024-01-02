@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { NavigationProvider } from "../context/NavigationContext";
 import ToastProvider from "../context/ToastProvider";
+import { montserrat } from "../helpers/FontSetup";
 
 export async function generateMetadata({
   params: { locale },
@@ -65,7 +66,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={montserrat.className}>
       <NavigationProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <body>
