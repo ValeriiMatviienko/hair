@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Components Documentation
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This document outlines a series of adaptable and easily integrable React components designed to enhance user experience in web applications.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Section Components
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### AccordionSection & FAQSection
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Display information in a concise, expandable format.
+- Ideal for FAQs or organized sections.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### FooterSection & GallerySection
 
-## Learn More
+- Present additional information, links, and image galleries.
+- Attractive layout design.
 
-To learn more about Next.js, take a look at the following resources:
+### HeroSection & ServiceSection
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Customizable component for landing pages.
+- Details services/features in a versatile format.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### PriceSection & LanguageSelectorSection
 
-## Deploy on Vercel
+- Provides clear pricing details.
+- Enhances accessibility and internationalization.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Other Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Interactive communication tools featuring modal functionality and custom triggers.
+- A sliding navigation drawer that optimizes space and improves the navigation experience.
+- A functional, responsive top navigation bar
+- Dynamic image carousel.
+- A convenient feature for quickly returning to the top of the page.
+
+## Functionality and Customization
+
+- Utilizes modern React practices for clean, manageable code.
+- Modular design for independent or combined use.
+
+## License
+
+- Project is under the MIT License, see the LICENSE file for details.
+
+## Useful Libraries
+
+The project leverages several libraries for its functionality:
+
+- [`@headlessui/react`](https://github.com/tailwindlabs/headlessui#react): For building fully accessible UI components.
+- [`autoprefixer`](https://www.npmjs.com/package/autoprefixer), [`postcss`](https://www.npmjs.com/package/postcss), [`tailwindcss`](https://www.npmjs.com/package/tailwindcss): For styling and CSS.
+- [`next`](https://nextjs.org/), [`next-intl`](https://github.com/amannn/next-intl): For the Next.js framework and internationalization.
+- [`nodemailer`](https://nodemailer.com/about/): For sending emails.
+- [`react-awesome-reveal`](https://www.npmjs.com/package/react-awesome-reveal): For reveal animations.
+- [`react-toastify`](https://www.npmjs.com/package/react-toastify): For adding toast notifications.
+- [`typescript`](https://www.typescriptlang.org/): For using TypeScript.
+
+## Contributing
+
+- Contributions are not allowed.
