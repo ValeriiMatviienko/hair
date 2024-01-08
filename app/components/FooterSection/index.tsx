@@ -25,7 +25,7 @@ const Footer: FC = () => {
                 className="flex-1 text-center"
               >
                 <div className="flex flex-col items-center hover:underline">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full shadow-xl md:w-14 md:h-14 ">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full md:w-14 md:h-14 ">
                     <item.Component className="w-full h-full" />
                   </div>
                   <p className="mt-2 text-lg text-center text-black">
