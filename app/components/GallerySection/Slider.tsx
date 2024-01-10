@@ -18,9 +18,10 @@ const Slider = ({ images }: SliderProps) => {
     setDistance(e.touches[0].clientX - startX);
   };
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     index === 0 ? setIndex(length) : setIndex(index - 1);
-  };
+  }, [index, length]);
+
   const handleNext = useCallback(() => {
     index === length ? setIndex(0) : setIndex(index + 1);
   }, [index, length]);
@@ -39,7 +40,7 @@ const Slider = ({ images }: SliderProps) => {
     return () => {
       clearInterval(slideInterval);
     };
-  }, [index, handleNext]);
+  }, [handleNext]);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -47,6 +48,7 @@ const Slider = ({ images }: SliderProps) => {
         <ArrowLeftIcon
           className="w-8 h-8 text-black cursor-pointer "
           onClick={handlePrev}
+          aria-label="Previous image"
         />
         <Image
           src={images[index].src}
@@ -63,6 +65,7 @@ const Slider = ({ images }: SliderProps) => {
         <ArrowRightIcon
           className="w-8 h-8 text-black cursor-pointer"
           onClick={handleNext}
+          aria-label="Next image"
         />
       </div>
       <div className="flex items-center mt-4 space-x-3">

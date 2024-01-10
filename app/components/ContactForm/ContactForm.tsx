@@ -60,7 +60,7 @@ const ContactForm: FC = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                <Dialog.Panel className="w-full max-w-md p-6 overflow-hidden transition-all transform bg-white shadow-xl rounded-2xl">
                   <button
                     onClick={toggleModalClose}
                     className="absolute p-2 rounded-full top-3 right-3 hover:bg-gray-200"

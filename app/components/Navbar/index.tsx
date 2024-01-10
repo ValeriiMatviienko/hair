@@ -52,6 +52,7 @@ const Navbar: FC = () => {
                 }`}
                 aria-hidden="true"
                 onClick={handleIconClick}
+                aria-label="Hamburger icon"
               />
             </div>
           </div>

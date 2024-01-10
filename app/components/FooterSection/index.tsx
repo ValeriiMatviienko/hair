@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { useTranslations } from "next-intl";
 import { socialLinks } from "./SocialLinks";
 import OpenHours from "./OpenHours";
-import { FC } from "react";
+import Address from "./Adress";
 
 const currentYear = new Date().getFullYear();
 
@@ -39,21 +40,13 @@ const Footer: FC = () => {
             <h2 className="mb-2 text-lg font-semibold text-center uppercase">
               {t("adress")}:
             </h2>
-            <div className="text-lg text-center hover:underline ">
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Aleja+Armii+Krajowej+48+Wrocław+(Krzyki)"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                al. Armii Krajowej 48 <br /> Wrocław (Krzyki)
-              </a>
-            </div>
+            <Address />
             <OpenHours />
           </div>
         </div>
         <div className="col-span-full sm:col-span-6">
           <iframe
-            title="Hair by Hanna Location"
+            title="Hair by Hanna"
             src={t("location")}
             width="100%"
             height="250"
