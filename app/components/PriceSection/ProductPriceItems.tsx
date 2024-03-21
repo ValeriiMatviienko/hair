@@ -33,4 +33,5 @@ export const getAdditionalServices = (
   { name: t("scalp_peeling"), price: 50 },
   { name: t("hair_trimming"), price: 90 },
   { name: t("sos_treatment"), price: 50 },
+  { name: t("hair_polishing"), price: 110 },
 ];
