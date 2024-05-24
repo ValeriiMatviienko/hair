@@ -20,7 +20,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: `${baseUrl}`,
+      canonical: `${baseUrl}/${locale}`,
       languages: {
         "pl-PL": "/pl-PL",
         "uk-UA": "/uk-UA",
@@ -54,7 +54,7 @@ export async function generateMetadata({
     category: "Beauty",
     openGraph: {
       type: "website",
-      url: baseUrl,
+      url: `${baseUrl}/${locale}`,
       title: t("title"),
       description: t("description"),
       site_name: t("title"),
