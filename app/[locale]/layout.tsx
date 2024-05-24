@@ -7,6 +7,7 @@ import { getTranslations } from "next-intl/server";
 import { NavigationProvider } from "../context/NavigationContext";
 import ToastProvider from "../context/ToastProvider";
 import { montserrat } from "../helpers/FontSetup";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 
 export async function generateMetadata({
   params: { locale },
@@ -77,6 +78,7 @@ export default async function RootLayout({
       <NavigationProvider>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <body>
+            <GoogleAnalytics />
             <ToastProvider>{children}</ToastProvider>
           </body>
         </NextIntlClientProvider>
