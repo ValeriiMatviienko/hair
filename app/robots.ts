@@ -14,5 +14,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: "https://hairbyhanna.pl/sitemap.xml",
+    host: "https://hairbyhanna.pl",
   };
 }

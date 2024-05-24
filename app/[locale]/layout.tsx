@@ -22,9 +22,9 @@ export async function generateMetadata({
     alternates: {
       canonical: `${baseUrl}/${locale}`,
       languages: {
-        "pl-PL": "/pl-PL",
-        "uk-UA": "/uk-UA",
-        "en-US": "/en-US",
+        "pl-PL": `${baseUrl}/pl-PL`,
+        "uk-UA": `${baseUrl}/uk-UA`,
+        "en-US": `${baseUrl}/en-US`,
       },
     },
     keywords: t("keywords").split(","),
