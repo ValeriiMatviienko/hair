@@ -33,7 +33,7 @@ const ServiceSection: FC = () => {
           triggerOnce={true}
         >
           <p className="text-3xl font-semibold text-black lg:text-5xl">
-            {t("service_section_subtitle")}
+            {/* {t("service_section_subtitle")} */}
           </p>
         </Fade>
       </div>
@@ -48,7 +48,7 @@ const ServiceSection: FC = () => {
         >
           {serviceData.map((items, i) => (
             <div className="p-3" key={i}>
-              <h2 className="text-2xl font-semibold text-center text-black">
+              <h2 className="text-2xl font-semibold text-center text-black lg:text-start">
                 {items.serviceTitle}
               </h2>
               <p className="mt-2 text-lg text-center text-black whitespace-pre-line md:text-start md:text-xl text-opacity-80">
