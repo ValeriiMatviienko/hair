@@ -55,9 +55,9 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       url: `${baseUrl}/${locale}`,
-      title: t("title"),
+      title: "Keratyna Wrocław",
       description: t("description"),
-      site_name: t("title"),
+      locale: `${locale}`,
     },
   };
 }
