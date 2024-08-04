@@ -3,7 +3,6 @@ import {
   ProductPrice,
   TranslationFunction,
 } from "@/app/types/types";
-import { useRouter } from "next/router";
 
 export const getProductPrices = (t: TranslationFunction): ProductPrice[] => [
   {
@@ -30,9 +29,9 @@ export const getProductPrices = (t: TranslationFunction): ProductPrice[] => [
 export const getAdditionalServices = (
   t: TranslationFunction
 ): AdditionalService[] => [
-  { name: t("trichological_consultation"), price: 200 },
+  { name: t("trichological_consultation"), price: 250 },
   { name: t("bio_ampoule"), price: 50 },
-  { name: t("scalp_peeling"), price: 50 },
+  { name: t("scalp_peeling"), price: 70 },
   { name: t("hair_trimming"), price: 90 },
   { name: t("sos_treatment"), price: 50 },
   { name: t("hair_polishing"), price: 120 },
