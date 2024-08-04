@@ -4,11 +4,11 @@ const Address: FC = () => {
   return (
     <address className="text-lg text-center hover:underline">
       <a
-        href="https://www.google.com/maps/search/?api=1&query=Aleja+Armii+Krajowej+48+Wrocław+(Krzyki)"
+        href="https://maps.app.goo.gl/L85sTG4VuXV8DBKEA"
         target="_blank"
         rel="noopener noreferrer"
       >
-        al. Armii Krajowej 48 <br /> Wrocław (Krzyki)
+        Świętokrzyska 37B
       </a>
     </address>
   );
