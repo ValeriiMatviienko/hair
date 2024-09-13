@@ -53,7 +53,7 @@ const LanguageSelector = ({ id }: LanguageSelectorProps) => {
         )}
       </div>
       {isDropdownOpen && (
-        <div className="absolute mt-1 transform translate-x-4 bg-white rounded-md shadow-lg">
+        <div className="absolute top-0 flex flex-row mt-1 transform bg-white rounded-md shadow-lg lg:top-auto left-24 lg:left-0 lg:flex-col md:translate-x-4">
           {locales.map((locale) => (
             <div
               key={locale}
