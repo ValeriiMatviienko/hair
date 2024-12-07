@@ -13,7 +13,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://hairbyhanna.pl/sitemap.xml",
-    host: "https://hairbyhanna.pl",
+    sitemap: "https://hairbyhanna.eu/sitemap.xml",
+    host: "https://hairbyhanna.eu",
   };
 }
