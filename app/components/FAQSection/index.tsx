@@ -39,7 +39,7 @@ const FAQSection: FC = () => {
         </Fade>
       </div>
       <div className="grid grid-cols-1 space-x-0 sm:space-x-1 lg:grid-cols-12">
-        <div className="col-span-12 lg:col-span-12">
+        <div className="col-span-12 whitespace-pre-line lg:col-span-12">
           <Fade
             direction={"up"}
             delay={40}

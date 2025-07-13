@@ -21,4 +21,12 @@ export const getFAQs = (t: TranslationFunction): FAQItem[] => [
     question: t("faq_question_5"),
     answer: t("faq_answer_5"),
   },
+  {
+    question: t("faq_question_6"),
+    answer: t("faq_answer_6"),
+  },
+  {
+    question: t("faq_question_7"),
+    answer: t("faq_answer_7"),
+  },
 ];
