@@ -1,9 +1,9 @@
+"use client";
 import React, { useCallback } from "react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { FaTimes } from "react-icons/fa";
 import { DrawerProps } from "@/app/types/types";
 import LogoComponent from "../Navbar/LogoComponent";
 import useDocumentHeight from "@/app/hooks/useDocumentHeight";
-import useOnScreenKeyboardScrollFix from "@/app/hooks/useOnScreenKeyboardScrollFix";
 import { useNavigationContext } from "@/app/context/NavigationContext";
 
 const Drawer = ({ children }: DrawerProps) => {
@@ -16,7 +16,7 @@ const Drawer = ({ children }: DrawerProps) => {
     },
     [setIsOpen]
   );
-  useOnScreenKeyboardScrollFix();
+
   useDocumentHeight();
 
   const mainClassName = `fixed overflow-hidden z-10 bg-black bg-opacity-25 inset-0 transform ease-in-out ${
@@ -31,7 +31,7 @@ const Drawer = ({ children }: DrawerProps) => {
       <section className={sectionClassName}>
         <header className="flex items-center justify-between px-4 py-4">
           <LogoComponent />
-          <XMarkIcon
+          <FaTimes
             className="block w-6 h-6"
             onClick={handleClose}
             aria-label="Close drawer"

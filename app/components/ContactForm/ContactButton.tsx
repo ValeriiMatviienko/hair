@@ -1,3 +1,5 @@
+"use client";
+
 import { ContactButtonProps } from "@/app/types/types";
 import { useTranslations } from "next-intl";
 

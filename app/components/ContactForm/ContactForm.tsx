@@ -1,12 +1,9 @@
+"use client";
+
 import useContactForm from "@/app/hooks/useContactForm";
 import { Dialog, Transition } from "@headlessui/react";
 import { FC, Fragment } from "react";
-import {
-  EnvelopeIcon,
-  PhoneIcon,
-  UserIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { FaEnvelope, FaPhone, FaUser, FaTimes } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 import ContactButton from "./ContactButton";
 
@@ -66,10 +63,10 @@ const ContactForm: FC = () => {
                     className="absolute p-2 rounded-full top-3 right-3 hover:bg-gray-200"
                     aria-label="Close modal"
                   >
-                    {isContactFormOpen && <XMarkIcon className="w-6 h-6" />}
+                    {isContactFormOpen && <FaTimes className="w-6 h-6" />}
                   </button>
                   <div className="px-4 py-6 mx-auto">
-                    <div className="flex items-center justify-center flex-shrink-0">
+                    <div className="flex items-center justify-center shrink-0">
                       <h1 className="text-xl font-semibold text-black sm:text-2xl">
                         {t("form_title")}
                       </h1>
@@ -87,7 +84,7 @@ const ContactForm: FC = () => {
                           htmlFor="text"
                           className="flex items-center mb-2 text-black"
                         >
-                          <UserIcon className="inline-block w-5 h-5 mr-2" />
+                          <FaUser className="inline-block w-5 h-5 mr-2" />
                           {t("form_name")}
                         </label>
                         <input
@@ -108,7 +105,7 @@ const ContactForm: FC = () => {
                           htmlFor="number"
                           className="flex items-center mb-2 font-medium text-black"
                         >
-                          <PhoneIcon className="inline-block w-5 h-5 mr-2" />
+                          <FaPhone className="inline-block w-5 h-5 mr-2" />
                           {t("form_number")}
                         </label>
                         <input
@@ -134,7 +131,7 @@ const ContactForm: FC = () => {
                           htmlFor="message"
                           className="flex items-center mb-2 font-medium text-black"
                         >
-                          <EnvelopeIcon className="inline-block w-5 h-5 mr-2" />
+                          <FaEnvelope className="inline-block w-5 h-5 mr-2" />
                           {t("form_message")}
                         </label>
                         <textarea

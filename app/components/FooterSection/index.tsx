@@ -1,3 +1,4 @@
+"use client";
 import { FC } from "react";
 import { useTranslations } from "next-intl";
 import { socialLinks } from "./SocialLinks";

@@ -1,6 +1,6 @@
 "use client";
 import { AccordionProps } from "@/app/types/types";
-import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { useState } from "react";
 
 const Accordion = ({ items }: AccordionProps) => {
@@ -18,16 +18,16 @@ const Accordion = ({ items }: AccordionProps) => {
             className="flex items-center justify-between p-4 cursor-pointer"
             onClick={() => handleAccordionClick(index)}
           >
-            <div className="flex-grow">
+            <div className="grow">
               <p className="font-semibold text-black md:text-xl">
                 {item.question}
               </p>
             </div>
             <div>
               {openIndex === index ? (
-                <ChevronUpIcon className="w-6 h-6 text-black" />
+                <FaChevronUp className="w-6 h-6 text-black" />
               ) : (
-                <ChevronDownIcon className="w-6 h-6 text-black" />
+                <FaChevronDown className="w-6 h-6 text-black" />
               )}
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { SliderProps } from "@/app/types/types";
 
 const Slider = ({ images }: SliderProps) => {
@@ -45,7 +45,7 @@ const Slider = ({ images }: SliderProps) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="flex items-center justify-between w-full px-4 ">
-        <ArrowLeftIcon
+        <FaArrowLeft
           className="w-8 h-8 text-black cursor-pointer "
           onClick={handlePrev}
           aria-label="Previous image"
@@ -62,7 +62,7 @@ const Slider = ({ images }: SliderProps) => {
           onTouchEnd={handleTouchEnd}
           loading="lazy"
         />
-        <ArrowRightIcon
+        <FaArrowRight
           className="w-8 h-8 text-black cursor-pointer"
           onClick={handleNext}
           aria-label="Next image"
