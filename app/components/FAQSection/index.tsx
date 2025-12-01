@@ -1,9 +1,10 @@
 "use client";
-import Accordion from "./Accordion";
+
 import { Fade } from "react-awesome-reveal";
 import { getFAQs } from "./FAQItem";
 import { useTranslations } from "next-intl";
 import { FC } from "react";
+import CustomAccordion from "./Accordion";
 
 const FAQSection: FC = () => {
   const t = useTranslations("Index");
@@ -16,18 +17,18 @@ const FAQSection: FC = () => {
     >
       <div className="mb-10 text-center sm:mb-14">
         <Fade
-          direction={"up"}
+          direction="up"
           delay={40}
           cascade
           damping={0.1}
           triggerOnce={true}
         >
-          <h3 className="mb-3 text-2xl text-black uppercase title-line ls-51">
+          <h3 className="mb-3 text-2xl text-black uppercase  ls-51">
             {t("faq_title")}
           </h3>
         </Fade>
         <Fade
-          direction={"up"}
+          direction="up"
           delay={40}
           cascade
           damping={0.1}
@@ -38,16 +39,17 @@ const FAQSection: FC = () => {
           </p>
         </Fade>
       </div>
-      <div className="grid grid-cols-1 space-x-0 sm:space-x-1 lg:grid-cols-12">
-        <div className="col-span-12 whitespace-pre-line lg:col-span-12">
+
+      <div className="grid grid-cols-1 lg:grid-cols-12">
+        <div className="col-span-12 whitespace-pre-line">
           <Fade
-            direction={"up"}
+            direction="up"
             delay={40}
             cascade
             damping={0.1}
             triggerOnce={true}
           >
-            <Accordion items={faqs} />
+            <CustomAccordion items={faqs} />
           </Fade>
         </div>
       </div>

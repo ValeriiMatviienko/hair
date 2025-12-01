@@ -1,3 +1,4 @@
+"use client";
 import React, { FC, useCallback } from "react";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
@@ -35,7 +36,7 @@ const DrawerData: FC = () => {
             onClick={handleContactClick}
             className="justify-center w-full mb-10 lg:px-8 navbutton"
           />
-          <LanguageSelector id="drawerLanguageSelector" />
+          <LanguageSelector />
         </div>
       </div>
     </div>

@@ -1,72 +1,64 @@
-import { useState, useEffect, useCallback } from "react";
-import { createSharedPathnamesNavigation } from "next-intl/navigation";
-import { LanguageSelectorProps } from "@/app/types/types";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+"use client";
 
-const locales = ["en", "pl", "ua"] as const;
-const { useRouter, usePathname } = createSharedPathnamesNavigation({ locales });
+import { useCallback } from "react";
+import { useLocaleContext } from "@/app/context/localesProvider";
+import { Button } from "@/components/ui/button";
+import { IoLanguage } from "react-icons/io5";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-const LanguageSelector = ({ id }: LanguageSelectorProps) => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const [selectedLocale, setSelectedLocale] = useState<string>("pl");
-  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+const LANGUAGES = ["pl", "en", "ua"] as const;
+type Language = (typeof LANGUAGES)[number];
 
-  useEffect(() => {
-    const savedLocale = localStorage.getItem("selectedLocale");
-    if (savedLocale) {
-      setSelectedLocale(savedLocale);
-      router.push(pathname, { locale: savedLocale });
-    } else {
-      localStorage.setItem("selectedLocale", "pl");
-    }
-  }, [pathname, router]);
+export default function LanguageSelector() {
+  const { locale, setLocale, ready } = useLocaleContext();
 
   const handleLanguageChange = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>, newLocale: string) => {
-      e.preventDefault();
-      router.push(pathname, { locale: newLocale });
-      setSelectedLocale(newLocale);
-      localStorage.setItem("selectedLocale", newLocale);
-      setIsDropdownOpen(false);
-    },
-    [pathname, router]
-  );
+    (lang: Language) => {
+      if (!ready) return;
 
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
-  const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) =>
-    e.stopPropagation();
+      setLocale(lang);
+
+      // persist between refreshes
+      if (typeof window !== "undefined") {
+        localStorage.setItem("locale", lang);
+      }
+    },
+    [ready, setLocale]
+  );
 
   return (
-    <div className="relative inline-block" onClick={stopPropagation}>
-      <div
-        id={id}
-        aria-label="Select language"
-        className="flex items-center px-4 py-3 font-medium bg-white border rounded-full cursor-pointer text-darkgreen border-darkgreen hover:bg-softgray"
-        onClick={toggleDropdown}
-      >
-        <span className="mr-2">{selectedLocale.toUpperCase()}</span>
-        {isDropdownOpen ? (
-          <ChevronUpIcon className="w-5 h-5" />
-        ) : (
-          <ChevronDownIcon className="w-5 h-5" />
-        )}
-      </div>
-      {isDropdownOpen && (
-        <div className="absolute top-0 flex flex-row mt-1 transform bg-white rounded-md shadow-lg lg:top-auto left-24 lg:left-0 lg:flex-col md:translate-x-4">
-          {locales.map((locale) => (
-            <div
-              key={locale}
-              className="px-4 py-2 cursor-pointer hover:bg-softgray text-darkgreen"
-              onClick={(e) => handleLanguageChange(e, locale)}
-            >
-              {locale.toUpperCase()}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          className=" flex text-darkgreen items-center gap-2"
+          variant="outline"
+          aria-label="Change language"
+          disabled={!ready}
+        >
+          <IoLanguage size={18} />
+          {ready ? locale.toUpperCase() : "…"}
+        </Button>
+      </DropdownMenuTrigger>
 
-export default LanguageSelector;
+      <DropdownMenuContent align="end">
+        {LANGUAGES.map((lang) => (
+          <DropdownMenuItem
+            key={lang}
+            onClick={() => handleLanguageChange(lang)}
+            className="flex items-center gap-2"
+          >
+            <span className="text-darkgreen mb-3">{lang.toUpperCase()}</span>
+            {locale === lang && (
+              <span className="ml-auto text-darkgreen text-xs">✓</span>
+            )}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}

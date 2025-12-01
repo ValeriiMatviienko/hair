@@ -1,18 +1,15 @@
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import { notFound } from "next/navigation";
-import { GenerateMetadataParams, RootLayoutProps } from "../types/types";
-import { NextIntlClientProvider } from "next-intl";
+import { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
-import { NavigationProvider } from "../context/NavigationContext";
-import ToastProvider from "../context/ToastProvider";
-import { montserrat } from "../helpers/FontSetup";
-import GoogleAnalytics from "../components/GoogleAnalytics";
+import GoogleAnalytics from "./components/GoogleAnalytics";
+import { NavigationProvider } from "./context/NavigationContext";
+import ToastProvider from "./context/ToastProvider";
+import { montserrat } from "./helpers/FontSetup";
+import { LocaleProvider } from "./context/localesProvider";
 
-export async function generateMetadata({
-  params: { locale },
-}: GenerateMetadataParams) {
-  const t = await getTranslations({ locale, namespace: "Index" });
+export async function generateMetadata() {
+  const t = await getTranslations("Index");
   const baseUrl = process.env.BASE_URL || "http://localhost:3000";
 
   return {
@@ -20,7 +17,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: `${baseUrl}/${locale}`,
+      canonical: `${baseUrl}`,
       languages: {
         "pl-PL": `${baseUrl}/pl-PL`,
         "uk-UA": `${baseUrl}/uk-UA`,
@@ -49,40 +46,28 @@ export async function generateMetadata({
         "max-snippet": -1,
       },
     },
-    viewport: "width=device-width, initial-scale=1",
     referrer: "origin",
     category: "Beauty",
     openGraph: {
       type: "website",
-      url: `${baseUrl}/${locale}`,
+      url: `${baseUrl}`,
       title: "Keratyna Wrocław",
       description: t("description"),
-      locale: `${locale}`,
     },
   };
 }
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: RootLayoutProps) {
-  let messages;
-  try {
-    messages = (await import(`@/messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
-
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang={locale} className={montserrat.className}>
-      <NavigationProvider>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <body>
-            <GoogleAnalytics />
+    <html lang="pl" suppressHydrationWarning className={montserrat.className}>
+      <GoogleAnalytics />
+      <body suppressHydrationWarning>
+        <NavigationProvider>
+          <LocaleProvider>
             <ToastProvider>{children}</ToastProvider>
-          </body>
-        </NextIntlClientProvider>
-      </NavigationProvider>
+          </LocaleProvider>
+        </NavigationProvider>
+      </body>
     </html>
   );
 }

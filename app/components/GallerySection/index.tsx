@@ -21,7 +21,7 @@ const GallerySection: FC = () => {
           damping={0.1}
           triggerOnce={true}
         >
-          <h2 className="mb-3 text-2xl tracking-widest text-black uppercase title-line ls-51">
+          <h2 className="mb-3 text-2xl tracking-widest text-black uppercase  ls-51">
             {t("gallery_title")}
           </h2>
         </Fade>
@@ -38,7 +38,7 @@ const GallerySection: FC = () => {
         </Fade>
       </div>
       <div className="my-16">
-        <Slider images={GalleryImage} />
+        <Slider />
       </div>
     </section>
   );

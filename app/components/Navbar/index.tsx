@@ -1,6 +1,6 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import { FaBars } from "react-icons/fa";
 import { FC, useCallback } from "react";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
@@ -41,12 +41,12 @@ const Navbar: FC = () => {
               <div className="hidden gap-6 xl:flex">
                 <div className="flex items-center gap-4">
                   <ContactForm />
-                  <LanguageSelector id="navbarLanguageSelector" />
+                  <LanguageSelector />
                 </div>
               </div>
             </div>
             <div className="block xl:hidden">
-              <Bars3Icon
+              <FaBars
                 className={`block w-9 h-9 md:w-12 md:h-12 ${
                   isOpen ? "click-scale-animation" : ""
                 }`}

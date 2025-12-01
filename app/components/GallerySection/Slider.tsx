@@ -1,86 +1,89 @@
-import React, { useCallback, useEffect, useState } from "react";
+"use client";
+
 import Image from "next/image";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import { SliderProps } from "@/app/types/types";
+import { useEffect, useState } from "react";
 
-const Slider = ({ images }: SliderProps) => {
-  const length = images.length - 1;
-  const [index, setIndex] = useState<number>(0);
-  const [startX, setStartX] = useState<number>(0);
-  const [distance, setDistance] = useState<number>(0);
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    setStartX(e.touches[0].clientX);
-  };
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    setDistance(e.touches[0].clientX - startX);
-  };
+import { GalleryImage } from "./GalleryImage";
 
-  const handlePrev = useCallback(() => {
-    index === 0 ? setIndex(length) : setIndex(index - 1);
-  }, [index, length]);
-
-  const handleNext = useCallback(() => {
-    index === length ? setIndex(0) : setIndex(index + 1);
-  }, [index, length]);
-
-  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    distance > 50 ? handlePrev() : distance < -50 && handleNext();
-    /** Reset the distance for the next swipe */
-    setDistance(0);
-  };
+export default function Slider() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const slideInterval = setInterval(() => {
-      handleNext();
-    }, 3000);
-    return () => {
-      clearInterval(slideInterval);
-    };
-  }, [handleNext]);
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="flex items-center justify-between w-full px-4 ">
-        <ArrowLeftIcon
-          className="w-8 h-8 text-black cursor-pointer "
-          onClick={handlePrev}
-          aria-label="Previous image"
-        />
-        <Image
-          src={images[index].src}
-          alt={images[index].alt}
-          width={500}
-          height={500}
-          style={{ width: "auto", height: "auto" }}
-          className="max-w-full rounded-lg shadow-lg"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          loading="lazy"
-        />
-        <ArrowRightIcon
-          className="w-8 h-8 text-black cursor-pointer"
-          onClick={handleNext}
-          aria-label="Next image"
-        />
-      </div>
-      <div className="flex items-center mt-4 space-x-3">
-        {images.map((_, i) => (
-          <div
-            onClick={() => setIndex(i)}
-            key={i}
-            className={`${
-              i === index ? "w-4 h-4" : "w-2 h-2"
-            } rounded-full cursor-pointer bg-black`}
-          ></div>
-        ))}
+    <div className="mx-auto max-w-xs">
+      <Carousel setApi={setApi} className="w-full max-w-xs">
+        <CarouselContent>
+          {GalleryImage.map((image, index) => (
+            <CarouselItem key={image.src ?? index}>
+              <Card>
+                <CardContent className="relative h-150 p-0">
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <div className="relative h-full cursor-pointer">
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          className="object-cover rounded-md"
+                        />
+                      </div>
+                    </DialogTrigger>
+
+                    <DialogContent className="max-w-4xl p-0 bg-transparent border-none shadow-none">
+                      <DialogHeader className="hidden">
+                        <DialogTitle>Image preview</DialogTitle>
+                      </DialogHeader>
+
+                      <div className="relative w-full h-[80vh]">
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          className="object-contain rounded-md"
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+      <div className="mt-4 text-center text-sm text-muted-foreground">
+        Slide {current} of {count}
       </div>
     </div>
   );
-};
-
-export default Slider;
+}
