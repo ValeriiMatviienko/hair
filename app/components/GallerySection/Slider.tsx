@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -11,10 +12,15 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 import { GalleryImage } from "./GalleryImage";
-import { useEffect, useState } from "react";
 
 export default function Slider() {
   const [api, setApi] = useState<CarouselApi>();
@@ -53,6 +59,10 @@ export default function Slider() {
                     </DialogTrigger>
 
                     <DialogContent className="max-w-4xl p-0 bg-transparent border-none shadow-none">
+                      <DialogHeader className="hidden">
+                        <DialogTitle>Image preview</DialogTitle>
+                      </DialogHeader>
+
                       <div className="relative w-full h-[80vh]">
                         <Image
                           src={image.src}

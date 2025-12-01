@@ -52,7 +52,7 @@ export default function LanguageSelector() {
             onClick={() => handleLanguageChange(lang)}
             className="flex items-center gap-2"
           >
-            <span className="text-darkgreen">{lang.toUpperCase()}</span>
+            <span className="text-darkgreen mb-3">{lang.toUpperCase()}</span>
             {locale === lang && (
               <span className="ml-auto text-darkgreen text-xs">✓</span>
             )}

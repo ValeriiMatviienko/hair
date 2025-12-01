@@ -38,7 +38,7 @@ const GallerySection: FC = () => {
         </Fade>
       </div>
       <div className="my-16">
-        <Slider images={GalleryImage} />
+        <Slider />
       </div>
     </section>
   );
