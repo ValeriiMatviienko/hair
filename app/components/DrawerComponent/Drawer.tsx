@@ -19,7 +19,7 @@ const Drawer = ({ children }: DrawerProps) => {
 
   useDocumentHeight();
 
-  const mainClassName = `fixed overflow-hidden z-10 bg-black bg-opacity-25 inset-0 transform ease-in-out ${
+  const mainClassName = `fixed overflow-hidden z-10 bg-secondary-foreground/75 inset-0 transform ease-in-out ${
     isOpen ? "opacity-100" : "opacity-0"
   }`;
 

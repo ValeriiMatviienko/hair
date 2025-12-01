@@ -1,3 +1,5 @@
+"use client";
+
 import DrawerContainer from "./components/DrawerComponent";
 import FAQSection from "./components/FAQSection";
 import FooterSection from "./components/FooterSection";

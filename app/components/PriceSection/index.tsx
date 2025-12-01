@@ -16,7 +16,7 @@ const PriceSection: FC = () => {
     >
       <Fade direction={"up"} delay={40} cascade damping={0.1} triggerOnce>
         <div className="text-center">
-          <h2 className="mb-4 text-2xl text-center text-black uppercase title-line sm:mb-10 ls-51">
+          <h2 className="mb-4 text-2xl text-center text-black uppercase  sm:mb-10 ls-51">
             {t("price_section_title")}
           </h2>
         </div>

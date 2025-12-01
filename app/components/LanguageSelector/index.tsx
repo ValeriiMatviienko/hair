@@ -3,7 +3,7 @@
 import { useCallback } from "react";
 import { useLocaleContext } from "@/app/context/localesProvider";
 import { Button } from "@/components/ui/button";
-import { MdLanguage } from "react-icons/md";
+import { IoLanguage } from "react-icons/io5";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -35,12 +35,12 @@ export default function LanguageSelector() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="bg-brandNavy/90 hover:text-brandNavy text-white flex items-center gap-2"
+          className=" flex text-darkgreen items-center gap-2"
           variant="outline"
           aria-label="Change language"
           disabled={!ready}
         >
-          <MdLanguage size={18} />
+          <IoLanguage size={18} />
           {ready ? locale.toUpperCase() : "…"}
         </Button>
       </DropdownMenuTrigger>
@@ -52,9 +52,9 @@ export default function LanguageSelector() {
             onClick={() => handleLanguageChange(lang)}
             className="flex items-center gap-2"
           >
-            <span>{lang.toUpperCase()}</span>
+            <span className="text-darkgreen">{lang.toUpperCase()}</span>
             {locale === lang && (
-              <span className="ml-auto text-xs text-muted-foreground">✓</span>
+              <span className="ml-auto text-darkgreen text-xs">✓</span>
             )}
           </DropdownMenuItem>
         ))}
