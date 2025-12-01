@@ -36,7 +36,7 @@ const CustomAccordion = ({ items }: AccordionProps) => {
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
 
-          <AccordionContent className="text-base text-muted-foreground">
+          <AccordionContent className="text-base text-secondary-foreground">
             {answer}
           </AccordionContent>
         </AccordionItem>

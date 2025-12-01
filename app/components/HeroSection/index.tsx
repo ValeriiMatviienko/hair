@@ -21,7 +21,7 @@ const HeroSection: FC = () => {
             damping={0.1}
             triggerOnce={true}
           >
-            <h1 className="mb-4 text-4xl font-semibold text-center text-black md:text-5xl sm:mb-5 lg:text-7xl lg:text-start">
+            <h1 className="mb-4 text-4xl font-semibold tracking-tighter text-center md:leading-[1.2] text-black md:text-5xl sm:mb-5 lg:text-7xl lg:text-start">
               {t("hero_title")}
             </h1>
           </Fade>
