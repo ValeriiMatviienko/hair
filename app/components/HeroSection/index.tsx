@@ -39,14 +39,15 @@ const HeroSection: FC = () => {
         </div>
 
         <div className="flex justify-center col-span-12 lg:col-span-6">
-          <Image
-            src="/images/profilePicture.webp"
-            alt="Profile picture"
-            width={1000}
-            height={805}
-            className="object-cover w-full h-auto rounded-lg shadow-lg"
-            priority
-          />
+          <div className="relative w-full max-w-xl overflow-hidden rounded-lg shadow-lg aspect-square">
+            <Image
+              src="/images/profilePicture.webp"
+              alt="Profile picture"
+              fill
+              priority
+              className="object-cover scale-105"
+            />
+          </div>
         </div>
       </div>
     </section>
