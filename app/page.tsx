@@ -18,7 +18,7 @@ export default function Home() {
       <HeroSection />
       <ServiceSection />
       <GallerySection />
-      <PriceSection />
+      {/* <PriceSection /> */}
       <FAQSection />
       <FooterSection />
       <ScrollToTopButton />
