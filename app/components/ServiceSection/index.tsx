@@ -15,7 +15,10 @@ const ServiceSection: FC = () => {
   const isPlus = (s: string) => s.trim().startsWith("➕");
   const isTime = (s: string) =>
     /^((Duration|Czas trwania|Тривалість)\s*:)/i.test(s.trim());
-
+  const isTrichoscopy = (s: string) =>
+    /^(Trichoscopy diagnostics|Diagnostyka trychoskopem|Діагностика трихоскопом)$/i.test(
+      s.trim()
+    );
   return (
     <section
       className="px-4 py-12 mx-auto md:py-18 lg:px-8 max-w-7xl"
@@ -66,13 +69,32 @@ const ServiceSection: FC = () => {
                         ].join(" ")}
                       >
                         {noCheck ? (
-                          <span className="leading-6">{feature}</span>
+                          <span
+                            className={[
+                              "leading-6",
+                              isTrichoscopy(feature)
+                                ? "font-semibold text-black"
+                                : "",
+                            ].join(" ")}
+                          >
+                            {feature}
+                          </span>
                         ) : (
                           <>
                             <div className="h-4 w-4 flex items-center justify-center">
                               <CircleCheck className="h-4 w-4 text-darkgreen" />
                             </div>
-                            <span className="leading-6">{feature}</span>
+
+                            <span
+                              className={[
+                                "leading-6",
+                                isTrichoscopy(feature)
+                                  ? "font-semibold text-black"
+                                  : "",
+                              ].join(" ")}
+                            >
+                              {feature}
+                            </span>
                           </>
                         )}
                       </li>
