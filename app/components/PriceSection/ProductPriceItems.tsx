@@ -29,10 +29,8 @@ export const getProductPrices = (t: TranslationFunction): ProductPrice[] => [
 export const getAdditionalServices = (
   t: TranslationFunction
 ): AdditionalService[] => [
-  { name: t("trichological_consultation"), price: 290 },
   { name: t("bio_ampoule"), price: 170 },
-  { name: t("scalp_peeling"), price: 230 },
-  { name: t("hair_trimming"), price: 120 },
-  { name: t("sos_treatment"), price: 50 },
+  { name: t("hair_trimming"), price: 130 },
   { name: t("hair_polishing"), price: 150 },
+  { name: t("scalp_peeling"), price: 210 },
 ];

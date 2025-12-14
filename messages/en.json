@@ -23,12 +23,16 @@
 
     "service_section_title": "Consultation",
     "service_section_subtitle": "Discover the benefits of hair treatments",
+
     "service_title_1": "Starter Pack",
-    "service_description_1": "Analysis of current products, selection of a personal care system, and advice for a healthy scalp and strong hair\n\nDuration: 30 minutes",
+    "service_description_1": "Analysis of current products\nPersonal care system selection\nAdvice for a healthy scalp and strong hair\n\nDuration: 30 minutes",
+
     "service_title_2": "All Inclusive",
-    "service_description_2": "Trichoscopy diagnostics, analysis of current care, written: selection of therapeutic care, referral for lab tests, vitamin recommendations, dietary advice\n\n➕ online support\n\nDuration: 60 minutes",
+    "service_description_2": "Trichoscopy diagnostics\nAnalysis of current care\nWritten: therapeutic care selection\nReferral for lab tests\nVitamin recommendations\nDietary advice\n➕ Online support\n\nDuration: 60 minutes",
+
     "service_title_3": "Full complete",
-    "service_description_3": "Trichoscopy diagnostics, analysis of current care, written: selection of therapeutic care, referral for lab tests, vitamin recommendations, dietary advice\n\n➕ online support\n➕ follow-up consultation\n\nDuration: 75 minutes",
+    "service_description_3": "Trichoscopy diagnostics\nAnalysis of current care\nWritten: therapeutic care selection\nReferral for lab tests\nVitamin recommendations\nDietary advice\n➕ Online support\n➕ Follow-up consultation\n\nDuration: 75 minutes",
+
     "benefits_conclusion": "Follow-up consultation: results progress review, analysis of implemented care, repeated trichoscopy, comparison with initial photos, scalp condition check. Duration: 60 minutes",
 
     "gallery_title": "Gallery",
@@ -45,12 +49,10 @@
 
     "dodatki_title": "Extra",
     "dodatki_prices": "Price",
-    "bio_ampoule": "Secondary trichological consultation",
-    "scalp_peeling": "Trichological scalp cleansing",
-    "hair_trimming": "Haircut",
-    "sos_treatment": "SOS treatment",
+    "bio_ampoule": "Follow-up trichological consultation",
+    "scalp_peeling": "Ends trimming + hair polishing",
+    "hair_trimming": "Ends trimming",
     "hair_polishing": "Hair polishing",
-    "trichological_consultation": "Trichological consultation",
 
     "faq_title": "FAQ",
     "faq_subtitle": "Answers to your questions",

@@ -23,12 +23,16 @@
 
     "service_section_title": "Konsultacja",
     "service_section_subtitle": "Zapoznaj się z zaletami zabiegów na włosy",
+
     "service_title_1": "Starter Pack",
-    "service_description_1": "Analiza obecnych produktów, dobór indywidualnego systemu pielęgnacji i porady dotyczące zdrowej skóry głowy oraz mocnych włosów\n\nCzas trwania: 30 minut",
+    "service_description_1": "Analiza obecnych produktów\nDobór indywidualnego systemu pielęgnacji\nPorady dotyczące zdrowej skóry głowy oraz mocnych włosów\n\nCzas trwania: 30 minut",
+
     "service_title_2": "All Inclusive",
-    "service_description_2": "Diagnostyka trychoskopem, analiza obecnej pielęgnacji, pisemnie: dobór pielęgnacji terapeutycznej, skierowanie na badania, dobór witamin, zalecenia dietetyczne\n\n➕ wsparcie online\n\nCzas trwania: 60 minut",
+    "service_description_2": "Diagnostyka trychoskopem\nAnaliza obecnej pielęgnacji\nPisemnie: dobór pielęgnacji terapeutycznej\nSkierowanie na badania\nDobór witamin\nZalecenia dietetyczne\n➕ Wsparcie online\n\nCzas trwania: 60 minut",
+
     "service_title_3": "Full complete",
-    "service_description_3": "Diagnostyka trychoskopem, analiza obecnej pielęgnacji, pisemnie: dobór pielęgnacji terapeutycznej, skierowanie na badania, dobór witamin, zalecenia dietetyczne\n\n➕ wsparcie online\n➕ konsultacja kontrolna\n\nCzas trwania: 75 minut",
+    "service_description_3": "Diagnostyka trychoskopem\nAnaliza obecnej pielęgnacji\nPisemnie: dobór pielęgnacji terapeutycznej\nSkierowanie na badania\nDobór witamin\nZalecenia dietetyczne\n➕ Wsparcie online\n➕ Konsultacja kontrolna\n\nCzas trwania: 75 minut",
+
     "benefits_conclusion": "Konsultacja kontrolna: analiza postępów, omówienie wdrożonej pielęgnacji, ponowna trychoskopia, porównanie zdjęć z pierwszej wizyty, kontrola stanu skóry. Czas trwania: 60 minut",
 
     "gallery_title": "Galeria",
@@ -46,11 +50,9 @@
     "dodatki_title": "Dodatki",
     "dodatki_prices": "Cena",
     "bio_ampoule": "Wtórna konsultacja trychologiczna",
-    "scalp_peeling": "Trychologiczne Oczyszczanie skóry",
-    "hair_trimming": "Strzyżenie końcówek",
-    "sos_treatment": "SOS treatment",
+    "scalp_peeling": "Podcięcie końcówek + polerowanie włosów",
+    "hair_trimming": "Podcięcie końcówek",
     "hair_polishing": "Polerowanie włosów",
-    "trichological_consultation": "Konsultacja trychologiczna",
 
     "faq_title": "FAQ",
     "faq_subtitle": "Najczęściej zadawane pytania",
