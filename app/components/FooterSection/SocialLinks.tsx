@@ -12,7 +12,7 @@ export const socialLinks: SocialLinks[] = [
   },
   {
     Component: InstagramIcon,
-    link: "https://instagram.com/hair.by.hanna.wroclaw",
+    link: "https://www.instagram.com/hanna.matvienko",
     description: "Instagram",
   },
   {

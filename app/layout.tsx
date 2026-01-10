@@ -53,6 +53,14 @@ export async function generateMetadata() {
       url: `${baseUrl}`,
       title: "Trycholog Wrocław",
       description: t("description"),
+      images: [
+        {
+          url: `${baseUrl}/images/profilePicture.webp`,
+          width: 1200,
+          height: 630,
+          alt: "Profile Picture",
+        },
+      ],
     },
   };
 }
