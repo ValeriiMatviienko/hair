@@ -51,7 +51,7 @@ export async function generateMetadata() {
     openGraph: {
       type: "website",
       url: `${baseUrl}`,
-      title: "Keratyna Wrocław",
+      title: "Trycholog Wrocław",
       description: t("description"),
     },
   };
