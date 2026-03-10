@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 import { getNavigationItems } from "./NavigationItem";
 import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "./NavigationItemComponent";
-import ContactForm from "../ContactForm/ContactForm";
 import LogoComponent from "./LogoComponent";
 import { useNavigationContext } from "@/app/context/NavigationContext";
 
@@ -40,7 +39,6 @@ const Navbar: FC = () => {
               </div>
               <div className="hidden gap-6 xl:flex">
                 <div className="flex items-center gap-4">
-                  <ContactForm />
                   <LanguageSelector />
                 </div>
               </div>
