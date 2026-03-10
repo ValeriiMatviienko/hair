@@ -34,10 +34,6 @@ export interface InputType {
   numberInput: string;
   descriptionInput: string;
 }
-export interface ToggleModalProps {
-  open: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-}
 export interface FAQItem {
   question: string;
   answer: string;
@@ -75,14 +71,11 @@ export interface NavigationItemComponentProps {
   activeLink: string | null;
   handleNavLinkClick: (
     e: React.MouseEvent<HTMLAnchorElement>,
-    item: NavigationItemType
+    item: NavigationItemType,
   ) => void;
   className: string;
 }
-export type ContactButtonProps = {
-  onClick: (e: React.MouseEvent) => void;
-  className?: string;
-};
+
 export interface NavigationContextType {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
