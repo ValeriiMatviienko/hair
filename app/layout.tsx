@@ -17,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(baseUrl),
     title: {
-      default: t("title"),
-      template: `%s | Hair by Hanna`,
+      default: `${t("title")} – ${t("seoTitleSuffix")}`,
+      template: `%s | ${t("title")}`,
     },
     description: t("description"),
     keywords: t("keywords").split(","),
@@ -58,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
     category: "Beauty",
     twitter: {
       card: "summary_large_image",
-      title: "Trycholog Warszawa",
+      title: `${t("title")} – ${t("seoTitleSuffix")}`,
       description: t("description"),
       images: [
         {
@@ -70,7 +70,8 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: "website",
       url: baseUrl,
-      title: "Trycholog Warszawa",
+      siteName: "Hair by Hanna",
+      title: `${t("title")} – ${t("seoTitleSuffix")}`,
       description: t("description"),
       images: [
         {
