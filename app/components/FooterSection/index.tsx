@@ -62,8 +62,7 @@ const Footer: FC = () => {
 
       <div className="items-center border-t">
         <h3 className="text-center text-black md:text-lg md:text-start">
-          &quot;Copyright &copy; {currentYear} Hair by Hanna. All rights
-          reserved.&quot;
+          Copyright &copy; 2020-{currentYear} Hair by Hanna.
         </h3>
       </div>
     </div>
