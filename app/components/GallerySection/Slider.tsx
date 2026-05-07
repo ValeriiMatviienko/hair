@@ -9,8 +9,6 @@ import {
   type CarouselApi,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 import { GalleryImage } from "./GalleryImage";
@@ -19,6 +17,7 @@ export default function Slider() {
   const [mainApi, setMainApi] = useState<CarouselApi>();
   const [thumbApi, setThumbApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!mainApi) return;
@@ -30,6 +29,7 @@ export default function Slider() {
       thumbApi?.scrollTo(selected);
     };
 
+    setCount(mainApi.scrollSnapList().length);
     handleSelect();
 
     mainApi.on("select", handleSelect);
@@ -96,6 +96,9 @@ export default function Slider() {
           </CarouselContent>
         </div>
       </Carousel>
+      <div className="mt-4 text-center text-sm text-muted-foreground">
+        {current + 1} / {count}
+      </div>
     </div>
   );
 }
