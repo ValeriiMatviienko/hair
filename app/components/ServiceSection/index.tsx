@@ -21,14 +21,14 @@ const ServiceSection: FC = () => {
     /^((Duration|Czas trwania|Тривалість)\s*:)/i.test(s.trim());
   const isTrichoscopy = (s: string) =>
     /^(Trichoscopy diagnostics|Diagnostyka trychoskopem|Діагностика трихоскопом)$/i.test(
-      s.trim()
+      s.trim(),
     );
   const prices = [150, 290, 390];
   const popularIndex = 1;
   return (
     <section
       className="px-4 py-12 mx-auto md:py-18 lg:px-8 max-w-7xl"
-      id="service-section"
+      id="price-section"
     >
       <div className="mb-10 text-center sm:mb-14">
         <Fade direction="up" delay={40} cascade damping={0.1} triggerOnce>

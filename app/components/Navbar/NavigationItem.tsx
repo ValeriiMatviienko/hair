@@ -4,8 +4,8 @@ export const getNavigationItems = (
   t: TranslationFunction,
 ): NavigationItemType[] => [
   { name: t("nav_about"), href: "#home-section" },
-  { name: t("nav_price"), href: "#service-section" },
-  { name: t("nav_service"), href: "#service-section" },
+  { name: t("nav_price"), href: "#price-section" },
+  // { name: t("nav_service"), href: "#service-section" },
   { name: t("nav_galery"), href: "#gallery-section" },
   { name: t("nav_faq"), href: "#faq-section" },
 ];
