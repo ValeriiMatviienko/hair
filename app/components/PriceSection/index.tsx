@@ -1,119 +1,131 @@
 "use client";
 
+import { FC } from "react";
 import { Fade } from "react-awesome-reveal";
-import { getAdditionalServices, getProductPrices } from "./ProductPriceItems";
 import { useTranslations } from "next-intl";
-import { FC, useMemo } from "react";
-
+import { getServiceData } from "./ServiceData";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
-import { CircleCheck } from "lucide-react";
+import { PackageCheck, Layers, Crown, CircleCheck } from "lucide-react";
+import { getAdditionalServices } from "./ProductPriceItems";
 
-const PriceSection: FC = () => {
+const icons = [PackageCheck, Layers, Crown];
+
+const ServiceSection: FC = () => {
   const t = useTranslations("Index");
-
-  const productList = getProductPrices(t);
+  const serviceData = getServiceData(t);
   const additionalServices = getAdditionalServices(t);
 
-  const plans = useMemo(
-    () => [
-      {
-        name: t("price_nanoplastia"),
-        price: productList[0]?.shortHairPrice ?? 0,
-        description: t("product_type"),
-        features: [
-          {
-            title: `${t("short_hair")}: ${productList[0]?.shortHairPrice ?? 0}`,
-          },
-          { title: `${t("mid_hair")}: ${productList[0]?.midHairPrice ?? 0}` },
-          { title: `${t("long_hair")}: ${productList[0]?.longHairPrice ?? 0}` },
-        ],
-      },
-      {
-        name: t("price_keratine"),
-        price: productList[1]?.shortHairPrice ?? 0,
-        description: t("product_type"),
-        features: [
-          {
-            title: `${t("short_hair")}: ${productList[1]?.shortHairPrice ?? 0}`,
-          },
-          { title: `${t("mid_hair")}: ${productList[1]?.midHairPrice ?? 0}` },
-          { title: `${t("long_hair")}: ${productList[1]?.longHairPrice ?? 0}` },
-        ],
-        isPopular: true,
-      },
-      {
-        name: t("price_botox"),
-        price: productList[2]?.shortHairPrice ?? 0,
-        description: t("product_type"),
-        features: [
-          {
-            title: `${t("short_hair")}: ${productList[2]?.shortHairPrice ?? 0}`,
-          },
-          { title: `${t("mid_hair")}: ${productList[2]?.midHairPrice ?? 0}` },
-          { title: `${t("long_hair")}: ${productList[2]?.longHairPrice ?? 0}` },
-        ],
-      },
-    ],
-    [t, productList]
-  );
-
+  const isPlus = (s: string) => s.trim().startsWith("➕");
+  const isTime = (s: string) =>
+    /^((Duration|Czas trwania|Тривалість)\s*:)/i.test(s.trim());
+  const isTrichoscopy = (s: string) =>
+    /^(Trichoscopy diagnostics|Diagnostyka trychoskopem|Діагностика трихоскопом)$/i.test(
+      s.trim(),
+    );
+  const prices = [150, 290, 390];
+  const popularIndex = 1;
   return (
     <section
       className="px-4 py-12 mx-auto md:py-18 lg:px-8 max-w-7xl"
       id="price-section"
     >
-      <Fade direction="up" delay={40} cascade damping={0.1} triggerOnce>
-        <div className="text-center">
-          <h2 className="mb-4 text-2xl text-center text-black uppercase sm:mb-10 ls-51">
+      <div className="mb-10 text-center sm:mb-14">
+        <Fade direction="up" delay={40} cascade damping={0.1} triggerOnce>
+          <h1 className="mb-3 text-2xl text-black uppercase ls-51">
             {t("price_section_title")}
-          </h2>
-        </div>
-      </Fade>
+          </h1>
+        </Fade>
 
-      <div className="mt-12 sm:mt-16 max-w-(--breakpoint-lg) mx-auto grid grid-cols-1 lg:grid-cols-3 items-center gap-8 lg:gap-0">
-        {plans.map((plan) => (
-          <div
-            key={plan.name}
-            className={cn("relative p-6 bg-background border px-8 rounded-lg", {
-              "shadow-[0px_2px_12px_0px_rgba(0,0,0,0.07)] py-14 z-1 px-10 lg:-mx-2 overflow-hidden":
-                plan.isPopular,
-            })}
-          >
-            {plan.isPopular && (
-              <Badge className="absolute top-0 right-0 rounded-none px-5 py-1 uppercase rounded-bl-lg">
-                {t("price_section_title")}
-              </Badge>
-            )}
-
-            <h3 className="text-lg font-medium uppercase">{plan.name}</h3>
-
-            <p className="mt-2 text-4xl font-semibold text-black">
-              {plan.price}
-              <span className="ml-1.5 text-sm text-muted-foreground font-normal">
-                {t("short_hair")}
-              </span>
-            </p>
-
-            <p className="mt-4 text-sm text-muted-foreground">
-              {plan.description}
-            </p>
-
-            <Separator className="my-8" />
-
-            <ul className="space-y-3">
-              {plan.features.map((feature) => (
-                <li key={feature.title} className="flex items-start gap-1.5">
-                  <CircleCheck className="h-4 w-4 mt-1 text-green-600" />
-                  <span className="text-black">{feature.title}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {/* <Fade direction="up" delay={40} cascade damping={0.1} triggerOnce>
+          <p className="text-3xl font-semibold text-black lg:text-5xl">
+            {t("service_section_subtitle")}
+          </p>
+        </Fade> */}
       </div>
 
+      <Fade direction="up" delay={40} cascade damping={0.1} triggerOnce>
+        <div className="mt-4 sm:mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {serviceData.map((item, index) => {
+            const Icon = icons[index] ?? PackageCheck;
+
+            return (
+              <div
+                key={item.serviceTitle}
+                className={[
+                  "relative flex flex-col items-start border rounded-xl py-6 px-5 bg-background",
+                  index === popularIndex ? "border-2 border-primary" : "",
+                ].join(" ")}
+              >
+                {index === popularIndex && (
+                  <Badge className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2">
+                    Most popular
+                  </Badge>
+                )}
+
+                <div className="mb-4 h-10 w-10 flex items-center justify-center bg-muted rounded-full">
+                  <Icon className="size-5" />
+                </div>
+
+                <span className="text-lg font-semibold text-black">
+                  {item.serviceTitle}
+                </span>
+
+                <p className="mt-1 text-3xl font-semibold text-black">
+                  {prices[index]} zł
+                </p>
+
+                <Separator className="my-4" />
+
+                <ul className="space-y-2 w-full">
+                  {item.serviceFeatures.map((feature) => {
+                    const noCheck = isPlus(feature) || isTime(feature);
+
+                    return (
+                      <li
+                        key={feature}
+                        className={[
+                          "text-md items-center text-foreground/80",
+                          noCheck ? "pl-0" : "grid grid-cols-[16px_1fr] gap-2",
+                        ].join(" ")}
+                      >
+                        {noCheck ? (
+                          <span
+                            className={[
+                              "leading-6",
+                              isTrichoscopy(feature)
+                                ? "font-semibold text-black"
+                                : "",
+                            ].join(" ")}
+                          >
+                            {feature}
+                          </span>
+                        ) : (
+                          <>
+                            <div className="h-4 w-4 flex items-center justify-center">
+                              <CircleCheck className="h-4 w-4 text-green-600" />
+                            </div>
+                            <span
+                              className={[
+                                "leading-6",
+                                isTrichoscopy(feature)
+                                  ? "font-semibold text-black"
+                                  : "",
+                              ].join(" ")}
+                            >
+                              {feature}
+                            </span>
+                          </>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </Fade>
       <div className="mt-12 sm:mt-16 max-w-(--breakpoint-lg) mx-auto">
         <div className="relative p-6 bg-background border px-8 rounded-lg shadow-[0px_2px_12px_0px_rgba(0,0,0,0.07)]">
           <h3 className="text-lg font-medium uppercase text-black">
@@ -140,8 +152,13 @@ const PriceSection: FC = () => {
           </ul>
         </div>
       </div>
+      <Fade direction="up" delay={40} damping={0.1} triggerOnce>
+        <p className="mt-16 text-lg text-center text-black sm:text-xl">
+          {t("benefits_conclusion")}
+        </p>
+      </Fade>
     </section>
   );
 };
 
-export default PriceSection;
+export default ServiceSection;
