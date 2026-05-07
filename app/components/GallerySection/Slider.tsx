@@ -1,89 +1,86 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
 } from "@/components/ui/carousel";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 
 import { GalleryImage } from "./GalleryImage";
 
 export default function Slider() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!api) return;
 
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
+    setCurrent(api.selectedScrollSnap());
 
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
+      setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
 
+  const handleThumbClick = useCallback(
+    (index: number) => api?.scrollTo(index),
+    [api],
+  );
+
   return (
-    <div className="mx-auto max-w-xs">
-      <Carousel setApi={setApi} className="w-full max-w-xs">
+    <div className="mx-auto ">
+      <Carousel className="w-full" setApi={setApi}>
         <CarouselContent>
           {GalleryImage.map((image, index) => (
             <CarouselItem key={image.src ?? index}>
-              <Card>
-                <CardContent className="relative h-150 p-0">
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <div className="relative h-full cursor-pointer">
-                        <Image
-                          src={image.src}
-                          alt={image.alt}
-                          fill
-                          className="object-cover rounded-md"
-                        />
-                      </div>
-                    </DialogTrigger>
-
-                    <DialogContent className="max-w-4xl p-0 bg-transparent border-none shadow-none">
-                      <DialogHeader className="hidden">
-                        <DialogTitle>Image preview</DialogTitle>
-                      </DialogHeader>
-
-                      <div className="relative w-full h-[80vh]">
-                        <Image
-                          src={image.src}
-                          alt={image.alt}
-                          fill
-                          className="object-contain rounded-md"
-                        />
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </CardContent>
-              </Card>
+              <div className="relative h-150 lg:h-300 w-full">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="rounded-xl object-cover"
+                />
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
+      </Carousel>
+
+      <Carousel className="mt-4 w-full ">
+        <div className="mask-x-from-90%">
+          <CarouselContent className="my-1 flex">
+            {GalleryImage.map((image, index) => (
+              <CarouselItem
+                key={image.src ?? index}
+                onClick={() => handleThumbClick(index)}
+                className={cn(
+                  "basis-1/4 cursor-pointer transition-opacity",
+                  current === index ? "opacity-100" : "opacity-50",
+                )}
+              >
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="rounded-xl object-cover"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </div>
+
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <div className="mt-4 text-center text-sm text-muted-foreground">
-        Slide {current} of {count}
-      </div>
     </div>
   );
 }

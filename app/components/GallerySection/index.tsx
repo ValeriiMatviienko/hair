@@ -1,6 +1,5 @@
 "use client";
 import { Fade } from "react-awesome-reveal";
-import { GalleryImage } from "./GalleryImage";
 import Slider from "./Slider";
 import { useTranslations } from "next-intl";
 import { FC } from "react";

@@ -1,10 +1,8 @@
 import "./globals.css";
-import "react-toastify/dist/ReactToastify.css";
 import { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import { NavigationProvider } from "./context/NavigationContext";
-import ToastProvider from "./context/ToastProvider";
 import { montserrat } from "./helpers/FontSetup";
 import { LocaleProvider } from "./context/localesProvider";
 import type { Metadata } from "next";
@@ -94,9 +92,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body suppressHydrationWarning>
         <GoogleAnalytics />
         <NavigationProvider>
-          <LocaleProvider>
-            <ToastProvider>{children}</ToastProvider>
-          </LocaleProvider>
+          <LocaleProvider>{children}</LocaleProvider>
         </NavigationProvider>
       </body>
     </html>
