@@ -78,8 +78,8 @@ export default function Slider() {
           </CarouselContent>
         </div>
 
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="left-2 z-10 md:-left-12" />
+        <CarouselNext className="right-2 z-10 md:-right-12" />
       </Carousel>
     </div>
   );
