@@ -1,12 +1,9 @@
 {
   "Index": {
     "nav_about": "O mnie",
-    "nav_service": "Usługi",
-    "nav_benefit": "Korzyści",
-    "nav_galery": "Galeria",
     "nav_price": "Cennik",
+    "nav_galery": "Galeria",
     "nav_faq": "FAQ",
-    "nav_contact": "Kontakt",
 
     "form_title": "Formularz kontaktowy",
     "form_subtitle": "Wypełnij formularz, aby się ze mną skontaktować",

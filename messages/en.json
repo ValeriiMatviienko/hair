@@ -1,12 +1,9 @@
 {
   "Index": {
     "nav_about": "About me",
-    "nav_service": "Services",
-    "nav_benefit": "Benefits",
-    "nav_galery": "Gallery",
     "nav_price": "Price",
+    "nav_galery": "Gallery",
     "nav_faq": "FAQ",
-    "nav_contact": "Contact me",
 
     "form_title": "Contact form",
     "form_subtitle": "Fill in the form to contact me",
