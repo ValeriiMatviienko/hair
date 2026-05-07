@@ -16,31 +16,45 @@ import {
 import { GalleryImage } from "./GalleryImage";
 
 export default function Slider() {
-  const [api, setApi] = useState<CarouselApi>();
+  const [mainApi, setMainApi] = useState<CarouselApi>();
+  const [thumbApi, setThumbApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    if (!api) return;
+    if (!mainApi) return;
 
-    setCurrent(api.selectedScrollSnap());
+    const handleSelect = () => {
+      const selected = mainApi.selectedScrollSnap();
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
+      setCurrent(selected);
+      thumbApi?.scrollTo(selected);
+    };
+
+    handleSelect();
+
+    mainApi.on("select", handleSelect);
+
+    return () => {
+      mainApi.off("select", handleSelect);
+    };
+  }, [mainApi, thumbApi]);
 
   const handleThumbClick = useCallback(
-    (index: number) => api?.scrollTo(index),
-    [api],
+    (index: number) => {
+      mainApi?.scrollTo(index);
+      thumbApi?.scrollTo(index);
+      setCurrent(index);
+    },
+    [mainApi, thumbApi],
   );
 
   return (
-    <div className="mx-auto ">
-      <Carousel className="w-full" setApi={setApi}>
+    <div className="mx-auto">
+      <Carousel className="w-full" setApi={setMainApi}>
         <CarouselContent>
           {GalleryImage.map((image, index) => (
             <CarouselItem key={image.src ?? index}>
-              <div className="relative h-150 lg:h-300 w-full">
+              <div className="relative h-150 w-full lg:h-300">
                 <Image
                   src={image.src}
                   alt={image.alt}
@@ -53,7 +67,11 @@ export default function Slider() {
         </CarouselContent>
       </Carousel>
 
-      <Carousel className="mt-4 w-full ">
+      <Carousel
+        className="mt-4 w-full"
+        setApi={setThumbApi}
+        opts={{ align: "start" }}
+      >
         <div className="mask-x-from-90%">
           <CarouselContent className="my-1 flex">
             {GalleryImage.map((image, index) => (
@@ -77,9 +95,6 @@ export default function Slider() {
             ))}
           </CarouselContent>
         </div>
-
-        <CarouselPrevious className="left-2 z-10 md:-left-12" />
-        <CarouselNext className="right-2 z-10 md:-right-12" />
       </Carousel>
     </div>
   );
