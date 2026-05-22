@@ -1,11 +1,11 @@
 import "./globals.css";
-import { ReactNode } from "react";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import { NavigationProvider } from "./context/NavigationContext";
 import { montserrat } from "./helpers/FontSetup";
 import { LocaleProvider } from "./context/localesProvider";
-import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Index");
@@ -29,9 +29,9 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical: baseUrl,
       languages: {
-        "pl-PL": `${baseUrl}/pl-PL`,
-        "uk-UA": `${baseUrl}/uk-UA`,
-        "en-US": `${baseUrl}/en-US`,
+        "pl-PL": "/pl-PL",
+        "uk-UA": "/uk-UA",
+        "en-US": "/en-US",
       },
     },
     creator: "Valerii Matviienko",

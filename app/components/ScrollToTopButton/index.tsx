@@ -1,32 +1,33 @@
 "use client";
-import { FaArrowUp } from "react-icons/fa";
-import { useState, useEffect, FC } from "react";
 
-const ScrollToTopButton: FC = () => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+import { useEffect, useState } from "react";
+import { FaArrowUp } from "react-icons/fa";
+
+const SCROLL_THRESHOLD = 300;
+
+const ScrollToTopButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      setIsVisible(window.pageYOffset > 300);
+      setIsVisible(window.scrollY > SCROLL_THRESHOLD);
     };
-    window.addEventListener("scroll", toggleVisibility);
+
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    toggleVisibility();
+
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return isVisible ? (
-    <div
-      className="fixed p-2 rounded-full cursor-pointer bg-opacity-20 bg-gray-100/25 bottom-4 right-4"
-      onClick={scrollToTop}
+    <button
+      type="button"
+      aria-label="Scroll to top"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="fixed bottom-4 right-4 cursor-pointer rounded-full bg-gray-100/25 p-2"
     >
-      <FaArrowUp className="w-6 h-6 sm:w-10 sm:h-10 text-darkgreen" />
-    </div>
+      <FaArrowUp className="h-6 w-6 text-darkgreen sm:h-10 sm:w-10" />
+    </button>
   ) : null;
 };
 

@@ -1,14 +1,12 @@
 "use client";
-import { FC } from "react";
+
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
 import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "../Navbar/NavigationItemComponent";
 import { getNavigationItems } from "../Navbar/NavigationItem";
-import { useNavigationContext } from "@/app/context/NavigationContext";
 
-const DrawerData: FC = () => {
-  const { setIsContactFormOpen } = useNavigationContext();
+const DrawerData = () => {
   const t = useTranslations("Index");
   const navigationItems = getNavigationItems(t);
   const { activeLink, handleNavLinkClick } = useNavigation();

@@ -1,7 +1,6 @@
 "use client";
-import { FC } from "react";
 
-const LogoComponent: FC = () => {
+const LogoComponent = () => {
   return (
     <div className="flex items-center shrink-0 text-center">
       <a href="/" className="text-3xl font-semibold text-black ">

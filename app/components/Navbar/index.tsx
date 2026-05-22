@@ -1,7 +1,7 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
 import { FaBars } from "react-icons/fa";
-import { FC, useCallback } from "react";
+import { useCallback } from "react";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
 import { getNavigationItems } from "./NavigationItem";
@@ -10,7 +10,7 @@ import NavigationItemComponent from "./NavigationItemComponent";
 import LogoComponent from "./LogoComponent";
 import { useNavigationContext } from "@/app/context/NavigationContext";
 
-const Navbar: FC = () => {
+const Navbar = () => {
   const t = useTranslations("Index");
   const navigationItems = getNavigationItems(t);
   const { isOpen, setIsOpen } = useNavigationContext();

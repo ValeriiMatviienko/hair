@@ -1,48 +1,51 @@
 "use client";
-import React, { useCallback } from "react";
+
+import { PropsWithChildren } from "react";
 import { FaTimes } from "react-icons/fa";
-import { DrawerProps } from "@/app/types/types";
 import LogoComponent from "../Navbar/LogoComponent";
 import useDocumentHeight from "@/app/hooks/useDocumentHeight";
 import { useNavigationContext } from "@/app/context/NavigationContext";
 
-const Drawer = ({ children }: DrawerProps) => {
+const Drawer = ({ children }: PropsWithChildren) => {
   const { isOpen, setIsOpen } = useNavigationContext();
-  const handleClose = useCallback(
-    (event: React.MouseEvent) => {
-      event.preventDefault();
-      event.stopPropagation();
-      setIsOpen(false);
-    },
-    [setIsOpen]
-  );
 
   useDocumentHeight();
 
-  const mainClassName = `fixed overflow-hidden z-10 bg-secondary-foreground/75 inset-0 transform ease-in-out ${
-    isOpen ? "opacity-100" : "opacity-0"
-  }`;
+  const closeDrawer = () => setIsOpen(false);
 
-  const sectionClassName = `absolute bg-white h-full shadow-xl transform ${
-    isOpen ? "translate-x-0" : "-translate-x-full"
-  } w-full max-w-xs md:max-w-sm`;
   return (
-    <main className={mainClassName}>
-      <section className={sectionClassName}>
+    <main
+      className={`fixed inset-0 z-10 overflow-hidden bg-secondary-foreground/75 transition-opacity ease-in-out ${
+        isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+      }`}
+    >
+      <section
+        className={`absolute h-full w-full max-w-xs bg-white shadow-xl transition-transform md:max-w-sm ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
         <header className="flex items-center justify-between px-4 py-4">
           <LogoComponent />
-          <FaTimes
-            className="block w-6 h-6"
-            onClick={handleClose}
+
+          <button
+            type="button"
+            onClick={closeDrawer}
             aria-label="Close drawer"
-          />
+            className="block"
+          >
+            <FaTimes className="h-6 w-6" />
+          </button>
         </header>
-        <div onClick={handleClose}>{children}</div>
+
+        <div onClick={closeDrawer}>{children}</div>
       </section>
-      <section
-        className="w-screen h-full cursor-pointer "
-        onClick={handleClose}
-      ></section>
+
+      <button
+        type="button"
+        aria-label="Close drawer overlay"
+        onClick={closeDrawer}
+        className="h-full w-screen cursor-pointer"
+      />
     </main>
   );
 };

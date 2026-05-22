@@ -1,8 +1,14 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { NextIntlClientProvider } from "next-intl";
-import { useLocale, Locale } from "../hooks/useLocale";
+import { Locale, useLocale } from "../hooks/useLocale";
 
 type LocaleContextValue = {
   locale: Locale;
@@ -12,27 +18,24 @@ type LocaleContextValue = {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
-export function LocaleProvider({ children }: { children: React.ReactNode }) {
+export function LocaleProvider({ children }: PropsWithChildren) {
   const [locale, setLocale, ready] = useLocale();
-  const [messages, setMessages] = useState<Record<string, unknown> | null>(
-    null
-  );
+  const [messages, setMessages] = useState<Record<string, unknown>>();
 
   useEffect(() => {
-    let alive = true;
+    let isMounted = true;
 
-    (async () => {
-      try {
-        const mod = await import(`@/messages/${locale}.json`);
-        if (alive) setMessages(mod.default);
-      } catch (err) {
-        console.error(`Error loading messages for "${locale}":`, err);
-        if (alive) setMessages({});
-      }
-    })();
+    import(`@/messages/${locale}.json`)
+      .then(({ default: messages }) => {
+        if (isMounted) setMessages(messages);
+      })
+      .catch((error) => {
+        console.error(`Error loading messages for "${locale}":`, error);
+        if (isMounted) setMessages({});
+      });
 
     return () => {
-      alive = false;
+      isMounted = false;
     };
   }, [locale]);
 
@@ -48,8 +51,11 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useLocaleContext() {
-  const ctx = useContext(LocaleContext);
-  if (!ctx)
+  const context = useContext(LocaleContext);
+
+  if (!context) {
     throw new Error("useLocaleContext must be used within a LocaleProvider");
-  return ctx;
+  }
+
+  return context;
 }

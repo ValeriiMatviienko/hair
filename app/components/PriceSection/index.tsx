@@ -1,6 +1,5 @@
 "use client";
 
-import { FC } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useTranslations } from "next-intl";
 import { getServiceData } from "./ServiceData";
@@ -11,7 +10,7 @@ import { getAdditionalServices } from "./ProductPriceItems";
 
 const icons = [PackageCheck, Layers, Crown];
 
-const ServiceSection: FC = () => {
+const ServiceSection = () => {
   const t = useTranslations("Index");
   const serviceData = getServiceData(t);
   const additionalServices = getAdditionalServices(t);

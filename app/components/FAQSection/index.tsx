@@ -3,10 +3,10 @@
 import { Fade } from "react-awesome-reveal";
 import { getFAQs } from "./FAQItem";
 import { useTranslations } from "next-intl";
-import { FC } from "react";
+
 import CustomAccordion from "./Accordion";
 
-const FAQSection: FC = () => {
+const FAQSection = () => {
   const t = useTranslations("Index");
   const faqs = getFAQs(t);
 

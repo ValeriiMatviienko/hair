@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const Address: FC = () => {
+const Address = () => {
   return (
     <address className="text-lg text-center hover:underline">
       <a

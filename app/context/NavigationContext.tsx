@@ -1,10 +1,5 @@
 "use client";
-import React, {
-  PropsWithChildren,
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { PropsWithChildren, createContext, useContext, useState } from "react";
 import { NavigationContextType } from "../types/types";
 
 const NavigationContext = createContext<NavigationContextType>({

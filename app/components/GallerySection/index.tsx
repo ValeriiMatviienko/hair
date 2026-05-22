@@ -2,9 +2,8 @@
 import { Fade } from "react-awesome-reveal";
 import Slider from "./Slider";
 import { useTranslations } from "next-intl";
-import { FC } from "react";
 
-const GallerySection: FC = () => {
+const GallerySection = () => {
   const t = useTranslations("Index");
 
   return (

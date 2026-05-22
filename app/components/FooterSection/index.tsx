@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+
 import { useTranslations } from "next-intl";
 import { socialLinks } from "./SocialLinks";
 import OpenHours from "./OpenHours";
@@ -7,7 +7,7 @@ import Address from "./Adress";
 
 const currentYear = new Date().getFullYear();
 
-const Footer: FC = () => {
+const Footer = () => {
   const t = useTranslations("Index");
 
   return (

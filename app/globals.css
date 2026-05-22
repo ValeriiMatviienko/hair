@@ -165,7 +165,7 @@ main {
 }
 
 .active-class {
-  color: #1a4c3d;
+  color: var(--color-darkgreen);
   font-weight: bold;
 }
 
