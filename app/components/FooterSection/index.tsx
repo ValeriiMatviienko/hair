@@ -3,7 +3,8 @@
 import { useTranslations } from "next-intl";
 import { socialLinks } from "./SocialLinks";
 import OpenHours from "./OpenHours";
-import Address from "./Adress";
+import Address from "./Address";
+import { siteConfig } from "@/lib/site-config";
 
 const currentYear = new Date().getFullYear();
 
@@ -39,7 +40,7 @@ const Footer = () => {
           </div>
           <div className="py-4">
             <h2 className="mb-2 text-lg font-semibold text-center uppercase">
-              {t("adress")}:
+              {t("address")}:
             </h2>
             <Address />
             <OpenHours />
@@ -47,7 +48,7 @@ const Footer = () => {
         </div>
         <div className="col-span-full sm:col-span-6">
           <iframe
-            title="Hair by Hanna"
+            title={t("map_title")}
             src={t("location")}
             width="100%"
             height="250"
@@ -56,7 +57,15 @@ const Footer = () => {
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          />
+          <a
+            href={siteConfig.address.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-darkgreen underline"
+          >
+            {t("open_map")}
+          </a>
         </div>
       </div>
 

@@ -3,21 +3,22 @@ import TikTokIcon, {
   FacebookIcon,
   InstagramIcon,
 } from "@/public/images/Footer/icons";
+import { siteConfig } from "@/lib/site-config";
 
 export const socialLinks: SocialLinks[] = [
   {
     Component: FacebookIcon,
-    link: "https://facebook.com/hair.by.hanna.ua",
+    link: siteConfig.social.facebook,
     description: "Facebook",
   },
   {
     Component: InstagramIcon,
-    link: "https://www.instagram.com/hanna.matvienko",
+    link: siteConfig.social.instagram,
     description: "Instagram",
   },
   {
     Component: TikTokIcon,
-    link: "https://www.tiktok.com/@hair.by.hanna?_t=8hRRAiMGYoT&_r=1",
+    link: siteConfig.social.tiktok,
     description: "TikTok",
   },
 ];

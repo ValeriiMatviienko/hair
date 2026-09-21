@@ -4,22 +4,20 @@
     "nav_price": "Цінник",
     "nav_galery": "Галерея",
     "nav_faq": "FAQ",
-
-    "form_title": "Контактна форма",
-    "form_subtitle": "Заповніть форму, щоб зв'язатися зі мною",
-    "form_name": "Ім'я",
-    "form_name_placeholder": "Ім'я",
-    "form_number": "Номер",
-    "form_number_placeholder": "Ваш номер телефону",
-    "form_message": "Ваше повідомлення",
-    "form_message_placeholder": "Залиште коментар",
-    "form_button_send": "Надіслати повідомлення",
-
+    "change_language": "Змінити мову",
+    "open_menu": "Відкрити меню",
+    "close_menu": "Закрити меню",
+    "close_menu_overlay": "Закрити мобільне меню",
+    "mobile_navigation": "Мобільна навігація",
+    "scroll_to_top": "Прокрутити вгору",
+    "cookie_consent_title": "Налаштування файлів cookie",
+    "cookie_consent_description": "Дозволити необов’язкові аналітичні файли cookie?",
+    "cookie_consent_allow": "Дозволити",
+    "cookie_consent_decline": "Не дозволяти",
     "hero_title": "Welcome to my world",
     "hero_description": "Я - Ганна, трихолог-естетист, твій  експерт в сфері догляду за волоссям та шкірою голови.\n\n Проводжу трихологічні  консультації, які змінюють життя на краще. Якщо тебе турбуює лущення,  свербіж, лупа, себорейний дерматит або надмірне випадіння волосся - запрошую на індивідуальну консультацію.\n Допоможу підібрати ефективний догляд, зміцнити та загустити волосся і зроблю його доглянутим.\n\nЯ відкрию тобі світ гарного і здорового волосся.",
 
-    "service_section_title": "Консультація",
-    "service_section_subtitle": "Ознайомтеся з перевагами процедур для волосся",
+    "most_popular": "Найпопулярніший",
 
     "service_title_1": "Starter Pack",
     "service_description_1": "Аналіз поточних засобів\nПідбір персональної системи догляду\nПоради для здорової шкіри голови й міцного волосся\n\nТривалість: 30 хвилин",
@@ -34,18 +32,17 @@
 
     "gallery_title": "Галерея",
     "gallery_subtitle": "Галерея моїх останніх робіт",
+    "select_gallery_image": "Показати фото {number} з галереї",
+    "gallery_image_alt": "Результат процедури для волосся, фото {number}",
+    "profile_image_alt": "Портрет Ганни, трихологині Hair by Hanna",
+
+    "instagram_label": "Instagram",
+    "instagram_title": "Hair by Hanna в Instagram",
+    "instagram_follow": "Підписатися на {handle}",
+    "instagram_post_fallback": "Переглянути допис в Instagram",
 
     "price_section_title": "Ціни",
-    "product_type": "Послуга",
-    "short_hair": "До плечей",
-    "mid_hair": "До лопаток",
-    "long_hair": "До пояса",
-    "price_keratine": "Keratin",
-    "price_botox": "Botox",
-    "price_nanoplastia": "Nanoplastia",
-
     "dodatki_title": "Додатково",
-    "dodatki_prices": "Ціна",
     "bio_ampoule": "Вторинна консультація трихологічна",
     "scalp_peeling": "Стрижка кінчиків + Полірування волосся",
     "hair_trimming": "Стрижка кінчиків",
@@ -69,7 +66,9 @@
     "faq_answer_7": "Не мийте голову 12 годин до візиту — це допоможе краще оцінити стан шкіри.",
 
     "follow_me": "Підпишись",
-    "adress": "Адреса",
+    "address": "Адреса",
+    "map_title": "Розташування Hair by Hanna",
+    "open_map": "Відкрити місце в Google Maps",
 
     "open_hours": "Години Роботи",
     "monday_friday": "Понеділок - П'ятниця: 9 - 21",
@@ -79,11 +78,6 @@
     "seoTitleSuffix": "Трихолог Варшава",
     "description": "Професійний трихолог у Варшаві, спеціаліст з догляду за волоссям, послуги кератинового вирівнювання, ботоксу для волосся та нанопластики. Індивідуальний підхід для здоров'я та краси вашого волосся у Варшаві.",
     "keywords": "догляд за волоссям Варшава, кератинове вирівнювання Варшава, ботокс для волосся Варшава, нанопластика, професійний трихолог Варшава, лікування волосся, відновлення волосся, трихолог у Варшаві",
-
-    "messageSent": "Повідомлення відправлено!",
-    "messageError": "Помилка при відправленні повідомлення. Будь ласка, спробуйте ще раз.",
-
-    "form_number_tip": "Будь ласка, вводьте тільки цифри.",
 
     "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.497822116449!2d17.04497!3d51.1177263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe9da5bc30ee9%3A0x5530bc6d1c976957!2zxaF3acSZdG9rcnp5c2thIDM3LCA1MC0zMjcgV3JvY8WCYXc!5e0!3m2!1suk!2spl!4v1764622918919!5m2!1suk!2spl"
   }

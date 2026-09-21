@@ -1,60 +1,63 @@
-# Components Documentation
+# Hair by Hanna
 
-## Overview
+Multilingual marketing site for the Hair by Hanna trichology and hair-care business. The application is a single Next.js App Router page with Polish, English, and Ukrainian content, service pricing, a gallery, FAQ, social links, Instagram embeds, and a Google Maps embed.
 
-This document outlines a series of adaptable and easily integrable React components designed to enhance user experience in web applications.
+## Requirements
 
-## Section Components
+- Node.js 20.9 or newer
+- npm
 
-### AccordionSection & FAQSection
+## Local development
 
-- Display information in a concise, expandable format.
-- Ideal for FAQs or organized sections.
+```bash
+npm install
+copy .env.example .env.local
+npm run dev
+```
 
-### FooterSection & GallerySection
+Open `http://localhost:3000`.
 
-- Present additional information, links, and image galleries.
-- Attractive layout design.
+## Environment
 
-### HeroSection & ServiceSection
+Copy `.env.example` to `.env.local` and configure:
 
-- Customizable component for landing pages.
-- Details services/features in a versatile format.
+- `BASE_URL`: absolute public site origin used by metadata, robots, and the sitemap. It defaults to `https://hairbyhanna.eu`.
+- `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID`: optional GA4 measurement ID. Analytics is disabled when it is unset and loads only after the visitor allows analytics cookies.
 
-### PriceSection & LanguageSelectorSection
+Do not commit `.env` or `.env.local` files.
 
-- Provides clear pricing details.
-- Enhances accessibility and internationalization.
+## Commands
 
-## Other Components
+```bash
+npm run dev        # development server
+npm run typecheck  # TypeScript validation
+npm run lint       # ESLint 9 / Next.js rules
+npm run build      # production build
+npm run start      # serve the production build
+```
 
-- Interactive communication tools featuring modal functionality and custom triggers.
-- A sliding navigation drawer that optimizes space and improves the navigation experience.
-- A functional, responsive top navigation bar
-- Dynamic image carousel.
-- A convenient feature for quickly returning to the top of the page.
+There is currently no automated unit or end-to-end test suite. Before merging changes, run typecheck, lint, and a production build, then manually verify desktop/mobile navigation, all locales, the gallery, the cookie banner, Maps, and Instagram embeds.
 
-## Functionality and Customization
+## Architecture
 
-- Utilizes modern React practices for clean, manageable code.
-- Modular design for independent or combined use.
+- `app/layout.tsx`: server root layout, metadata, request locale, and global providers.
+- `app/page.tsx`: server-rendered page composition.
+- `app/components/`: page sections and interactive controls.
+- `app/context/`: navigation, locale, and analytics-consent state.
+- `i18n/`: locale definitions plus request-scoped message loading.
+- `messages/`: synchronized `pl`, `en`, and `uk` translation files.
+- `components/ui/`: shared Radix/shadcn-style primitives.
+- `lib/site-config.ts`: public business URLs, handles, address, and prices.
+- `public/images/`: optimized local profile and gallery images.
+
+The locale is stored in both a first-party cookie and `localStorage`. The cookie lets the server render the selected language immediately; the client storage entry preserves compatibility with older visits. The root URL is canonical, and the application does not expose locale-specific routes.
+
+The Google Maps iframe and Instagram embeds load directly. Analytics loads when `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` is configured and the visitor allows analytics cookies. Direct external links remain available alongside the embeds.
+
+## Data and backend
+
+The site has no API routes, database, authentication, contact-form backend, or remote first-party data source. Business content is held in translation JSON and colocated TypeScript configuration.
 
 ## License
 
-- Project is under the MIT License, see the LICENSE file for details.
-
-## Useful Libraries
-
-The project leverages several libraries for its functionality:
-
-- [`@headlessui/react`](https://github.com/tailwindlabs/headlessui#react): For building fully accessible UI components.
-- [`autoprefixer`](https://www.npmjs.com/package/autoprefixer), [`postcss`](https://www.npmjs.com/package/postcss), [`tailwindcss`](https://www.npmjs.com/package/tailwindcss): For styling and CSS.
-- [`next`](https://nextjs.org/), [`next-intl`](https://github.com/amannn/next-intl): For the Next.js framework and internationalization.
-- [`nodemailer`](https://nodemailer.com/about/): For sending emails.
-- [`react-awesome-reveal`](https://www.npmjs.com/package/react-awesome-reveal): For reveal animations.
-- [`react-toastify`](https://www.npmjs.com/package/react-toastify): For adding toast notifications.
-- [`typescript`](https://www.typescriptlang.org/): For using TypeScript.
-
-## Contributing
-
-- Contributions are not allowed.
+See [LICENSE](LICENSE).

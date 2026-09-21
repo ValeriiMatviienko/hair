@@ -15,6 +15,7 @@ const NavigationItemComponent = ({
           key={item.name}
           href={item.href}
           onClick={(e) => handleNavLinkClick(e, item)}
+          aria-current={activeLink === item.name ? "location" : undefined}
           className={`${className} ${
             activeLink === item.name ? "active-class" : ""
           }`}
