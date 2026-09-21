@@ -1,16 +1,25 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { cookies } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import { NavigationProvider } from "./context/NavigationContext";
-import { montserrat } from "./helpers/FontSetup";
 import { LocaleProvider } from "./context/localesProvider";
+import { localeLanguageTags } from "@/i18n/config";
+import { getMessages, getRequestLocale } from "@/i18n/server";
+import { siteConfig } from "@/lib/site-config";
+import { getSiteUrl } from "@/lib/site-url";
+import { AnalyticsConsentProvider } from "./context/AnalyticsConsentContext";
+import {
+  analyticsConsentCookie,
+  normalizeAnalyticsConsent,
+} from "@/lib/analytics-consent";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Index");
-  const baseUrl = process.env.BASE_URL || "http://localhost:3000";
-  const profileImage = `${baseUrl}/images/profilePicture.webp`;
+  const baseUrl = getSiteUrl();
+  const profileImage = `${baseUrl}${siteConfig.profileImagePath}`;
 
   return {
     metadataBase: new URL(baseUrl),
@@ -20,25 +29,20 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: t("description"),
     keywords: t("keywords").split(","),
-    applicationName: "Hair by Hanna",
+    applicationName: siteConfig.name,
     appleWebApp: {
       capable: true,
-      title: "Hair by Hanna",
+      title: siteConfig.name,
       statusBarStyle: "default",
     },
     alternates: {
-      canonical: baseUrl,
-      languages: {
-        "pl-PL": "/pl-PL",
-        "uk-UA": "/uk-UA",
-        "en-US": "/en-US",
-      },
+      canonical: "/",
     },
     creator: "Valerii Matviienko",
     authors: [
       {
-        name: "Hanna Matviienko",
-        url: "https://www.instagram.com/hair.by.hanna.warszawa/",
+        name: siteConfig.author.name,
+        url: siteConfig.author.instagramUrl,
       },
     ],
     robots: {
@@ -61,14 +65,14 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [
         {
           url: profileImage,
-          alt: "Profile Picture",
+          alt: t("profile_image_alt"),
         },
       ],
     },
     openGraph: {
       type: "website",
       url: baseUrl,
-      siteName: "Hair by Hanna",
+      siteName: siteConfig.name,
       title: `${t("title")} – ${t("seoTitleSuffix")}`,
       description: t("description"),
       images: [
@@ -76,23 +80,34 @@ export async function generateMetadata(): Promise<Metadata> {
           url: profileImage,
           width: 1200,
           height: 630,
-          alt: "Profile Picture",
+          alt: t("profile_image_alt"),
         },
       ],
     },
     other: {
-      copyright: "Hair by Hanna",
+      copyright: siteConfig.name,
     },
   };
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const locale = await getRequestLocale();
+  const messages = await getMessages(locale);
+  const cookieStore = await cookies();
+  const analyticsConsent = normalizeAnalyticsConsent(
+    cookieStore.get(analyticsConsentCookie)?.value,
+  );
+
   return (
-    <html lang="pl" suppressHydrationWarning className={montserrat.className}>
+    <html lang={localeLanguageTags[locale]} suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <GoogleAnalytics />
         <NavigationProvider>
-          <LocaleProvider>{children}</LocaleProvider>
+          <LocaleProvider initialLocale={locale} initialMessages={messages}>
+            <AnalyticsConsentProvider initialConsent={analyticsConsent}>
+              <GoogleAnalytics />
+              {children}
+            </AnalyticsConsentProvider>
+          </LocaleProvider>
         </NavigationProvider>
       </body>
     </html>

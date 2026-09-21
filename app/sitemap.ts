@@ -1,11 +1,10 @@
 import { MetadataRoute } from "next";
+import { getSiteUrl } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const currentDate = new Date();
   return [
     {
-      url: "https://hairbyhanna.eu",
-      lastModified: currentDate,
+      url: getSiteUrl(),
     },
   ];
 }

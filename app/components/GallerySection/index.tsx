@@ -1,5 +1,4 @@
 "use client";
-import { Fade } from "react-awesome-reveal";
 import Slider from "./Slider";
 import { useTranslations } from "next-intl";
 
@@ -12,28 +11,12 @@ const GallerySection = () => {
       id="gallery-section"
     >
       <div className="text-center">
-        <Fade
-          direction={"up"}
-          delay={40}
-          cascade
-          damping={0.1}
-          triggerOnce={true}
-        >
-          <h2 className="mb-3 text-2xl tracking-widest text-black uppercase  ls-51">
-            {t("gallery_title")}
-          </h2>
-        </Fade>
-        <Fade
-          direction={"up"}
-          delay={40}
-          cascade
-          damping={0.1}
-          triggerOnce={true}
-        >
-          <h3 className="text-3xl font-semibold text-black lg:text-5xl">
-            {t("gallery_subtitle")}
-          </h3>
-        </Fade>
+        <h2 className="mb-3 text-2xl tracking-widest text-black uppercase  ls-51">
+          {t("gallery_title")}
+        </h2>
+        <h3 className="text-3xl font-semibold text-black lg:text-5xl">
+          {t("gallery_subtitle")}
+        </h3>
       </div>
       <div className="my-16">
         <Slider />

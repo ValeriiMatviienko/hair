@@ -4,22 +4,20 @@
     "nav_price": "Cennik",
     "nav_galery": "Galeria",
     "nav_faq": "FAQ",
-
-    "form_title": "Formularz kontaktowy",
-    "form_subtitle": "Wypełnij formularz, aby się ze mną skontaktować",
-    "form_name": "Imię",
-    "form_name_placeholder": "Imię",
-    "form_number": "Numer",
-    "form_number_placeholder": "Twój numer telefonu",
-    "form_message": "Twoja wiadomość",
-    "form_message_placeholder": "Zostaw komentarz",
-    "form_button_send": "Wyślij wiadomość",
-
+    "change_language": "Zmień język",
+    "open_menu": "Otwórz menu",
+    "close_menu": "Zamknij menu",
+    "close_menu_overlay": "Zamknij menu mobilne",
+    "mobile_navigation": "Nawigacja mobilna",
+    "scroll_to_top": "Przewiń na górę",
+    "cookie_consent_title": "Ustawienia plików cookie",
+    "cookie_consent_description": "Czy zezwalasz na opcjonalne analityczne pliki cookie?",
+    "cookie_consent_allow": "Zezwól",
+    "cookie_consent_decline": "Nie zezwalaj",
     "hero_title": "Welcome to my world",
     "hero_description": "Jestem Hanna, trycholog, Twoja ekspertka w zakresie pielęgnacji włosów i skóry głowy.\n\nProwadzę konsultacje trychologiczne, które zmieniają życie na lepsze. Jeśli dokucza Ci łuszczenie, swędzenie, łupież, łojotokowe zapalenie skóry lub nadmierne wypadanie włosów - zapraszam na indywidualną konsultację.\nPomogę dobrać skuteczną pielęgnację, wzmocnię i zagęszczę włosy oraz sprawię, że będą zadbane.\n\nOtworzę przed Tobą świat pięknych i zdrowych włosów.",
 
-    "service_section_title": "Konsultacja",
-    "service_section_subtitle": "Zapoznaj się z zaletami zabiegów na włosy",
+    "most_popular": "Najpopularniejszy",
 
     "service_title_1": "Starter Pack",
     "service_description_1": "Analiza obecnych produktów\nDobór indywidualnego systemu pielęgnacji\nPorady dotyczące zdrowej skóry głowy oraz mocnych włosów\n\nCzas trwania: 30 minut",
@@ -34,18 +32,17 @@
 
     "gallery_title": "Galeria",
     "gallery_subtitle": "Galeria ostatnich realizacji",
+    "select_gallery_image": "Pokaż zdjęcie {number} z galerii",
+    "gallery_image_alt": "Efekt zabiegu na włosy, zdjęcie {number}",
+    "profile_image_alt": "Portret Hanny, trycholożki Hair by Hanna",
+
+    "instagram_label": "Instagram",
+    "instagram_title": "Hair by Hanna na Instagramie",
+    "instagram_follow": "Obserwuj {handle}",
+    "instagram_post_fallback": "Zobacz post na Instagramie",
 
     "price_section_title": "Cennik",
-    "product_type": "Usługa",
-    "short_hair": "Do ramion",
-    "mid_hair": "Do łopatek",
-    "long_hair": "Do pasa",
-    "price_keratine": "Keratyna",
-    "price_botox": "Botox",
-    "price_nanoplastia": "Nanoplastia",
-
     "dodatki_title": "Dodatki",
-    "dodatki_prices": "Cena",
     "bio_ampoule": "Wtórna konsultacja trychologiczna",
     "scalp_peeling": "Podcięcie końcówek + polerowanie włosów",
     "hair_trimming": "Podcięcie końcówek",
@@ -69,7 +66,9 @@
     "faq_answer_7": "Nie myj głowy przez co najmniej 12 godzin przed wizytą – ułatwi to ocenę stanu skóry głowy.",
 
     "follow_me": "Zaobserwuj",
-    "adress": "Adres",
+    "address": "Adres",
+    "map_title": "Lokalizacja Hair by Hanna",
+    "open_map": "Otwórz lokalizację w Mapach Google",
 
     "open_hours": "Godziny Otwarcia",
     "monday_friday": "Poniedziałek - Piątek: 9 - 21",
@@ -79,11 +78,6 @@
     "seoTitleSuffix": "Trycholog Warszawa",
     "description": "Profesjonalny trycholog w Warszawie, specjalizujący się w keratynowym wygładzaniu włosów, botoxie i nanoplastii. Oferujemy indywidualnie dopasowane zabiegi dla zdrowia i piękna Twoich włosów w Warszawie.",
     "keywords": "pielęgnacja włosów Warszawa, wygładzanie keratynowe Warszawa, botoks na włosy Warszawa, nanoplastia, profesjonalny trycholog Warszawa, zabiegi na włosy, odnowa włosów, trycholog w Warszawie",
-
-    "messageSent": "Wiadomość wysłana!",
-    "messageError": "Błąd wysyłania wiadomości. Proszę spróbować ponownie.",
-
-    "form_number_tip": "Proszę używaj tylko cyfr.",
 
     "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.497822116449!2d17.04497!3d51.1177263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe9da5bc30ee9%3A0x5530bc6d1c976957!2zxaF3acSZdG9rcnp5c2thIDM3LCA1MC0zMjcgV3JvY8WCYXc!5e0!3m2!1spl!2spl!4v1764622918919!5m2!1spl!2spl"
   }

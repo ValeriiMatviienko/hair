@@ -1,10 +1,13 @@
 import { getRequestConfig } from "next-intl/server";
+import { getMessages, getRequestLocale } from "./server";
+import { siteConfig } from "@/lib/site-config";
 
 export default getRequestConfig(async () => {
-  const locale = "pl";
+  const locale = await getRequestLocale();
 
   return {
     locale,
-    messages: (await import(`../messages/${locale}.json`)).default,
+    messages: await getMessages(locale),
+    timeZone: siteConfig.timeZone,
   };
 });

@@ -1,7 +1,11 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useTransition } from "react";
+import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useLocaleContext } from "@/app/context/localesProvider";
+import { useNavigationContext } from "@/app/context/NavigationContext";
+import { locales, type Locale } from "@/i18n/config";
 import { Button } from "@/components/ui/button";
 import { IoLanguage } from "react-icons/io5";
 import {
@@ -11,24 +15,26 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const LANGUAGES = ["pl", "en", "ua"] as const;
-type Language = (typeof LANGUAGES)[number];
+const languageLabels: Record<Locale, string> = {
+  pl: "PL",
+  en: "EN",
+  uk: "UA",
+};
 
 export default function LanguageSelector() {
-  const { locale, setLocale, ready } = useLocaleContext();
+  const t = useTranslations("Index");
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const { locale, setLocale } = useLocaleContext();
+  const { setIsOpen } = useNavigationContext();
 
   const handleLanguageChange = useCallback(
-    (lang: Language) => {
-      if (!ready) return;
-
+    (lang: Locale) => {
       setLocale(lang);
-
-      // persist between refreshes
-      if (typeof window !== "undefined") {
-        localStorage.setItem("locale", lang);
-      }
+      setIsOpen(false);
+      startTransition(() => router.refresh());
     },
-    [ready, setLocale]
+    [router, setIsOpen, setLocale],
   );
 
   return (
@@ -37,22 +43,22 @@ export default function LanguageSelector() {
         <Button
           className=" flex text-darkgreen items-center gap-2"
           variant="outline"
-          aria-label="Change language"
-          disabled={!ready}
+          aria-label={t("change_language")}
+          disabled={isPending}
         >
           <IoLanguage size={18} />
-          {ready ? locale.toUpperCase() : "…"}
+          {languageLabels[locale]}
         </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end">
-        {LANGUAGES.map((lang) => (
+        {locales.map((lang) => (
           <DropdownMenuItem
             key={lang}
             onClick={() => handleLanguageChange(lang)}
             className="flex items-center gap-2"
           >
-            <span className="text-darkgreen mb-3">{lang.toUpperCase()}</span>
+            <span className="mb-3 text-darkgreen">{languageLabels[lang]}</span>
             {locale === lang && (
               <span className="ml-auto text-darkgreen text-xs">✓</span>
             )}

@@ -1,7 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Fade } from "react-awesome-reveal";
 
 const HeroSection = () => {
   const t = useTranslations("Index");
@@ -13,37 +12,22 @@ const HeroSection = () => {
     >
       <div className="grid grid-cols-1 space-x-0 sm:space-x-1 lg:grid-cols-12">
         <div className="flex flex-col justify-center col-span-12 pb-8 sm:pb-0 lg:col-span-6">
-          <Fade
-            direction={"up"}
-            delay={40}
-            cascade
-            damping={0.1}
-            triggerOnce={true}
-          >
-            <h1 className="mb-4 text-4xl font-semibold tracking-tighter text-center md:leading-[1.2] text-black md:text-5xl sm:mb-5 lg:text-7xl lg:text-start">
-              {t("hero_title")}
-            </h1>
-          </Fade>
-          <Fade
-            direction={"up"}
-            delay={40}
-            cascade
-            damping={0.1}
-            triggerOnce={true}
-          >
-            <p className="mb-6 text-lg text-center text-black whitespace-pre-line sm:text-xl sm:mb-10 lg:text-start">
-              {t("hero_description")}
-            </p>
-          </Fade>
+          <h1 className="mb-4 text-4xl font-semibold tracking-tighter text-center md:leading-[1.2] text-black md:text-5xl sm:mb-5 lg:text-7xl lg:text-start">
+            {t("hero_title")}
+          </h1>
+          <p className="mb-6 text-lg text-center text-black whitespace-pre-line sm:text-xl sm:mb-10 lg:text-start">
+            {t("hero_description")}
+          </p>
         </div>
 
         <div className="flex justify-center col-span-12 lg:col-span-6">
           <div className="relative w-full max-w-xl overflow-hidden rounded-lg shadow-lg aspect-square">
             <Image
               src="/images/profilePicture.webp"
-              alt="Profile picture"
+              alt={t("profile_image_alt")}
               fill
               priority
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover scale-105"
             />
           </div>
