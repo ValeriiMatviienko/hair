@@ -2,13 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import { getServiceData } from "./ServiceData";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { PackageCheck, Layers, Crown, CircleCheck } from "lucide-react";
 import { getAdditionalServices } from "./ProductPriceItems";
 import { siteConfig } from "@/lib/site-config";
-
-const icons = [PackageCheck, Layers, Crown];
+import { cn } from "@/lib/utils";
 
 const ServiceSection = () => {
   const t = useTranslations("Index");
@@ -23,125 +19,91 @@ const ServiceSection = () => {
       s.trim(),
     );
   const popularIndex = 1;
-  return (
-    <section
-      className="px-4 py-12 mx-auto md:py-18 lg:px-8 max-w-7xl"
-      id="price-section"
-    >
-      <div className="mb-10 text-center sm:mb-14">
-        <h1 className="mb-3 text-2xl text-black uppercase ls-51">
-          {t("price_section_title")}
-        </h1>
 
+  return (
+    <section className="section-shell pt-6 md:pt-10" id="price-section">
+      <div className="mb-10 max-w-xl sm:mb-14">
+        <p className="section-label">{t("section_price")}</p>
+        <h2 className="mt-4 font-display text-4xl font-medium tracking-tight text-ink md:text-5xl">
+          {t("price_section_title")}
+        </h2>
       </div>
 
-      <div className="mt-4 sm:mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {serviceData.map((item, index) => {
-          const Icon = icons[index] ?? PackageCheck;
-
-          return (
-            <div
-              key={item.serviceTitle}
-              className={[
-                "relative flex flex-col items-start border rounded-xl py-6 px-5 bg-background",
-                index === popularIndex ? "border-2 border-primary" : "",
-              ].join(" ")}
-            >
-              {index === popularIndex && (
-                <Badge className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2">
-                  {t("most_popular")}
-                </Badge>
-              )}
-
-              <div className="mb-4 h-10 w-10 flex items-center justify-center bg-muted rounded-full">
-                <Icon className="size-5" />
+      <div className="mx-auto max-w-4xl">
+        {serviceData.map((item, index) => (
+          <article
+            key={item.serviceTitle}
+            className={cn(
+              "border-t border-ink/10 py-8 transition-colors duration-300 last:border-b md:py-10",
+              index === popularIndex && "border-l-2 border-l-darkgreen pl-4 md:pl-6",
+            )}
+          >
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="section-label">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  {index === popularIndex && (
+                    <p className="text-[0.65rem] uppercase tracking-[0.2em] text-darkgreen">
+                      {t("most_popular")}
+                    </p>
+                  )}
+                </div>
+                <h3 className="mt-2 font-display text-3xl font-medium tracking-tight text-ink md:text-4xl">
+                  {item.serviceTitle}
+                </h3>
               </div>
-
-              <span className="text-lg font-semibold text-black">
-                {item.serviceTitle}
-              </span>
-
-              <p className="mt-1 text-3xl font-semibold text-black">
+              <p className="font-display text-3xl tracking-tight text-ink tabular-nums md:text-4xl">
                 {siteConfig.servicePrices[index]} zł
               </p>
-
-              <Separator className="my-4" />
-
-              <ul className="space-y-2 w-full">
-                {item.serviceFeatures.map((feature) => {
-                  const noCheck = isPlus(feature) || isTime(feature);
-
-                  return (
-                    <li
-                      key={feature}
-                      className={[
-                        "text-md items-center text-foreground/80",
-                        noCheck ? "pl-0" : "grid grid-cols-[16px_1fr] gap-2",
-                      ].join(" ")}
-                    >
-                      {noCheck ? (
-                        <span
-                          className={[
-                            "leading-6",
-                            isTrichoscopy(feature)
-                              ? "font-semibold text-black"
-                              : "",
-                          ].join(" ")}
-                        >
-                          {feature}
-                        </span>
-                      ) : (
-                        <>
-                          <div className="h-4 w-4 flex items-center justify-center">
-                            <CircleCheck className="h-4 w-4 text-green-600" />
-                          </div>
-                          <span
-                            className={[
-                              "leading-6",
-                              isTrichoscopy(feature)
-                                ? "font-semibold text-black"
-                                : "",
-                            ].join(" ")}
-                          >
-                            {feature}
-                          </span>
-                        </>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
             </div>
-          );
-        })}
+
+            <ul className="mt-5 max-w-xl space-y-1.5">
+              {item.serviceFeatures.map((feature) => {
+                const muted = isPlus(feature) || isTime(feature);
+
+                return (
+                  <li
+                    key={feature}
+                    className={cn(
+                      "text-[0.95rem] leading-6 text-ink/70",
+                      isTrichoscopy(feature) && "font-medium text-ink",
+                      muted && "text-ink/50",
+                    )}
+                  >
+                    {feature}
+                  </li>
+                );
+              })}
+            </ul>
+          </article>
+        ))}
       </div>
-      <div className="mt-12 sm:mt-16 max-w-(--breakpoint-lg) mx-auto">
-        <div className="relative p-6 bg-background border px-8 rounded-lg shadow-[0px_2px_12px_0px_rgba(0,0,0,0.07)]">
-          <h3 className="text-lg font-medium uppercase text-black">
-            {t("dodatki_title")}
-          </h3>
 
-          <Separator className="my-8" />
+      <div className="mx-auto mt-14 max-w-4xl border-t border-ink/10 pt-10">
+        <h3 className="font-display text-2xl font-medium tracking-tight text-ink">
+          {t("dodatki_title")}
+        </h3>
 
-          <ul className="space-y-3">
-            {additionalServices.map((service) => (
-              <li
-                key={service.name}
-                className="flex items-start justify-between gap-3 border-b last:border-b-0 pb-3 last:pb-0"
-              >
-                <div className="flex items-start gap-1.5">
-                  <span className="text-black uppercase">{service.name}</span>
-                </div>
-
-                <span className="text-lg md:text-2xl text-black tabular-nums">
-                  {service.price}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="mt-6 space-y-0">
+          {additionalServices.map((service) => (
+            <li
+              key={service.name}
+              className="flex items-baseline justify-between gap-4 border-b border-ink/10 py-4 last:border-b-0"
+            >
+              <span className="text-sm uppercase tracking-[0.12em] text-ink">
+                {service.name}
+              </span>
+              <span className="shrink-0 font-display text-xl text-ink tabular-nums md:text-2xl">
+                {service.price} zł
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <p className="mt-16 text-lg text-center text-black sm:text-xl">
+
+      <p className="mx-auto mt-12 max-w-3xl text-sm leading-relaxed text-ink/55 sm:text-base">
         {t("benefits_conclusion")}
       </p>
     </section>

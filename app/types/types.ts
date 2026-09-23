@@ -3,7 +3,10 @@ export interface SocialLinks {
   link: string;
   description: string;
 }
-export type TranslationFunction = (key: string) => string;
+export type TranslationFunction = (
+  key: string,
+  values?: Record<string, string | number>,
+) => string;
 export type ImageInfo = {
   src: string;
 };

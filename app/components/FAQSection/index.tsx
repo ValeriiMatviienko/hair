@@ -10,21 +10,19 @@ const FAQSection = () => {
   const faqs = getFAQs(t);
 
   return (
-    <section
-      className="px-4 py-12 mx-auto md:py-18 lg:px-8 max-w-7xl"
-      id="faq-section"
-    >
-      <div className="mb-10 text-center sm:mb-14">
-        <h3 className="mb-3 text-2xl text-black uppercase  ls-51">
-          {t("faq_title")}
-        </h3>
-        <p className="text-3xl font-semibold text-black lg:text-5xl">
-          {t("faq_subtitle")}
-        </p>
-      </div>
+    <section className="scroll-mt-[5.5rem] bg-sage/70" id="faq-section">
+      <div className="section-shell">
+        <div className="mb-10 max-w-xl sm:mb-14">
+          <p className="section-label">{t("section_faq")}</p>
+          <h2 className="mt-4 font-display text-4xl font-medium tracking-tight text-ink md:text-5xl">
+            {t("faq_title")}
+          </h2>
+          <p className="mt-3 text-base text-ink/65 sm:text-lg">
+            {t("faq_subtitle")}
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="col-span-12 whitespace-pre-line">
+        <div className="mx-auto max-w-3xl">
           <CustomAccordion items={faqs} />
         </div>
       </div>

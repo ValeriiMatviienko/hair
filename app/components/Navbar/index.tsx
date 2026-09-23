@@ -1,5 +1,4 @@
 "use client";
-import { FaBars } from "react-icons/fa";
 import { useCallback } from "react";
 import LanguageSelector from "../LanguageSelector";
 import { useTranslations } from "next-intl";
@@ -8,6 +7,7 @@ import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "./NavigationItemComponent";
 import LogoComponent from "./LogoComponent";
 import { useNavigationContext } from "@/app/context/NavigationContext";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const t = useTranslations("Index");
@@ -20,18 +20,18 @@ const Navbar = () => {
   }, [isOpen, setIsOpen]);
 
   return (
-    <nav className="sticky top-0 z-10 bg-white navbar">
-      <div className="p-4 mx-auto max-w-screen-2xl md:p-8">
+    <nav className="navbar sticky top-0 z-20 border-b border-ink/10 bg-paper/90 backdrop-blur-md">
+      <div className="mx-auto max-w-screen-2xl px-4 py-3 md:px-8 md:py-4">
         <div className="flex items-center">
-          <div className="flex items-center justify-between flex-1">
+          <div className="flex flex-1 items-center justify-between">
             <LogoComponent />
-            <div className="items-center hidden xl:flex">
-              <div className="flex space-x-4">
+            <div className="hidden items-center xl:flex">
+              <div className="flex space-x-6">
                 <NavigationItemComponent
                   navigationItems={navigationItems}
                   activeLink={activeLink}
                   handleNavLinkClick={handleNavLinkClick}
-                  className="px-2 py-4 text-lg nav-link sm:text-xl"
+                  className="nav-link px-1 py-3 text-[0.75rem] uppercase tracking-[0.14em]"
                 />
               </div>
             </div>
@@ -48,14 +48,22 @@ const Navbar = () => {
               aria-label={t("open_menu")}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
-              className="block rounded-sm p-1 focus-visible:ring-2 focus-visible:ring-darkgreen"
+              className="flex h-11 w-11 items-center justify-center rounded-sm focus-visible:ring-2 focus-visible:ring-darkgreen"
             >
-              <FaBars
-                className={`block w-9 h-9 md:w-12 md:h-12 ${
-                  isOpen ? "click-scale-animation" : ""
-                }`}
-                aria-hidden="true"
-              />
+              <span className="relative block h-3.5 w-6" aria-hidden="true">
+                <span
+                  className={cn(
+                    "menu-line absolute left-0 h-px w-full bg-ink transition-transform duration-300",
+                    isOpen ? "top-1.5 rotate-45" : "top-0",
+                  )}
+                />
+                <span
+                  className={cn(
+                    "menu-line absolute left-0 h-px w-full bg-ink transition-transform duration-300",
+                    isOpen ? "top-1.5 -rotate-45" : "top-3.5",
+                  )}
+                />
+              </span>
             </button>
           </div>
         </div>
