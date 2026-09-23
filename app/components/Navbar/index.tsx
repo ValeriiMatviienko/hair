@@ -53,9 +53,9 @@ const Navbar = () => {
               aria-label={t("open_menu")}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
-              className="flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-ink/10 bg-paper/95 text-darkgreen shadow-sm focus-visible:ring-2 focus-visible:ring-darkgreen"
+              className="-mr-2.5 flex h-11 w-11 touch-manipulation items-center justify-center rounded-sm text-ink focus-visible:ring-2 focus-visible:ring-darkgreen"
             >
-              <span className="relative block h-3.5 w-5" aria-hidden="true">
+              <span className="relative block h-3.5 w-6" aria-hidden="true">
                 <span
                   className={cn(
                     "menu-line absolute left-0 h-0.5 w-full bg-current transition-transform duration-300",
