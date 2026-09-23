@@ -20,7 +20,7 @@ const Navbar = () => {
   }, [isOpen, setIsOpen]);
 
   return (
-    <nav className="navbar sticky top-0 z-20 border-b border-ink/10 bg-paper/90 backdrop-blur-md">
+    <nav className="navbar sticky top-0 z-30 border-b border-ink/10 bg-paper xl:bg-paper/90 xl:backdrop-blur-md">
       <div className="mx-auto max-w-screen-2xl px-4 py-3 md:px-8 md:py-4">
         <div className="flex items-center">
           <div className="flex flex-1 items-center justify-between">
@@ -48,19 +48,19 @@ const Navbar = () => {
               aria-label={t("open_menu")}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
-              className="flex h-11 w-11 items-center justify-center rounded-sm focus-visible:ring-2 focus-visible:ring-darkgreen"
+              className="-mr-2 flex h-11 w-11 touch-manipulation items-center justify-center rounded-sm text-ink focus-visible:ring-2 focus-visible:ring-darkgreen"
             >
               <span className="relative block h-3.5 w-6" aria-hidden="true">
                 <span
                   className={cn(
-                    "menu-line absolute left-0 h-px w-full bg-ink transition-transform duration-300",
+                    "menu-line absolute left-0 h-0.5 w-full bg-current transition-transform duration-300",
                     isOpen ? "top-1.5 rotate-45" : "top-0",
                   )}
                 />
                 <span
                   className={cn(
-                    "menu-line absolute left-0 h-px w-full bg-ink transition-transform duration-300",
-                    isOpen ? "top-1.5 -rotate-45" : "top-3.5",
+                    "menu-line absolute left-0 h-0.5 w-full bg-current transition-transform duration-300",
+                    isOpen ? "top-1.5 -rotate-45" : "top-3",
                   )}
                 />
               </span>

@@ -29,7 +29,7 @@ const Drawer = ({ children }: PropsWithChildren) => {
         role="dialog"
         aria-modal="true"
         aria-label={t("mobile_navigation")}
-        className={`absolute z-10 h-full w-full max-w-xs bg-paper shadow-xl transition-transform md:max-w-sm ${
+        className={`absolute z-10 h-full w-full max-w-xs overflow-y-auto overscroll-contain bg-paper pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] shadow-xl transition-transform md:max-w-sm ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -43,8 +43,8 @@ const Drawer = ({ children }: PropsWithChildren) => {
             className="flex h-11 w-11 items-center justify-center"
           >
             <span className="relative block h-3.5 w-6" aria-hidden="true">
-              <span className="absolute top-1.5 left-0 h-px w-full rotate-45 bg-ink" />
-              <span className="absolute top-1.5 left-0 h-px w-full -rotate-45 bg-ink" />
+              <span className="absolute top-1.5 left-0 h-0.5 w-full rotate-45 bg-ink" />
+              <span className="absolute top-1.5 left-0 h-0.5 w-full -rotate-45 bg-ink" />
             </span>
           </button>
         </header>

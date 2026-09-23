@@ -53,7 +53,7 @@ export function AnalyticsConsentProvider({
       {consent === "unknown" && (
         <aside
           aria-label={t("cookie_consent_title")}
-          className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-2xl border border-ink/10 bg-paper/95 p-4 shadow-xl backdrop-blur-sm"
+          className="fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 mx-auto max-w-2xl border border-ink/10 bg-paper p-4 text-ink shadow-xl"
         >
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
