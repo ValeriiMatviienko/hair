@@ -41,7 +41,7 @@ export default function LanguageSelector() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className=" flex text-darkgreen items-center gap-2"
+          className="flex items-center gap-2 border-ink/15 bg-transparent text-ink hover:bg-darkgreen hover:text-paper"
           variant="outline"
           aria-label={t("change_language")}
           disabled={isPending}
@@ -58,7 +58,7 @@ export default function LanguageSelector() {
             onClick={() => handleLanguageChange(lang)}
             className="flex items-center gap-2"
           >
-            <span className="mb-3 text-darkgreen">{languageLabels[lang]}</span>
+            <span className="text-ink">{languageLabels[lang]}</span>
             {locale === lang && (
               <span className="ml-auto text-darkgreen text-xs">✓</span>
             )}

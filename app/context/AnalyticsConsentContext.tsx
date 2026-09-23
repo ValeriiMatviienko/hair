@@ -53,29 +53,33 @@ export function AnalyticsConsentProvider({
       {consent === "unknown" && (
         <aside
           aria-label={t("cookie_consent_title")}
-          className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-2xl rounded-xl border bg-white p-5 shadow-xl"
+          className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-2xl border border-ink/10 bg-paper/95 p-4 shadow-xl backdrop-blur-sm"
         >
-          <h2 className="font-semibold text-black">
-            {t("cookie_consent_title")}
-          </h2>
-          <p className="mt-2 text-sm text-foreground/80">
-            {t("cookie_consent_description")}
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <button
-              type="button"
-              onClick={allowAnalytics}
-              className="rounded-md bg-darkgreen px-4 py-2 text-sm font-medium text-white"
-            >
-              {t("cookie_consent_allow")}
-            </button>
-            <button
-              type="button"
-              onClick={denyAnalytics}
-              className="rounded-md border px-4 py-2 text-sm font-medium text-black"
-            >
-              {t("cookie_consent_decline")}
-            </button>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="font-display text-lg font-medium text-ink">
+                {t("cookie_consent_title")}
+              </h2>
+              <p className="mt-1 text-sm text-ink/70">
+                {t("cookie_consent_description")}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={allowAnalytics}
+                className="editorial-cta-solid"
+              >
+                {t("cookie_consent_allow")}
+              </button>
+              <button
+                type="button"
+                onClick={denyAnalytics}
+                className="editorial-cta"
+              >
+                {t("cookie_consent_decline")}
+              </button>
+            </div>
           </div>
         </aside>
       )}

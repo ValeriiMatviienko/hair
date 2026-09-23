@@ -11,6 +11,12 @@ export const localeLanguageTags: Record<Locale, string> = {
   uk: "uk",
 };
 
+export const localeOpenGraphTags: Record<Locale, string> = {
+  pl: "pl_PL",
+  en: "en_US",
+  uk: "uk_UA",
+};
+
 export function normalizeLocale(value: string | null | undefined): Locale | null {
   const normalized = value === "ua" ? "uk" : value;
 

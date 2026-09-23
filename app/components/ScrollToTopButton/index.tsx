@@ -26,12 +26,9 @@ const ScrollToTopButton = () => {
       type="button"
       aria-label={t("scroll_to_top")}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-4 right-4 cursor-pointer rounded-full bg-gray-100/25 p-2"
+      className="fixed right-4 bottom-24 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-darkgreen text-paper shadow-sm transition-transform duration-300 hover:-translate-y-0.5 md:bottom-6"
     >
-      <FaArrowUp
-        className="h-6 w-6 text-darkgreen sm:h-10 sm:w-10"
-        aria-hidden="true"
-      />
+      <FaArrowUp className="h-4 w-4" aria-hidden="true" />
     </button>
   ) : null;
 };

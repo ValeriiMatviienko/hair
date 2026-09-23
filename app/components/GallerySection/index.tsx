@@ -6,21 +6,17 @@ const GallerySection = () => {
   const t = useTranslations("Index");
 
   return (
-    <section
-      className="px-4 py-12 mx-auto md:py-18 lg:px-8 max-w-7xl"
-      id="gallery-section"
-    >
-      <div className="text-center">
-        <h2 className="mb-3 text-2xl tracking-widest text-black uppercase  ls-51">
+    <section className="section-shell" id="gallery-section">
+      <div className="mb-10 max-w-xl">
+        <p className="section-label">{t("section_gallery")}</p>
+        <h2 className="mt-4 font-display text-4xl font-medium tracking-tight text-ink md:text-5xl">
           {t("gallery_title")}
         </h2>
-        <h3 className="text-3xl font-semibold text-black lg:text-5xl">
+        <p className="mt-3 text-base text-ink/65 sm:text-lg">
           {t("gallery_subtitle")}
-        </h3>
+        </p>
       </div>
-      <div className="my-16">
-        <Slider />
-      </div>
+      <Slider />
     </section>
   );
 };

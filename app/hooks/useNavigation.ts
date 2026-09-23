@@ -1,7 +1,9 @@
 import { useState, useCallback } from "react";
+import { usePathname } from "next/navigation";
 import { NavigationItemType } from "../types/types";
 
 const useNavigation = () => {
+  const pathname = usePathname();
   const [activeLink, setActiveLink] = useState<string | null>(null);
 
   const smoothScroll = useCallback((targetId: string) => {
@@ -9,7 +11,7 @@ const useNavigation = () => {
 
     if (targetElement) {
       const headerElement = document.querySelector(
-        ".navbar"
+        ".navbar",
       ) as HTMLElement | null;
       const headerHeight = headerElement ? headerElement.offsetHeight : 0;
 
@@ -25,14 +27,21 @@ const useNavigation = () => {
 
   const handleNavLinkClick = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement>, item: NavigationItemType) => {
-      event.preventDefault();
+      const hashIndex = item.href.indexOf("#");
+
+      if (hashIndex !== -1 && pathname === "/") {
+        event.preventDefault();
+        setActiveLink(item.name);
+        smoothScroll(item.href.slice(hashIndex));
+        return;
+      }
+
       setActiveLink(item.name);
-      smoothScroll(item.href);
     },
-    [smoothScroll]
+    [pathname, smoothScroll],
   );
 
-  return { activeLink, handleNavLinkClick };
+  return { activeLink, handleNavLinkClick, pathname };
 };
 
 export default useNavigation;

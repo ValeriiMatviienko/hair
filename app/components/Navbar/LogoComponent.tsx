@@ -4,8 +4,11 @@ import Link from "next/link";
 
 const LogoComponent = () => {
   return (
-    <div className="flex items-center shrink-0 text-center">
-      <Link href="/" className="text-3xl font-semibold text-black ">
+    <div className="flex shrink-0 items-center text-center">
+      <Link
+        href="/"
+        className="font-display text-2xl font-medium tracking-tight text-ink transition-[letter-spacing] duration-300 hover:tracking-[0.04em] md:text-[1.7rem]"
+      >
         Hair by Hanna
       </Link>
     </div>

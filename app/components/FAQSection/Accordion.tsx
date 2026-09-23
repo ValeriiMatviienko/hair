@@ -15,28 +15,33 @@ const CustomAccordion = ({ items }: AccordionProps) => {
     <Accordion
       type="single"
       collapsible
-      className="mt-8 sm:mt-10 space-y-4"
+      className="mt-2 space-y-0"
       defaultValue="question-0"
     >
       {items.map(({ question, answer }, index) => (
         <AccordionItem
           key={question ?? index}
           value={`question-${index}`}
-          className="bg-accent py-1 px-4 rounded-xl border-none"
+          className="border-b border-ink/10 bg-transparent px-0"
         >
           <AccordionPrimitive.Header className="flex">
             <AccordionPrimitive.Trigger
               className={cn(
-                "flex flex-1 items-center justify-between pt-4 pb-3 font-semibold tracking-tight transition-all hover:underline [&[data-state=open]>svg]:rotate-45",
-                "text-start text-lg"
+                "flex flex-1 items-center justify-between gap-4 py-5 text-start font-medium tracking-tight transition-colors hover:text-darkgreen [&[data-state=open]>svg]:rotate-45",
+                "text-lg",
               )}
             >
-              {question}
-              <PlusIcon className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200" />
+              <span className="flex items-start gap-4">
+                <span className="mt-1 hidden font-display text-sm text-ink/35 tabular-nums sm:inline">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span>{question}</span>
+              </span>
+              <PlusIcon className="h-5 w-5 shrink-0 text-ink/45 transition-transform duration-200" />
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
 
-          <AccordionContent className="text-base text-secondary-foreground">
+          <AccordionContent className="text-base leading-relaxed text-ink/70">
             {answer}
           </AccordionContent>
         </AccordionItem>

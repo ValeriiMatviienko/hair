@@ -12,15 +12,15 @@ const DrawerData = () => {
   const { activeLink, handleNavLinkClick } = useNavigation();
 
   return (
-    <div className="w-full max-w-sm mx-auto rounded-md">
-      <div className="flex-1 py-1 ">
-        <div className="px-5 pt-2 pb-3">
-          <NavigationItemComponent
-            navigationItems={navigationItems}
-            activeLink={activeLink}
-            handleNavLinkClick={handleNavLinkClick}
-            className="block px-4 py-4 mb-4 text-lg hover:text-darkgreen"
-          />
+    <div className="mx-auto w-full max-w-sm">
+      <div className="px-5 pt-4 pb-8">
+        <NavigationItemComponent
+          navigationItems={navigationItems}
+          activeLink={activeLink}
+          handleNavLinkClick={handleNavLinkClick}
+          className="block border-b border-ink/10 py-4 font-display text-2xl text-ink hover:text-darkgreen"
+        />
+        <div className="mt-8">
           <LanguageSelector />
         </div>
       </div>

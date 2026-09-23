@@ -8,7 +8,7 @@ export const siteConfig = {
     instagramUrl: "https://www.instagram.com/hair.by.hanna.warszawa/",
   },
   address: {
-    label: "Świętokrzyska 37",
+    label: "Świętokrzyska 37, Wrocław",
     mapsUrl: "https://maps.app.goo.gl/F738fsPTDwx33iKBA",
   },
   social: {
