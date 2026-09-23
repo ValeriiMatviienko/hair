@@ -7,6 +7,7 @@ import useNavigation from "@/app/hooks/useNavigation";
 import NavigationItemComponent from "./NavigationItemComponent";
 import LogoComponent from "./LogoComponent";
 import { useNavigationContext } from "@/app/context/NavigationContext";
+import useIsScrolled from "@/app/hooks/useIsScrolled";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -14,13 +15,17 @@ const Navbar = () => {
   const navigationItems = getNavigationItems(t);
   const { isOpen, setIsOpen } = useNavigationContext();
   const { activeLink, handleNavLinkClick } = useNavigation();
+  const isScrolled = useIsScrolled();
 
   const handleIconClick = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen, setIsOpen]);
 
   return (
-    <nav className="navbar sticky top-0 z-30 border-b border-ink/10 bg-paper xl:bg-paper/90 xl:backdrop-blur-md">
+    <nav
+      data-scrolled={isScrolled}
+      className="navbar glass-surface sticky top-0 z-30"
+    >
       <div className="mx-auto max-w-screen-2xl px-4 py-3 md:px-8 md:py-4">
         <div className="flex items-center">
           <div className="flex flex-1 items-center justify-between">
@@ -48,9 +53,9 @@ const Navbar = () => {
               aria-label={t("open_menu")}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
-              className="-mr-2 flex h-11 w-11 touch-manipulation items-center justify-center rounded-sm text-ink focus-visible:ring-2 focus-visible:ring-darkgreen"
+              className="flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-ink/10 bg-paper/95 text-darkgreen shadow-sm focus-visible:ring-2 focus-visible:ring-darkgreen"
             >
-              <span className="relative block h-3.5 w-6" aria-hidden="true">
+              <span className="relative block h-3.5 w-5" aria-hidden="true">
                 <span
                   className={cn(
                     "menu-line absolute left-0 h-0.5 w-full bg-current transition-transform duration-300",

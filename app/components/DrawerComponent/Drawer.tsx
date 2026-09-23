@@ -13,7 +13,7 @@ const Drawer = ({ children }: PropsWithChildren) => {
 
   return (
     <div
-      className={`fixed inset-0 z-40 overflow-hidden bg-ink/50 transition-opacity ease-in-out ${
+      className={`glass-overlay fixed inset-0 z-40 overflow-hidden transition-opacity ease-in-out ${
         isOpen ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
