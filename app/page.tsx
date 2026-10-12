@@ -10,6 +10,7 @@ import HeroSection from "./components/HeroSection";
 import { InstagramSection } from "./components/InstagramSection";
 import JsonLd from "./components/JsonLd";
 import Navbar from "./components/Navbar";
+import OnlineConsultationSection from "./components/OnlineConsultationSection";
 import PriceSection from "./components/PriceSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import { getRequestLocale } from "@/i18n/server";
@@ -47,6 +48,7 @@ export default async function Home() {
       <HeroSection />
       <EditorialMark />
       <PriceSection />
+      <OnlineConsultationSection />
       <GallerySection />
       <FAQSection />
       <InstagramSection />

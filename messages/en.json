@@ -2,6 +2,7 @@
   "Index": {
     "nav_about": "About me",
     "nav_price": "Price",
+    "nav_consultation": "Online consultation",
     "nav_galery": "Gallery",
     "nav_certificates": "Certificates",
     "nav_faq": "FAQ",
@@ -31,8 +32,8 @@
     "hero_description": "I offer trichology consultations that change lives for the better. If you’re struggling with flaking, itching, dandruff, seborrheic dermatitis, or excessive hair loss - I invite you to a personal consultation.\nI’ll help you choose effective care, strengthen and thicken your hair, and make it perfect.\n\nI’ll open for you the world of beautiful and healthy hair.",
     "section_about": "01 - About",
     "section_price": "02 - Prices",
-    "section_gallery": "03 - Gallery",
-    "section_faq": "04 - FAQ",
+    "section_gallery": "04 - Gallery",
+    "section_faq": "05 - FAQ",
     "editorial_mark": "TRICHOLOGY",
 
     "most_popular": "Most popular",
@@ -47,6 +48,23 @@
     "service_description_3": "Trichoscopy diagnostics\nAnalysis of current care\nWritten: therapeutic care selection\nReferral for lab tests\nVitamin recommendations\nDietary advice\n➕ Online support\n➕ Follow-up consultation\n\nDuration: 75 minutes",
 
     "benefits_conclusion": "Follow-up consultation: results progress review, analysis of implemented care, repeated trichoscopy, comparison with initial photos, scalp condition check. Duration: 60 minutes",
+
+    "consultation_label": "03 - Online consultation",
+    "consultation_title": "Online consultation",
+    "consultation_description": "Make time for your hair, wherever you are. During an online trichology consultation with me, we'll talk through your hair and scalp concerns, review your current routine and explore your next steps from home.",
+    "consultation_format_label": "Format",
+    "consultation_format": "Video call",
+    "consultation_duration_label": "Duration",
+    "consultation_duration": "Approx. 45 minutes",
+    "consultation_cta": "Message me on Instagram",
+    "consultation_placeholder_note": "Example consultation details. I'll confirm the final duration, price and availability.",
+    "consultation_steps_label": "How it works",
+    "consultation_step_1_title": "Share your story",
+    "consultation_step_1_description": "Prepare your questions, a few recent photos of your hair and scalp, and a list of the products you use.",
+    "consultation_step_2_title": "Let's talk about your routine",
+    "consultation_step_2_description": "Meet me by video to discuss your everyday care, your concerns and what you would like to improve.",
+    "consultation_step_3_title": "Leave with a clear next step",
+    "consultation_step_3_description": "I'll send you a summary of our conversation and suggested next steps for your hair-care routine.",
 
     "gallery_title": "Gallery",
     "gallery_subtitle": "Gallery of my latest works",

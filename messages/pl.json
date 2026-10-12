@@ -2,6 +2,7 @@
   "Index": {
     "nav_about": "O mnie",
     "nav_price": "Cennik",
+    "nav_consultation": "Konsultacja online",
     "nav_galery": "Galeria",
     "nav_certificates": "Certyfikaty",
     "nav_faq": "FAQ",
@@ -31,8 +32,8 @@
     "hero_description": "Prowadzę konsultacje trychologiczne, które zmieniają życie na lepsze. Jeśli dokucza Ci łuszczenie, swędzenie, łupież, łojotokowe zapalenie skóry lub nadmierne wypadanie włosów - zapraszam na indywidualną konsultację.\nPomogę dobrać skuteczną pielęgnację, wzmocnię i zagęszczę włosy oraz sprawię, że będą zadbane.\n\nOtworzę przed Tobą świat pięknych i zdrowych włosów.",
     "section_about": "01 - O mnie",
     "section_price": "02 - Cennik",
-    "section_gallery": "03 - Galeria",
-    "section_faq": "04 - FAQ",
+    "section_gallery": "04 - Galeria",
+    "section_faq": "05 - FAQ",
     "editorial_mark": "TRYCHOLOGIA",
 
     "most_popular": "Najpopularniejszy",
@@ -47,6 +48,23 @@
     "service_description_3": "Diagnostyka trychoskopem\nAnaliza obecnej pielęgnacji\nPisemnie: dobór pielęgnacji terapeutycznej\nSkierowanie na badania\nDobór witamin\nZalecenia dietetyczne\n➕ Wsparcie online\n➕ Konsultacja kontrolna\n\nCzas trwania: 75 minut",
 
     "benefits_conclusion": "Konsultacja kontrolna: analiza postępów, omówienie wdrożonej pielęgnacji, ponowna trychoskopia, porównanie zdjęć z pierwszej wizyty, kontrola stanu skóry. Czas trwania: 60 minut",
+
+    "consultation_label": "03 - Konsultacja online",
+    "consultation_title": "Konsultacja online",
+    "consultation_description": "Zadbaj o włosy, gdziekolwiek jesteś. Podczas konsultacji trychologicznej online ze mną porozmawiamy o Twoich włosach i skórze głowy, przyjrzymy się obecnej pielęgnacji i omówimy kolejne kroki bez wychodzenia z domu.",
+    "consultation_format_label": "Forma",
+    "consultation_format": "Rozmowa wideo",
+    "consultation_duration_label": "Czas trwania",
+    "consultation_duration": "Około 45 minut",
+    "consultation_cta": "Napisz do mnie na Instagramie",
+    "consultation_placeholder_note": "Przykładowy opis konsultacji. Potwierdzę ostateczny czas trwania, cenę i dostępność.",
+    "consultation_steps_label": "Jak to działa",
+    "consultation_step_1_title": "Opowiedz o swoich potrzebach",
+    "consultation_step_1_description": "Przygotuj pytania, kilka aktualnych zdjęć włosów i skóry głowy oraz listę kosmetyków, których używasz.",
+    "consultation_step_2_title": "Porozmawiajmy o pielęgnacji",
+    "consultation_step_2_description": "Podczas rozmowy wideo ze mną omówimy Twoją codzienną pielęgnację, wątpliwości i to, co chcesz poprawić.",
+    "consultation_step_3_title": "Zaplanuj kolejny krok",
+    "consultation_step_3_description": "Prześlę Ci podsumowanie naszej rozmowy i propozycje kolejnych kroków w codziennej pielęgnacji włosów.",
 
     "gallery_title": "Galeria",
     "gallery_subtitle": "Galeria ostatnich realizacji",

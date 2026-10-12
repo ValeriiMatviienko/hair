@@ -29,16 +29,16 @@ const ServiceSection = () => {
         </h2>
       </div>
 
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl lg:grid lg:max-w-none lg:grid-cols-3 lg:gap-8 xl:gap-12">
         {serviceData.map((item, index) => (
           <article
             key={item.serviceTitle}
             className={cn(
-              "border-t border-ink/10 py-8 transition-colors duration-300 last:border-b md:py-10",
+              "min-w-0 border-t border-ink/10 py-8 transition-colors duration-300 last:border-b md:py-10 lg:border-b",
               index === popularIndex && "border-l-2 border-l-darkgreen pl-4 md:pl-6",
             )}
           >
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between lg:flex-col lg:gap-4">
               <div>
                 <div className="flex flex-wrap items-center gap-3">
                   <p className="section-label">

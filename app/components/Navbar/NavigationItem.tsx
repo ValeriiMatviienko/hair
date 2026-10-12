@@ -5,6 +5,7 @@ export const getNavigationItems = (
 ): NavigationItemType[] => [
   { name: t("nav_about"), href: "/#home-section" },
   { name: t("nav_price"), href: "/#price-section" },
+  { name: t("nav_consultation"), href: "/#online-consultation-section" },
   { name: t("nav_galery"), href: "/#gallery-section" },
   { name: t("nav_certificates"), href: "/certificates" },
   { name: t("nav_faq"), href: "/#faq-section" },
