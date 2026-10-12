@@ -23,7 +23,7 @@ export default async function OnlineConsultationSection() {
     <section
       id="online-consultation-section"
       aria-labelledby="online-consultation-title"
-      className="scroll-mt-[5.5rem] border-y border-ink/10 bg-sage/40"
+      className="scroll-mt-22 border-y border-ink/10 bg-sage/40"
     >
       <div className="section-shell">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
@@ -66,9 +66,10 @@ export default async function OnlineConsultationSection() {
               className="editorial-cta mt-8 gap-3 motion-reduce:transition-none"
             >
               {t("consultation_cta")}
+              <span className="sr-only"> {t("opens_new_tab")}</span>
               <ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" />
             </a>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/60">
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/70">
               {t("consultation_placeholder_note")}
             </p>
           </div>

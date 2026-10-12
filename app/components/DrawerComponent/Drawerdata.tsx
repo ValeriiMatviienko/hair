@@ -14,12 +14,14 @@ const DrawerData = () => {
   return (
     <div className="mx-auto w-full max-w-sm">
       <div className="px-5 pt-4 pb-8">
-        <NavigationItemComponent
-          navigationItems={navigationItems}
-          activeLink={activeLink}
-          handleNavLinkClick={handleNavLinkClick}
-          className="block border-b border-ink/10 py-4 font-display text-2xl text-ink hover:text-darkgreen"
-        />
+        <nav aria-label={t("main_navigation")}>
+          <NavigationItemComponent
+            navigationItems={navigationItems}
+            activeLink={activeLink}
+            handleNavLinkClick={handleNavLinkClick}
+            className="block border-b border-ink/10 py-4 font-display text-2xl text-ink hover:text-darkgreen"
+          />
+        </nav>
         <div className="mt-8">
           <LanguageSelector />
         </div>

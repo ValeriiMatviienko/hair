@@ -101,6 +101,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const locale = await getRequestLocale();
   const messages = await getMessages(locale);
+  const t = await getTranslations("Index");
   const cookieStore = await cookies();
   const analyticsConsent = normalizeAnalyticsConsent(
     cookieStore.get(analyticsConsentCookie)?.value,
@@ -113,6 +114,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       suppressHydrationWarning
     >
       <body className="bg-paper text-ink" suppressHydrationWarning>
+        <a href="#main-content" className="skip-link">
+          {t("skip_to_content")}
+        </a>
         <NavigationProvider>
           <LocaleProvider initialLocale={locale} initialMessages={messages}>
             <AnalyticsConsentProvider initialConsent={analyticsConsent}>

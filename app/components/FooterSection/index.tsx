@@ -31,10 +31,11 @@ const Footer = () => {
                   className="group flex flex-col items-start"
                 >
                   <div className="flex h-11 w-11 items-center justify-center text-paper transition-transform duration-300 group-hover:-translate-y-0.5">
-                    <item.Component className="h-6 w-6" />
+                    <item.Component className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="mt-1 text-sm text-paper/80 underline-offset-4 group-hover:underline">
                     {item.description}
+                    <span className="sr-only"> {t("opens_new_tab")}</span>
                   </p>
                 </a>
               ))}
@@ -68,12 +69,13 @@ const Footer = () => {
               className="mt-3 inline-block text-sm text-paper/80 underline underline-offset-4 hover:text-paper"
             >
               {t("open_map")}
+              <span className="sr-only"> {t("opens_new_tab")}</span>
             </a>
           </div>
         </div>
 
         <div className="mt-14 border-t border-paper/15 pt-6">
-          <p className="text-sm text-paper/55">
+          <p className="text-sm text-paper/75">
             Copyright &copy; 2020-{currentYear} Hair by Hanna.
           </p>
         </div>

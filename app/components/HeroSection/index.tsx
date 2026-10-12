@@ -12,13 +12,19 @@ const HeroSection = () => {
   const t = useTranslations("Index");
 
   return (
-    <section className="relative isolate scroll-mt-[5.5rem]" id="home-section">
+    <section
+      className="relative isolate scroll-mt-[5.5rem]"
+      id="home-section"
+      aria-labelledby="hero-title"
+    >
       <HeroAtmosphere />
       <div className="section-shell relative z-10 pt-10 md:pt-16">
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-0">
           <div className="lg:col-span-5 lg:flex lg:min-h-full lg:flex-col lg:justify-center">
             <p className="section-label">{t("section_about")}</p>
-            <h1 className="mt-5 max-w-[12ch] font-display text-[2.55rem] font-medium leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl xl:text-[4.5rem]">
+            <h1
+              id="hero-title"
+              className="mt-5 max-w-[12ch] font-display text-[2.55rem] font-medium leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl xl:text-[4.5rem]">
               {t("hero_title")}
             </h1>
             <p className="mt-5 max-w-md text-base leading-relaxed text-ink/75 sm:text-lg">

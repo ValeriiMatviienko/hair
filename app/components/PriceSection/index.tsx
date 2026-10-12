@@ -21,10 +21,14 @@ const ServiceSection = () => {
   const popularIndex = 1;
 
   return (
-    <section className="section-shell pt-6 md:pt-10" id="price-section">
+    <section
+      className="section-shell pt-6 md:pt-10"
+      id="price-section"
+      aria-labelledby="price-title"
+    >
       <div className="mb-10 max-w-xl sm:mb-14">
         <p className="section-label">{t("section_price")}</p>
-        <h2 className="mt-4 font-display text-4xl font-medium tracking-tight text-ink md:text-5xl">
+        <h2 id="price-title" className="mt-4 font-display text-4xl font-medium tracking-tight text-ink md:text-5xl">
           {t("price_section_title")}
         </h2>
       </div>
@@ -41,11 +45,11 @@ const ServiceSection = () => {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between lg:flex-col lg:gap-4">
               <div>
                 <div className="flex flex-wrap items-center gap-3">
-                  <p className="section-label">
+                  <p className="section-label" aria-hidden="true">
                     {String(index + 1).padStart(2, "0")}
                   </p>
                   {index === popularIndex && (
-                    <p className="text-[0.65rem] uppercase tracking-[0.2em] text-darkgreen">
+                    <p className="text-[0.75rem] uppercase tracking-[0.2em] text-darkgreen">
                       {t("most_popular")}
                     </p>
                   )}
@@ -55,7 +59,9 @@ const ServiceSection = () => {
                 </h3>
               </div>
               <p className="font-display text-3xl tracking-tight text-ink tabular-nums md:text-4xl">
-                {siteConfig.servicePrices[index]} zł
+                {siteConfig.servicePrices[index]}{" "}
+                <span aria-hidden="true">zł</span>
+                <span className="sr-only">{t("currency_pln")}</span>
               </p>
             </div>
 
@@ -69,10 +75,20 @@ const ServiceSection = () => {
                     className={cn(
                       "text-[0.95rem] leading-6 text-ink/70",
                       isTrichoscopy(feature) && "font-medium text-ink",
-                      muted && "text-ink/50",
+                      muted && "text-ink/65",
                     )}
                   >
-                    {feature}
+                    {isPlus(feature) ? (
+                      <>
+                        <span aria-hidden="true">➕ </span>
+                        <span className="sr-only">
+                          {t("price_extra_prefix")}{" "}
+                        </span>
+                        {feature.trim().replace(/^➕\s*/, "")}
+                      </>
+                    ) : (
+                      feature
+                    )}
                   </li>
                 );
               })}
@@ -96,14 +112,15 @@ const ServiceSection = () => {
                 {service.name}
               </span>
               <span className="shrink-0 font-display text-xl text-ink tabular-nums md:text-2xl">
-                {service.price} zł
+                {service.price} <span aria-hidden="true">zł</span>
+                <span className="sr-only">{t("currency_pln")}</span>
               </span>
             </li>
           ))}
         </ul>
       </div>
 
-      <p className="mx-auto mt-12 max-w-3xl text-sm leading-relaxed text-ink/55 sm:text-base">
+      <p className="mx-auto mt-12 max-w-3xl text-sm leading-relaxed text-ink/70 sm:text-base">
         {t("benefits_conclusion")}
       </p>
     </section>

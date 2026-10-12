@@ -21,6 +21,12 @@ const languageLabels: Record<Locale, string> = {
   uk: "UA",
 };
 
+const languageNames: Record<Locale, string> = {
+  pl: "Polski",
+  en: "English",
+  uk: "Українська",
+};
+
 export default function LanguageSelector() {
   const t = useTranslations("Index");
   const router = useRouter();
@@ -41,13 +47,16 @@ export default function LanguageSelector() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="flex items-center gap-2 border-ink/15 bg-transparent text-ink hover:bg-darkgreen hover:text-paper"
+          className="flex h-11 items-center gap-2 border-ink/15 bg-transparent text-ink hover:bg-darkgreen hover:text-paper"
           variant="outline"
-          aria-label={t("change_language")}
           disabled={isPending}
         >
-          <IoLanguage size={18} />
+          <IoLanguage size={18} aria-hidden="true" />
+          <span className="sr-only">{t("change_language")}: </span>
           {languageLabels[locale]}
+          <span className="sr-only" lang={locale}>
+            , {languageNames[locale]}
+          </span>
         </Button>
       </DropdownMenuTrigger>
 
@@ -55,12 +64,22 @@ export default function LanguageSelector() {
         {locales.map((lang) => (
           <DropdownMenuItem
             key={lang}
+            role="menuitemradio"
+            aria-checked={locale === lang}
             onClick={() => handleLanguageChange(lang)}
             className="flex items-center gap-2"
           >
             <span className="text-ink">{languageLabels[lang]}</span>
+            <span className="sr-only" lang={lang}>
+              , {languageNames[lang]}
+            </span>
             {locale === lang && (
-              <span className="ml-auto text-darkgreen text-xs">✓</span>
+              <span
+                aria-hidden="true"
+                className="ml-auto text-darkgreen text-xs"
+              >
+                ✓
+              </span>
             )}
           </DropdownMenuItem>
         ))}

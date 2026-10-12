@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { NavigationItemType } from "../types/types";
+import { getScrollBehavior } from "@/lib/utils";
 
 const useNavigation = () => {
   const pathname = usePathname();
@@ -20,7 +21,7 @@ const useNavigation = () => {
 
       window.scrollTo({
         top: offsetPosition + window.pageYOffset,
-        behavior: "smooth",
+        behavior: getScrollBehavior(),
       });
     }
   }, []);
@@ -32,7 +33,9 @@ const useNavigation = () => {
       if (hashIndex !== -1 && pathname === "/") {
         event.preventDefault();
         setActiveLink(item.name);
-        smoothScroll(item.href.slice(hashIndex));
+        const targetId = item.href.slice(hashIndex);
+        // Runs after the mobile drawer has released its scroll lock.
+        requestAnimationFrame(() => smoothScroll(targetId));
         return;
       }
 

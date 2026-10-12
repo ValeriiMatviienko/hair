@@ -7,6 +7,7 @@ type InstagramEmbedProps = {
   url: string;
   showCaption?: boolean;
   fallbackLabel: string;
+  newTabLabel: string;
 };
 
 const INSTAGRAM_SCRIPT_SRC = "https://www.instagram.com/embed.js";
@@ -15,6 +16,7 @@ export function InstagramEmbed({
   url,
   showCaption = false,
   fallbackLabel,
+  newTabLabel,
 }: InstagramEmbedProps) {
   useEffect(() => {
     window.instgrm?.Embeds.process();
@@ -30,6 +32,7 @@ export function InstagramEmbed({
       >
         <a href={url} target="_blank" rel="noopener noreferrer">
           {fallbackLabel}
+          <span className="sr-only"> {newTabLabel}</span>
         </a>
       </blockquote>
 

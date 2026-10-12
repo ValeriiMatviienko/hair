@@ -23,6 +23,7 @@ const Navbar = () => {
 
   return (
     <nav
+      aria-label={t("main_navigation")}
       data-scrolled={isScrolled}
       className="navbar glass-surface sticky top-0 z-30"
     >
@@ -48,12 +49,14 @@ const Navbar = () => {
           </div>
           <div className="block xl:hidden">
             <button
+              id="mobile-menu-button"
               type="button"
               onClick={handleIconClick}
               aria-label={t("open_menu")}
+              aria-haspopup="dialog"
               aria-expanded={isOpen}
-              aria-controls="mobile-navigation"
-              className="-mr-2.5 flex h-11 w-11 touch-manipulation items-center justify-center rounded-sm text-ink focus-visible:ring-2 focus-visible:ring-darkgreen"
+              aria-controls={isOpen ? "mobile-navigation" : undefined}
+              className="-mr-2.5 flex h-11 w-11 touch-manipulation items-center justify-center rounded-sm text-ink"
             >
               <span className="relative block h-3.5 w-6" aria-hidden="true">
                 <span

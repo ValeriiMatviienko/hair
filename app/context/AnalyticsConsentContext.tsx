@@ -45,11 +45,15 @@ export function AnalyticsConsentProvider({
     [persistConsent],
   );
 
+  const chooseFromBanner = (choose: () => void) => () => {
+    choose();
+    document.getElementById("main-content")?.focus({ preventScroll: true });
+  };
+
   return (
     <AnalyticsConsentContext.Provider
       value={{ consent, allowAnalytics, denyAnalytics }}
     >
-      {children}
       {consent === "unknown" && (
         <aside
           aria-label={t("cookie_consent_title")}
@@ -67,14 +71,14 @@ export function AnalyticsConsentProvider({
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
-                onClick={allowAnalytics}
+                onClick={chooseFromBanner(allowAnalytics)}
                 className="editorial-cta-solid"
               >
                 {t("cookie_consent_allow")}
               </button>
               <button
                 type="button"
-                onClick={denyAnalytics}
+                onClick={chooseFromBanner(denyAnalytics)}
                 className="editorial-cta"
               >
                 {t("cookie_consent_decline")}
@@ -83,6 +87,7 @@ export function AnalyticsConsentProvider({
           </div>
         </aside>
       )}
+      {children}
     </AnalyticsConsentContext.Provider>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
@@ -24,6 +24,7 @@ type GalleryProps = {
 const Gallery = ({ title, description, sections }: GalleryProps) => {
   const t = useTranslations("Index");
   const [selected, setSelected] = useState<CertificateImage | null>(null);
+  const openerRef = useRef<HTMLButtonElement | null>(null);
 
   return (
     <section className="py-8 sm:py-16 lg:py-24">
@@ -51,14 +52,17 @@ const Gallery = ({ title, description, sections }: GalleryProps) => {
                 <button
                   key={image.src}
                   type="button"
-                  onClick={() => setSelected(image)}
+                  onClick={(event) => {
+                    openerRef.current = event.currentTarget;
+                    setSelected(image);
+                  }}
                   aria-haspopup="dialog"
                   aria-label={t("certificates_open", { number: image.number })}
-                  className="group relative block w-full overflow-hidden rounded-lg focus-visible:ring-2 focus-visible:ring-darkgreen"
+                  className="group relative block w-full overflow-hidden rounded-lg"
                 >
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt=""
                     width={1200}
                     height={900}
                     sizes={
@@ -84,13 +88,17 @@ const Gallery = ({ title, description, sections }: GalleryProps) => {
         <DialogPortal>
           <DialogPrimitive.Content
             aria-label={t("certificates_viewer_label")}
+            onCloseAutoFocus={(event) => {
+              event.preventDefault();
+              openerRef.current?.focus({ preventScroll: true });
+            }}
             className="fixed inset-0 z-[80] h-[100dvh] w-screen max-w-none translate-x-0 translate-y-0 border-0 bg-ink/90 p-0 shadow-none outline-none"
           >
             <DialogTitle className="sr-only">
               {selected?.alt ?? t("certificates_viewer_label")}
             </DialogTitle>
             <DialogDescription className="sr-only">
-              {t("certificates_close_overlay")}
+              {t("certificates_viewer_hint")}
             </DialogDescription>
             <div
               className="flex h-full w-full items-center justify-center p-4 md:p-8"
@@ -103,7 +111,7 @@ const Gallery = ({ title, description, sections }: GalleryProps) => {
                   event.stopPropagation();
                   setSelected(null);
                 }}
-                className="absolute top-4 right-4 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-paper text-ink focus-visible:ring-2 focus-visible:ring-paper"
+                className="absolute top-4 right-4 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-paper text-ink focus-visible:outline-paper"
               >
                 <X className="h-6 w-6" aria-hidden="true" />
               </button>

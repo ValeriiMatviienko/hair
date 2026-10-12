@@ -39,21 +39,23 @@ export default async function Home() {
   const faqs = getFAQs(t);
 
   return (
-    <main>
+    <>
       <JsonLd data={getLocalBusinessJsonLd(t("description"))} />
       <JsonLd data={getPersonJsonLd()} />
       <JsonLd data={getFaqJsonLd(faqs)} />
       <Navbar />
       <DrawerContainer />
-      <HeroSection />
-      <EditorialMark />
-      <PriceSection />
-      <OnlineConsultationSection />
-      <GallerySection />
-      <FAQSection />
-      <InstagramSection />
+      <main id="main-content" tabIndex={-1}>
+        <HeroSection />
+        <EditorialMark />
+        <PriceSection />
+        <OnlineConsultationSection />
+        <GallerySection />
+        <FAQSection />
+        <InstagramSection />
+      </main>
       <FooterSection />
       <ScrollToTopButton />
-    </main>
+    </>
   );
 }

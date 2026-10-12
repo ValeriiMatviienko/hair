@@ -136,12 +136,24 @@
   * {
     margin: 0;
     padding: 0;
-    outline: 0;
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-darkgreen);
+    outline-offset: 3px;
+  }
+
+  footer :focus-visible {
+    outline-color: var(--color-paper);
+  }
+
+  #main-content:focus {
+    outline: none;
   }
 
   body {
@@ -160,6 +172,23 @@ div {
 
 main {
   overflow-x: clip;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-darkgreen);
+  color: var(--color-paper);
+  font-size: 0.875rem;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+  outline-color: var(--color-darkgreen);
 }
 
 /* Solid paper is the baseline so surfaces stay readable when blur is unavailable. */
@@ -232,11 +261,11 @@ main {
 }
 
 .section-label {
-  @apply text-[0.68rem] font-medium uppercase tracking-[0.28em] text-ink/45;
+  @apply text-[0.75rem] font-medium uppercase tracking-[0.28em] text-ink/65;
 }
 
 .footer-label {
-  @apply text-[0.68rem] font-medium uppercase tracking-[0.28em] text-paper/70;
+  @apply text-[0.75rem] font-medium uppercase tracking-[0.28em] text-paper/75;
 }
 
 .editorial-cta {
@@ -257,10 +286,6 @@ main {
 .editorial-cta-solid:hover {
   background-color: var(--color-softgreen);
   color: var(--color-paper);
-}
-
-.editorial-cta:focus-visible {
-  @apply ring-2 ring-darkgreen ring-offset-2 ring-offset-paper;
 }
 
 .nav-link {

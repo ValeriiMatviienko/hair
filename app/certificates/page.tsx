@@ -40,7 +40,7 @@ export default async function CertificatesPage() {
   const sections = getCertificateSections(t);
 
   return (
-    <main>
+    <>
       <JsonLd
         data={getBreadcrumbJsonLd(
           t("breadcrumb_home"),
@@ -50,32 +50,34 @@ export default async function CertificatesPage() {
       />
       <Navbar />
       <DrawerContainer />
-      <div className="section-shell pb-0">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href="/" className="text-ink/60 hover:text-darkgreen">
-                  {t("breadcrumb_home")}
-                </Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-ink">
-                {t("nav_certificates")}
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
-      <Gallery
-        title={t("certificates_title")}
-        description={t("certificates_subtitle")}
-        sections={sections}
-      />
+      <main id="main-content" tabIndex={-1}>
+        <div className="section-shell pb-0">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/" className="text-ink/70 hover:text-darkgreen">
+                    {t("breadcrumb_home")}
+                  </Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-ink">
+                  {t("nav_certificates")}
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+        <Gallery
+          title={t("certificates_title")}
+          description={t("certificates_subtitle")}
+          sections={sections}
+        />
+      </main>
       <FooterSection />
       <ScrollToTopButton />
-    </main>
+    </>
   );
 }

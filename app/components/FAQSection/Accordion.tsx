@@ -32,12 +32,18 @@ const CustomAccordion = ({ items }: AccordionProps) => {
               )}
             >
               <span className="flex items-start gap-4">
-                <span className="mt-1 hidden font-display text-sm text-ink/35 tabular-nums sm:inline">
+                <span
+                  aria-hidden="true"
+                  className="mt-1 hidden font-display text-sm text-ink/35 tabular-nums sm:inline"
+                >
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span>{question}</span>
               </span>
-              <PlusIcon className="h-5 w-5 shrink-0 text-ink/45 transition-transform duration-200" />
+              <PlusIcon
+                aria-hidden="true"
+                className="h-5 w-5 shrink-0 text-ink/60 transition-transform duration-200"
+              />
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
 

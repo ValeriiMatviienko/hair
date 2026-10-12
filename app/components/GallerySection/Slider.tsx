@@ -69,10 +69,15 @@ export default function Slider() {
     <div className="mx-auto">
       <div className="mb-4 flex items-end justify-between gap-4">
         <p className="font-display text-4xl tracking-tight text-ink tabular-nums md:text-5xl">
-          {String(current + 1).padStart(2, "0")}
-          <span className="text-ink/25">
-            {" "}
-            / {String(galleryTotal).padStart(2, "0")}
+          <span aria-hidden="true">
+            {String(current + 1).padStart(2, "0")}
+            <span className="text-ink/55">
+              {" "}
+              / {String(galleryTotal).padStart(2, "0")}
+            </span>
+          </span>
+          <span className="sr-only" aria-live="polite" aria-atomic="true">
+            {t("gallery_counter", { current: current + 1, total: galleryTotal })}
           </span>
         </p>
       </div>
@@ -81,6 +86,7 @@ export default function Slider() {
         className="w-full"
         setApi={setMainApi}
         opts={{ align: "start" }}
+        aria-label={t("gallery_label")}
       >
         <CarouselContent>
           {GalleryImage.map((image, index) => (
@@ -102,7 +108,11 @@ export default function Slider() {
         </CarouselContent>
       </Carousel>
 
-      <Carousel className="mt-4 w-full" opts={{ align: "start" }}>
+      <Carousel
+        className="mt-4 w-full"
+        opts={{ align: "start" }}
+        aria-label={t("gallery_thumbnails_label")}
+      >
         <div className="mask-x-from-90%">
           <CarouselContent className="my-1 flex">
             {GalleryImage.map((image, index) => (
@@ -116,7 +126,7 @@ export default function Slider() {
                   aria-label={t("select_gallery_image", { number: index + 1 })}
                   aria-current={current === index ? "true" : undefined}
                   className={cn(
-                    "relative block aspect-square w-full transition-opacity focus-visible:ring-2 focus-visible:ring-darkgreen",
+                    "relative block aspect-square w-full transition-opacity focus-visible:-outline-offset-2",
                     current === index
                       ? "opacity-100 ring-1 ring-darkgreen"
                       : "opacity-45",
@@ -124,7 +134,7 @@ export default function Slider() {
                 >
                   <Image
                     src={image.src}
-                    alt={t("gallery_image_alt", { number: index + 1 })}
+                    alt=""
                     fill
                     sizes="25vw"
                     className="object-cover"
