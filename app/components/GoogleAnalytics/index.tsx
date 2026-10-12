@@ -3,12 +3,12 @@
 import { GoogleAnalytics as NextGoogleAnalytics } from "@next/third-parties/google";
 import { useAnalyticsConsent } from "@/app/context/AnalyticsConsentContext";
 
-const GoogleAnalytics = () => {
+const GoogleAnalytics = ({ nonce }: { nonce?: string }) => {
   const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
   const { consent } = useAnalyticsConsent();
 
   return gaId && consent === "granted" ? (
-    <NextGoogleAnalytics gaId={gaId} />
+    <NextGoogleAnalytics gaId={gaId} nonce={nonce} />
   ) : null;
 };
 

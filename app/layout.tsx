@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { Cormorant_Garamond } from "next/font/google";
 import { getTranslations } from "next-intl/server";
 import GoogleAnalytics from "./components/GoogleAnalytics";
@@ -103,6 +103,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const messages = await getMessages(locale);
   const t = await getTranslations("Index");
   const cookieStore = await cookies();
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const analyticsConsent = normalizeAnalyticsConsent(
     cookieStore.get(analyticsConsentCookie)?.value,
   );
@@ -120,7 +121,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <NavigationProvider>
           <LocaleProvider initialLocale={locale} initialMessages={messages}>
             <AnalyticsConsentProvider initialConsent={analyticsConsent}>
-              <GoogleAnalytics />
+              <GoogleAnalytics nonce={nonce} />
               {children}
             </AnalyticsConsentProvider>
           </LocaleProvider>
