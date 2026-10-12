@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useTransition } from "react";
+import { useCallback, useRef, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useLocaleContext } from "@/app/context/localesProvider";
@@ -33,14 +33,28 @@ export default function LanguageSelector() {
   const [isPending, startTransition] = useTransition();
   const { locale, setLocale } = useLocaleContext();
   const { setIsOpen } = useNavigationContext();
+  const closeDrawerAfterMenu = useRef(false);
 
   const handleLanguageChange = useCallback(
     (lang: Locale) => {
       setLocale(lang);
-      setIsOpen(false);
+      closeDrawerAfterMenu.current = true;
       startTransition(() => router.refresh());
     },
-    [router, setIsOpen, setLocale],
+    [router, setLocale],
+  );
+
+  // The drawer must close only after this menu has unmounted. Closing both
+  // Radix layers in one render leaves `pointer-events: none` on <body>.
+  const handleMenuCloseAutoFocus = useCallback(
+    (event: Event) => {
+      if (!closeDrawerAfterMenu.current) return;
+
+      closeDrawerAfterMenu.current = false;
+      event.preventDefault();
+      setIsOpen(false);
+    },
+    [setIsOpen],
   );
 
   return (
@@ -60,7 +74,10 @@ export default function LanguageSelector() {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent
+        align="end"
+        onCloseAutoFocus={handleMenuCloseAutoFocus}
+      >
         {locales.map((lang) => (
           <DropdownMenuItem
             key={lang}
