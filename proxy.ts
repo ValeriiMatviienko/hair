@@ -8,9 +8,9 @@ const buildContentSecurityPolicy = (nonce: string) =>
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.instagram.com${isDev ? " 'unsafe-eval'" : ""}`,
     // React, Radix and Embla write inline style attributes, which nonces cannot cover.
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com",
+    "img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com https://*.google.pl",
     "font-src 'self'",
-    "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.instagram.com",
+    "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com https://*.google.pl https://www.instagram.com",
     "frame-src https://www.google.com https://www.instagram.com",
     "object-src 'none'",
     "base-uri 'self'",
