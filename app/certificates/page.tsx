@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { getCertificateSections } from "@/lib/certificates";
 import { getBreadcrumbJsonLd } from "@/lib/json-ld";
-import { buildPageMetadata, getPageTitle } from "@/lib/page-metadata";
+import { buildPageMetadata } from "@/lib/page-metadata";
 import { getRequestLocale } from "@/i18n/server";
 import DrawerContainer from "../components/DrawerComponent";
 import FooterSection from "../components/FooterSection";
@@ -24,7 +24,7 @@ import ScrollToTopButton from "../components/ScrollToTopButton";
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Index");
   const locale = await getRequestLocale();
-  const title = getPageTitle(t("certificates_seo_title"), t("title"));
+  const title = `${t("title")} - ${t("certificates_title")}`;
 
   return buildPageMetadata({
     title,
