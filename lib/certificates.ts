@@ -12,8 +12,8 @@ export type CertificateSection = {
 };
 
 const layout = [
-  { type: undefined, numbers: [10] },
-  { type: "grid" as const, numbers: [9, 8, 7, 6] },
+  { type: undefined, numbers: [9] },
+  { type: "grid" as const, numbers: [8, 7, 6] },
   { type: "grid" as const, numbers: [4, 3, 2, 1] },
   { type: undefined, numbers: [5] },
 ];
@@ -24,7 +24,7 @@ export const getCertificateSections = (
   layout.map((section) => ({
     type: section.type,
     images: section.numbers.map((number) => ({
-      src: `/images/certificates/cert-${String(number).padStart(2, "0")}.png`,
+      src: `/images/certificates/cert-${String(number).padStart(2, "0")}-preview.webp`,
       alt: t("certificate_image_alt", { number: String(number) }),
       number,
     })),

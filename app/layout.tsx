@@ -111,6 +111,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html
       lang={localeLanguageTags[locale]}
+      data-scroll-behavior="smooth"
       className={displaySerif.variable}
       suppressHydrationWarning
     >
