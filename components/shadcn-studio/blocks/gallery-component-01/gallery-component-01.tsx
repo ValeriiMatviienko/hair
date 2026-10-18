@@ -48,7 +48,7 @@ const Gallery = ({ title, description, sections }: GalleryProps) => {
               key={sectionIndex}
               className={cn({ "grid grid-cols-2 gap-6": section.type === "grid" })}
             >
-              {section.images.map((image) => (
+              {section.images.map((image, imageIndex) => (
                 <button
                   key={image.src}
                   type="button"
@@ -58,7 +58,12 @@ const Gallery = ({ title, description, sections }: GalleryProps) => {
                   }}
                   aria-haspopup="dialog"
                   aria-label={t("certificates_open", { number: image.number })}
-                  className="group relative block w-full overflow-hidden rounded-lg"
+                  className={cn(
+                    "group relative block w-full overflow-hidden rounded-lg",
+                    section.type === "grid" &&
+                      section.images.length % 2 === 1 &&
+                      "last:col-span-2 md:last:col-span-1",
+                  )}
                 >
                   <Image
                     src={image.src}
@@ -67,7 +72,10 @@ const Gallery = ({ title, description, sections }: GalleryProps) => {
                     height={900}
                     sizes={
                       section.type === "grid"
-                        ? "(min-width: 768px) 25vw, 50vw"
+                        ? section.images.length % 2 === 1 &&
+                          imageIndex === section.images.length - 1
+                          ? "(min-width: 768px) 25vw, 100vw"
+                          : "(min-width: 768px) 25vw, 50vw"
                         : "(min-width: 768px) 50vw, 100vw"
                     }
                     className="aspect-[4/3] h-auto w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-[1.02]"
